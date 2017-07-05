@@ -23,7 +23,7 @@
 						<div class="col-md-push-6 col-md-6 full-height js-full-height">
 							<div class="fh5co-cover-intro">
 								<h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Festivals</h1>
-								<h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Hier findest du eine Liste der aktuellen Festivals / Wettbewerbe</h2>
+								<h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Hier findest du eine Liste der aktuellen Festivals</h2>
 								<p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a class="btn btn-primary btn-outline btn-lg">Für das Jugendtheater-Festival Schweiz bewerben</a></p>
 							</div>
 						</div>
@@ -40,7 +40,7 @@
 				<div class="row p-b">
 					<div class="col-md-6 col-md-offset-3 text-center">
 						<h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Festivals</h2>
-						<p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Hier findest du eine Liste der aktuellen Festivals / Wettbewerbe</p>
+						<p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Hier findest du eine Liste der aktuellen Festivals</p>
 						<p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a href="#" class="btn btn-primary btn-outline btn-lg btn-black">Meine Premiere anmelden</a></p>
 					</div>
 				</div>
