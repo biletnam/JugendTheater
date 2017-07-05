@@ -1,17 +1,20 @@
 @font-face {
-    font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?eggpxg');
-    src:    url('fonts/icomoon.eot?eggpxg#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?eggpxg') format('truetype'),
-        url('fonts/icomoon.woff?eggpxg') format('woff'),
-        url('fonts/icomoon.svg?eggpxg#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'circular';
+  src: url("../fonts/circular/CircularPro-Book.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'circular';
+  src: url("../fonts/circular/CircularPro-BookItalic.otf");
+  font-weight: normal;
+  font-style: italic;
 }
 
 [class^="icon-"], [class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
+    font-family: 'circular' !important;
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -3591,4 +3594,3 @@
 .icon-ellipsis:before {
     content: "\e129";
 }
-
