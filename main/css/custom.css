@@ -1,0 +1,12 @@
+#premiere-container{
+  width:100%;
+}
+
+.btn-black{
+  color: black !important;
+  border-color: black !important;
+}
+
+.btn-black:hover{
+  color:white !important;
+}

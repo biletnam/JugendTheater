@@ -8,7 +8,7 @@
       <ul data-offcanvass="yes">
         <li><a href="../index.php">Home</a></li>
       <!--  <li class="active"><a href="build/festivals.php">Festivals</a></li> -->
-      <li><a href="build/festivals.php">Festivals</a></li>
+      <li><a href="/build/festivals.php">Festivals</a></li>
         <li><a href="#">Info</a></li>
         <li><a href="#">About</a></li>
       </ul>

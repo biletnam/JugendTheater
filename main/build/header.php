@@ -54,6 +54,8 @@
 	<link rel="stylesheet" href="../css/cards.css">
 	<!-- FontAwesome -->
 	<link rel="stylesheet" href="../css/font-awesome.min.css">
+	<!-- Custom -->
+	<link rel="stylesheet" href="../css/custom.css">
 	<!-- Modernizr JS -->
 	<script src="../js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->

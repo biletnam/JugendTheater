@@ -1,14 +1,3 @@
-/*
-///////////////////////////////////////////////////
-
-Project Name: Drag & Drop Cards by FREEHTML5.co
-Author: FREEHTML5.co
-Website: http://freehtml5.co
-URL: http://freehtml5.co/cards/drag-drop
-License: Creative Commons Attribution 3.0 License
-
-///////////////////////////////////////////////////
-*/
 @font-face {
   font-family: 'circular';
   src: url("../fonts/circular/CircularPro-Book.otf");
@@ -22,6 +11,13 @@ License: Creative Commons Attribution 3.0 License
   font-weight: normal;
   font-style: italic;
 }
+
+:root {
+  --main: #3680EE;
+  --sub: #FF7B26;
+  --acc: #FFD326;
+}
+
 /*
 ///////////////////////////////////////////////////
 1.0 BASE
@@ -113,8 +109,8 @@ a:hover, a:focus, a:active {
   border: 2px solid #1784fb;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background: #0477f4 !important;
-  border-color: #0477f4 !important;
+  background: var(--main) !important;
+  border-color: var(--main) !important;
 }
 .btn-primary.btn-outline {
   background: transparent;
@@ -700,8 +696,8 @@ a:hover .lnk-icon-right {
 }
 .fh5co-nav-style-1 .fh5co-link-wrap ul li a.call-to-action, .fh5co-nav-style-2 .fh5co-link-wrap ul li a.call-to-action {
   margin-top: 2px;
-  border: 2px solid #58ca7e;
-  background: #58ca7e;
+  border: 2px solid var(--sub);
+  background: var(--sub);
   padding: 2px 15px !important;
   display: -moz-inline-stack;
   display: inline-block;
@@ -714,9 +710,8 @@ a:hover .lnk-icon-right {
   color: #fff;
 }
 .fh5co-nav-style-1 .fh5co-link-wrap ul li a.call-to-action:hover, .fh5co-nav-style-2 .fh5co-link-wrap ul li a.call-to-action:hover {
-  color: #fff;
-  border: 2px solid #45c46f;
-  background: #45c46f;
+  color: var(--sub);
+  background: rgba(0, 0, 0, 0);
 }
 .fh5co-nav-style-1 .fh5co-link-wrap ul li.active a, .fh5co-nav-style-2 .fh5co-link-wrap ul li.active a {
   color: #fff;
@@ -924,8 +919,8 @@ a:hover .lnk-icon-right {
 }
 .fh5co-cover .fh5co-cover-text .btn-outline:hover {
   color: #fff;
-  background: #1784fb;
-  border-color: #1784fb;
+  background: var(--main);
+  border-color: var(--main);
 }
 .fh5co-cover .fh5co-cover-text .btn-outline:hover, .fh5co-cover .fh5co-cover-text .btn-outline:focus, .fh5co-cover .fh5co-cover-text .btn-outline:active {
   outline: none;

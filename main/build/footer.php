@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row p-b">
 
-      <div class="col-md-6 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+      <div class="col-md-6 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
         <div class="fh5co-logo">Jugend-Theater</div>
         <p class="fh5co-copyright"><i class="fa fa-copyright" aria-hidden="true"></i> 2017 Jugend-Theater-Gruppe Aarau <br>All Rights Reserved</p>
       </div>
@@ -19,7 +19,7 @@
         </ul>
       </div>
 
-      <div class="col-md-3 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.1s">
+      <div class="col-md-3 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.0s">
         <h3>About</h3>
         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
       </div>
