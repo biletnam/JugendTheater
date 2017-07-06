@@ -179,7 +179,7 @@
 		<ul>
 
 			<li class="wow fadeInUp col-md-3 wir_partner" style="background-image: url(/images/TTJ.jpg);" data-wow-duration="1s" data-wow-delay=".4s">
-				<a href="https://www.berlinerfestspiele.de/de/aktuell/festivals/bundeswettbewerbe/theatertreffen_der_jugend/ueber_festival_ttj/aktuell_ttj/start_ttj.php" target=_blank>
+				<a href="https://www.berlinerfestspiele.de/de/aktuell/festivals/bundeswettbewerbe/theatertreffen_der_jugend/ueber_festival_ttj/aktuell_ttj/start_ttj.php" target="_blank">
 					<div class="fh5co-overlay"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
@@ -190,7 +190,7 @@
 			</li>
 
 			<li class="wow fadeInUp col-md-3 wir_partner" style="background-image: url(/images/zamba.jpg);" data-wow-duration="1s" data-wow-delay=".6s">
-				<a href="https://www.zamba-loca.ch/" target=_blank>
+				<a href="https://www.zamba-loca.ch/" target="_blank">
 					<div class="fh5co-overlay"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
@@ -201,7 +201,7 @@
 			</li>
 
 			<li class="wow fadeInUp col-md-3 wir_partner" style="background-image: url(/images/FF.jpg);" data-wow-duration="1s" data-wow-delay=".8s">
-				<a href="http://www.festivalforum.ch/" target=_blank>
+				<a href="http://www.festivalforum.ch/" target="_blank">
 					<div class="fh5co-overlay"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
@@ -212,7 +212,7 @@
 			</li>
 
 			<li class="wow fadeInUp col-md-3 wir_partner" style="background-image: url(/images/jugendarbeit.jpg);" data-wow-duration="1s" data-wow-delay="1s">
-				<a href="https://www.jugendarbeitaarau.ch/" target=_blank>
+				<a href="https://www.jugendarbeitaarau.ch/" target="_blank">
 					<div class="fh5co-overlay"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
@@ -234,7 +234,7 @@
 			</li>
 
 			<li class="wow fadeInUp col-md-3 wir_partner" style="background-image: url(/images/nksa.jpg);" data-wow-duration="1s" data-wow-delay="1.4s">
-				<a href="http://nksa.ch/" target=_blank>
+				<a href="http://nksa.ch/" target="_blank">
 					<div class="fh5co-overlay"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
@@ -245,7 +245,7 @@
 			</li>
 
 			<li class="wow fadeInUp col-md-3 wir_partner" style="background-image: url(/images/hkb.jpg);" data-wow-duration="1s" data-wow-delay="1.6s">
-				<a href="https://www.hkb.bfh.ch/" target=_blank>
+				<a href="https://www.hkb.bfh.ch/" target="_blank">
 					<div class="fh5co-overlay"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
@@ -278,7 +278,7 @@
 		<ul>
 
 			<li class="wow fadeInUp col-md-6 wir_partner" style="background-image: url(/images/arttv.jpg);" data-wow-duration="1s" data-wow-delay=".4s">
-				<a href="https://www.arttv.ch/" target=_blank>
+				<a href="https://www.arttv.ch/" target="_blank">
 					<div class="fh5co-overlay"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
@@ -289,7 +289,7 @@
 			</li>
 
 			<li class="wow fadeInUp col-md-6 wir_partner" style="background-image: url(/images/AZJTFS.jpg);" data-wow-duration="1s" data-wow-delay=".6s">
-				<a href="https://www.aargauerzeitung.ch/" target=_blank>
+				<a href="https://www.aargauerzeitung.ch/" target="_blank">
 					<div class="fh5co-overlay"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
@@ -319,7 +319,7 @@
 		<ul>
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/cometas.jpg);" data-wow-duration="1s" data-wow-delay=".4s">
-				<a href="http://www.cometas.ch/" target=_blank>
+				<a href="http://www.cometas.ch/" target="_blank">
 					<div class="fh5co-overlay"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">

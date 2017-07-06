@@ -56,7 +56,7 @@
 							<div class="fh5co-overlay"></div>
 								<div class="fh5co-text">
 									<div class="fh5co-text-inner">
-											<div class="text-center"><h3>Project Name #1</h3></div>
+											<div class="text-center"><h3>Premiere #1</h3></div>
 									</div>
 								</div>
 						</a>
@@ -67,7 +67,7 @@
 							<div class="fh5co-overlay"></div>
 								<div class="fh5co-text">
 									<div class="fh5co-text-inner">
-											<div class="text-center"><h3>Project Name #2</h3></div>
+											<div class="text-center"><h3>Premiere #2</h3></div>
 									</div>
 								</div>
 						</a>
@@ -78,7 +78,7 @@
 							<div class="fh5co-overlay"></div>
 								<div class="fh5co-text">
 									<div class="fh5co-text-inner">
-											<div class="text-center"><h3>Project Name #3</h3></div>
+											<div class="text-center"><h3>Premiere #3</h3></div>
 								</div>
 							</div>
 						</a>
