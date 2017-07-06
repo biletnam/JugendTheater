@@ -9,7 +9,7 @@
         <li><a href="../index.php">Home</a></li>
       <!--  <li class="active"><a href="build/festivals.php">Festivals</a></li> -->
         <li><a href="/build/medien.php">Medien</a></li>
-        <li><a href="/build/wir.php">Wir</a></li>
+        <li><a href="/build/wir.php">About</a></li>
       </ul>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-4 text-right fh5co-link-wrap">

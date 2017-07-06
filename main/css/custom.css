@@ -48,3 +48,11 @@
   background-position: center;
   box-shadow: none !important;
 }
+
+.footer_logo{
+  margin-bottom: 35px !important;
+}
+
+.footer_titel{
+  margin-top: 0px !important;
+}
