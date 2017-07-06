@@ -1,0 +1,50 @@
+#premiere-container{
+  width:100%;
+}
+
+.btn-black{
+  color: black !important;
+  border-color: black !important;
+}
+
+.btn-black:hover{
+  color:white !important;
+}
+
+.untertitel{
+  font-size: 20px;
+}
+
+.gonnerverein{
+  text-align: left;
+}
+
+.wir_abteilung{
+  color:grey;
+}
+
+.wir_geschichte{
+  color: black;
+  font-style: normal !important;
+}
+
+.wir_vorstand{
+  padding-bottom: 0px;
+}
+
+.wir_spender_name{
+  font-weight: bold;
+
+}
+
+.wir_spender{
+    line-height: 32px;
+}
+
+.wir_partner{
+  background-size: contain !important;
+  background-repeat: no-repeat;
+  background-attachment: scroll !important;
+  background-position: center;
+  box-shadow: none !important;
+}
