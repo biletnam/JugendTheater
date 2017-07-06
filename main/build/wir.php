@@ -37,7 +37,14 @@
         <div class="row p-b">
           <div class="text-center">
             <h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Vorstand</h2>
-            <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">    Gunhild Hamer - Präsidentin (Leiterin Fachstelle Kulturvermittlung Kanton Aargau)<br>Christoph Haering (Leiter Darstellende Künste und Literatur Migros Kulturprozent)<br>Beat Knaus (Lehrer Neue Kantonsschule Aarau)<br>Patrick Oes (Schauspieler und Regisseur)<br>Madelaine Passerini (Kulturmanagerin)<br>Anita Zihlmann (Kulturvermittlerin)<br> </p>
+            <p class="wow fadeInUp col-md-7 col-md-offset-3" data-wow-duration="1s" data-wow-delay=".4s">
+
+							<span class="wir_vorstand_name">Gunhild Hamer</span><span class="wir_vorstand_txt">Präsidentin (Leiterin Fachstelle Kulturvermittlung Kanton Aargau)</span><br>
+							<span class="wir_vorstand_name">Christoph Haering</span><span class="wir_vorstand_txt">(Leiter Darstellende Künste und Literatur Migros Kulturprozent)</span><br>
+							<span class="wir_vorstand_name">Beat Knaus</span><span class="wir_vorstand_txt">(Lehrer Neue Kantonsschule Aarau)</span><br>
+							<span class="wir_vorstand_name">Patrick Oes</span><span class="wir_vorstand_txt">(Schauspieler und Regisseur)</span><br>
+							<span class="wir_vorstand_name">Madelaine Passerini</span><span class="wir_vorstand_txt">(Kulturmanagerin)</span><br>
+							<span class="wir_vorstand_name">Anita Zihlmann</span><span class="wir_vorstand_txt">(Kulturvermittlerin)</span></p>
           </div>
         </div>
   </div>
