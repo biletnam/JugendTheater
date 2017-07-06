@@ -1,5 +1,5 @@
 #premiere-container{
-  width:100%;
+  width:100% !important;
 }
 
 .btn-black{
@@ -12,40 +12,48 @@
 }
 
 .untertitel{
-  font-size: 20px;
+  font-size: 20px !important;
 }
 
 .gonnerverein{
-  text-align: left;
+  text-align: left !important;
 }
 
 .wir_abteilung{
-  color:grey;
+  color:grey !important;
 }
 
 .wir_geschichte{
-  color: black;
-  font-style: normal !important;
+  color: black !important;
 }
 
 .wir_vorstand{
-  padding-bottom: 0px;
+  padding-bottom: 0px !important;
+}
+
+.wir_vorstand_name{
+  float: left;
+  font-weight: bold !important;
+}
+
+.wir_vorstand_txt{
+  float: right;
 }
 
 .wir_spender_name{
-  font-weight: bold;
+  font-weight: bold !important;
 
 }
 
 .wir_spender{
-    line-height: 32px;
+    line-height: 32px !important;
 }
 
 .wir_partner{
   background-size: contain !important;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat !important;
   background-attachment: scroll !important;
-  background-position: center;
+  background-position: center !important;
   box-shadow: none !important;
 }
 
