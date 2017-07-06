@@ -14,14 +14,14 @@
         <ul class="fh5co-links fh5co-social">
           <li><a href="#"><i class="fa fa-facebook-square"  aria-hidden="true"></i> Facebook</a></li>
           <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
-          <li><a href="#"><i class="fa fa-snapchat-ghost" aria-hidden="true"></i> Snapchat</a></li>
+          <!-- <li><a href="#"><i class="fa fa-snapchat-ghost" aria-hidden="true"></i> Snapchat</a></li> -->
           <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
         </ul>
       </div>
 
       <div class="col-md-3 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.0s">
-        <h3>About</h3>
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+        <h3>Kontakt</h3>
+        <p>Jugend Theater Festival Schweiz<br>5000 Aarau<br>info@jugendtheaterfestival.ch</p>
       </div>
 
     </div>
