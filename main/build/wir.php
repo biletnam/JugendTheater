@@ -1,15 +1,4 @@
 
-<?php
-	include "header.php";
- ?>
-	<body>
-
-	<div id="fh5co-page">
-<?php
-	include "topbar.php";
- ?>
-
-
 		<div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(/images/wir.jpg);">
 		  	<span class="scroll-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
 				<a href="#">
@@ -606,20 +595,3 @@
 </div>
 </div>
 </div>
-
-
-
-
-<?php
-include "footer.php";
-?>
-		<!-- END footer -->
-
-	</div>
-	<!-- END page-->
-
-	<?php
-	include "js.php";
-	 ?>
-	</body>
-</html>

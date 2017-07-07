@@ -21,3 +21,5 @@
 </script>
 <!-- Main -->
 <script src="../js/main.js"></script>
+<!-- Custom -->
+<script src="../js/custom.js"></script>
