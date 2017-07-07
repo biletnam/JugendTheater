@@ -6,10 +6,10 @@
     </div>
     <div class="col-lg-6 col-md-5 col-sm-5 text-center fh5co-link-wrap">
       <ul data-offcanvass="yes">
-        <li><a href="../index.php">Home</a></li>
+        <li><a href="../">Home</a></li>
       <!--  <li class="active"><a href="build/festivals.php">Festivals</a></li> -->
-        <li><a href="/build/medien.php">Medien</a></li>
-        <li><a href="/build/wir.php">About</a></li>
+        <li><a href="../?loc=medien">Medien</a></li>
+        <li><a href="../?loc=wir">About</a></li>
       </ul>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-4 text-right fh5co-link-wrap">
