@@ -28,13 +28,15 @@
 	<!-- END page-->
 	<?php
 	include "build/modals.php";
-	include "functions/notifier.php";
 	include "build/js.php";
+	include "functions/notifier.php";
 	?>
+	<!-- JS Definitions to find them later -->
 	<script>
 	    var loginBtn = document.getElementById("loginBtn");
 	    var registerBtn = document.getElementById("registerBtn");
 			var userIcon = document.getElementById("userIcon");
+			var profileName = document.getElementById("profileName");
 	</script>
 	</body>
 </html>
