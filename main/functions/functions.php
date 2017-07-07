@@ -26,5 +26,5 @@ switch($func){
     case "sendEmail": sendEmail(); break;
     case "verification": verification(); break;
     default: echo "NO FUNCTION FOUND!";
-} 
+}
  ?>

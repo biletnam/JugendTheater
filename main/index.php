@@ -1,13 +1,14 @@
+<?php
+session_start();
+include('../config.php');
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<?php
-	session_start();
-	include('../config.php');
-	include "build/header.php";
- ?>
+<?php include "build/header.php";?>
 	<body>
 	<div id="fh5co-page">
 		<?php include "build/topbar.php";
@@ -30,6 +31,7 @@
 	include "build/modals.php";
 	include "build/js.php";
 	include "functions/notifier.php";
+	checkMsg();
 	?>
 	<!-- JS Definitions to find them later -->
 	<script>

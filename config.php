@@ -1,7 +1,7 @@
 <?php
 			include("libs/uFlex/autoload.php");
 			$DBhost = 'localhost';
-			$DBuser = 'jgt';
+			$DBuser = 'wpp_jgt';
 			$DBpw = 'jgtdbpwd';
 			$DBname = 'wpp_jgt';
 
