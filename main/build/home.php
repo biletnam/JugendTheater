@@ -20,9 +20,6 @@
   </div>
 </div>
 
-
-
-
 <div class="fh5co-project-style-2">
   <div class="container">
     <div class="row p-b">
@@ -71,7 +68,6 @@
           </div>
         </a>
       </li>
-
     </ul>
   </div>
 </div>

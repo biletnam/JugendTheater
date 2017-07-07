@@ -2,13 +2,50 @@
   width:100% !important;
 }
 
+#infoModText{
+  color: #000;
+}
+
+.bigger-icon{
+  font-size: 26px;
+}
+
 .btn-black{
-  color: black !important;
-  border-color: black !important;
+  color: #000 !important;
+  border-color: #000 !important;
 }
 
 .btn-black:hover{
   color:white !important;
+}
+
+.btn-success.btn-outline{
+    color: var(--sub) !important;
+    border-color: var(--sub) !important;
+}
+
+.btn-success.btn-outline:hover{
+    color: #fff !important;
+    background: var(--sub) !important;
+}
+
+.btn-success.btn-outline:focus{
+    color: #fff !important;
+    background: var(--sub) !important;
+}
+
+.modalResponse{
+    float: right;
+}
+
+.regMod{
+  margin-top: 10px;
+}
+
+.notifier-alert{
+  background: none;
+  border: none;
+  color: #000;
 }
 
 .untertitel{
@@ -24,7 +61,7 @@
 }
 
 .wir_geschichte{
-  color: black !important;
+  color: #000 !important;
 }
 
 .wir_vorstand{
