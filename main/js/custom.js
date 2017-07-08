@@ -7,10 +7,14 @@ function tryLogin() {
             document.getElementById("loginResponse").innerHTML = this.responseText;
             if(this.responseText.includes("Success")){
               $("#loginmodal").modal("hide");
+              //loginBtn.className = "invisible";
+              //registerBtn.className = "invisible";
               loginBtn.parentNode.removeChild(loginBtn);
               registerBtn.parentNode.removeChild(registerBtn);
               userIcon.className = "dropdown top-dd";
               profileName.innerHTML = username;
+              //loginBtn.parentNode.insertBefore(userIcon, loginBtn);
+              //document.getElementById("loginResponse").innerHTML = "";
             }
        } else {
          document.getElementById("loginResponse").innerHTML = "Waiting for response...";
@@ -40,6 +44,70 @@ function tryRegister() {
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(request);
 }
+
+
+/*function tryLogout(){
+  var xhttp = new XMLHttpRequest();
+  var username = document.getElementById('logUsername').value;
+  var pw = document.getElementById('logPassword').value;
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          if(this.responseText.includes("logged")){
+            $("#infoModText").html(this.responseText);
+      			$("#infomodal").modal("show");
+            userIcon.className = "dropdown top-dd invisible";
+            loginBtn.className = "";
+            registerBtn.className = "";
+            userIcon.parentNode.insertBefore(loginBtn, userIcon);
+          }
+     } else {
+       document.getElementById("loginResponse").innerHTML = "Waiting for response...";
+     }
+  };
+  xhttp.open("POST", "functions/functions.php?func=logout", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send();
+}*/
+
+
+function tryChangeEmail(){
+  var xhttp = new XMLHttpRequest();
+  var email = document.getElementById('setMail').value;
+  var email2 = document.getElementById('setMail2').value;
+  xhttp.onreadystatechange = function() {
+    $("#infomodal").modal("show");
+      if (this.readyState == 4 && this.status == 200) {
+            $("#infoModText").html(this.responseText);
+
+     } else {
+       document.getElementById("infoModText").innerHTML = "Changing...";
+     }
+  };
+  var request = "email=" + email + "&email2=" + email2;
+  xhttp.open("POST", "functions/functions.php?func=changeEmail", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(request);
+}
+
+function tryChangePw(){
+  var xhttp = new XMLHttpRequest();
+  var Pw = document.getElementById('setPw').value;
+  var Pw2 = document.getElementById('setPw2').value;
+  xhttp.onreadystatechange = function() {
+    $("#infomodal").modal("show");
+      if (this.readyState == 4 && this.status == 200) {
+            $("#infoModText").html(this.responseText);
+
+     } else {
+       document.getElementById("infoModText").innerHTML = "Changing...";
+     }
+  };
+  var request = "pwd=" + Pw + "&pwd2=" + Pw2;
+  xhttp.open("POST", "functions/functions.php?func=changePassword", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(request);
+}
+
 
 
 // Add slideDown animation to Bootstrap dropdown when expanding.

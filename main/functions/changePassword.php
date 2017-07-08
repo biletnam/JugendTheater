@@ -13,14 +13,13 @@ function changePassword(){
 	  );
 		$suc = $user->update($pw);
 	  if($suc){
-	    $msg = "Password has been changed";
+	    $msg = "Password has been changed.";
 	  } else {
-	    $msg = "Password could not be changed";
+	    $msg = "Password could not be changed.";
 	  }
 	} else {
 		$msg = "The passwords do not match!";
 	}
-	sendMsg($msg,$suc);
-	header("Location: ".$profilePath);
+	echo $msg;
 }
 ?>

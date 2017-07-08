@@ -94,6 +94,10 @@
   box-shadow: none !important;
 }
 
+.setBtn{
+  width: 100% !important;
+}
+
 .top-dd ul li a{
   color: #000 !important;
   width: 100% !important;
