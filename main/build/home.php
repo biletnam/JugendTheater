@@ -26,7 +26,7 @@
       <div class="col-md-6 col-md-offset-3 text-center">
         <h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Festivals</h2>
         <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Hier findest du eine Liste der aktuellen Festivals</p>
-        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a href="build/pa.php" class="btn btn-primary btn-outline btn-lg btn-black">Meine Premiere anmelden</a></p>
+        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a href="#" id="preBtn" data-toggle="modal" data-target="#premieremodal" class="btn btn-primary btn-outline btn-lg btn-black">Meine Premiere anmelden</a></p>
       </div>
     </div>
   </div>

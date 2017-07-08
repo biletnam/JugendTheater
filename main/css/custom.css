@@ -2,8 +2,16 @@
   width:100% !important;
 }
 
-#infoModText{
-  color: #000;
+#premModCon{
+  margin-top: -26px;
+}
+
+#preBtn:focus{
+  color: #fff !important;
+}
+
+.modalCorr{
+    color: #000 !important;
 }
 
 .bigger-icon{

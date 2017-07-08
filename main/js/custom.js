@@ -13,6 +13,8 @@ function tryLogin() {
               registerBtn.parentNode.removeChild(registerBtn);
               userIcon.className = "dropdown top-dd";
               profileName.innerHTML = username;
+              document.getElementById("premModLog").className = "invisible";
+              document.getElementById("premModCon").className = "modalCorr";
               //loginBtn.parentNode.insertBefore(userIcon, loginBtn);
               //document.getElementById("loginResponse").innerHTML = "";
             }
