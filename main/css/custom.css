@@ -2,16 +2,55 @@
   width:100% !important;
 }
 
-#premModCon{
-  margin-top: -26px;
-}
-
 #preBtn:focus{
   color: #fff !important;
 }
 
+#premTA{
+  resize:none;
+  height: 300px;
+}
+
+#my-dz{
+  border: 2px dashed var(--main);
+	border-radius: 6px;
+}
+
+#my-dz-msg{
+	height: 107px;
+	line-height: 107px;
+	text-align: center;
+}
+
+.dropzone {
+	min-height: 214px;
+  display: table;
+  width: 100%;
+}
+
+.dz-preview{
+    display: table-cell !important;
+    vertical-align: middle !important;
+}
+
+.dz-preview *{
+  margin:auto;
+}
+
+.dz-details{
+  margin-top: 30px;
+}
+
+.dz-message{
+	font-weight: normal;
+}
+
 .modalCorr{
     color: #000 !important;
+}
+
+.modal-body.modalCorr{
+    padding-top: 5px !important;
 }
 
 .bigger-icon{

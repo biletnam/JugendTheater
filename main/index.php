@@ -33,6 +33,9 @@ include('../config.php');
 	include "build/js.php";
 	include "functions/notifier.php";
 	checkMsg();
+	if($user->getProperty("Username") != "Guess"){
+		echo "<script>loggedIn = true;</script>";
+	}
 	?>
 	<!-- JS Definitions to find them later -->
 	<script>

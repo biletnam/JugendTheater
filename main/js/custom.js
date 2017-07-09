@@ -1,3 +1,5 @@
+var loggedIn = false;
+
 function tryLogin() {
     var xhttp = new XMLHttpRequest();
     var username = document.getElementById('logUsername').value;
@@ -13,8 +15,7 @@ function tryLogin() {
               registerBtn.parentNode.removeChild(registerBtn);
               userIcon.className = "dropdown top-dd";
               profileName.innerHTML = username;
-              document.getElementById("premModLog").className = "invisible";
-              document.getElementById("premModCon").className = "modalCorr";
+              loggedIn = true;
               //loginBtn.parentNode.insertBefore(userIcon, loginBtn);
               //document.getElementById("loginResponse").innerHTML = "";
             }
@@ -45,6 +46,19 @@ function tryRegister() {
     xhttp.open("POST", "functions/functions.php?func=register", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(request);
+}
+
+function tryPremiere(){
+
+}
+
+function openPremiere(){
+  if(!loggedIn){
+    $("#infoModText").html("Du musst eingeloggt sein!");
+    $("#infomodal").modal("show");
+  } else {
+    $("#premieremodal").modal("show");
+  }
 }
 
 
@@ -112,7 +126,7 @@ function tryChangePw(){
 
 
 
-// Add slideDown animation to Bootstrap dropdown when expanding.
+  // Add slideDown animation to Bootstrap dropdown when expanding.
   $('.dropdown').on('show.bs.dropdown', function() {
     $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
   });
@@ -122,11 +136,40 @@ function tryChangePw(){
     $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
   });
 
-
-  jQuery(document).ready(function($) {  
-  // site preloader -- also uncomment the div in the header and the css style for #preloader
+//Preloader
+  jQuery(document).ready(function($) {
   $(window).load(function(){
   	$('#preloader').fadeOut('slow',function(){$(this).remove();});
   });
 
   });
+
+// Disable newline
+  $(document).ready(function() {
+    $("#premTA").keypress(function(event) {
+      if(event.which == '13') {
+        return false;
+      }
+    });
+  });
+
+// Dropzone config
+var fileName2 = "img_" + profileName.innerHTML;
+  $(document).ready(function(){
+  Dropzone.autoDiscover = false;
+
+  $("#my-dz").dropzone({
+    paramName: fileName2,
+    url: '../functions/functions.php?func=imageUploader',
+    maxFilesize: 1,
+    acceptedFiles: "image/jpeg,image/png,image/gif",
+
+    init: function() {
+      this.on("addedfile", function() {
+        if (this.files[1]!=null){
+          this.removeFile(this.files[0]);
+        }
+      });
+    }
+  });
+});

@@ -49,6 +49,8 @@
 	<link rel="stylesheet" href="../css/cards.css">
 	<!-- FontAwesome -->
 	<link rel="stylesheet" href="../css/font-awesome.min.css">
+	<!-- Dropzone -->
+	<link rel="stylesheet" href="../css/dropzone.css">
 	<!-- Custom -->
 	<link rel="stylesheet" href="../css/custom.css">
 	<!-- Modernizr JS -->

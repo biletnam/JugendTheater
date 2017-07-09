@@ -526,8 +526,8 @@ a:hover .lnk-icon-right {
 }
 #fh5co-offcanvass ul li a.call-to-action {
   margin-top: 40px;
-  border: 2px solid #58ca7e;
-  background: #58ca7e;
+  border: 2px solid var(--sub);
+  background: var(--sub);
   padding: 2px 15px !important;
   display: -moz-inline-stack;
   display: inline-block;
@@ -540,9 +540,9 @@ a:hover .lnk-icon-right {
   color: #fff;
 }
 #fh5co-offcanvass ul li a.call-to-action:hover {
-  color: #fff;
-  border: 2px solid #45c46f;
-  background: #45c46f;
+  color: var(--sub);
+  border: 2px solid var(--sub);
+  background: none;
 }
 #fh5co-offcanvass ul.fh5co-inline {
   width: 100%;
