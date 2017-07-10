@@ -36,38 +36,22 @@
     <div class="row">
     <ul>
 
-      <li class="wow fadeInUp col-md-4" style="background-image: url(images/full_4.jpg);" data-wow-duration="1s" data-wow-delay=".8s" data-stellar-background-ratio="0.5">
-        <a href="#">
+      <?php $result = mysqli_query($DBconn, "SELECT * FROM premieren");
+      while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)): ?>
+      <li class="wow fadeInUp col-md-4" style="background-image: url(../uploads/<?php  echo $row['ID'].$row['Bilder']; ?>);" data-wow-duration="1s" data-wow-delay=".8s" data-stellar-background-ratio="0.5">
+        <a href="../?loc=premiere&prem=<?php echo $row['ID']; ?>">
           <div class="fh5co-overlay"></div>
             <div class="fh5co-text">
               <div class="fh5co-text-inner">
-                  <div class="text-center"><h3>Premiere #1</h3></div>
+                  <div class="text-center"><h3><?php echo $row['Produktion']; ?></h3></div>
               </div>
             </div>
         </a>
       </li>
 
-      <li class="wow fadeInUp col-md-4" style="background-image: url(images/full_2.jpg);" data-wow-duration="1s" data-wow-delay="1.0s" data-stellar-background-ratio="0.5">
-        <a href="#">
-          <div class="fh5co-overlay"></div>
-            <div class="fh5co-text">
-              <div class="fh5co-text-inner">
-                  <div class="text-center"><h3>Premiere #2</h3></div>
-              </div>
-            </div>
-        </a>
-      </li>
+    <?php endwhile; ?>
 
-      <li class="wow fadeInUp col-md-4" style="background-image: url(images/full_1.jpg);" data-wow-duration="1s" data-wow-delay="1.2s" data-stellar-background-ratio="0.5">
-        <a href="#">
-          <div class="fh5co-overlay"></div>
-            <div class="fh5co-text">
-              <div class="fh5co-text-inner">
-                  <div class="text-center"><h3>Premiere #3</h3></div>
-            </div>
-          </div>
-        </a>
-      </li>
+
     </ul>
   </div>
 </div>

@@ -49,7 +49,34 @@ function tryRegister() {
 }
 
 function tryPremiere(){
-
+  var xhttp = new XMLHttpRequest();
+  var name = document.getElementById('premProduktion').value;
+  var spieler = document.getElementById('premSpieler').value;
+  var datum = document.getElementById('premDate').value;
+  var ort = document.getElementById('premOrt').value;
+  var beschrieb = document.getElementById('premTA').value;
+  var video = document.getElementById('premVid').value;
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("premResponse").innerHTML = this.responseText;
+          if(this.responseText.includes("Success")){
+            document.getElementById('premProduktion').value = "";
+            document.getElementById('premSpieler').value = "";
+            document.getElementById('premDate').value = "";
+            document.getElementById('premOrt').value = "";
+            document.getElementById('premTA').value = "";
+            document.getElementById('premVid').value = "";
+            Dropzone.forElement("#my-dz").removeAllFiles(true);
+            setTimeout(function(){$("#premieremodal").modal("hide");document.getElementById("premResponse").innerHTML = "";}, 1000);
+          }
+     } else {
+       document.getElementById("premResponse").innerHTML = "Waiting for response...";
+     }
+  };
+  var request = "name=" + name + "&spieler=" + spieler + "&datum=" + datum + "&ort=" + ort + "&beschrieb=" + beschrieb + "&video=" + video;
+  xhttp.open("POST", "functions/functions.php?func=newPrem", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(request);
 }
 
 function openPremiere(){

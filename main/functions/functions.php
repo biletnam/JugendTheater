@@ -11,6 +11,7 @@ include 'logout.php';
 include 'register.php';
 include 'sendEmail.php';
 include 'verification.php';
+include 'newPrem.php';
 
 $defaultPath = "../";
 $profilePath = "../";
@@ -25,6 +26,7 @@ switch($func){
     case "register": register(); break;
     case "sendEmail": sendEmail(); break;
     case "verification": verification(); break;
+    case "newPrem": newPrem(); break;
     default: echo "NO FUNCTION FOUND!";
 }
  ?>

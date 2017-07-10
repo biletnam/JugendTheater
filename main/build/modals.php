@@ -92,7 +92,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header modalCorr">
-        <h4 class="modal-title modalCorr">Premiere anmelden</h4>
+        <h4 class="modal-title modalCorr">Premiere anmelden <span class="modalResponse" id="premResponse"></span></h4>
       </div>
       <div class="modal-body modalCorr">
           <div class="row">
@@ -107,7 +107,7 @@
                     <input class="form-control input-lg mt-1 modalCorr" name="premProduktion" id="premProduktion" type="text" placeholder="Name Produktion" required>
                 </div>
                 <div class="col-md-6 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr" name="premSpieler" id="premSpieler" type="text" placeholder="SpielerInnen" required>
+                    <input class="form-control input-lg mt-1 modalCorr" name="premSpieler" id="premSpieler" type="text" placeholder="Spieler (kommagetrennt)" required>
                 </div>
                 <div class="col-md-6 regMod">
                     <input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDate" type="date" placeholder="Datum Premiere" required>
