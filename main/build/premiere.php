@@ -1,6 +1,18 @@
-<?php $query = "SELECT * FROM premieren WHERE ID=".$_GET['prem'];
+<?php
+if(isset($_GET['prem'])){
+    $prem = $_GET['prem'];
+}
+if(empty($prem) || $prem == ""){include ('404.php');} else {
+  $query = "SELECT * FROM premieren WHERE ID=".$prem;
+  if (!mysqli_fetch_assoc(mysqli_query($DBconn,$query))){
+        include ('404.php');
+  } else {
+$query = "SELECT * FROM premieren WHERE ID=".$prem;
 $result = mysqli_query($DBconn, $query);
-$row = mysqli_fetch_assoc($result);  // TODO: finish this page?>
+$row = mysqli_fetch_assoc($result);
+function convertYoutube($string) {
+    return preg_replace("/\s*[a-zA-Z\/\/:\.]*youtu(be.com\/watch\?v=|.be\/)([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i","<iframe id=\"premVid\" class=\"embed-responsive-item\" src=\"//www.youtube.com/embed/$2\" allowfullscreen></iframe>",$string);}
+?>
 
     <div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(../uploads/<?php echo $row['ID'].$row['Bilder']; ?>);">
 		  	<span class="scroll-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
@@ -15,8 +27,10 @@ $row = mysqli_fetch_assoc($result);  // TODO: finish this page?>
 						<div class="col-md-push-6 col-md-6 full-height js-full-height">
 							<div class="fh5co-cover-intro">
 								<h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><?php echo $row['Produktion']; ?></h1>
-								<h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s"><?php echo $row['Beschrieb'] ?></h2>
-                <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a href="../" class="btn btn-primary btn-outline btn-lg">Zurück zur Auswhl</a></p>
+								<h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">von <?php $query2 = "SELECT Username FROM users WHERE ID=".$row['UserID'];$result2 = mysqli_query($DBconn, $query2);$row2 = mysqli_fetch_assoc($result2);echo $row2['Username'];?>
+                  in <?php $dStart=new DateTime(date("Y-m-d"));$dEnd=new DateTime($row['PremiereDatum']);$dDiff=$dStart->diff($dEnd);echo $dDiff->days; ?> Tagen
+                </h2>
+                <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a href="../" class="btn btn-primary btn-outline btn-lg">Zurück zur Auswahl</a></p>
 							</div>
 						</div>
 					</div>
@@ -24,7 +38,21 @@ $row = mysqli_fetch_assoc($result);  // TODO: finish this page?>
 			</div>
 		</div>
 
-
+    <div class="fh5co-testimonial-style-2">
+      <div class="container">
+        <div class="row p-b">
+          <div class="text-center">
+            <h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><?php echo $row['Produktion']; ?></h2>
+            <p class="wow fadeInUp col-md-6" data-wow-duration="1s" data-wow-delay=".4s"><span class="untertitel">Beschrieb</span><br><br><?php echo $row['Beschrieb'] ?></p>
+            <p class="wow fadeInUp col-md-6" data-wow-duration="1s" data-wow-delay=".6s"><span class="untertitel">Gruppe</span><br><br><?php $people = explode(",",$row['Spieler']); echo $row['Spieler'];?></p>
+          <p class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay=".8s"><span class="untertitel">Video</span></p>
+              <div class="embed-responsive embed-responsive-16by9 wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay="1s">
+                <?php echo convertYoutube($row['Video']); ?>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
 
 			<div class="fh5co-counter-style-2" style="background-image: url(../images/full_2.jpg);" data-stellar-background-ratio="0.5">
 			<div class="fh5co-overlay"></div>
@@ -32,30 +60,35 @@ $row = mysqli_fetch_assoc($result);  // TODO: finish this page?>
 				<div class="fh5co-section-content-wrap">
 					<div class="fh5co-section-content">
 						<div class="row">
-							<div class="col-md-4 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+							<div class="col-md-2 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
 								<div class="icon">
 									<i class="fa fa-calendar" aria-hidden="true"></i>
 								</div>
-								<span class="fh5co-counter js-counter" data-from="0" data-to="28" data-speed="4000" data-refresh-interval="40"></span>
-								<span class="fh5co-counter-label">Tage bis zur Premiere</span>
+								<span class="fh5co-counter js-counter counter" data-from="0" data-to="<?php list($date,$time)=explode(' ', $row['PremiereDatum']);list($year,$month,$day)=explode('-',$date);echo $day;?>" data-speed="2000" data-refresh-interval="20"></span>
+                <span class="fh5co-counter counter">.</span>
+                <span class="fh5co-counter js-counter counter" data-from="0" data-to="<?php echo $month;?>" data-speed="2000" data-refresh-interval="20"></span>
+								<span class="fh5co-counter-label">Datum</span>
 
 							</div>
-							<div class="col-md-4 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+							<div class="col-md-8 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
 								<div class="icon">
 									<i class="fa fa-map-marker" aria-hidden="true"></i>
 								</div>
-								<span class="fh5co-counter"><?php echo $row['Ort']; ?></span>
+								<span class="fh5co-counter counter"><?php echo $row['Ort']; ?></span>
 								<span class="fh5co-counter-label">Ort</span>
 							</div>
-							<div class="col-md-4 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-								<div class="icon">
-									<i class="fa fa-user" aria-hidden="true"></i>
-								</div>
-								<span class="fh5co-counter js-counter" data-from="0" data-to="62" data-speed="4000" data-refresh-interval="40"></span>
-								<span class="fh5co-counter-label">Spieler</span>
-							</div>
+              <div class="col-md-2 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                <div class="icon">
+                  <i class="fa fa-clock-o" aria-hidden="true"></i>
+                </div>
+                <span class="fh5co-counter js-counter counter" data-from="0" data-to="<?php list($hour,$min,$sec)=explode(':',$time);echo $hour;?>" data-speed="2000" data-refresh-interval="20"></span>
+                <span class="fh5co-counter counter">:</span>
+                <span class="fh5co-counter js-counter counter" data-from="0" data-to="<?php echo $min; ?>" data-speed="2000" data-refresh-interval="20"></span>
+                <span class="fh5co-counter-label">Uhrzeit</span>
+              </div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+<?php }} ?>

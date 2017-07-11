@@ -152,6 +152,7 @@
 							<span class="wir_spender"><span class="wir_spender_name">Pascale Pfeuti</span>, Schauspielerin und Musikerin<br></span>
 							<span class="wir_spender"><span class="wir_spender_name">Robert Baranowski</span>, Schauspieler<br></span>
 							<span class="wir_spender"><span class="wir_spender_name">Ruedi Häusermann</span>, Regisseur, Musiker, Komponist</span>
+						</p>
           </div>
         </div>
   </div>

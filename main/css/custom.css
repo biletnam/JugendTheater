@@ -11,6 +11,10 @@
   height: 300px;
 }
 
+#premVid{
+  border-radius: 6px;
+}
+
 #my-dz{
   border: 2px dashed var(--main);
 	border-radius: 6px;
@@ -55,6 +59,10 @@
 
 .bigger-icon{
   font-size: 26px;
+}
+
+.counter{
+    display: initial !important;
 }
 
 .btn-black{

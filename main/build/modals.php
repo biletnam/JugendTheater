@@ -104,22 +104,22 @@
               </div>
               <div class="col-md-6 regMod">
                 <form onsubmit="tryPremiere();return false;">
-                    <input class="form-control input-lg mt-1 modalCorr" name="premProduktion" id="premProduktion" type="text" placeholder="Name Produktion" required>
+                    <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premProduktion" id="premProduktion" type="text" placeholder="Name Produktion" required>
                 </div>
                 <div class="col-md-6 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr" name="premSpieler" id="premSpieler" type="text" placeholder="Spieler (kommagetrennt)" required>
+                    <input class="form-control input-lg mt-1 modalCorr" maxlength="500" name="premSpieler" id="premSpieler" type="text" placeholder="Spieler (kommagetrennt)" required>
                 </div>
                 <div class="col-md-6 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDate" type="date" placeholder="Datum Premiere" required>
+                    <input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDate" type="datetime-local" placeholder="Datum Premiere" required>
                 </div>
                 <div class="col-md-6 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr" name="premOrt" id="premOrt" type="text" placeholder="Aufführungort" required>
+                    <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrt" type="text" placeholder="Aufführungort" required>
                 </div>
                 <div class="col-md-12 regMod">
                   <textarea class="form-control input-lg mt-1 modalCorr" maxlength="500" id="premTA" name="premTA" placeholder="Stückbeschrieb" required></textarea>
                 </div>
                 <div class="col-md-12 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr" name="premVid" id="premVid" type="url" placeholder="Videolink" required>
+                    <input class="form-control input-lg mt-1 modalCorr" maxlength="1000" name="premVid" id="premVid" type="url" placeholder="Youtube-Link" required>
                 </div>
                 <div class="col-md-12 regMod">
 

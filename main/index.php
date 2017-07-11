@@ -8,9 +8,11 @@ include('../config.php');
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<?php include "build/header.php";?>
+	<head>
+		<?php include "build/header.php";?>
+	</head>
 	<body>
-		<div id="preloader"></div>
+		<div id=""></div>
 	<div id="fh5co-page">
 		<?php include "build/topbar.php";
 
