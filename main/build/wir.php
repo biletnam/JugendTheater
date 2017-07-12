@@ -25,7 +25,7 @@
       <div class="container">
         <div class="row p-b">
           <div class="text-center">
-            <h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Vorstand</h2>
+            <h2 class="fh5co-heading wow fadeInUp titel" data-wow-duration="1s" data-wow-delay=".2s">Vorstand</h2>
             <p class="wow fadeInUp col-md-7 col-md-offset-3" data-wow-duration="1s" data-wow-delay=".4s">
 
 							<span class="wir_vorstand_name">Gunhild Hamer</span><span class="wir_vorstand_txt">Präsidentin (Leiterin Fachstelle Kulturvermittlung Kanton Aargau)</span><br>
@@ -139,9 +139,9 @@
       <div class="container">
         <div class="row p-b">
           <div class="text-center">
-            <h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Gönnerverein</h2>
-            <p class="wow fadeInUp col-md-4" data-wow-duration="1s" data-wow-delay=".4s"><span class="untertitel">Unser Gönnerverein</span><br><br>Treten Sie unserem Förderverein bei und ermöglichen Sie dadurch der Jugend Kultur. Mit Ihrer Unterstützung helfen Sie mit, dass das Jugend Theater Festival Schweiz jährlich stattfinden kann. Sie stärken dadurch die Jugendtheaterszene und ermöglichen den Jugendlichen ein Treffen, einen Austausch und dadurch persönliche Weiterentwicklung und Entfaltung. </p>
-            <p class="wow fadeInUp col-md-4" data-wow-duration="1s" data-wow-delay=".6s"><span class="untertitel">Unterstützung</span><br><br>Jungendliche (bis 25): CHF 50.-<br>Erwachsene: CHF 100.-<br>Familie: CHF 150.-<br><br><span class="untertitel">Wie können Sie mitmachen?</span><br><br>Schreiben Sie uns Ihre Kontaktdaten (Name & Vorname, Strasse & Nr., PLZ & Ort, E-Mail) und den gewünschten Beitrag mit dem sie das Jugend Theater Festival jährlich unterstützen wollen. Senden Sie uns die Informationen entweder per Mail oder per Post (Jugend Theater Festival Schweiz, 5000 Aarau).</p>
+            <h2 class="fh5co-heading wow fadeInUp titel" data-wow-duration="1s" data-wow-delay=".2s">Gönnerverein</h2>
+            <p class="wow fadeInUp col-md-4 gonnerverein" data-wow-duration="1s" data-wow-delay=".4s"><span class="untertitel">Unser Gönnerverein</span><br><br>Treten Sie unserem Förderverein bei und ermöglichen Sie dadurch der Jugend Kultur. Mit Ihrer Unterstützung helfen Sie mit, dass das Jugend Theater Festival Schweiz jährlich stattfinden kann. Sie stärken dadurch die Jugendtheaterszene und ermöglichen den Jugendlichen ein Treffen, einen Austausch und dadurch persönliche Weiterentwicklung und Entfaltung. </p>
+            <p class="wow fadeInUp col-md-4 gonnerverein" data-wow-duration="1s" data-wow-delay=".6s"><span class="untertitel">Unterstützung</span><br><br>Jungendliche (bis 25): CHF 50.-<br>Erwachsene: CHF 100.-<br>Familie: CHF 150.-<br><br><span class="untertitel">Wie können Sie mitmachen?</span><br><br>Schreiben Sie uns Ihre Kontaktdaten (Name & Vorname, Strasse & Nr., PLZ & Ort, E-Mail) und den gewünschten Beitrag mit dem sie das Jugend Theater Festival jährlich unterstützen wollen. Senden Sie uns die Informationen entweder per Mail oder per Post (Jugend Theater Festival Schweiz, 5000 Aarau).</p>
             <p class="wow fadeInUp col-md-4 gonnerverein" data-wow-duration="1s" data-wow-delay=".8s"><span class="untertitel">Unterstützer der Idee und des Festivals</span><br><br>
 							<span class="wir_spender"><span class="wir_spender_name">Andreas Beck</span>, Intendant Theater Basel<br></span>
 							<span class="wir_spender"><span class="wir_spender_name">Anna Papst</span>, Regisseurin<br></span>
@@ -157,6 +157,7 @@
         </div>
   </div>
 </div>
+
 
 
 

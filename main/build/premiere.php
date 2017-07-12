@@ -27,7 +27,7 @@ function convertYoutube($string) {
 						<div class="col-md-push-6 col-md-6 full-height js-full-height">
 							<div class="fh5co-cover-intro">
 								<h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><?php echo $row['Produktion']; ?></h1>
-								<h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">von <?php $query2 = "SELECT Username FROM users WHERE ID=".$row['UserID'];$result2 = mysqli_query($DBconn, $query2);$row2 = mysqli_fetch_assoc($result2);echo $row2['Username'];?>
+								<h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">von <?php $query2 = "SELECT Username FROM Users WHERE ID=".$row['UserID'];$result2 = mysqli_query($DBconn, $query2);$row2 = mysqli_fetch_assoc($result2);echo $row2['Username'];?>
                   in <?php $dStart=new DateTime(date("Y-m-d"));$dEnd=new DateTime($row['PremiereDatum']);$dDiff=$dStart->diff($dEnd);echo $dDiff->days; ?> Tagen
                 </h2>
                 <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a href="../" class="btn btn-primary btn-outline btn-lg">Zurück zur Auswahl</a></p>
@@ -43,9 +43,9 @@ function convertYoutube($string) {
         <div class="row p-b">
           <div class="text-center">
             <h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><?php echo $row['Produktion']; ?></h2>
-            <p class="wow fadeInUp col-md-6" data-wow-duration="1s" data-wow-delay=".4s"><span class="untertitel">Beschrieb</span><br><br><?php echo $row['Beschrieb'] ?></p>
-            <p class="wow fadeInUp col-md-6" data-wow-duration="1s" data-wow-delay=".6s"><span class="untertitel">Gruppe</span><br><br><?php $people = explode(",",$row['Spieler']); echo $row['Spieler'];?></p>
-          <p class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay=".8s"><span class="untertitel">Video</span></p>
+            <div class="wow fadeInUp col-md-6 gonnerverein" data-wow-duration="1s" data-wow-delay=".4s"><div class="untertitel">Beschrieb</div><br><?php echo $row['Beschrieb'] ?></div>
+            <div class="wow fadeInUp col-md-6 gonnerverein" data-wow-duration="1s" data-wow-delay=".6s"><div class="untertitel">Gruppe</div><br><?php $people = explode(",",$row['Spieler']); echo $row['Spieler'];?></div>
+            <div class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay=".8s"><div class="untertitel">Video</div><br></div>
               <div class="embed-responsive embed-responsive-16by9 wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay="1s">
                 <?php echo convertYoutube($row['Video']); ?>
               </div>
@@ -74,7 +74,7 @@ function convertYoutube($string) {
 								<div class="icon">
 									<i class="fa fa-map-marker" aria-hidden="true"></i>
 								</div>
-								<span class="fh5co-counter counter"><?php echo $row['Ort']; ?></span>
+								<span class="fh5co-counter counter" id="premOrt"><?php echo str_replace(",",",<br>",$row['Ort']); ?></span>
 								<span class="fh5co-counter-label">Ort</span>
 							</div>
               <div class="col-md-2 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">

@@ -12,7 +12,7 @@ include('../config.php');
 		<?php include "build/header.php";?>
 	</head>
 	<body>
-		<div id=""></div>
+		<div id="preloader"></div>
 	<div id="fh5co-page">
 		<?php include "build/topbar.php";
 

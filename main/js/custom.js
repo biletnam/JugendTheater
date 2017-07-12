@@ -42,7 +42,9 @@ function tryRegister() {
     var username = document.getElementById('regUsername').value;
     var pw = document.getElementById('regPassword').value;
     var email = document.getElementById('regEmail').value;
-    var request = "us=" + username + "&pw=" + pw + "&email=" + email;
+    var ename = document.getElementById('regEname').value;
+    var city = document.getElementById('regCity').value;
+    var request = "us=" + username + "&pw=" + pw + "&email=" + email + "&ename=" + ename + "&city=" + city;
     xhttp.open("POST", "functions/functions.php?func=register", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(request);
@@ -151,6 +153,48 @@ function tryChangePw(){
   xhttp.send(request);
 }
 
+function tryChangeEname(){
+  var xhttp = new XMLHttpRequest();
+  var name = document.getElementById('setName').value;
+  xhttp.onreadystatechange = function() {
+    $("#infomodal").modal("show");
+      if (this.readyState == 4 && this.status == 200) {
+            $("#infoModText").html(this.responseText);
+
+     } else {
+       document.getElementById("infoModText").innerHTML = "Changing...";
+     }
+  };
+  var request = "name=" + name;
+  xhttp.open("POST", "functions/functions.php?func=changeEname", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(request);
+}
+
+function tryChangeCity(){
+  var xhttp = new XMLHttpRequest();
+  var city = document.getElementById('setCity').value;
+  xhttp.onreadystatechange = function() {
+    $("#infomodal").modal("show");
+      if (this.readyState == 4 && this.status == 200) {
+            $("#infoModText").html(this.responseText);
+
+     } else {
+       document.getElementById("infoModText").innerHTML = "Changing...";
+     }
+  };
+  var request = "city=" + city;
+  xhttp.open("POST", "functions/functions.php?func=changeCity", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(request);
+}
+
+
+function showPremEditModal(premID){
+  $("#premEditmodal").modal("show");
+  document.getElementById("premResponseEdit").innerHTML = "Loading...";
+  // TODO: load info from id, Enable buttons
+}
 
 
   // Add slideDown animation to Bootstrap dropdown when expanding.
@@ -199,4 +243,23 @@ var fileName2 = "img_" + profileName.innerHTML;
       });
     }
   });
+});
+
+$(document).ready(function(){
+Dropzone.autoDiscover = false;
+
+$("#my-dz-Edit").dropzone({
+  paramName: fileName2,
+  url: '../functions/functions.php?func=imageUploader',
+  maxFilesize: 1,
+  acceptedFiles: "image/jpeg,image/png,image/gif",
+
+  init: function() {
+    this.on("addedfile", function() {
+      if (this.files[1]!=null){
+        this.removeFile(this.files[0]);
+      }
+    });
+  }
+});
 });

@@ -11,8 +11,17 @@
   height: 300px;
 }
 
+#premTAEdit{
+  resize:none;
+  height: 300px;
+}
+
 #premVid{
   border-radius: 6px;
+}
+
+#premOrt{
+  line-height: 35px !important;
 }
 
 #my-dz{
@@ -21,6 +30,25 @@
 }
 
 #my-dz-msg{
+	height: 107px;
+	line-height: 107px;
+	text-align: center;
+}
+
+#premVidEdit{
+  border-radius: 6px;
+}
+
+#premOrtEdit{
+  line-height: 35px !important;
+}
+
+#my-dz-Edit{
+  border: 2px dashed var(--main);
+	border-radius: 6px;
+}
+
+#my-dz-msg-Edit{
 	height: 107px;
 	line-height: 107px;
 	text-align: center;
@@ -105,10 +133,19 @@
 
 .untertitel{
   font-size: 20px !important;
+  text-align: center !important;
 }
 
 .gonnerverein{
   text-align: left !important;
+}
+
+.titel{
+  margin-bottom: 50px;
+}
+
+.mgt5{
+  margin-top: 50px;
 }
 
 .wir_abteilung{
