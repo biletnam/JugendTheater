@@ -91,7 +91,7 @@
 
 
 
-
+<?php if($loc == "home" || $loc == "profile"){  ?>
 <!-- this is hidden (the dialog that shows up on pressing a button) -->
 <div id="premieremodal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -141,9 +141,9 @@
     </div>
   </div>
 </div>
+<?php } ?>
 
-
-
+<?php if($loc == "profile"){  ?>
 <!-- this is hidden (the dialog that shows up on pressing a button) -->
 <div id="premEditmodal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -194,3 +194,4 @@
     </div>
   </div>
 </div>
+<?php } ?>

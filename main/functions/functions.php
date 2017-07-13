@@ -14,6 +14,7 @@ include 'verification.php';
 include 'newPrem.php';
 include 'changeCity.php';
 include 'changeEname.php';
+include 'imageResize.php';
 
 $defaultPath = "../";
 $profilePath = "../";

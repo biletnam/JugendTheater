@@ -14,7 +14,9 @@ include('../config.php');
 	<body>
 		<div id="preloader"></div>
 	<div id="fh5co-page">
-		<?php include "build/topbar.php";
+		<?php
+		if($user->getProperty("Username") != "Guess"){$loggedIn = true;}
+		include "build/topbar.php";
 
 		if(isset($_GET['loc'])){
 		    $loc = $_GET['loc'];
@@ -35,7 +37,7 @@ include('../config.php');
 	include "build/js.php";
 	include "functions/notifier.php";
 	checkMsg();
-	if($user->getProperty("Username") != "Guess"){
+	if($loggedIn){
 		echo "<script>loggedIn = true;</script>";
 	}
 	?>

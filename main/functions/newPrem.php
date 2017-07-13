@@ -10,6 +10,7 @@ function createPrem($fileType){
   $sql = "INSERT INTO premieren (UserID, Produktion, Spieler, PremiereDatum, Ort, Beschrieb, Video, Bilder) VALUES ('".$user->getProperty('ID')."', '".gMS($_POST['name'])."', '".gMS($_POST['spieler'])."','".gMS($_POST['datum'])."','".gMS($_POST['ort'])."','".gMS($_POST['beschrieb'])."','".gMS($_POST['video'])."','". $fileType . "')";
   if ($DBconn->query($sql) === TRUE) {
     $last_id = $DBconn->insert_id;
+    uploadResize("../uploads/img_".$user->getProperty('Username').$fileType);
     rename("../uploads/img_".$user->getProperty('Username').$fileType, "../uploads/" . $last_id . $fileType);
     echo "Success!";
   } else {
