@@ -15,6 +15,9 @@ include 'newPrem.php';
 include 'changeCity.php';
 include 'changeEname.php';
 include 'imageResize.php';
+include 'getPremInfo.php';
+include 'delPrem.php';
+include 'changePrem.php';
 
 $defaultPath = "../";
 $profilePath = "../";
@@ -32,6 +35,9 @@ switch($func){
     case "newPrem": newPrem(); break;
     case "changeEname": changeEname(); break;
     case "changeCity": changeCity(); break;
+    case "getPremInfo": getPremInfo(); break;
+    case "delPrem": delPrem(); break;
+    case "changePrem": changePrem(); break;
     default: echo "NO FUNCTION FOUND!";
 }
  ?>

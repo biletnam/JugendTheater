@@ -147,7 +147,7 @@ class DB_Table
                 $sql = str_replace(' _arguments_', $finalArgs, $sql);
             } else {
                 // Appends the parameters string the sql query
-                // $sql .= $finalArgs; TODO: Watch this expression if it is on use
+                // $sql .= $finalArgs; Watch this expression if it is on use
             }
         }
 

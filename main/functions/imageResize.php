@@ -122,8 +122,9 @@
     return true;
   }
 
-function uploadResize($path){
+function uploadResize($path,$path2){
   smart_resize_image($path,null,1920, 1080, true, $path, false, false, 50);
+  smart_resize_image($path,null,1400, 700, true, $path2, false, false, 50);
 }
 
 ?>

@@ -14,7 +14,7 @@ include('../config.php');
 	<body>
 		<div id="preloader"></div>
 	<div id="fh5co-page">
-		<?php
+		<?php $loggedIn = false;
 		if($user->getProperty("Username") != "Guess"){$loggedIn = true;}
 		include "build/topbar.php";
 
@@ -33,12 +33,13 @@ include('../config.php');
 	</div>
 	<!-- END page-->
 	<?php
+	echo '<script>var loggedIn = false;</script>';
 	include "build/modals.php";
 	include "build/js.php";
 	include "functions/notifier.php";
 	checkMsg();
 	if($loggedIn){
-		echo "<script>loggedIn = true;</script>";
+		echo '<script>loggedIn = true;loc = "'.$loc.'";</script>';
 	}
 	?>
 	<!-- JS Definitions to find them later -->

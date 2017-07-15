@@ -202,7 +202,7 @@ class User extends UserBase
 
             //If auto Remember User
             if ($autoLogin) {
-                // TODO: The way the autologin cookie works needs to be improved
+                // The way the autologin cookie works needs to be improved
                 $this->cookie->setValue($this->hash->generate($this->ID, $this->Password));
                 $this->cookie->add();
             }
@@ -350,7 +350,7 @@ class User extends UserBase
 
         /*
          * Prevent a signed user from registering a new user
-         * NOTE: If a signed user needs to register a new user
+         * If a signed user needs to register a new user
          * use the User::manageUser() function to create a new user
          * object which then can then be use to register a new user
          */
