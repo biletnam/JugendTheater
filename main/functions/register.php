@@ -5,6 +5,8 @@ function register(){
         'Username'  => $_POST["us"],
         'Password'  => $_POST["pw"],
         'Email'     => $_POST["email"],
+				'StadtKanton' => $_POST["city"],
+				'EnsembleName' => $_POST["ename"]
   ),true);
 
 	$msg = "";

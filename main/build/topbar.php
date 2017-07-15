@@ -15,16 +15,16 @@
     <div class="col-lg-3 col-md-4 col-sm-4 text-right fh5co-link-wrap">
       <ul class="fh5co-special" data-offcanvass="yes">
         <?php
-          if($user->getProperty("Username") == "Guess"){
+          if(!$loggedIn){
 		          echo '<li id="loginBtn"><a href="#" data-toggle="modal" data-target="#loginmodal">Login</a></li>
                     <li id="registerBtn"><a href="#" data-toggle="modal" data-target="#registermodal" class="call-to-action">Register</a></li>';
           }
         ?>
-        <li class="dropdown top-dd <?php if($user->getProperty('Username') == 'Guess'){echo'invisible';}?>" id="userIcon">
+        <li class="dropdown top-dd <?php if(!$loggedIn){echo'invisible';}?>" id="userIcon">
           <a href="#" class="dropdown-toggle call-to-action" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span id="profileName"><?php echo $user->getProperty("Username"); ?></span> <i class="fa fa-user" aria-hidden="true"></i> <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Profile</a></li>
-              <li><a href="#">Settings</a></li>
+              <li><a href="../?loc=profile">Profile</a></li>
+              <li><a href="../?loc=settings">Settings</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="../functions/functions.php?func=logout">Logout</a></li>
             </ul>

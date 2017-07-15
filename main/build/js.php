@@ -16,6 +16,9 @@
 <script src="../js/jquery.countTo.js"></script>
 <!-- WOW -->
 <script src="../js/wow.min.js"></script>
+<!-- Dropzone -->
+<script src="../js/dropzone.js"></script>
+<!-- Init -->
 <script>
   new WOW().init();
 </script>
@@ -23,3 +26,16 @@
 <script src="../js/main.js"></script>
 <!-- Custom -->
 <script src="../js/custom.js"></script>
+<?php
+if($loc == "profile"){
+  echo '<script src="../js/profile.js"></script>';   
+} elseif($loc == "settings"){
+  echo '<script src="../js/settings.js"></script>';
+} elseif($loc == "home"){
+  echo '<script src="../js/premiere.js"></script>';
+}
+
+if(!$loggedIn){
+  echo '<script src="../js/topbar.js"></script>';
+}
+?>
