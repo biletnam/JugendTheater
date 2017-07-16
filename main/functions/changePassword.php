@@ -9,7 +9,7 @@ function changePassword(){
 	if($input->pwd == $input->pwd2){
 		$hash = new ptejada\uFlex\Hash();
 	  $pw = array(
-	    "password" => $hash->generateUserPassword($user, $input->pwd)
+	    "password" => $hash->generateUserPassword($user, gMS($input->pwd))
 	  );
 		$suc = $user->update($pw);
 	  if($suc){

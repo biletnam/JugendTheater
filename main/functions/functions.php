@@ -3,6 +3,11 @@ session_start();
 include('../../config.php');
 include('notifier.php');
 
+function gMS($string){
+  global $DBconn;
+  return mysqli_real_escape_string($DBconn,$string);
+}
+
 include 'changeEmail.php';
 include 'changePassword.php';
 include 'imageUploader.php';

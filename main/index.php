@@ -24,8 +24,8 @@ include('../config.php');
 		if(empty($loc) || $loc == ""){
 				$loc = "home";
 		}
-		if(!file_exists("build/". $loc .".php")){$loc = "404";}
-		include "build/" . $loc . ".php";
+		if(!file_exists("sites/". $loc .".php")){$loc = "404";}
+		include "sites/" . $loc . ".php";
 
 	 	include "build/footer.php";
 		?>

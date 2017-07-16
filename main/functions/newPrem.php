@@ -1,9 +1,4 @@
 <?php
-function gMS($string){
-  global $DBconn;
-  return mysqli_real_escape_string($DBconn,$string);
-}
-
 function createPrem($fileType){
   global $user;
   global $DBconn;

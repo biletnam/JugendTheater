@@ -40,20 +40,20 @@
       <form onsubmit="tryRegister();return false;">
       <div class="modal-body modalCorr">
           <div class="row">
-            <div class="col-md-12 regMod">
+            <div class="col-md-6 regMod">
                   <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="Username" id="regUsername" type="text" placeholder="Benutzername" required>
               </div>
-              <div class="col-md-12 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="Password" id="regPassword" type="password" placeholder="Passwort" required>
-              </div>
-              <div class="col-md-12 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="Email" id="regEmail" type="email" placeholder="Email" required>
-              </div>
-              <div class="col-md-12 regMod">
+              <div class="col-md-6 regMod">
                   <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="Ename" id="regEname" type="text" placeholder="Ensemblename" required>
               </div>
-              <div class="col-md-12 regMod">
+              <div class="col-md-6 regMod">
+                  <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="Password" id="regPassword" type="password" placeholder="Passwort" required>
+              </div>
+              <div class="col-md-6 regMod">
                   <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="City" id="regCity" type="text" placeholder="Stadt,Kanton" required>
+              </div>
+              <div class="col-md-6 regMod">
+                  <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="Email" id="regEmail" type="email" placeholder="Email" required>
               </div>
           </div>
       </div>

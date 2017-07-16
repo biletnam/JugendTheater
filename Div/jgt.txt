@@ -1,0 +1,55 @@
+<h1>Zum Stück</h1>
+Titel der Produktion*
+Untertitel der Produktion
+Ort und Datum der Premiere*
+Ort und Datum der weiteren Aufführungen*
+Aufführungsdauer(gesamt)*
+Pause*: Ja Nein
+Altersfreigabe*
+Sprache(n)*
+Falls die Aufführung auf Texten Dritter basiert bzw. Textpassagen Dritter enthält, bitte Angaben zum Urheberrecht (Name der Autorin/des Autors, ggf. des Verlags)
+
+
+<h1>Zum Ensemble</h1>
+Name des Ensembles*
+Herkunft des Ensembles*
+Anzahl Spieler*innen*
+Anzahl weitere beteiligte Personen (Spielleiter*innen, Techniker*innen, Maske, usw.)*
+Alter aller Spieler*innen*    von....bis....Jahren
+davon jünger als 13 Jahre:    Weiblich....  Männlich....
+davon 14-17 Jahre:            W.... M....
+davon 18-20 Jahre:            W.... M....
+davon älter als 21 Jahre:     W.... M....
+Name der Spielleitung*
+Adresse*
+Telefonnummer*
+E-Mail*
+Weitere Infos zum Ensemble (Zusammensetzung, Arbeitsweise/-bedingungen)
+
+
+<h1>Zur Trägerschaft</h1>
+Name Trägerinstitution(Theater,Verein,Schule...)*
+Adresse*
+Telefonnummer*
+E-Mail*
+Website
+
+
+<h1>Vom Wettbewerb haben wir erfahren durch</h1>* (Auswahl Boxen)
+Elektronische Medien      Instagram,Flickr,E-mail,Facebook,www.jugendtheaterfestival.ch
+Printmedien               Tagespresse, Artikel Fachzeitschrift, Anzeige, Ausschreibungsflyer
+Sonstige                  Kolleg*innen/Kollegen, Schulverteiler, Sonstige .....
+
+
+<h1>Anhänge</h1>
+Videolink* (Youtube, Vimeo...)
+Beschrieb zu Videolink
+Techrider (pdf)
+Stückbeschrieb (500 Zeichen)*
+Weitere Informationen zur Produktion
+Weitere Anhänge (zb Flyer...) (pdf,jpg)
+Beschrieb weitere Anhänge
+
+Ich habe die Teilnahmebedingungen gelesen*
+
+Ort, Datum*

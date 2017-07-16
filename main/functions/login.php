@@ -1,8 +1,8 @@
 <?php
 function login(){
 	global $user;
-	$username = $_POST["Us"];
-	$password = $_POST["Pw"];
+	$username = gMS($_POST["Us"]);
+	$password = gMS($_POST["Pw"]);
 	$auto = true;  //To remember user with a cookie for autologin
 	$user->logout(); //To prevent logging in with wrong credentials (if "login" fails, the user is still "Signed")
 	$user->login($username,$password,$auto);

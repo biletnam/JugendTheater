@@ -2,7 +2,7 @@
 function verification(){
 	global $user;
 	global $defaultPath;
-	$suc = $user->activate($_GET['hsh']);
+	$suc = $user->activate(gMS($_GET['hsh']));
 	$msg = "";
 	if(!$suc){
 			$msg = "<b>Error:</b> Could not verify. Try again.";

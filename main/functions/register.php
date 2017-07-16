@@ -2,11 +2,11 @@
 function register(){
 	global $user;
   $hash = $user->register(array(
-        'Username'  => $_POST["us"],
-        'Password'  => $_POST["pw"],
-        'Email'     => $_POST["email"],
-				'StadtKanton' => $_POST["city"],
-				'EnsembleName' => $_POST["ename"]
+        'Username'  => gMS($_POST["us"]),
+        'Password'  => gMS($_POST["pw"]),
+        'Email'     => gMS($_POST["email"]),
+				'StadtKanton' => gMS($_POST["city"]),
+				'EnsembleName' => gMS($_POST["ename"])
   ),true);
 
 	$msg = "";
