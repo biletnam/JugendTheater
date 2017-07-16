@@ -11,7 +11,7 @@
       <div class="modal-body modalCorr">
           <div class="row">
             <div class="col-md-6 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="Username" id="logUsername" type="text" placeholder="Benutzername" required>
+                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="Username" id="logUsername" type="text" placeholder="Benutzername/Email" required>
               </div>
               <div class="col-md-6 regMod">
                   <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="Password" id="logPassword" type="password" placeholder="Passwort" required>
@@ -21,6 +21,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-primary btn-outline btn-black pull-left" data-dismiss="modal">Cancel</button>
         <input type="submit" class="btn btn-success btn-outline pull-right" value="Login">
+        <button type="button" class="btn btn-primary btn-outline btn-black pull-right" onclick="forgotPw();">Passwort vergessen</button>
         </form>
       </div>
     </div>

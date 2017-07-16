@@ -23,6 +23,7 @@ include 'imageResize.php';
 include 'getPremInfo.php';
 include 'delPrem.php';
 include 'changePrem.php';
+include 'forgotPw.php';
 
 $defaultPath = "../";
 $profilePath = "../";
@@ -43,6 +44,7 @@ switch($func){
     case "getPremInfo": getPremInfo(); break;
     case "delPrem": delPrem(); break;
     case "changePrem": changePrem(); break;
+    case "forgotPw": forgotPw(); break;
     default: echo "NO FUNCTION FOUND!";
 }
  ?>

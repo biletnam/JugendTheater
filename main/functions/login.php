@@ -8,9 +8,9 @@ function login(){
 	$user->login($username,$password,$auto);
 
 	if($user->isSigned()){
-		echo "Successfully logged in!";
+		echo "Successfully logged in!/".$user->getProperty("Username");
 	}else{
-		echo "Username or password wrong.";
+		echo "Benutzername oder Passwort falsch.";
 	}
 }
 ?>

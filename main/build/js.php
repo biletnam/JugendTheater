@@ -28,11 +28,13 @@
 <script src="../js/custom.js"></script>
 <?php
 if($loc == "profile"){
-  echo '<script src="../js/profile.js"></script>';   
+  echo '<script src="../js/profile.js"></script>';
 } elseif($loc == "settings"){
   echo '<script src="../js/settings.js"></script>';
 } elseif($loc == "home"){
   echo '<script src="../js/premiere.js"></script>';
+} elseif($loc == "resetPassword"){
+  echo '<script src="../js/resetPw.js"></script>';
 }
 
 if(!$loggedIn){

@@ -22,10 +22,11 @@ function register(){
 		$headers = "MIME-Version: 1.0" . "\r\n";
 		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 		$headers .= 'From: <info@jugend-theater.ch>' . "\r\n";
-
 		$suc = mail($to, $subject, $message, $headers);
 		if(!$suc){
 			$msg = "Could not send Email. Please enter a valid Email-Address.";
+			// TODO: Remove user from DB
+			// IDEA: Remove all unverified user after 24h 
 		} else {
 			$msg = "Registration successful!";
 		}
