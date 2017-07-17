@@ -1,3 +1,8 @@
+<?php
+if(isset($_GET['hash'])){
+    $hsh = $_GET['hash'];
+} else {$hsh = "";}
+echo '<script>var hash="'.$hsh.'"</script>'; ?>
 <div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(images/png.jpg);">
   <div class="fh5co-overlay"></div>
   <div class="fh5co-cover-text">
@@ -15,7 +20,7 @@
               </div>
               <div class="col-md-6 resPw"></div>
               <div class="col-md-6 resPw wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
-                <input type="submit" class="btn btn-invert btn-outline pull-right" value="Ändern">
+                <input id="resetPwBtn" type="submit" class="btn btn-invert btn-outline pull-right" value="Ändern">
               </div>
               </form>
           </div>

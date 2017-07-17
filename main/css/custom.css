@@ -58,6 +58,10 @@
   padding-right: 17px;
 }
 
+#resetPwBtn{
+  margin-right: 0px;
+}
+
 .dropzone {
 	min-height: 214px;
   display: table;

@@ -54,7 +54,7 @@ function convertYoutube($string) {
   </div>
 </div>
 
-			<div class="fh5co-counter-style-2" style="background-image: url(../images/full_2.jpg);" data-stellar-background-ratio="0.5">
+			<div class="fh5co-counter-style-2" style="background-image: url(../uploads/<?php echo $row['ID'].$row['Bilder']; ?>);" data-stellar-background-ratio="0.5">
 			<div class="fh5co-overlay"></div>
 			<div class="container">
 				<div class="fh5co-section-content-wrap">
