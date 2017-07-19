@@ -4,18 +4,22 @@ function tryLogin() {
     var pw = document.getElementById('logPassword').value;
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("loginResponse").innerHTML = this.responseText;
-            if(this.responseText.includes("Success")){
-              $("#loginmodal").modal("hide");
+            var ret = this.responseText;
+            if(ret.includes("Success")){
+              var res = ret.split("/");
+              document.getElementById("loginResponse").innerHTML = res[0];
               //loginBtn.className = "invisible";
               //registerBtn.className = "invisible";
               loginBtn.parentNode.removeChild(loginBtn);
               registerBtn.parentNode.removeChild(registerBtn);
               userIcon.className = "dropdown top-dd";
-              profileName.innerHTML = username;
+              profileName.innerHTML = res[1];
+              $("#loginmodal").modal("hide");
               loggedIn = true;
               //loginBtn.parentNode.insertBefore(userIcon, loginBtn);
               //document.getElementById("loginResponse").innerHTML = "";
+            } else {
+              document.getElementById("loginResponse").innerHTML = this.responseText;
             }
        } else {
          document.getElementById("loginResponse").innerHTML = "Waiting for response...";
@@ -46,4 +50,21 @@ function tryRegister() {
     xhttp.open("POST", "functions/functions.php?func=register", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(request);
+}
+
+function forgotPw(){
+  var xhttp = new XMLHttpRequest();
+  var username = document.getElementById('logUsername').value;
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("loginResponse").innerHTML = this.responseText;
+     } else {
+       document.getElementById("loginResponse").innerHTML = "Waiting for response...";
+     }
+  };
+  var request = "usr_mail=" + username;
+  xhttp.open("POST", "functions/functions.php?func=forgotPw", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(request);
+
 }

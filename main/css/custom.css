@@ -58,6 +58,10 @@
   padding-right: 17px;
 }
 
+#resetPwBtn{
+  margin-right: 0px;
+}
+
 .dropzone {
 	min-height: 214px;
   display: table;
@@ -106,6 +110,10 @@
   color:white !important;
 }
 
+.btn-black:focus{
+  color:white !important;
+}
+
 .btn-success.btn-outline{
     color: var(--sub) !important;
     border-color: var(--sub) !important;
@@ -121,12 +129,38 @@
     background: var(--sub) !important;
 }
 
+.btn-invert{
+  border-color: var(--sub) !important;
+  background: var(--sub) !important;
+}
+
+.btn-invert:hover{
+  color: var(--sub) !important;
+  background: none !important;
+}
+
+.btn-invert:focus{
+  color: var(--sub) !important;
+  background: none !important;
+}
+
 .modalResponse{
     float: right;
 }
 
 .regMod{
   margin-top: 10px;
+}
+
+.resPw{
+  margin-top: 10px;
+  padding-left: 0px;
+}
+
+.resPw input{
+  background: none;
+  color: #fff;
+  border: 2px solid #fff;
 }
 
 .notifier-alert{
@@ -207,7 +241,6 @@
 
 .top-dd{
   display: list-item !important;
-  margin-left: 100px !important;
 }
 
 .footer_logo{

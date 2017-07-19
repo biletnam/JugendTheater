@@ -3,6 +3,11 @@ session_start();
 include('../../config.php');
 include('notifier.php');
 
+function gMS($string){
+  global $DBconn;
+  return mysqli_real_escape_string($DBconn,$string);
+}
+
 include 'changeEmail.php';
 include 'changePassword.php';
 include 'imageUploader.php';
@@ -18,6 +23,8 @@ include 'imageResize.php';
 include 'getPremInfo.php';
 include 'delPrem.php';
 include 'changePrem.php';
+include 'forgotPw.php';
+include 'resetPw.php';
 
 $defaultPath = "../";
 $profilePath = "../";
@@ -38,6 +45,8 @@ switch($func){
     case "getPremInfo": getPremInfo(); break;
     case "delPrem": delPrem(); break;
     case "changePrem": changePrem(); break;
+    case "forgotPw": forgotPw(); break;
+    case "resetPw": resetPw(); break;
     default: echo "NO FUNCTION FOUND!";
 }
  ?>

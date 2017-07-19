@@ -1,0 +1,12 @@
+Kacheln mit Bilder,Name Ensemble und Stück und Datum
+
+Name Ensemble
+Stadt, Kanton
+Name Produktion
+SpielerInnen
+Datum Premiere
+-- Aufführungsdaten --
+Aufführungsort
+Stückbeschrieb (max. 500 Zeichen)
+Videolink
+Bilder

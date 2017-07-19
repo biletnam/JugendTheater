@@ -2,11 +2,11 @@
 function register(){
 	global $user;
   $hash = $user->register(array(
-        'Username'  => $_POST["us"],
-        'Password'  => $_POST["pw"],
-        'Email'     => $_POST["email"],
-				'StadtKanton' => $_POST["city"],
-				'EnsembleName' => $_POST["ename"]
+        'Username'  => gMS($_POST["us"]),
+        'Password'  => gMS($_POST["pw"]),
+        'Email'     => gMS($_POST["email"]),
+				'StadtKanton' => gMS($_POST["city"]),
+				'EnsembleName' => gMS($_POST["ename"])
   ),true);
 
 	$msg = "";
@@ -22,10 +22,11 @@ function register(){
 		$headers = "MIME-Version: 1.0" . "\r\n";
 		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 		$headers .= 'From: <info@jugend-theater.ch>' . "\r\n";
-
 		$suc = mail($to, $subject, $message, $headers);
 		if(!$suc){
 			$msg = "Could not send Email. Please enter a valid Email-Address.";
+			// TODO: Remove user from DB
+			// IDEA: Remove all unverified user after 24h 
 		} else {
 			$msg = "Registration successful!";
 		}

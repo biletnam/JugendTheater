@@ -1,0 +1,268 @@
+#premiere-container{
+  width:100% !important;
+}
+
+#preBtn:focus{
+  color: #fff !important;
+}
+
+#premTA{
+  resize:none;
+  height: 300px;
+}
+
+#premTAEdit{
+  resize:none;
+  height: 300px;
+}
+
+#premVid{
+  border-radius: 6px;
+}
+
+#premOrt{
+  line-height: 35px !important;
+}
+
+#my-dz{
+  border: 2px dashed var(--main);
+	border-radius: 6px;
+}
+
+#my-dz-msg{
+	height: 107px;
+	line-height: 107px;
+	text-align: center;
+}
+
+#premVidEdit{
+  border-radius: 6px;
+}
+
+#premOrtEdit{
+  line-height: 35px !important;
+}
+
+#my-dz-Edit{
+  border: 2px dashed var(--main);
+	border-radius: 6px;
+}
+
+#my-dz-msg-Edit{
+	height: 107px;
+	line-height: 107px;
+	text-align: center;
+}
+
+#deletemodal{
+  padding-right: 17px;
+}
+
+#resetPwBtn{
+  margin-right: 0px;
+}
+
+.dropzone {
+	min-height: 214px;
+  display: table;
+  width: 100%;
+}
+
+.dz-preview{
+    display: table-cell !important;
+    vertical-align: middle !important;
+}
+
+.dz-preview *{
+  margin:auto;
+}
+
+.dz-details{
+  margin-top: 30px;
+}
+
+.dz-message{
+	font-weight: normal;
+}
+
+.modalCorr{
+    color: #000 !important;
+}
+
+.modal-body.modalCorr{
+    padding-top: 5px !important;
+}
+
+.bigger-icon{
+  font-size: 26px;
+}
+
+.counter{
+    display: initial !important;
+}
+
+.btn-black{
+  color: #000 !important;
+  border-color: #000 !important;
+}
+
+.btn-black:hover{
+  color:white !important;
+}
+
+.btn-black:focus{
+  color:white !important;
+}
+
+.btn-success.btn-outline{
+    color: var(--sub) !important;
+    border-color: var(--sub) !important;
+}
+
+.btn-success.btn-outline:hover{
+    color: #fff !important;
+    background: var(--sub) !important;
+}
+
+.btn-success.btn-outline:focus{
+    color: #fff !important;
+    background: var(--sub) !important;
+}
+
+.btn-invert{
+  border-color: var(--sub) !important;
+  background: var(--sub) !important;
+}
+
+.btn-invert:hover{
+  color: var(--sub) !important;
+  background: none !important;
+}
+
+.btn-invert:focus{
+  color: var(--sub) !important;
+  background: none !important;
+}
+
+.modalResponse{
+    float: right;
+}
+
+.regMod{
+  margin-top: 10px;
+}
+
+.resPw{
+  margin-top: 10px;
+  padding-left: 0px;
+}
+
+.resPw input{
+  background: none;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.notifier-alert{
+  background: none;
+  border: none;
+  color: #000;
+}
+
+.untertitel{
+  font-size: 20px !important;
+  text-align: center !important;
+}
+
+.gonnerverein{
+  text-align: left !important;
+}
+
+.titel{
+  margin-bottom: 50px;
+}
+
+.mgt5{
+  margin-top: 50px;
+}
+
+.wir_abteilung{
+  color:grey !important;
+}
+
+.wir_geschichte{
+  color: #000 !important;
+}
+
+.wir_vorstand{
+  padding-bottom: 0px !important;
+}
+
+.wir_vorstand_name{
+  float: left;
+  font-weight: bold !important;
+}
+
+.wir_vorstand_txt{
+  float: right;
+}
+
+.wir_spender_name{
+  font-weight: bold !important;
+
+}
+
+.wir_spender{
+    line-height: 32px !important;
+}
+
+.wir_partner{
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
+  background-position: center !important;
+  box-shadow: none !important;
+}
+
+.setBtn{
+  width: 100% !important;
+}
+
+.top-dd ul li a{
+  color: #000 !important;
+  width: 100% !important;
+  margin: 0px !important;
+  padding-left: 15px !important;
+}
+
+.top-dd ul li{
+  display: list-item !important;
+}
+
+.top-dd{
+  display: list-item !important;
+}
+
+.footer_logo{
+  margin-bottom: 35px !important;
+}
+
+.footer_titel{
+  margin-top: 0px !important;
+}
+
+.invisibleStrict{
+  visibility: hidden !important;
+}
+
+
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: #000;
+}
