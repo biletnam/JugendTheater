@@ -79,14 +79,13 @@
       </div>
       <div class="modal-body modalCorr">
           <div class="row">
-            <div class="col-md-12">
               <div class="col-md-6 regMod">
                 <form action="" class="dropzone" id="my-dz">
                   <div class="dz-message modalCorr" id="my-dz-msg">Bild hochladen</div>
                 </form>
               </div>
+              <form onsubmit="tryPremiere();return false;">
               <div class="col-md-6 regMod">
-                <form onsubmit="tryPremiere();return false;">
                     <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premProduktion" id="premProduktion" type="text" placeholder="Name Produktion" required>
                 </div>
                 <div class="col-md-6 regMod">
@@ -104,15 +103,35 @@
                 <div class="col-md-12 regMod">
                     <input class="form-control input-lg mt-1 modalCorr" maxlength="1000" name="premVid" id="premVid" type="url" placeholder="Youtube-Link" required>
                 </div>
-                <div class="col-md-12 regMod">
-
-                </div>
-              </div>
           </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary btn-outline btn-black pull-left" data-dismiss="modal">Cancel</button>
         <input type="submit" class="btn btn-success btn-outline pull-right" value="Anmelden">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- this is hidden (the dialog that shows up on pressing a button) -->
+<div id="jgtmodal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header modalCorr">
+        <h4 class="modal-title modalCorr">Für das Festival bewerben <span class="modalResponse" id="jgtResponse"></span></h4>
+      </div>
+      <div class="modal-body modalCorr">
+          <div class="row">
+            <form onsubmit="tryJgt();return false;">
+              In Bearbeitung.
+              <!-- TODO: Finish this Form -->
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-outline btn-black pull-left" data-dismiss="modal">Cancel</button>
+        <input type="submit" class="btn btn-success btn-outline pull-right" value="Bewerben">
         </form>
       </div>
     </div>

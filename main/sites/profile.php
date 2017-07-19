@@ -1,4 +1,4 @@
-<div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(images/kontakt.jpg);">
+<div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(images/edit/kontakt.jpg);">
     <span class="scroll-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
     <a href="#">
       <span class="mouse"><span></span></span>
@@ -12,7 +12,7 @@
           <div class="fh5co-cover-intro">
             <h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Profile</h1>
             <h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Hier kannst du deine Premieren verwalten</h2>
-            <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a class="btn btn-primary btn-outline btn-lg">Für das Jugendtheater-Festival Schweiz bewerben</a></p> <!-- TODO: Implement Bewerben-Button -->
+            <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a onclick="openJgt();" class="btn btn-primary btn-outline btn-lg">Für das Jugendtheater-Festival Schweiz bewerben</a></p>
           </div>
         </div>
       </div>
