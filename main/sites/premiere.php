@@ -14,7 +14,7 @@ function convertYoutube($string) {
     return preg_replace("/\s*[a-zA-Z\/\/:\.]*youtu(be.com\/watch\?v=|.be\/)([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i","<iframe id=\"premVid\" class=\"embed-responsive-item\" src=\"//www.youtube.com/embed/$2\" allowfullscreen></iframe>",$string);}
 ?>
 
-    <div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(../../uploads/<?php echo $row['ID'].$row['Bilder']; ?>);">
+    <div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(../uploads/<?php echo $row['ID'].$row['Bilder']; ?>);">
 		  	<span class="scroll-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
 				<a href="#">
 					<span class="mouse"><span></span></span>
@@ -54,7 +54,7 @@ function convertYoutube($string) {
   </div>
 </div>
 
-			<div class="fh5co-counter-style-2" style="background-image: url(../../uploads/<?php echo $row['ID'].$row['Bilder']; ?>);" data-stellar-background-ratio="0.5">
+			<div class="fh5co-counter-style-2" style="background-image: url(../uploads/<?php echo $row['ID'].$row['Bilder']; ?>);" data-stellar-background-ratio="0.5">
 			<div class="fh5co-overlay"></div>
 			<div class="container">
 				<div class="fh5co-section-content-wrap">
