@@ -2,7 +2,7 @@
   <div class="container">
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 fh5co-logo">
       <a href="#" class="js-fh5co-mobile-toggle fh5co-nav-toggle"><i></i></a>
-      <a href="#">Jugend-Theater</a>
+      <a href="../">Jugend-Theater</a>
     </div>
     <div class="col-lg-6 col-md-5 col-sm-5 text-center fh5co-link-wrap">
       <ul data-offcanvass="yes">

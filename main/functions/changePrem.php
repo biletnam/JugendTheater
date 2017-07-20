@@ -12,24 +12,24 @@
 
   function changePremImage($fileType){
     global $user;
-    unlink("../uploads/" . $_POST['id'] . $_POST['filetype']);
-    unlink("../uploads/small/" . $_POST['id'] . $_POST['filetype']);
-    rename("../uploads/img_".$user->getProperty('Username').$fileType, "../uploads/" . $_POST['id'] . $fileType);
-    uploadResize("../uploads/" . $_POST['id'] . $fileType,"../uploads/small/" . $_POST['id'] . $fileType);
+    unlink("../../uploads/" . $_POST['id'] . $_POST['filetype']);
+    unlink("../../uploads/small/" . $_POST['id'] . $_POST['filetype']);
+    rename("../../uploads/img_".$user->getProperty('Username').$fileType, "../../uploads/" . $_POST['id'] . $fileType);
+    uploadResize("../../uploads/" . $_POST['id'] . $fileType,"../../uploads/small/" . $_POST['id'] . $fileType);
   }
 
   function changePrem(){
     include('checkUser.php');
-    if(file_exists("../uploads/img_".$user->getProperty('Username').".jpg")){
+    if(file_exists("../../uploads/img_".$user->getProperty('Username').".jpg")){
       changePremImage(".jpg");
       changePremDB(".jpg");
-    }elseif (file_exists("../uploads/img_".$user->getProperty('Username').".png")) {
+    }elseif (file_exists("../../uploads/img_".$user->getProperty('Username').".png")) {
       changePremImage(".png");
       changePremDB(".png");
-    }elseif (file_exists("../uploads/img_".$user->getProperty('Username').".gif")) {
+    }elseif (file_exists("../../uploads/img_".$user->getProperty('Username').".gif")) {
       changePremImage(".gif");
       changePremDB(".gif");
-    } elseif (file_exists("../uploads/img_".$user->getProperty('Username').".jpeg")) {
+    } elseif (file_exists("../../uploads/img_".$user->getProperty('Username').".jpeg")) {
       changePremImage(".jpeg");
       changePremDB(".jpeg");
     } else {

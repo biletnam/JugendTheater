@@ -23,7 +23,7 @@ function tryPremiere(){
             setTimeout(function(){
               $("#premieremodal").modal("hide");
               document.getElementById("premResponse").innerHTML = "";
-                $("ul#profPrems").append('<li class="wow fadeInUp col-md-4" style="background-image: url(../uploads/small/'+res[1]+res[2]+');" data-wow-duration="1s" data-wow-delay="0s" data-stellar-background-ratio="0.5" id="premNr'+res[1]+'"><a  href="#" onclick="showPremEditModal('+res[1]+');event.preventDefault();"><div class="fh5co-overlay"></div><div class="fh5co-text"><div class="fh5co-text-inner"><div class="text-center"><h3>'+res[3]+'</h3></div></div></div></a></li>');
+                $("ul#profPrems").append('<li class="wow fadeInUp col-md-4" style="background-image: url(../../uploads/small/'+res[1]+res[2]+');" data-wow-duration="1s" data-wow-delay="0s" data-stellar-background-ratio="0.5" id="premNr'+res[1]+'"><a  href="#" onclick="showPremEditModal('+res[1]+');event.preventDefault();"><div class="fh5co-overlay"></div><div class="fh5co-text"><div class="fh5co-text-inner"><div class="text-center"><h3>'+res[3]+'</h3></div></div></div></a></li>');
             }, 800);
           } else {
             document.getElementById("premResponse").innerHTML = this.responseText;
