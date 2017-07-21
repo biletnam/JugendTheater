@@ -178,10 +178,9 @@
 
 			<li class="wow fadeInUp col-md-3 wir_partner" style="background-image: url(/images/edit/TTJ.gif);" data-wow-duration="1s" data-wow-delay=".4s">
 				<a href="https://www.berlinerfestspiele.de/de/aktuell/festivals/bundeswettbewerbe/theatertreffen_der_jugend/ueber_festival_ttj/aktuell_ttj/start_ttj.php" target="_blank">
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Theatertreffen der Jugend</h3></div>
 							</div>
 						</div>
 				</a>
@@ -189,10 +188,9 @@
 
 			<li class="wow fadeInUp col-md-3 wir_partner" style="background-image: url(/images/edit/zamba.gif);" data-wow-duration="1s" data-wow-delay=".6s">
 				<a href="https://www.zamba-loca.ch/" target="_blank">
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Zamba</h3></div>
 							</div>
 						</div>
 				</a>
@@ -200,10 +198,9 @@
 
 			<li class="wow fadeInUp col-md-3 wir_partner" style="background-image: url(/images/edit/FF.gif);" data-wow-duration="1s" data-wow-delay=".8s">
 				<a href="http://www.festivalforum.ch/" target="_blank">
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Festival Forum</h3></div>
 						</div>
 					</div>
 				</a>
@@ -211,10 +208,9 @@
 
 			<li class="wow fadeInUp col-md-3 wir_partner" style="background-image: url(/images/edit/jugendarbeit.gif);" data-wow-duration="1s" data-wow-delay="1s">
 				<a href="https://www.jugendarbeitaarau.ch/" target="_blank">
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Jugendarbeit Aarau</h3></div>
 						</div>
 					</div>
 				</a>
@@ -222,10 +218,9 @@
 
 			<li class="wow fadeInUp col-md-3 wir_partner" style="background-image: url(/images/edit/FHNW.gif);" data-wow-duration="1s" data-wow-delay="1.2s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Fachhochschule Nordwestschweiz</h3></div>
 						</div>
 					</div>
 				</a>
@@ -233,10 +228,9 @@
 
 			<li class="wow fadeInUp col-md-3 wir_partner" style="background-image: url(/images/edit/nksa.gif);" data-wow-duration="1s" data-wow-delay="1.4s">
 				<a href="http://nksa.ch/" target="_blank">
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>NKSA</h3></div>
 						</div>
 					</div>
 				</a>
@@ -244,10 +238,9 @@
 
 			<li class="wow fadeInUp col-md-3 wir_partner" style="background-image: url(/images/edit/hkb.gif);" data-wow-duration="1s" data-wow-delay="1.6s">
 				<a href="https://www.hkb.bfh.ch/" target="_blank">
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Hochschule der Künste Bern</h3></div>
 						</div>
 					</div>
 				</a>
@@ -277,10 +270,9 @@
 
 			<li class="wow fadeInUp col-md-6 wir_partner" style="background-image: url(/images/edit/arttv.gif);" data-wow-duration="1s" data-wow-delay=".4s">
 				<a href="https://www.arttv.ch/" target="_blank">
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>ArtTv</h3></div>
 							</div>
 						</div>
 				</a>
@@ -288,10 +280,9 @@
 
 			<li class="wow fadeInUp col-md-6 wir_partner" style="background-image: url(/images/edit/AZJTFS.gif);" data-wow-duration="1s" data-wow-delay=".6s">
 				<a href="https://www.aargauerzeitung.ch/" target="_blank">
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Aargauer Zeitung</h3></div>
 							</div>
 						</div>
 				</a>
@@ -306,7 +297,6 @@
 	<div class="container">
 		<div class="row p-b">
 			<div class="col-md-6 col-md-offset-3 text-center">
-				<h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Wir danken für die Unterstützung</h2>
 			</div>
 		</div>
 	</div>
@@ -318,10 +308,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/cometas.gif);" data-wow-duration="1s" data-wow-delay=".4s">
 				<a href="http://www.cometas.ch/" target="_blank">
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Cometas</h3></div>
 							</div>
 						</div>
 				</a>
@@ -329,10 +318,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/swisslosAA.gif);" data-wow-duration="1s" data-wow-delay=".6s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Swisslos Aargau</h3></div>
 							</div>
 						</div>
 				</a>
@@ -340,10 +328,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/schweiz.gif);" data-wow-duration="1s" data-wow-delay=".8s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>BAK</h3></div>
 							</div>
 						</div>
 				</a>
@@ -351,10 +338,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/aarau.gif);" data-wow-duration="1s" data-wow-delay="1.0s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Stadt Aarau</h3></div>
 							</div>
 						</div>
 				</a>
@@ -362,10 +348,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/basel.gif);" data-wow-duration="1s" data-wow-delay=".2s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Kanton Basel-Stadt</h3></div>
 							</div>
 						</div>
 				</a>
@@ -373,10 +358,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/zurich.gif);" data-wow-duration="1s" data-wow-delay=".4s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Kanton Zürich</h3></div>
 							</div>
 						</div>
 				</a>
@@ -384,10 +368,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/swissloskultur.gif);" data-wow-duration="1s" data-wow-delay=".6s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Swisslos Kultur</h3></div>
 							</div>
 						</div>
 				</a>
@@ -395,10 +378,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/swisslosbern.gif);" data-wow-duration="1s" data-wow-delay=".8s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Swisslos Bern</h3></div>
 							</div>
 						</div>
 				</a>
@@ -406,10 +388,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/swisslosbasel.gif);" data-wow-duration="1s" data-wow-delay="1.0s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Swisslos Basel-Land</h3></div>
 							</div>
 						</div>
 				</a>
@@ -417,10 +398,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/avina.gif);" data-wow-duration="1s" data-wow-delay=".2s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Avina Stiftung</h3></div>
 							</div>
 						</div>
 				</a>
@@ -428,10 +408,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/beisheim.gif);" data-wow-duration="1s" data-wow-delay=".4s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Prof. Otto Beisheim Stiftung</h3></div>
 							</div>
 						</div>
 				</a>
@@ -439,10 +418,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/creditsuisse.gif);" data-wow-duration="1s" data-wow-delay=".6s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Credit Suisse</h3></div>
 							</div>
 						</div>
 				</a>
@@ -450,10 +428,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/hansundlina.gif);" data-wow-duration="1s" data-wow-delay=".8s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Hans und Lina Blattner Stiftung</h3></div>
 							</div>
 						</div>
 				</a>
@@ -461,10 +438,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/roldenfund.gif);" data-wow-duration="1s" data-wow-delay="1.0s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Stiftung Roldenfund</h3></div>
 							</div>
 						</div>
 				</a>
@@ -472,10 +448,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/franke.gif);" data-wow-duration="1s" data-wow-delay=".2s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Franke</h3></div>
 							</div>
 						</div>
 				</a>
@@ -483,10 +458,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/malamoud.gif);" data-wow-duration="1s" data-wow-delay=".4s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Stiftung Dr. Valentin Malamoud</h3></div>
 							</div>
 						</div>
 				</a>
@@ -494,10 +468,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/schlossplatz.gif);" data-wow-duration="1s" data-wow-delay=".6s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Forum Schlossplatz</h3></div>
 							</div>
 						</div>
 				</a>
@@ -505,10 +478,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/aarauinfo.gif);" data-wow-duration="1s" data-wow-delay=".8s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Aarau Info</h3></div>
 							</div>
 						</div>
 				</a>
@@ -516,10 +488,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/museumaarau.gif);" data-wow-duration="1s" data-wow-delay="1.0s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Stadtmuseum Aarau</h3></div>
 							</div>
 						</div>
 				</a>
@@ -527,10 +498,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/marie.gif);" data-wow-duration="1s" data-wow-delay=".2s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Theater Marie</h3></div>
 							</div>
 						</div>
 				</a>
@@ -538,10 +508,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/tuchlaube.gif);" data-wow-duration="1s" data-wow-delay=".4s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Theater Tuchlaube</h3></div>
 							</div>
 						</div>
 				</a>
@@ -549,10 +518,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/FHNW.gif);" data-wow-duration="1s" data-wow-delay=".6s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>FHNW</h3></div>
 							</div>
 						</div>
 				</a>
@@ -560,10 +528,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/schlafschon.gif);" data-wow-duration="1s" data-wow-delay=".8s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>b&b schlafschön tuch&laube</h3></div>
 							</div>
 						</div>
 				</a>
@@ -571,10 +538,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/ks.gif);" data-wow-duration="1s" data-wow-delay="1.0s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Katharina Strebel Stiftung</h3></div>
 							</div>
 						</div>
 				</a>
@@ -582,10 +548,9 @@
 
 			<li class="wow fadeInUp col-md-1 wir_partner" style="background-image: url(/images/edit/zumnoten.gif);" data-wow-duration="1s" data-wow-delay=".2s">
 				<a>
-					<div class="fh5co-overlay"></div>
+					<div class="fh5co-overlay wir_partner2"></div>
 						<div class="fh5co-text">
 							<div class="fh5co-text-inner">
-									<div class="text-center"><h3>Zum Noten-Schlüssel</h3></div>
 							</div>
 						</div>
 				</a>
