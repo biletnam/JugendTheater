@@ -12,8 +12,8 @@
         <li><a href="../?loc=wir">About</a></li>
       </ul>
     </div>
-    <div class="col-lg-3 col-md-4 col-sm-4 text-right fh5co-link-wrap">
-      <ul class="fh5co-special" data-offcanvass="yes">
+    <div class="col-lg-3 col-md-4 col-sm-4 text-right fh5co-link-wrap hidden-xs">
+      <ul class="fh5co-special hidden-xs" data-offcanvass="yes">
         <?php
           if(!$loggedIn){
 		          echo '<li id="loginBtn"><a href="#" data-toggle="modal" data-target="#loginmodal">Login</a></li>
