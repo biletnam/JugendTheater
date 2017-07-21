@@ -20,7 +20,7 @@ function forgotPw(){
     } else {
       $to      = $usr;
       $subject = 'Password reset';
-      $message = 'Click this link to reset your password: <a href="https://test.jugend-theater.ch/?loc=resetPassword&hash='.$prehash->Confirmation.'">Reset Password</a>';
+      $message = 'Click this link to reset your password: <a href="https://jugend-theater.ch/?loc=resetPassword&hash='.$prehash->Confirmation.'">Reset Password</a>';
       $headers = "MIME-Version: 1.0" . "\r\n";
       $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
       $headers .= 'From: <info@jugend-theater.ch>' . "\r\n";
