@@ -2,10 +2,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Jugend-Theater</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FREEHTML5.CO" />
-	
+	<meta name="description" content="Hier findest du alles rund um das Theater." />
+	<meta name="keywords" content="Jugend, Theater, Aarau, Premiere, Festival" />
+	<meta name="author" content="Berke Ates, Fabian Haller" />
+
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
