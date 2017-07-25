@@ -1,6 +1,7 @@
 <?php
 function register(){
 	global $user;
+	global $DBconn;
   $hash = $user->register(array(
         'Username'  => gMS($_POST["us"]),
         'Password'  => gMS($_POST["pw"]),
@@ -25,7 +26,8 @@ function register(){
 		$suc = mail($to, $subject, $message, $headers);
 		if(!$suc){
 			$msg = "Could not send Email. Please enter a valid Email-Address.";
-			// TODO: Remove user from DB
+			$sql="DELETE FROM Users WHERE Username=".$_POST['us'];
+	    mysqli_query($DBconn, $sql);
 			// IDEA: Remove all unverified user after 24h
 		} else {
 			$msg = "Registration successful!";

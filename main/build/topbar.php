@@ -22,10 +22,10 @@
         ?>
         <li class="dropdown top-dd <?php if(!$loggedIn){echo'invisible';}?>" id="userIcon">
           <a href="#" class="dropdown-toggle call-to-action" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span id="profileName"><?php echo $user->getProperty("Username"); ?></span> <i class="fa fa-user" aria-hidden="true"></i> <span class="caret"></span></a>
-            <ul class="dropdown-menu">
+            <ul id="topbarMenu" class="dropdown-menu">
+              <?php if($loggedIn && $user->getProperty("GroupID") >= 3){ echo '<li><a href="../admin/">Admin-Page</a></li>';} ?>
               <li><a href="../?loc=profile">Profile</a></li>
               <li><a href="../?loc=settings">Settings</a></li>
-              <?php if($user->getProperty("GroupID") >= 3){ echo '<li><a href="../admin/">Admin-Page</a></li>';} ?>
               <li role="separator" class="divider"></li>
               <li><a href="../functions/functions.php?func=logout">Logout</a></li>
             </ul>

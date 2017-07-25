@@ -8,7 +8,9 @@ function login(){
 	$user->login($username,$password,$auto);
 
 	if($user->isSigned()){
-		echo "Successfully logged in!/".$user->getProperty("Username");
+		$canEdit = false;
+		if($user->getProperty("GroupID") >= 3){$canEdit = true;}
+		echo "Successfully logged in!/".$user->getProperty("Username")."/".$canEdit;
 	}else{
 		echo "Benutzername oder Passwort falsch.";
 	}
