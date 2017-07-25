@@ -33,26 +33,28 @@ function showPremEditModal(premID){
             document.getElementById("premTAEdit").value = rows["Beschrieb"];
             document.getElementById("premVidEdit").value = rows["Video"];
             document.getElementById("premResponseEdit").innerHTML = "";
-            document.getElementById("premDel").className = "btn btn-danger btn-outline pull-right";
-            document.getElementById("premDel").disabled = false;
-            document.getElementById("premChange").className = "btn btn-success btn-outline pull-right";
-            document.getElementById("premChange").disabled = false;
-            currentAct = rows["Activation"];
-            if(currentAct == 0){
-              document.getElementById("premGrant").className = "btn btn-success btn-outline pull-right";
-              document.getElementById("premGrant").disabled = false;
-              document.getElementById("premInv").className = "btn btn-danger btn-outline pull-right";
-              document.getElementById("premInv").disabled = false;
-            } else if(currentAct == 1){
-              document.getElementById("premGrant").className = "btn btn-success btn-outline pull-right disabled";
-              document.getElementById("premGrant").disabled = true;
-              document.getElementById("premInv").className = "btn btn-danger btn-outline pull-right";
-              document.getElementById("premInv").disabled = false;
-            } else if(currentAct == 2){
-              document.getElementById("premGrant").className = "btn btn-success btn-outline pull-right";
-              document.getElementById("premGrant").disabled = false;
-              document.getElementById("premInv").className = "btn btn-danger btn-outline pull-right disabled";
-              document.getElementById("premInv").disabled = true;
+            if(allowEdit){
+              document.getElementById("premDel").className = "btn btn-danger btn-outline pull-right";
+              document.getElementById("premDel").disabled = false;
+              document.getElementById("premChange").className = "btn btn-success btn-outline pull-right";
+              document.getElementById("premChange").disabled = false;
+              currentAct = rows["Activation"];
+              if(currentAct == 0){
+                document.getElementById("premGrant").className = "btn btn-success btn-outline pull-right";
+                document.getElementById("premGrant").disabled = false;
+                document.getElementById("premInv").className = "btn btn-danger btn-outline pull-right";
+                document.getElementById("premInv").disabled = false;
+              } else if(currentAct == 1){
+                document.getElementById("premGrant").className = "btn btn-success btn-outline pull-right disabled";
+                document.getElementById("premGrant").disabled = true;
+                document.getElementById("premInv").className = "btn btn-danger btn-outline pull-right";
+                document.getElementById("premInv").disabled = false;
+              } else if(currentAct == 2){
+                document.getElementById("premGrant").className = "btn btn-success btn-outline pull-right";
+                document.getElementById("premGrant").disabled = false;
+                document.getElementById("premInv").className = "btn btn-danger btn-outline pull-right disabled";
+                document.getElementById("premInv").disabled = true;
+              }
             }
      } else {
        document.getElementById("premResponseEdit").innerHTML = "Loading...";

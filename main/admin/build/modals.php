@@ -97,3 +97,66 @@
     </div>
   </div>
 </div>
+
+<!-- this is hidden (the dialog that shows up on pressing a button)-->
+<div id="deleteUsermodal" class="modal fade bootbox" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header modalCorr">
+        <h4 class="modal-title modalCorr">Sicher? <span class="modalResponse" id="premResponseDelUser"></span></h4>
+      </div>
+      <div class="modal-body modalCorr">
+          <div class="row">
+            <div class="col-md-12 regMod">
+                  Bist du sicher, dass du <span id="deleteUserName"></span> löschen willst?
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-outline btn-black pull-left" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger btn-outline pull-right" onclick="delUser();">Löschen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="usermodal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title modalCorr">User bearbeiten <span class="modalResponse" id="UserResponse"></span></h4>
+      </div>
+      <div class="modal-body modalCorr">
+          <div class="row">
+            <div class="col-md-6 regMod">
+                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="Username" id="Username" type="text" placeholder="Benutzername" required>
+              </div>
+              <div class="col-md-6 regMod">
+                  <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="Email" id="UserEmail" type="email" placeholder="Email" required>
+              </div>
+              <div class="col-md-6 regMod">
+                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="EnsemleName" id="UserEnsemleName" type="text" placeholder="EnsemleName" required>
+              </div>
+              <div class="col-md-6 regMod">
+                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="StadtKanton" id="UserStadtKanton" type="text" placeholder="Stadt,Kanton" required>
+              </div>
+              <div class="col-md-6 regMod">
+                  <select id="UserGroup" class="form-control input-lg mt-1 modalCorr" name="Rolle">
+                    <option id="UserModalUser" value="1">User</option>
+                    <option id="UserModalModerator" value="3">Moderator</option>
+                    <option id="UserModalAdmin" value="4">Admin</option>
+                  </select>
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-outline btn-black pull-left" data-dismiss="modal">Cancel</button>
+        <button  onclick="changeUser();" type="button" class="btn btn-success btn-outline pull-right">Ändern</button>
+        <button type="button" class="btn btn-danger btn-outline pull-right" data-toggle="modal" data-target="#deleteUsermodal">Löschen</button>
+      </div>
+    </div>
+  </div>
+</div>

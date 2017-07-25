@@ -25,6 +25,7 @@
             <ul class="dropdown-menu">
               <li><a href="../?loc=profile">Profile</a></li>
               <li><a href="../?loc=settings">Settings</a></li>
+              <?php if($user->getProperty("GroupID") >= 3){ echo '<li><a href="../admin/">Admin-Page</a></li>';} ?>
               <li role="separator" class="divider"></li>
               <li><a href="../functions/functions.php?func=logout">Logout</a></li>
             </ul>
