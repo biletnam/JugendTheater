@@ -1,7 +1,6 @@
-<?php if($loc == "profile"){  ?>
 <!-- this is hidden (the dialog that shows up on pressing a button) -->
 <div id="premEditmodal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header modalCorr">
@@ -42,8 +41,10 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary btn-outline btn-black pull-left" data-dismiss="modal">Cancel</button>
+        <button type="button" onclick="changeActivation(1);" id="premGrant" class="btn btn-danger btn-outline pull-right disabled" disabled>Aktivieren</button>
         <input type="submit" id="premChange" class="btn btn-success btn-outline pull-right disabled" value="Ändern" disabled>
-          <button type="button" id="premDel" class="btn btn-danger btn-outline pull-right disabled" data-toggle="modal" data-target="#deletemodal" disabled>Löschen</button>
+        <button type="button" onclick="changeActivation(2);" id="premInv" class="btn btn-danger btn-outline pull-right disabled" disabled>Ablehnen</button>
+        <button type="button" id="premDel" class="btn btn-danger btn-outline pull-right disabled" data-toggle="modal" data-target="#deletemodal" disabled>Löschen</button>
         </form>
       </div>
     </div>
@@ -73,7 +74,6 @@
     </div>
   </div>
 </div>
-<?php } ?>
 
 
 <!-- this is hidden (the dialog that shows up on pressing a button) -->

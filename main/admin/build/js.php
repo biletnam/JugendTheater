@@ -25,4 +25,5 @@
 <!-- Main -->
 <script src="../js/main.js"></script>
 <!-- Custom -->
-<script src="../js/custom.js"></script>
+<script src="js/custom.js"></script>
+<script src="js/premieren.js"></script>

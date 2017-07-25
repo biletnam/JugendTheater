@@ -35,7 +35,7 @@
 	<!-- Dropzone -->
 	<link rel="stylesheet" href="../css/dropzone.css">
 	<!-- Custom -->
-	<link rel="stylesheet" href="../css/custom.css">
+	<link rel="stylesheet" href="css/custom.css">
 	<!-- Modernizr JS -->
 	<script src="../js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->

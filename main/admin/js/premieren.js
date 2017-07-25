@@ -1,43 +1,3 @@
-function tryPremiere(){
-  var xhttp = new XMLHttpRequest();
-  var name = document.getElementById('premProduktion').value;
-  var spieler = document.getElementById('premSpieler').value;
-  var datum = document.getElementById('premDate').value;
-  var ort = document.getElementById('premOrt').value;
-  var beschrieb = document.getElementById('premTA').value;
-  var video = document.getElementById('premVid').value;
-  xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-          var ret = this.responseText;
-          if(ret.includes("Success")){
-            var res = ret.split("/");
-            document.getElementById('premProduktion').value = "";
-            document.getElementById('premSpieler').value = "";
-            document.getElementById('premDate').value = "";
-            document.getElementById('premOrt').value = "";
-            document.getElementById('premTA').value = "";
-            document.getElementById('premVid').value = "";
-            Dropzone.forElement("#my-dz").removeAllFiles(true);
-            document.getElementById("premResponse").innerHTML = res[0];
-            document.getElementById("noPremtxt").className = "wow fadeInUp col-md-12 text-center invisibleStrict";
-            setTimeout(function(){
-              $("#premieremodal").modal("hide");
-              document.getElementById("premResponse").innerHTML = "";
-                $("ul#profPrems").append('<li class="wow fadeInUp col-md-4" style="background-image: url(../uploads/small/'+res[1]+res[2]+');" data-wow-duration="1s" data-wow-delay="0s" data-stellar-background-ratio="0.5" id="premNr'+res[1]+'"><a  href="#" onclick="showPremEditModal('+res[1]+');event.preventDefault();"><div class="fh5co-overlay"></div><div class="fh5co-text"><div class="fh5co-text-inner"><div class="text-center"><h3>'+res[3]+'</h3></div></div></div></a></li>');
-            }, 800);
-          } else {
-            document.getElementById("premResponse").innerHTML = this.responseText;
-          }
-     } else {
-       document.getElementById("premResponse").innerHTML = "Waiting for response...";
-     }
-  };
-  var request = "name=" + name + "&spieler=" + spieler + "&datum=" + datum + "&ort=" + ort + "&beschrieb=" + beschrieb + "&video=" + video;
-  xhttp.open("POST", "functions/functions.php?func=newPrem", true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send(request);
-}
-
 function openPremiere(){
   if(!loggedIn){
     $("#infoModText").html("Du musst eingeloggt sein!");
@@ -48,6 +8,7 @@ function openPremiere(){
 }
 
 var currentPremID = 0;
+var currentAct = 0;
 var filetype = "";
 function showPremEditModal(premID){
   var xhttp = new XMLHttpRequest();
@@ -71,24 +32,34 @@ function showPremEditModal(premID){
             document.getElementById("premOrtEdit").value = rows["Ort"];
             document.getElementById("premTAEdit").value = rows["Beschrieb"];
             document.getElementById("premVidEdit").value = rows["Video"];
-            if(rows["Activation"] == 0){
-              document.getElementById("premResponseEdit").innerHTML = "Warten auf Aktivierung...";
-            } else if(rows["Activation"] == 1){
-              document.getElementById("premResponseEdit").innerHTML = "Aktiviert.";
-            } else if(rows["Activation"] == 2){
-              document.getElementById("premResponseEdit").innerHTML = "Abgelehnt.";
-            }
-
+            document.getElementById("premResponseEdit").innerHTML = "";
             document.getElementById("premDel").className = "btn btn-danger btn-outline pull-right";
             document.getElementById("premDel").disabled = false;
             document.getElementById("premChange").className = "btn btn-success btn-outline pull-right";
             document.getElementById("premChange").disabled = false;
+            currentAct = rows["Activation"];
+            if(currentAct == 0){
+              document.getElementById("premGrant").className = "btn btn-success btn-outline pull-right";
+              document.getElementById("premGrant").disabled = false;
+              document.getElementById("premInv").className = "btn btn-danger btn-outline pull-right";
+              document.getElementById("premInv").disabled = false;
+            } else if(currentAct == 1){
+              document.getElementById("premGrant").className = "btn btn-success btn-outline pull-right disabled";
+              document.getElementById("premGrant").disabled = true;
+              document.getElementById("premInv").className = "btn btn-danger btn-outline pull-right";
+              document.getElementById("premInv").disabled = false;
+            } else if(currentAct == 2){
+              document.getElementById("premGrant").className = "btn btn-success btn-outline pull-right";
+              document.getElementById("premGrant").disabled = false;
+              document.getElementById("premInv").className = "btn btn-danger btn-outline pull-right disabled";
+              document.getElementById("premInv").disabled = true;
+            }
      } else {
        document.getElementById("premResponseEdit").innerHTML = "Loading...";
      }
   };
   var request = "id=" + premID;
-  xhttp.open("POST", "functions/functions.php?func=getPremInfo", true);
+  xhttp.open("POST", "../functions/functions.php?func=getPremInfo", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(request);
 }
@@ -97,7 +68,7 @@ function delPrem(){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("premResponseDel").innerHTML = "Deleted";
+            document.getElementById("premResponseDel").innerHTML = this.responseText;
             document.getElementById("premProduktionEdit").value = "";
             document.getElementById("deleteName").innerHTML = "";
             document.getElementById("premSpielerEdit").value = "";
@@ -111,14 +82,20 @@ function delPrem(){
               document.getElementById("premResponseDel").innerHTML = "";
               var elem = document.getElementById('premNr'+currentPremID);
               elem.parentNode.removeChild(elem);
-              if($("ul#profPrems > li").length == 0){document.getElementById("noPremtxt").className = "wow fadeInUp col-md-12 text-center";}
+              if(currentAct == 0){
+                  if($("ul#profPrems > li").length == 0){document.getElementById("noPremtxt").className = "wow fadeInUp col-md-12 text-center";}
+              } else if(currentAct == 1){
+                  if($("ul#profPremsActive > li").length == 0){document.getElementById("noPremtxtActive").className = "wow fadeInUp col-md-12 text-center";}
+              } else if(currentAct == 2){
+                  if($("ul#profPremsInv > li").length == 0){document.getElementById("noPremtxtInv").className = "wow fadeInUp col-md-12 text-center";}
+              }
             }, 800);
      } else {
        document.getElementById("premResponseDel").innerHTML = "Loading...";
      }
   };
   var request = "id=" + currentPremID;
-  xhttp.open("POST", "functions/functions.php?func=delPrem", true);
+  xhttp.open("POST", "../functions/functions.php?func=delPrem", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(request);
 }
@@ -157,6 +134,23 @@ function updatePrem(){
   };
   var request = "id=" + currentPremID + "&name=" + name + "&spieler=" + spieler + "&datum=" + datum + "&ort=" + ort + "&beschrieb=" + beschrieb + "&video=" + video + "&filetype=" + filetype;
   xhttp.open("POST", "functions/functions.php?func=changePrem", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(request);
+}
+
+
+function changeActivation(newAct){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("premResponseEdit").innerHTML = this.responseText;
+          setTimeout(function(){ location.reload(); }, 800);
+     } else {
+       document.getElementById("premResponseEdit").innerHTML = "Loading...";
+     }
+  };
+  var request = "id=" + currentPremID + "&activation="+newAct;
+  xhttp.open("POST", "functions/functions.php?func=changeActivation", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(request);
 }

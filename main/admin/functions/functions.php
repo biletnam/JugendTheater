@@ -10,7 +10,8 @@ function gMS($string){
 
 include 'login.php';
 include 'logout.php';
-include 'getPremInfo.php';
+include 'changeActivation.php';
+include 'changePrem.php';
 
 $defaultPath = "../";
 $profilePath = "../";
@@ -19,7 +20,8 @@ $func = $_GET['func'];
 switch($func){
     case "login": login(); break;
     case "logout": logout(); break;
-    case "getPremInfo": getPremInfo(); break;
+    case "changeActivation": changeActivation(); break;
+    case "changePrem": changePrem(); break;
     default: echo "NO FUNCTION FOUND!";
 }
  ?>

@@ -36,7 +36,7 @@
     <div class="row">
     <ul id="homePrems">
 
-      <?php $tour = 0; $result = mysqli_query($DBconn, "SELECT * FROM premieren");
+      <?php $tour = 0; $result = mysqli_query($DBconn, "SELECT * FROM premieren WHERE Activation = 1");
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)): $tour++;?>
       <li class="wow fadeInUp col-md-4" style="background-image: url(../uploads/small/<?php  echo $row['ID'].$row['Bilder']; ?>);" data-wow-duration="1s" data-wow-delay=".8s" data-stellar-background-ratio="0.5">
         <a href="../?loc=premiere&prem=<?php echo $row['ID']; ?>">
