@@ -7,10 +7,9 @@
     <?php if($loggedIn){ ?>
     <div class="col-lg-6 col-md-5 col-sm-5 text-center fh5co-link-wrap">
       <ul data-offcanvass="yes">
-        <li><a href="?loc=home">Home</a></li>
-      <!--  <li class="active"><a href="build/festivals.php">Festivals</a></li> -->
         <li><a href="?loc=premieren">Premieren</a></li>
         <li><a href="?loc=anmeldungen">Festival Anmeldungen</a></li>
+        <li><a href="?loc=user">User</a></li>
       </ul>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-4 text-right fh5co-link-wrap">
@@ -18,6 +17,7 @@
         <li class="dropdown top-dd" id="userIcon">
           <a href="#" class="dropdown-toggle call-to-action" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span id="profileName"><?php if($user->getProperty("GroupID") == 4){echo "Admin";}else{echo "Moderator";} ?></span> <i class="fa fa-user" aria-hidden="true"></i> <span class="caret"></span></a>
             <ul class="dropdown-menu">
+              <li><a href="../">Main-Page</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="functions/functions.php?func=logout">Logout</a></li>
             </ul>

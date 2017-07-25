@@ -15,6 +15,9 @@ function tryLogin() {
               userIcon.className = "dropdown top-dd";
               profileName.innerHTML = res[1];
               $("#loginmodal").modal("hide");
+              if(res[2]){
+                $("ul#topbarMenu").prepend('<li><a href="../admin/">Admin-Page</a></li>');
+              }
               loggedIn = true;
               //loginBtn.parentNode.insertBefore(userIcon, loginBtn);
               //document.getElementById("loginResponse").innerHTML = "";

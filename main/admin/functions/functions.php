@@ -12,6 +12,9 @@ include 'login.php';
 include 'logout.php';
 include 'changeActivation.php';
 include 'changePrem.php';
+include 'getUserInfo.php';
+include 'delUser.php';
+include 'changeUser.php';
 
 $defaultPath = "../";
 $profilePath = "../";
@@ -22,6 +25,9 @@ switch($func){
     case "logout": logout(); break;
     case "changeActivation": changeActivation(); break;
     case "changePrem": changePrem(); break;
+    case "getUserInfo": getUserInfo(); break;
+    case "delUser": delUser(); break;
+    case "changeUser": changeUser(); break;
     default: echo "NO FUNCTION FOUND!";
 }
  ?>

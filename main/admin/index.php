@@ -19,7 +19,6 @@ include('../../config.php');
 		if($user->getProperty("Username") != "Guess"){$loggedIn = true;}
 		include "functions/adminCheck.php";
 		include "build/topbar.php";
-
 		if(isset($_GET['loc'])){$loc = $_GET['loc'];}
 		if(empty($loc) || $loc == ""){$loc = "home";}
 		if(!$loggedIn){$loc = "login";}
@@ -33,11 +32,15 @@ include('../../config.php');
 	<!-- END page-->
 	<?php
 	echo '<script>var loggedIn = false;</script>';
+	echo '<script>var allowEdit= false;</script>';
 	include "build/modals.php";
 	include "build/js.php";
 	checkMsg();
 	if($loggedIn){
 		echo '<script>loggedIn = true;loc = "'.$loc.'";</script>';
+	}
+	if($user->getProperty("GroupID") == 4){
+		echo '<script>allowEdit = true;</script>';
 	}
 	?>
 	<!-- JS Definitions to find them later -->
