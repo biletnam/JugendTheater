@@ -19,7 +19,11 @@ function showUser(UserID){
             } else if(rows["GroupID"] == 4){
               document.getElementById("UserModalAdmin").selected = true;
             }
-
+            if(rows["Activated"] == 1){
+              document.getElementById("actCheck").checked = true;
+            } else {
+              document.getElementById("actCheck").checked = false;
+            }
             document.getElementById("UserResponse").innerHTML = "";
      } else {
        document.getElementById("UserResponse").innerHTML = "Loading...";
@@ -62,7 +66,10 @@ function changeUser(){
   var city = document.getElementById('UserStadtKanton').value;
   var e = document.getElementById("UserGroup");
   var group = e.options[e.selectedIndex].value;
-
+  var act = 0;
+  if(document.getElementById('actCheck').checked){
+    act = 1;
+  }
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         var ret = this.responseText;
@@ -78,8 +85,67 @@ function changeUser(){
        document.getElementById("UserResponse").innerHTML = "Loading...";
      }
   };
-  var request = "id=" + currentUserID + "&name=" + name + "&email=" + email + "&ename=" + ename + "&city=" + city + "&group=" + group;
+  var request = "id=" + currentUserID + "&name=" + name + "&email=" + email + "&ename=" + ename + "&city=" + city + "&group=" + group + "&act=" + act;
   xhttp.open("POST", "functions/functions.php?func=changeUser", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(request);
+}
+
+
+function SearchUser() {
+  var input, filter, table, tr, td, i, group;
+  input = document.getElementById("UserSearch");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("UserTable");
+  tr = table.getElementsByTagName("tr");
+  group = document.getElementById("SearchFor").options[document.getElementById("SearchFor").selectedIndex].value;
+
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[group];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("UserTable");
+  switching = true;
+  dir = "asc";
+  while (switching) {
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          shouldSwitch= true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      switchcount ++;
+    } else {
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
 }

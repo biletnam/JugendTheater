@@ -89,13 +89,13 @@
                     <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premProduktion" id="premProduktion" type="text" placeholder="Name Produktion" required>
                 </div>
                 <div class="col-md-6 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr" maxlength="500" name="premSpieler" id="premSpieler" type="text" placeholder="Spieler (kommagetrennt)" required>
-                </div>
-                <div class="col-md-6 regMod">
                     <input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDate" type="datetime-local" placeholder="Datum Premiere" required>
                 </div>
                 <div class="col-md-6 regMod">
                     <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrt" type="text" placeholder="Aufführungort" required>
+                </div>
+                <div class="col-md-12 regMod">
+                    <textarea class="form-control input-lg mt-1 modalCorr" maxlength="500" name="premSpieler" id="premSpieler" type="text" placeholder="Spieler (kommagetrennt)" required></textarea>
                 </div>
                 <div class="col-md-12 regMod">
                   <textarea class="form-control input-lg mt-1 modalCorr" maxlength="500" id="premTA" name="premTA" placeholder="Stückbeschrieb" required></textarea>
@@ -161,22 +161,19 @@
                     <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premProduktion" id="premProduktionEdit" type="text" placeholder="Name Produktion" required>
                 </div>
                 <div class="col-md-6 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr" maxlength="500" name="premSpieler" id="premSpielerEdit" type="text" placeholder="Spieler (kommagetrennt)" required>
-                </div>
-                <div class="col-md-6 regMod">
                     <input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDateEdit" type="datetime-local" placeholder="Datum Premiere" required>
                 </div>
                 <div class="col-md-6 regMod">
                     <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrtEdit" type="text" placeholder="Aufführungort" required>
                 </div>
                 <div class="col-md-12 regMod">
+                    <textarea class="form-control input-lg mt-1 modalCorr" maxlength="500" name="premSpieler" id="premSpielerEdit" type="text" placeholder="Spieler (kommagetrennt)" required></textarea>
+                </div>
+                <div class="col-md-12 regMod">
                   <textarea class="form-control input-lg mt-1 modalCorr" maxlength="500" id="premTAEdit" name="premTA" placeholder="Stückbeschrieb" required></textarea>
                 </div>
                 <div class="col-md-12 regMod">
                     <input class="form-control input-lg mt-1 modalCorr" maxlength="1000" name="premVid" id="premVidEdit" type="url" placeholder="Youtube-Link" required>
-                </div>
-                <div class="col-md-12 regMod">
-
                 </div>
               </div>
           </div>
