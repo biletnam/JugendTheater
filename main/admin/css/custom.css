@@ -1,3 +1,17 @@
+.checkbox{
+  margin:0px;
+  line-height: 1.42857;
+}
+
+.checkbox label{
+  font-size: 2em;
+  padding-left:0px;
+}
+
+.clickable{
+  cursor: pointer;
+}
+
 .premiere-container{
   width:100% !important;
 }

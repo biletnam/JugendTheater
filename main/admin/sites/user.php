@@ -26,29 +26,50 @@
       <div class="col-md-6 col-md-offset-3 text-center">
         <h2 class="fh5co-heading">User</h2>
       </div>
+      <div class="col-md-6">
+          <input class="form-control input-lg mt-1 modalCorr" type="text" id="UserSearch" onkeyup="SearchUser();" placeholder="Suche">
+      </div>
+      <div class="col-md-6">
+        <select id="SearchFor" class="form-control input-lg mt-1 modalCorr" name="Suchen nach" onchange="SearchUser();">
+          <option value="0">ID</option>
+          <option value="1" selected>Username</option>
+          <option value="2">Email</option>
+          <option value="4">Registriert seit</option>
+          <option value="5">Letztes Login</option>
+          <option value="6">Ensemble Name</option>
+          <option value="7">Stadt,Kanton</option>
+          <option value="8">Rolle</option>
+        </select>
+      </div>
     </div>
   </div>
 
     <div class="container">
       <div class="row">
-        <table class="table table-hover modalCorr">
+        <table class="table table-hover table-striped modalCorr" id="UserTable">
           <thead>
             <tr>
-              <th>Username</th>
-              <th>Email</th>
-              <th>Letztes Login</th>
-              <th>Ensemble Name</th>
-              <th>Stadt,Kanton</th>
-              <th>Rolle</th>
-              <th>Bearbeiten</th>
+              <th class="clickable" onclick="sortTable(0)">ID</th>
+              <th class="clickable" onclick="sortTable(1)">Username</th>
+              <th class="clickable" onclick="sortTable(2)">Email</th>
+              <th class="clickable" onclick="sortTable(3)">Aktiviert</th>
+              <th class="clickable" onclick="sortTable(4)">Registriert seit</th>
+              <th class="clickable" onclick="sortTable(5)">Letztes Login</th>
+              <th class="clickable" onclick="sortTable(6)">Ensemble Name</th>
+              <th class="clickable" onclick="sortTable(7)">Stadt,Kanton</th>
+              <th class="clickable" onclick="sortTable(8)">Rolle</th>
+              <th class="clickable" onclick="sortTable(9)">Bearbeiten</th>
             </tr>
           </thead>
           <tbody>
             <?php $tour = 0; $result = mysqli_query($DBconn, "SELECT * FROM Users");
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)): $tour++;?>
               <tr>
-                <th scope="row"><?php echo $row["Username"]; ?></th>
+                <td scope="row"><?php echo $row["ID"]; ?></td>
+                <td><?php echo $row["Username"]; ?></td>
                 <td><?php echo $row["Email"]; ?></td>
+                <td><?php if($row["Activated"]){ echo '<i class="fa fa-check" aria-hidden="true"></i>';} else { echo '<i class="fa fa-times" aria-hidden="true"></i>';} ?></td>
+                <td><?php echo date("d.m.y",$row["RegDate"]); ?></td>
                 <td><?php echo date("d.m.y",$row["LastLogin"]); ?></td>
                 <td><?php echo $row["EnsembleName"]; ?></td>
                 <td><?php echo $row["StadtKanton"]; ?></td>

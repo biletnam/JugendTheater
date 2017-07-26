@@ -150,6 +150,15 @@
                     <option id="UserModalAdmin" value="4">Admin</option>
                   </select>
               </div>
+              <div class="col-md-6 regMod">
+                <div class="checkbox">
+                  <label>
+                    <input id="actCheck" type="checkbox" value="">
+                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                    Aktiviert
+                  </label>
+                </div>
+              </div>
           </div>
       </div>
       <div class="modal-footer">
