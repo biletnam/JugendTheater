@@ -7,13 +7,23 @@
 }
 
 #premTA{
-  resize:none;
+  resize: none;
   height: 300px;
 }
 
 #premTAEdit{
-  resize:none;
+  resize: none;
   height: 300px;
+}
+
+#premSpieler{
+  resize: none;
+  height: 150px;
+}
+
+#premSpielerEdit{
+  resize: none;
+  height: 150px;
 }
 
 #premVid{
