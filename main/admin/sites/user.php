@@ -1,4 +1,4 @@
-<?php $allowEdit = false; if($user->getProperty("GroupID") == 4){ $allowEdit = true; } ?>
+<?php $allowEdit = false; $superuser=false; if($user->getProperty("GroupID") >= 4){ $allowEdit = true; } if($user->getProperty("GroupID") > 4){$superuser = true;} ?>
 <div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(../images/edit/wir.jpg);">
     <span class="scroll-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
     <a href="#">
@@ -64,6 +64,7 @@
           <tbody class="text-center">
             <?php $tour = 0; $result = mysqli_query($DBconn, "SELECT * FROM Users");
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)): $tour++;?>
+            <?php if($row["GroupID"] == 5){continue;}?>
               <tr>
                 <td scope="row"><?php echo $row["ID"]; ?></td>
                 <td><?php echo $row["Username"]; ?></td>
@@ -74,7 +75,7 @@
                 <td><?php echo $row["EnsembleName"]; ?></td>
                 <td><?php echo $row["StadtKanton"]; ?></td>
                 <td><?php if($row["GroupID"] < 3){ echo "User";} elseif($row["GroupID"] == 3){ echo "Moderator";} elseif($row["GroupID"] == 4){ echo "Admin";} ?></td>
-                <td><button type="button" onclick="showUser(<?php echo $row["ID"] ?>);" id="premInv" class="btn btn-primary btn-outline btn-black <?php if(!$allowEdit) echo "disabled";?>" <?php if(!$allowEdit) echo "disabled";?>>Bearbeiten</button></td>
+                <td><button type="button" onclick="showUser(<?php echo $row["ID"] ?>);" id="premInv" class="btn btn-primary btn-outline btn-black <?php if(!$allowEdit){ echo "disabled";} else {if($row["GroupID"] == 4 && !$superuser){echo "disabled";}}?>" <?php if(!$allowEdit){ echo "disabled";} else {if($row["GroupID"] == 4 && !$superuser){echo "disabled";}}?>>Bearbeiten</button></td>
               </tr>
             <?php endwhile;?>
           </tbody>
