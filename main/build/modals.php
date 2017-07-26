@@ -79,7 +79,7 @@
       </div>
       <div class="modal-body modalCorr">
           <div class="row">
-              <div class="col-md-6 regMod">
+              <div class="col-md-6 regMod" onclick="openChooser();">
                 <form action="" class="dropzone" id="my-dz">
                   <div class="dz-message modalCorr" id="my-dz-msg">Bild hochladen</div>
                 </form>
@@ -151,7 +151,7 @@
       <div class="modal-body modalCorr">
           <div class="row">
             <div class="col-md-12">
-              <div class="col-md-6 regMod">
+              <div class="col-md-6 regMod" onclick="openChooserEdit();">
                 <form action="" class="dropzone" id="my-dz-Edit">
                   <div class="dz-message modalCorr" id="my-dz-msg-Edit">Bild hochladen</div>
                 </form>

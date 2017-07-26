@@ -95,6 +95,10 @@
 	font-weight: normal;
 }
 
+.dropzone.dz-clickable * {
+  cursor: pointer;
+}
+
 .modalCorr{
     color: #000 !important;
 }

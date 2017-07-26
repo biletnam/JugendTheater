@@ -49,19 +49,19 @@
         <table class="table table-hover table-striped modalCorr" id="UserTable">
           <thead>
             <tr>
-              <th class="clickable" onclick="sortTable(0)">ID</th>
-              <th class="clickable" onclick="sortTable(1)">Username</th>
-              <th class="clickable" onclick="sortTable(2)">Email</th>
-              <th class="clickable" onclick="sortTable(3)">Aktiviert</th>
-              <th class="clickable" onclick="sortTable(4)">Registriert seit</th>
-              <th class="clickable" onclick="sortTable(5)">Letztes Login</th>
-              <th class="clickable" onclick="sortTable(6)">Ensemble Name</th>
-              <th class="clickable" onclick="sortTable(7)">Stadt,Kanton</th>
-              <th class="clickable" onclick="sortTable(8)">Rolle</th>
-              <th class="clickable" onclick="sortTable(9)">Bearbeiten</th>
+              <th class="clickable text-center" onclick="sortTable(0)">ID</th>
+              <th class="clickable text-center" onclick="sortTable(1)">Username</th>
+              <th class="clickable text-center" onclick="sortTable(2)">Email</th>
+              <th class="clickable text-center" onclick="sortTable(3)">Aktiviert</th>
+              <th class="clickable text-center" onclick="sortTable(4)">Registriert seit</th>
+              <th class="clickable text-center" onclick="sortTable(5)">Letztes Login</th>
+              <th class="clickable text-center" onclick="sortTable(6)">Ensemble Name</th>
+              <th class="clickable text-center" onclick="sortTable(7)">Stadt,Kanton</th>
+              <th class="clickable text-center" onclick="sortTable(8)">Rolle</th>
+              <th class="clickable text-center" onclick="sortTable(9)">Bearbeiten</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="text-center">
             <?php $tour = 0; $result = mysqli_query($DBconn, "SELECT * FROM Users");
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)): $tour++;?>
               <tr>
