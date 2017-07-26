@@ -39,7 +39,7 @@ include('../../config.php');
 	if($loggedIn){
 		echo '<script>loggedIn = true;loc = "'.$loc.'";</script>';
 	}
-	if($user->getProperty("GroupID") == 4){
+	if($user->getProperty("GroupID") >= 4){
 		echo '<script>allowEdit = true;</script>';
 	}
 	?>

@@ -15,7 +15,7 @@
     <div class="col-lg-3 col-md-4 col-sm-4 text-right fh5co-link-wrap">
       <ul class="fh5co-special" data-offcanvass="yes">
         <li class="dropdown top-dd" id="userIcon">
-          <a href="#" class="dropdown-toggle call-to-action" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span id="profileName"><?php if($user->getProperty("GroupID") == 4){echo "Admin";}else{echo "Moderator";} ?></span> <i class="fa fa-user" aria-hidden="true"></i> <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle call-to-action" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span id="profileName"><?php if($user->getProperty("GroupID") == 4){echo "Admin";}elseif($user->getProperty("GroupID") == 5){echo "Superuser";}else{echo "Moderator";} ?></span> <i class="fa fa-user" aria-hidden="true"></i> <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="../">Main-Page</a></li>
               <li role="separator" class="divider"></li>
