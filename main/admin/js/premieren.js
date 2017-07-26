@@ -170,7 +170,7 @@ function changeActivation(newAct){
   });
 
 // Dropzone config
-var fileName2 = "img_" + profileName.innerHTML;
+var fileName2 = "img_";
 $(document).ready(function(){
   Dropzone.autoDiscover = false;
 
@@ -200,11 +200,7 @@ $(document).ready(function(){
     acceptedFiles: "image/jpeg,image/png,image/gif",
 
     init: function() {
-      this.on("addedfile", function() {
-        if (this.files[1]!=null){
-          this.removeFile(this.files[0]);
-        }
-      });
+      this.removeEventListeners();
     }
   });
 });

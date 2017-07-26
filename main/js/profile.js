@@ -173,6 +173,17 @@ function updatePrem(){
     });
   });
 
+
+  function openChooser(){
+    var mydz = Dropzone.forElement("#my-dz");
+    mydz.hiddenFileInput.click();
+  }
+
+  function openChooserEdit(){
+    var mydz = Dropzone.forElement("#my-dz-Edit");
+    mydz.hiddenFileInput.click();
+  }
+
 // Dropzone config
 var fileName2 = "img_" + profileName.innerHTML;
 $(document).ready(function(){
@@ -185,6 +196,7 @@ $(document).ready(function(){
     acceptedFiles: "image/jpeg,image/png,image/gif",
 
     init: function() {
+      this.removeEventListeners();
       this.on("addedfile", function() {
         if (this.files[1]!=null){
           this.removeFile(this.files[0]);
@@ -204,6 +216,7 @@ $(document).ready(function(){
     acceptedFiles: "image/jpeg,image/png,image/gif",
 
     init: function() {
+      this.removeEventListeners();
       this.on("addedfile", function() {
         if (this.files[1]!=null){
           this.removeFile(this.files[0]);

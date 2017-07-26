@@ -155,7 +155,7 @@
                   <label>
                     <input id="actCheck" type="checkbox" value="">
                     <span class="cr"><i class="cr-icon fa fa-check"></i></span>
-                    Aktiviert
+                    <span>Aktiviert<span>
                   </label>
                 </div>
               </div>

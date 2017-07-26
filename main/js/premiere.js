@@ -47,6 +47,16 @@ function openPremiere(){
   }
 }
 
+function openChooser(){
+  var mydz = Dropzone.forElement("#my-dz");
+  mydz.hiddenFileInput.click();
+}
+
+function openChooserEdit(){
+  var mydz = Dropzone.forElement("#my-dz-Edit");
+  mydz.hiddenFileInput.click();
+}
+
 // Disable newline
   $(document).ready(function() {
     $("#premTA").keypress(function(event) {
@@ -68,6 +78,7 @@ var fileName2 = "img_" + profileName.innerHTML;
     acceptedFiles: "image/jpeg,image/png,image/gif",
 
     init: function() {
+      this.removeEventListeners();
       this.on("addedfile", function() {
         if (this.files[1]!=null){
           this.removeFile(this.files[0]);
@@ -87,6 +98,7 @@ $("#my-dz-Edit").dropzone({
   acceptedFiles: "image/jpeg,image/png,image/gif",
 
   init: function() {
+    this.removeEventListeners();
     this.on("addedfile", function() {
       if (this.files[1]!=null){
         this.removeFile(this.files[0]);
