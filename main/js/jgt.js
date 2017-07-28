@@ -6,3 +6,8 @@ function openJgt(){
     $("#jgtmodal").modal("show");
   }
 }
+
+function tryJgt(){
+  //TODO: Write JS to Jgt-Form
+  alert("In Bearbeitung");
+}

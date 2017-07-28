@@ -6,16 +6,6 @@
   color: #fff !important;
 }
 
-#premTA{
-  resize: none;
-  height: 300px;
-}
-
-#premTAEdit{
-  resize: none;
-  height: 300px;
-}
-
 #premSpieler{
   resize: none;
   height: 150px;
@@ -70,6 +60,45 @@
 
 #resetPwBtn{
   margin-right: 0px;
+}
+
+#jgtSonst{
+  margin-left: -60px;
+  height: 34px;
+}
+
+.beschriebArea{
+  resize: none;
+  height: 300px !important;
+}
+
+.checkbox{
+  margin:0px;
+  line-height: 1.42857;
+}
+
+.checkbox label{
+  font-size: 2em;
+  padding-left:0px;
+}
+
+.checkbox-sm label{
+  font-size: 24px;
+}
+
+.radio{
+  margin:0px;
+  line-height: 1.42857;
+}
+
+.radio label{
+  font-size: 2em;
+  padding-left:0px;
+}
+
+.FormTextAlign{
+  font-size: 2em;
+  line-height: 1.42857;
 }
 
 .dropzone {
@@ -164,6 +193,14 @@
 
 .regMod{
   margin-top: 10px;
+}
+
+.regMod20{
+  margin-top: 20px;
+}
+
+.regModTitle{
+  margin-top: 50px;
 }
 
 .resPw{
