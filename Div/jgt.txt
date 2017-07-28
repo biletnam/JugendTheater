@@ -2,7 +2,7 @@
 Titel der Produktion*
 Untertitel der Produktion
 Ort und Datum der Premiere*
-Ort und Datum der weiteren Aufführungen*
+-- Ort und Datum der weiteren Aufführungen* --
 Aufführungsdauer(gesamt)*
 Pause*: Ja Nein
 Altersfreigabe*

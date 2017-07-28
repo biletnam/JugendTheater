@@ -30,7 +30,7 @@ function register(){
 	    mysqli_query($DBconn, $sql);
 			// IDEA: Remove all unverified user after 24h
 		} else {
-			$msg = "Registration successful!";
+			$msg = "Email versendet!";
 		}
 	}
 	echo $msg;
