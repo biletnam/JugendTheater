@@ -25,6 +25,7 @@ include 'delPrem.php';
 include 'changePrem.php';
 include 'forgotPw.php';
 include 'resetPw.php';
+include 'jgt.php';
 
 $defaultPath = "../";
 $profilePath = "../";
@@ -47,6 +48,7 @@ switch($func){
     case "changePrem": changePrem(); break;
     case "forgotPw": forgotPw(); break;
     case "resetPw": resetPw(); break;
+    case "jgt": jgt(); break;
     default: echo "NO FUNCTION FOUND!";
 }
  ?>

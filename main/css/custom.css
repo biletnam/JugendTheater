@@ -63,8 +63,10 @@
 }
 
 #jgtSonst{
+  margin-top: 7px;
   margin-left: -60px;
   height: 34px;
+  font-size: 24px;
 }
 
 .beschriebArea{
@@ -74,30 +76,17 @@
 
 .checkbox{
   margin:0px;
+  font-size: 2em;
   line-height: 1.42857;
 }
 
 .checkbox label{
-  font-size: 2em;
-  padding-left:0px;
-}
-
-.checkbox-sm label{
   font-size: 24px;
-}
-
-.radio{
-  margin:0px;
-  line-height: 1.42857;
-}
-
-.radio label{
-  font-size: 2em;
   padding-left:0px;
 }
 
 .FormTextAlign{
-  font-size: 2em;
+  font-size: 24px;
   line-height: 1.42857;
 }
 
@@ -201,6 +190,10 @@
 
 .regModTitle{
   margin-top: 50px;
+}
+
+.regModTitle2{
+  margin-top: 45px;
 }
 
 .resPw{

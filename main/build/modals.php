@@ -88,6 +88,7 @@
               <div class="col-md-6 regMod">
                     <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premProduktion" id="premProduktion" type="text" placeholder="Name Produktion" required>
                 </div>
+                <!-- TODO: Add variable other Dates -->
                 <div class="col-md-6 regMod">
                     <input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDate" type="datetime-local" placeholder="Datum Premiere" required>
                 </div>
@@ -118,14 +119,13 @@
 <div id="jgtmodal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
     <!-- Modal content-->
-    <div class="modal-content">
+    <div class="modal-content" id="jgtModalContent">
       <div class="modal-header modalCorr">
         <h4 class="modal-title modalCorr">Für das Festival bewerben <span class="modalResponse" id="jgtResponse">* zwingend ausfüllen</span></h4>
       </div>
       <div class="modal-body modalCorr">
           <div class="row">
             <form onsubmit="tryJgt();return false;">
-                <!-- TODO: Finish this Form -->
               <div class="col-md-12 regMod text-center">
                 <h4 class="modal-title modalCorr">Zum Stück</h4>
               </div>
@@ -134,7 +134,7 @@
               </div>
 
               <div class="col-md-6 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtUntertitel" id="jgtUntertitel" type="text" placeholder="Untertitel der Produktion" required>
+                <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtUntertitel" id="jgtUntertitel" type="text" placeholder="Untertitel der Produktion">
               </div>
 
               <div class="col-md-4 regMod text-center">
@@ -148,7 +148,7 @@
               <div class="col-md-4 regMod text-center">
                 *Dauer(gesamt)
               </div>
-
+              <!-- TODO: Add variable other Aufführungen -->
               <div class="col-md-4 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" name="jgtDate" id="jgtDate" type="datetime-local" placeholder="*Datum Premiere" required>
               </div>
@@ -182,7 +182,7 @@
                 Falls die Aufführung auf Texten Dritter basiert bzw. Textpassagen Dritter enthält, bitte Angaben zum Urheberrecht (Name der Autorin/des Autors, ggf. des Verlags):
               </div>
               <div class="col-md-12 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="jgtCC" id="jgtCC" type="text" placeholder="Urheber" required>
+                <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="jgtCC" id="jgtCC" type="text" placeholder="Urheber">
               </div>
 
 
@@ -198,11 +198,11 @@
                 <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtEnsembleCity" id="jgtEnsembleCity" type="text" placeholder="*Herkunft des Ensembles" required>
               </div>
               <div class="col-md-6 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" max="18" name="jgtPlayer" id="jgtPlayer" type="number" placeholder="*Anzahl SpielerInnen" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtPlayer" id="jgtPlayer" type="number" placeholder="*Anzahl SpielerInnen" required>
               </div>
 
               <div class="col-md-6 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" max="18" name="jgtNonPlayer" id="jgtNonPlayer" type="number" placeholder="*Anzahl weitere beteiligte Personen (SpielleiterInnen, TechnikerInnen, Maske, usw.)" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtNonPlayer" id="jgtNonPlayer" type="number" placeholder="*Anzahl weitere beteiligte Personen (SpielleiterInnen, TechnikerInnen, Maske, usw.)" required>
               </div>
 
               <div class="col-md-6 regMod FormTextAlign">
@@ -210,11 +210,11 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" max="18" name="jgtAgeFrom" id="jgtAgeFrom" type="number" placeholder="von...Jahren" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAgeFrom" id="jgtAgeFrom" type="number" placeholder="von...Jahren" required>
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" max="18" name="jgtAgeTo" id="jgtAgeTo" type="number" placeholder="bis...Jahren" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAgeTo" id="jgtAgeTo" type="number" placeholder="bis...Jahren" required>
               </div>
 
               <div class="col-md-6 regMod FormTextAlign">
@@ -222,11 +222,11 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" max="18" name="jgtAge13W" id="jgtAge13W" type="number" placeholder="Weiblich" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge13W" id="jgtAge13W" type="number" placeholder="Weiblich" required>
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" max="18" name="jgtAge13M" id="jgtAge13M" type="number" placeholder="Männlich" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge13M" id="jgtAge13M" type="number" placeholder="Männlich" required>
               </div>
 
               <div class="col-md-6 regMod FormTextAlign">
@@ -234,11 +234,11 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" max="18" name="jgtAge14W" id="jgtAge14W" type="number" placeholder="Weiblich" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge14W" id="jgtAge14W" type="number" placeholder="Weiblich" required>
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" max="18" name="jgtAge14M" id="jgtAge14M" type="number" placeholder="Männlich" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge14M" id="jgtAge14M" type="number" placeholder="Männlich" required>
               </div>
 
               <div class="col-md-6 regMod FormTextAlign">
@@ -246,23 +246,23 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" max="18" name="jgtAge18W" id="jgtAge18W" type="number" placeholder="Weiblich" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge18W" id="jgtAge18W" type="number" placeholder="Weiblich" required>
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" max="18" name="jgtAge18M" id="jgtAge18M" type="number" placeholder="Männlich" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge18M" id="jgtAge18M" type="number" placeholder="Männlich" required>
               </div>
 
               <div class="col-md-6 regMod FormTextAlign">
-                davon 14-17 Jahre:
+                davon älter als 21 Jahre:
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" max="18" name="jgtAge21W" id="jgtAge21W" type="number" placeholder="Weiblich" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge21W" id="jgtAge21W" type="number" placeholder="Weiblich" required>
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" max="18" name="jgtAge21M" id="jgtAge21M" type="number" placeholder="Männlich" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge21M" id="jgtAge21M" type="number" placeholder="Männlich" required>
               </div>
 
               <div class="col-md-6 regMod">
@@ -282,7 +282,7 @@
               </div>
 
               <div class="col-md-12 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="jgtInfo" id="jgtInfo" type="text" placeholder="Weitere Infos zum Ensemble (Zusammensetzung, Arbeitsweise/-bedingungen)" required>
+                <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="jgtInfo" id="jgtInfo" type="text" placeholder="Weitere Infos zum Ensemble (Zusammensetzung, Arbeitsweise/-bedingungen)">
               </div>
 
 
@@ -306,7 +306,7 @@
               </div>
 
               <div class="col-md-12 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="jgtTragerWebsite" id="jgtTragerWebsite" type="url" placeholder="Website" required>
+                <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="jgtTragerWebsite" id="jgtTragerWebsite" type="url" placeholder="Website">
               </div>
 
 
@@ -318,9 +318,9 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <div class="checkbox checkbox-sm">
+                <div class="checkbox ">
                   <label>
-                    <input type="checkbox">
+                    <input id="medienInsta" type="checkbox">
                     <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Instagram
                   </label>
@@ -328,9 +328,9 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <div class="checkbox checkbox-sm">
+                <div class="checkbox ">
                   <label>
-                    <input type="checkbox">
+                    <input id="medienFlickr" type="checkbox">
                     <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Flickr
                   </label>
@@ -338,9 +338,9 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <div class="checkbox checkbox-sm">
+                <div class="checkbox ">
                   <label>
-                    <input type="checkbox">
+                    <input id="medienEmail" type="checkbox">
                     <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Email
                   </label>
@@ -348,9 +348,9 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <div class="checkbox checkbox-sm">
+                <div class="checkbox ">
                   <label>
-                    <input type="checkbox">
+                    <input id="medienFacebook" type="checkbox">
                     <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Facebook
                   </label>
@@ -358,9 +358,9 @@
               </div>
 
               <div class="col-md-12 regMod">
-                <div class="checkbox checkbox-sm">
+                <div class="checkbox ">
                   <label>
-                    <input type="checkbox">
+                    <input id="medienWebsite" type="checkbox">
                     <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                     www.jugendtheaterfestival.ch
                   </label>
@@ -372,9 +372,9 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <div class="checkbox checkbox-sm">
+                <div class="checkbox ">
                   <label>
-                    <input type="checkbox">
+                    <input id="medienTagespresse" type="checkbox">
                     <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Tagespresse
                   </label>
@@ -382,9 +382,9 @@
               </div>
 
               <div class="col-md-6 regMod">
-                <div class="checkbox checkbox-sm">
+                <div class="checkbox ">
                   <label>
-                    <input type="checkbox">
+                    <input id="medienFachzeitschrift" type="checkbox">
                     <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Artikel Fachzeitschrift
                   </label>
@@ -392,9 +392,9 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <div class="checkbox checkbox-sm">
+                <div class="checkbox ">
                   <label>
-                    <input type="checkbox">
+                    <input id="medienAnzeige" type="checkbox">
                     <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Anzeige
                   </label>
@@ -402,9 +402,9 @@
               </div>
 
               <div class="col-md-6 regMod">
-                <div class="checkbox checkbox-sm">
+                <div class="checkbox ">
                   <label>
-                    <input type="checkbox">
+                    <input id="medienFlyer" type="checkbox">
                     <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Auschreibungsflyer
                   </label>
@@ -416,9 +416,9 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <div class="checkbox checkbox-sm">
+                <div class="checkbox ">
                   <label>
-                    <input type="checkbox">
+                    <input id="medienKollegen" type="checkbox">
                     <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                     KollegInnen
                   </label>
@@ -426,9 +426,9 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <div class="checkbox checkbox-sm">
+                <div class="checkbox ">
                   <label>
-                    <input type="checkbox">
+                    <input id="medienSchulverteiler" type="checkbox">
                     <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Schulverteiler
                   </label>
@@ -436,9 +436,9 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <div class="checkbox checkbox-sm">
+                <div class="checkbox ">
                   <label>
-                    <input type="checkbox">
+                    <input onclick="sonstTxtToggle();" id="medienSonstige" type="checkbox">
                     <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Sonstige
                   </label>
@@ -446,7 +446,7 @@
               </div>
 
               <div class="col-md-3 regMod">
-                  <input class="form-control mt-1 modalCorr" maxlength="50" name="jgtSonst" id="jgtSonst" type="text" placeholder="..." required>
+                  <input class="form-control mt-1 modalCorr" maxlength="50" name="jgtSonst" id="jgtSonst" type="text" placeholder="..." disabled>
               </div>
 
               <div class="col-md-12 regModTitle text-center">
@@ -456,26 +456,26 @@
                   <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtVid" id="jgtVid" type="url" placeholder="*Videolink" required>
               </div>
               <div class="col-md-12 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtAnVid" id="jgtAnVid" type="text" placeholder="Beschrieb zu Videolink" required>
+                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtAnVid" id="jgtAnVid" type="text" placeholder="Beschrieb zu Videolink">
               </div>
               <!-- TODO: Techrider -->
               <div class="col-md-12 regMod">
                   <textarea class="form-control input-lg mt-1 modalCorr beschriebArea" maxlength="500" id="jgtBeschrieb" name="jgtBeschrieb" placeholder="*Stückbeschrieb" required></textarea>
               </div>
               <div class="col-md-12 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtAnInfo" id="jgtAnInfo" type="text" placeholder="Weitere Informationen zur Produktion" required>
+                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtAnInfo" id="jgtAnInfo" type="text" placeholder="Weitere Informationen zur Produktion">
               </div>
               <!-- TODO: Weitere Anhänge -->
               <div class="col-md-12 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtAnBe" id="jgtAnBe" type="text" placeholder="Beschrieb weitere Anhänge" required>
+                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtAnBe" id="jgtAnBe" type="text" placeholder="Beschrieb weitere Anhänge">
               </div>
 
-              <div class="col-md-8 regModTitle">
-                <div class="checkbox checkbox-sm">
+              <div class="col-md-8 regModTitle2">
+                <div class="checkbox ">
                   <label>
-                    <input type="checkbox">
+                    <input onclick="tbClick();" id="teilnahmebedingungen" type="checkbox">
                     <span class="cr"><i class="cr-icon fa fa-check"></i></span>
-                    *Ich habe die Teilnahmebedingungen gelesen
+                    *Ich habe die <a href="../?loc=teilnahmebedingungen" target="_blank">Teilnahmebedingungen</a> gelesen
                   </label>
                 </div>
               </div>
@@ -486,7 +486,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary btn-outline btn-black pull-left" data-dismiss="modal">Cancel</button>
-        <input type="submit" class="btn btn-success btn-outline pull-right" value="Bewerben">
+        <input id="jgtSubmitBtn" type="submit" class="btn btn-success btn-outline pull-right" value="Bewerben" disabled>
         </form>
       </div>
     </div>
