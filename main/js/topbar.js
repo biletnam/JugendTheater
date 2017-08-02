@@ -19,6 +19,9 @@ function tryLogin() {
                 $("ul#topbarMenu").prepend('<li><a href="../admin/">Admin-Page</a></li>');
               }
               loggedIn = true;
+              if(res[3]){
+                jgtdone = true;
+              }
               //loginBtn.parentNode.insertBefore(userIcon, loginBtn);
               //document.getElementById("loginResponse").innerHTML = "";
             } else {
