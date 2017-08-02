@@ -6,7 +6,6 @@
         <div class="col-md-push-6 col-md-6 full-height js-full-height">
           <div class="fh5co-cover-intro">
             <h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Admin Panel</h1>
-            <h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Hier findest du alles rund um das Theater</h2>
           </div>
         </div>
       </div>

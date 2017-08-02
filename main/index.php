@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('../config.php');
+//IDEA: one php to query
 ?>
 
 <!DOCTYPE html>
@@ -33,13 +34,19 @@ include('../config.php');
 	</div>
 	<!-- END page-->
 	<?php
-	echo '<script>var loggedIn = false;</script>';
+	echo '<script>var loggedIn = false;var jgtdone = false;</script>';
 	include "build/modals.php";
 	include "build/js.php";
 	include "functions/notifier.php";
 	checkMsg();
 	if($loggedIn){
 		echo '<script>loggedIn = true;loc = "'.$loc.'";</script>';
+		$query = "SELECT * FROM anmeldungen WHERE UserID=".$user->getProperty('ID');
+ 		if ($result=mysqli_query($DBconn,$query)){
+   		if(mysqli_num_rows($result) > 0){
+				echo '<script>jgtdone = true;</script>';
+			}
+  	}
 	}
 	?>
 	<!-- JS Definitions to find them later -->

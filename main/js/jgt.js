@@ -3,7 +3,12 @@ function openJgt(){
     $("#infoModText").html("Du musst eingeloggt sein!");
     $("#infomodal").modal("show");
   } else {
-    $("#jgtmodal").modal("show");
+    if(jgtdone){
+      $("#infoModText").html("Du hast dich bereits angemeldet. ");
+      $("#infomodal").modal("show");
+    } else {
+      $("#jgtmodal").modal("show");
+    }
   }
 }
 

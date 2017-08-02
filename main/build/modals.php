@@ -191,11 +191,11 @@
               </div>
 
               <div class="col-md-6 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtEnsembleName" id="jgtEnsembleName" type="text" placeholder="*Name des Ensembles" required>
+                <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtEnsembleName" id="jgtEnsembleName" type="text" placeholder="*Name des Ensembles" required value="<?php echo $user->getProperty('EnsembleName'); ?>">
               </div>
 
               <div class="col-md-6 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtEnsembleCity" id="jgtEnsembleCity" type="text" placeholder="*Herkunft des Ensembles" required>
+                <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtEnsembleCity" id="jgtEnsembleCity" type="text" placeholder="*Herkunft des Ensembles" required value="<?php echo $user->getProperty('StadtKanton'); ?>">
               </div>
               <div class="col-md-6 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" name="jgtPlayer" id="jgtPlayer" type="number" placeholder="*Anzahl SpielerInnen" required>
