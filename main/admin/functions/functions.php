@@ -16,6 +16,8 @@ include 'getUserInfo.php';
 include 'delUser.php';
 include 'changeUser.php';
 include 'getAnmeldung.php';
+include 'delJgt.php';
+include 'changeJgt.php';
 
 $defaultPath = "../";
 $profilePath = "../";
@@ -30,6 +32,8 @@ switch($func){
     case "delUser": delUser(); break;
     case "changeUser": changeUser(); break;
     case "getAnmeldung": getAnmeldung(); break;
+    case "delJgt": delJgt(); break;
+    case "changeJgt": changeJgt(); break;
     default: echo "NO FUNCTION FOUND!";
 }
  ?>

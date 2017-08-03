@@ -2,6 +2,7 @@
 session_start();
 include('../config.php');
 //IDEA: one php to query
+//IDEA: one js for easy AJAX
 ?>
 
 <!DOCTYPE html>

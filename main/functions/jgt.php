@@ -2,7 +2,8 @@
 function jgt(){
   global $user;
   global $DBconn;
-  if($_POST['teilnahmebedingungen'] == "false"){
+  $jgtTeilnahme = gMS($_POST['teilnahmebedingungen']);
+  if($jgtTeilnahme == "false"){
     echo "Bitte akzeptieren Sie die Teilnahmebedingungen";
   } else {
     // Zum Stück
@@ -69,7 +70,7 @@ function jgt(){
     // Schluss
     $jgtSign = gMS($_POST['jgtSign']);
 
-    $varArray = array($jgtTitel,$jgtUntertitel,$jgtDate,$jgtOrt,$jgtDauer,$actCheck,$jgtAlter,$jgtSprachen,$jgtCC,$jgtEnsembleName,$jgtEnsembleCity,$jgtPlayer,$jgtNonPlayer,$jgtAgeFrom,$jgtAgeTo,$jgtAge13W,$jgtAge13M,$jgtAge14W,$jgtAge14M,$jgtAge18W,$jgtAge18M,$jgtAge21W,$jgtAge21M,$jgtSpielleitung,$jgtAdress,$jgtTele,$jgtEmail,$jgtInfo,$jgtTrager,$jgtTragerAdress,$jgtTragerTele,$jgtTragerEmail,$jgtTragerWebsite,$medienInsta,$medienFlickr,$medienEmail,$medienFacebook,$medienWebsite,$medienTagespresse,$medienFachzeitschrift,$medienAnzeige,$medienFlyer,$medienKollegen,$medienSchulverteiler,$medienSonstige,$jgtSonst,$jgtVid,$jgtAnVid,$jgtBeschrieb,$jgtAnInfo,$jgtAnBe,$jgtSign);
+    $varArray = array($jgtTitel,$jgtUntertitel,$jgtDate,$jgtOrt,$jgtDauer,$actCheck,$jgtAlter,$jgtSprachen,$jgtCC,$jgtEnsembleName,$jgtEnsembleCity,$jgtPlayer,$jgtNonPlayer,$jgtAgeFrom,$jgtAgeTo,$jgtAge13W,$jgtAge13M,$jgtAge14W,$jgtAge14M,$jgtAge18W,$jgtAge18M,$jgtAge21W,$jgtAge21M,$jgtSpielleitung,$jgtAdress,$jgtTele,$jgtEmail,$jgtInfo,$jgtTrager,$jgtTragerAdress,$jgtTragerTele,$jgtTragerEmail,$jgtTragerWebsite,$medienInsta,$medienFlickr,$medienEmail,$medienFacebook,$medienWebsite,$medienTagespresse,$medienFachzeitschrift,$medienAnzeige,$medienFlyer,$medienKollegen,$medienSchulverteiler,$medienSonstige,$jgtSonst,$jgtVid,$jgtAnVid,$jgtBeschrieb,$jgtAnInfo,$jgtAnBe,$jgtTeilnahme,$jgtSign);
 
     $sql = "INSERT INTO anmeldungen (UserID, Json) VALUES ('".$user->getProperty('ID')."','".json_encode($varArray)."')";
     if ($DBconn->query($sql) === TRUE) {

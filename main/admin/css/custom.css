@@ -17,6 +17,11 @@
   width:100% !important;
 }
 
+.beschriebArea{
+  resize: none;
+  height: 300px !important;
+}
+
 #preBtn:focus{
   color: #fff !important;
 }
@@ -85,6 +90,13 @@
 
 #resetPwBtn{
   margin-right: 0px;
+}
+
+#jgtSonst{
+  margin-top: 7px;
+  margin-left: -60px;
+  height: 34px;
+  font-size: 24px;
 }
 
 .dropzone {
@@ -175,6 +187,18 @@
 
 .regMod{
   margin-top: 10px;
+}
+
+.regMod20{
+  margin-top: 20px;
+}
+
+.regModTitle{
+  margin-top: 50px;
+}
+
+.regModTitle2{
+  margin-top: 45px;
 }
 
 .resPw{
@@ -280,6 +304,10 @@
   visibility: hidden !important;
 }
 
+.FormTextAlign{
+  font-size: 24px;
+  line-height: 1.42857;
+}
 
 #preloader {
   position: fixed;
