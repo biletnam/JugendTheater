@@ -15,6 +15,7 @@
 			$DBconn = mysqli_connect($DBhost, $DBuser, $DBpw,$DBname);
 
 			function getContent($id){
+				//IDEA: Multilangue: with text instead of id. Plus add it if not existing.
 				$lang = isset($_GET['ln']) ? $_GET['ln'] : 'en';
 				if($lang == ""){ $lang = "en"; }
 

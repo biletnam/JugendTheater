@@ -8,8 +8,8 @@
       <ul data-offcanvass="yes">
         <li><a href="../">Home</a></li>
       <!--  <li class="active"><a href="build/festivals.php">Festivals</a></li> -->
-        <li><a href="../?loc=medien">Medien</a></li>
         <li><a href="../?loc=wir">About</a></li>
+        <li><a href="https://www.jugendtheaterfestival.ch/de" target="_blank">Jugendtheaterfestival.ch</a></li>
       </ul>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-4 text-right fh5co-link-wrap hidden-xs">

@@ -1,4 +1,4 @@
-<div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(../images/edit/wir.jpg);">
+<div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(../images/edit/medien.jpg);">
     <span class="scroll-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
     <a href="#">
       <span class="mouse"><span></span></span>
@@ -29,7 +29,7 @@
           <input class="form-control input-lg mt-1 modalCorr" type="text" id="JgtSearch" onkeyup="SearchJgt();" placeholder="Suche">
       </div>
       <div class="col-md-6">
-        <select id="SearchFor" class="form-control input-lg mt-1 modalCorr" name="Suchen nach" onchange="SearchJgt();">
+        <select id="SearchForJgt" class="form-control input-lg mt-1 modalCorr" name="Suchen nach" onchange="SearchJgt();">
           <option value="0">ID</option>
           <option value="1" selected>Ensemble Name</option>
           <option value="2">Email</option>
@@ -43,10 +43,10 @@
         <table class="table table-hover table-striped modalCorr" id="jgtTable">
           <thead>
             <tr>
-              <th class="clickable text-center" onclick="sortTable(0)">ID</th>
-              <th class="clickable text-center" onclick="sortTable(1)">Ensemble Name</th>
-              <th class="clickable text-center" onclick="sortTable(2)">Email</th>
-              <th class="clickable text-center" onclick="sortTable(9)">Details</th>
+              <th class="clickable text-center" onclick="sortTableJgt(0)">ID</th>
+              <th class="clickable text-center" onclick="sortTableJgt(1)">Ensemble Name</th>
+              <th class="clickable text-center" onclick="sortTableJgt(2)">Email</th>
+              <th class="clickable text-center" onclick="sortTableJgt(9)">Details</th>
             </tr>
           </thead>
           <tbody class="text-center">

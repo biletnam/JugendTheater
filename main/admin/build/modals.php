@@ -1,3 +1,9 @@
+<?php
+$allowEdit = false;
+if($loggedIn){
+  if($user->getProperty("GroupID") >= 4){ $allowEdit = true; }
+}
+ ?>
 <!-- this is hidden (the dialog that shows up on pressing a button) -->
 <div id="premEditmodal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
@@ -183,6 +189,7 @@
               <div class="col-md-12 regMod text-center">
                 <h4 class="modal-title modalCorr">Zum Stück</h4>
               </div>
+              <form>
               <div class="col-md-6 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtTitel" id="jgtTitel" type="text" placeholder="*Titel der Produktion" required>
               </div>
@@ -219,7 +226,7 @@
                 <div class="checkbox">
                   <label>
                     <input id="actCheck" type="checkbox" value="">
-                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                    <span id="actCheck2" class="cr"><i class="cr-icon fa fa-check"></i></span>
                     <span>*Pause<span>
                   </label>
                 </div>
@@ -375,7 +382,7 @@
                 <div class="checkbox ">
                   <label>
                     <input id="medienInsta" type="checkbox">
-                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                    <span id="medienInsta2" class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Instagram
                   </label>
                 </div>
@@ -385,7 +392,7 @@
                 <div class="checkbox ">
                   <label>
                     <input id="medienFlickr" type="checkbox">
-                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                    <span id="medienFlickr2" class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Flickr
                   </label>
                 </div>
@@ -395,7 +402,7 @@
                 <div class="checkbox ">
                   <label>
                     <input id="medienEmail" type="checkbox">
-                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                    <span id="medienEmail2" class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Email
                   </label>
                 </div>
@@ -405,7 +412,7 @@
                 <div class="checkbox ">
                   <label>
                     <input id="medienFacebook" type="checkbox">
-                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                    <span id="medienFacebook2" class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Facebook
                   </label>
                 </div>
@@ -415,7 +422,7 @@
                 <div class="checkbox ">
                   <label>
                     <input id="medienWebsite" type="checkbox">
-                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                    <span id="medienWebsite2" class="cr"><i class="cr-icon fa fa-check"></i></span>
                     www.jugendtheaterfestival.ch
                   </label>
                 </div>
@@ -429,7 +436,7 @@
                 <div class="checkbox ">
                   <label>
                     <input id="medienTagespresse" type="checkbox">
-                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                    <span id="medienTagespresse2" class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Tagespresse
                   </label>
                 </div>
@@ -439,7 +446,7 @@
                 <div class="checkbox ">
                   <label>
                     <input id="medienFachzeitschrift" type="checkbox">
-                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                    <span id="medienFachzeitschrift2" class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Artikel Fachzeitschrift
                   </label>
                 </div>
@@ -449,7 +456,7 @@
                 <div class="checkbox ">
                   <label>
                     <input id="medienAnzeige" type="checkbox">
-                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                    <span id="medienAnzeige2" class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Anzeige
                   </label>
                 </div>
@@ -459,7 +466,7 @@
                 <div class="checkbox ">
                   <label>
                     <input id="medienFlyer" type="checkbox">
-                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                    <span id="medienFlyer2" class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Auschreibungsflyer
                   </label>
                 </div>
@@ -473,7 +480,7 @@
                 <div class="checkbox ">
                   <label>
                     <input id="medienKollegen" type="checkbox">
-                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                    <span id="medienKollegen2" class="cr"><i class="cr-icon fa fa-check"></i></span>
                     KollegInnen
                   </label>
                 </div>
@@ -483,7 +490,7 @@
                 <div class="checkbox ">
                   <label>
                     <input id="medienSchulverteiler" type="checkbox">
-                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                    <span id="medienSchulverteiler2" class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Schulverteiler
                   </label>
                 </div>
@@ -492,15 +499,15 @@
               <div class="col-md-3 regMod">
                 <div class="checkbox ">
                   <label>
-                    <input onclick="sonstTxtToggle();" id="medienSonstige" type="checkbox">
-                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                    <input id="medienSonstige" type="checkbox">
+                    <span id="medienSonstige2" class="cr"><i class="cr-icon fa fa-check"></i></span>
                     Sonstige
                   </label>
                 </div>
               </div>
 
               <div class="col-md-3 regMod">
-                  <input class="form-control mt-1 modalCorr" maxlength="50" name="jgtSonst" id="jgtSonst" type="text" placeholder="..." disabled>
+                  <input class="form-control mt-1 modalCorr" maxlength="50" name="jgtSonst" id="jgtSonst" type="text" placeholder="...">
               </div>
 
               <div class="col-md-12 regModTitle text-center">
@@ -527,8 +534,8 @@
               <div class="col-md-8 regModTitle2">
                 <div class="checkbox ">
                   <label>
-                    <input onclick="tbClick();" id="teilnahmebedingungen" type="checkbox">
-                    <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                    <input id="teilnahmebedingungen" type="checkbox">
+                    <span id="teilnahmebedingungen2" class="cr"><i class="cr-icon fa fa-check"></i></span>
                     *Ich habe die <a href="../?loc=teilnahmebedingungen" target="_blank">Teilnahmebedingungen</a> gelesen
                   </label>
                 </div>
@@ -540,8 +547,33 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary btn-outline btn-black pull-left" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-danger btn-outline pull-right">Löschen</button>
+        <button  onclick="changeJgt();" type="button" class="btn btn-success btn-outline pull-right"<?php if(!$allowEdit){echo 'disabled';} ?>>Ändern</button>
+        <button type="button" class="btn btn-danger btn-outline pull-right" data-toggle="modal" data-target="#deleteJgtmodal" <?php if(!$allowEdit){echo 'disabled';} ?>>Löschen</button>
+      </form>
         <!-- IDEA: Download PDF/Word -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- this is hidden (the dialog that shows up on pressing a button)-->
+<div id="deleteJgtmodal" class="modal fade bootbox" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header modalCorr">
+        <h4 class="modal-title modalCorr">Sicher? <span class="modalResponse" id="jgtResponseDel"></span></h4>
+      </div>
+      <div class="modal-body modalCorr">
+          <div class="row">
+            <div class="col-md-12 regMod">
+                  Bist du sicher, dass du <span id="deleteJgt"></span> löschen willst?
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-outline btn-black pull-left" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger btn-outline pull-right" onclick="delJgt();">Löschen</button>
       </div>
     </div>
   </div>
