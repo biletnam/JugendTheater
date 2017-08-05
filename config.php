@@ -14,18 +14,29 @@
 
 			$DBconn = mysqli_connect($DBhost, $DBuser, $DBpw,$DBname);
 
-			function getContent($id){
-				//IDEA: Multilangue: with text instead of id. Plus add it if not existing.
-				$lang = isset($_GET['ln']) ? $_GET['ln'] : 'en';
-				if($lang == ""){ $lang = "en"; }
-
-				$result = mysql_query("SHOW COLUMNS FROM content LIKE '".$lang."'");
-				$exists = (mysql_num_rows($result))?TRUE:FALSE;
-				if(!$exists){ $lang = "en";}
-
-				$sql = "SELECT ".$lang." FROM content WHERE ID='".$id."'";
-				$result = mysql_query($sql);
-				if(mysql_num_rows($result) == 0){ return "DBND"; }
-				return mysql_fetch_array($result)[0] ; // . "<!-- DB-ID: ".$id." -->"  add to show everywhere the code
+			function gMS($string){
+			  global $DBconn;
+			  return mysqli_real_escape_string($DBconn,$string);
 			}
+
+			function gCT($std){
+				global $DBconn;
+				$lang = isset($_GET['ln']) ? $_GET['ln'] : 'de';
+				if($lang == ""){ $lang = "de"; }
+
+				$result = mysqli_query($DBconn,"SHOW COLUMNS FROM content LIKE '".$lang."'");
+				$exists = (mysqli_num_rows($result))?TRUE:FALSE;
+				if(!$exists){ $lang = "de";}
+
+				$sql = "SELECT ".$lang." FROM content WHERE de='".$std."'";
+				$result = mysqli_query($DBconn, $sql);
+				if(mysqli_num_rows($result) == 0){
+					$sql = "INSERT INTO content (de) VALUES ('".$std."')";
+					mysqli_query($DBconn, $sql);
+					echo $std;
+				}
+				echo mysqli_fetch_array($result)[0] ;
+			}
+
+
 ?>

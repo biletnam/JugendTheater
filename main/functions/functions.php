@@ -3,11 +3,6 @@ session_start();
 include('../../config.php');
 include('notifier.php');
 
-function gMS($string){
-  global $DBconn;
-  return mysqli_real_escape_string($DBconn,$string);
-}
-
 include 'changeEmail.php';
 include 'changePassword.php';
 include 'imageUploader.php';
@@ -26,6 +21,9 @@ include 'changePrem.php';
 include 'forgotPw.php';
 include 'resetPw.php';
 include 'jgt.php';
+include 'techUploader.php';
+include 'fileUploader.php';
+include 'getUserInfo.php';
 
 $defaultPath = "../";
 $profilePath = "../";
@@ -49,6 +47,9 @@ switch($func){
     case "forgotPw": forgotPw(); break;
     case "resetPw": resetPw(); break;
     case "jgt": jgt(); break;
+    case "techUploader": techUploader(); break;
+    case "fileUploader": fileUploader(); break;
+    case "getUserInfo": getUserInfo(); break;
     default: echo "NO FUNCTION FOUND!";
 }
  ?>

@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-md-push-6 col-md-6 full-height js-full-height">
           <div class="fh5co-cover-intro">
-            <h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Willkommen</h1>
+            <h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><?php gCT("Willkommen"); ?></h1>
             <h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Hier findest du alles rund um das Theater</h2>
             <p class="wow fadeInUp hidden-xs" data-wow-duration="1s" data-wow-delay=".6s"><a onclick="openJgt();" class="btn btn-primary btn-outline btn-lg">Für das Jugendtheater-Festival Schweiz bewerben</a></p>
           </div>
