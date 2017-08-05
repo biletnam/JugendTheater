@@ -7,6 +7,7 @@ function showJgt(id){
       if (this.readyState == 4 && this.status == 200) {
             var rows = JSON.parse(this.responseText);
             document.getElementById('deleteJgt').innerHTML = rows[0];
+            loadMockFiles();
 
             // Zum Stück
             document.getElementById('jgtTitel').value = rows[0];
@@ -70,7 +71,7 @@ function showJgt(id){
             document.getElementById('jgtAnBe').value = rows[50];
 
             // Schluss
-            if(rows[45] == 'true'){document.getElementById('teilnahmebedingungen2').click();}
+            if(rows[51] == 'true'){document.getElementById('teilnahmebedingungen2').click();}
             document.getElementById('jgtSign').value  = rows[52];
 
             document.getElementById("jgtResponse").innerHTML = "";
@@ -319,3 +320,78 @@ function sortTableJgt(n) {
     }
   }
 }
+
+function loadMockFiles(){
+  Dropzone.forElement("#jgtdz").removeAllFiles(true);
+  Dropzone.forElement("#jgtdzA").removeAllFiles(true);
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var ret = this.responseText;
+        var res = ret.split("/");
+        if(res[0] != ""){
+          addMockFile(res[0],"jgtdz");
+        }
+        for(var i = 1; i < res.length; i++){
+          addMockFile(res[i],"jgtdzA");
+        }
+     }
+  };
+  var request = "id="+CurrentJgtID;
+  xhttp.open("POST", "functions/functions.php?func=getFileInfos", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(request);
+}
+
+function addMockFile(filename,dzID){
+  var mockFile = { name: filename, size: 12345 };
+  var myDropzone = Dropzone.forElement("#"+dzID);
+  myDropzone.emit("addedfile", mockFile);
+  var ext = filename.split('.').pop();
+  if (ext == "pdf") {
+    myDropzone.createThumbnailFromUrl(mockFile, "../images/edit/pdf.png");
+  } else if(ext == "doc"){
+    myDropzone.createThumbnailFromUrl(mockFile, "../images/edit/doc.png");
+  } else if(ext == "docx"){
+    myDropzone.createThumbnailFromUrl(mockFile, "../images/edit/docx.png");
+  } else {
+    myDropzone.createThumbnailFromUrl(mockFile, "../uploads/"+filename);
+  }
+  myDropzone.emit("complete", mockFile);
+  myDropzone.files.push(mockFile);
+
+  var a = document.createElement('a');
+  a.setAttribute('href',"../uploads/"+filename);
+  a.setAttribute("download",filename);
+  a.className = "clickableStrict dBlock";
+  a.innerHTML = 'Download <i class="fa fa-download clickableStrict" aria-hidden="true"></i>';
+  mockFile.previewTemplate.appendChild(a);
+}
+
+var fileName3 = "tech_";
+$(document).ready(function(){
+  Dropzone.autoDiscover = false;
+  $("#jgtdz").dropzone({
+    paramName: fileName3,
+    url: '../functions/functions.php?func=techUploader',
+    maxFilesize: 1, //FileSize in MB
+    acceptedFiles: ".pdf",
+    init: function() {
+      this.removeEventListeners();
+    }
+  });
+});
+
+var jgtdzA_Counter = 0;
+var jgtdzA_MaxFiles = 5;
+var jgtdzA_FileName = "file_";
+var jgtdzA_ID = "#jgtdzA";
+var jgtdzA_FileTypes = ".pdf,.jpg,.png,.doc,.docx";
+var jgtdzA_FileSizeMB = 1;
+var jgtdzA_Url = "../functions/functions.php?func=fileUploader";
+
+function openChooserJgt(){var mydz = Dropzone.forElement(jgtdzA_ID);mydz.hiddenFileInput.click();}
+$(document).ready(function(){Dropzone.autoDiscover = false;
+  $(jgtdzA_ID).dropzone({paramName: jgtdzA_FileName,url: jgtdzA_Url,maxFilesize: jgtdzA_FileSizeMB, acceptedFiles: jgtdzA_FileTypes,
+    init: function() {this.removeEventListeners();}});
+  });

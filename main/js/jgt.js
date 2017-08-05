@@ -8,6 +8,7 @@ function openJgt(){
       $("#infomodal").modal("show");
     } else {
       $("#jgtmodal").modal("show");
+      getNames();
     }
   }
 }
@@ -91,12 +92,35 @@ function tryJgt(){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("jgtResponse").innerHTML = this.responseText;
+      var ret = this.responseText;
+      document.getElementById("jgtResponse").innerHTML = ret;
+      if(ret.includes("Success")){
+        jgtdone = true;
+        setTimeout(function(){
+          $("#jgtmodal").modal("hide");
+        }, 1000);
+      }
     } else {
       document.getElementById("jgtResponse").innerHTML = "Loading...";
     }
   };
   xhttp.open("POST", "functions/functions.php?func=jgt", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(request);
+}
+
+function getNames(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var ret = this.responseText;
+        var res = ret.split("/");
+        $("#jgtEnsembleName").val(res[0]);
+        $("#jgtEnsembleCity").val(res[1]);
+    }
+  };
+  var request = "";
+  xhttp.open("POST", "functions/functions.php?func=getUserInfo", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(request);
 }

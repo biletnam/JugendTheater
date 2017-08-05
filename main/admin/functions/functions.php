@@ -3,11 +3,6 @@ session_start();
 include('../../../config.php');
 include('notifier.php');
 
-function gMS($string){
-  global $DBconn;
-  return mysqli_real_escape_string($DBconn,$string);
-}
-
 include 'login.php';
 include 'logout.php';
 include 'changeActivation.php';
@@ -18,6 +13,7 @@ include 'changeUser.php';
 include 'getAnmeldung.php';
 include 'delJgt.php';
 include 'changeJgt.php';
+include 'getFileInfos.php';
 
 $defaultPath = "../";
 $profilePath = "../";
@@ -34,6 +30,7 @@ switch($func){
     case "getAnmeldung": getAnmeldung(); break;
     case "delJgt": delJgt(); break;
     case "changeJgt": changeJgt(); break;
+    case "getFileInfos": getFileInfos(); break;
     default: echo "NO FUNCTION FOUND!";
 }
  ?>

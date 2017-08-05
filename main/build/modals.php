@@ -125,7 +125,7 @@
       </div>
       <div class="modal-body modalCorr">
           <div class="row">
-            <form onsubmit="tryJgt();return false;">
+            <form id="jgtForm" onsubmit="tryJgt();return false;">
               <div class="col-md-12 regMod text-center">
                 <h4 class="modal-title modalCorr">Zum Stück</h4>
               </div>
@@ -191,11 +191,11 @@
               </div>
 
               <div class="col-md-6 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtEnsembleName" id="jgtEnsembleName" type="text" placeholder="*Name des Ensembles" required value="<?php echo $user->getProperty('EnsembleName'); ?>">
+                <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtEnsembleName" id="jgtEnsembleName" type="text" placeholder="*Name des Ensembles" required value="">
               </div>
 
               <div class="col-md-6 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtEnsembleCity" id="jgtEnsembleCity" type="text" placeholder="*Herkunft des Ensembles" required value="<?php echo $user->getProperty('StadtKanton'); ?>">
+                <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtEnsembleCity" id="jgtEnsembleCity" type="text" placeholder="*Herkunft des Ensembles" required value="">
               </div>
               <div class="col-md-6 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" name="jgtPlayer" id="jgtPlayer" type="number" placeholder="*Anzahl SpielerInnen" required>
@@ -452,23 +452,40 @@
               <div class="col-md-12 regModTitle text-center">
                 <h4 class="modal-title modalCorr">Anhänge</h4>
               </div>
-              <div class="col-md-12 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtVid" id="jgtVid" type="url" placeholder="*Videolink" required>
+              <div class="col-md-6 regMod" onclick="openChooserTech();">
+                <div class="dropzone dz-clickable" id="jgtdz">
+                  <div class="dz-message modalCorr" id="jgtdzmsg">Techrider</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-12 regMod">
+                      <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtVid" id="jgtVid" type="url" placeholder="*Videolink" required>
+                  </div>
+                  <div class="col-md-12 regMod">
+                      <textarea class="form-control input-lg mt-1 modalCorr beschriebArea-xm" maxlength="500" id="jgtAnVid" name="jgtAnVid" placeholder="Beschrieb zu Videolink"></textarea>
+                  </div>
+                </div>
               </div>
               <div class="col-md-12 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtAnVid" id="jgtAnVid" type="text" placeholder="Beschrieb zu Videolink">
+                  <textarea class="form-control input-lg mt-1 modalCorr beschriebArea-sm" maxlength="500" id="jgtBeschrieb" name="jgtBeschrieb" placeholder="*Stückbeschrieb" required></textarea>
               </div>
-              <!-- TODO: Techrider -->
-              <div class="col-md-12 regMod">
-                  <textarea class="form-control input-lg mt-1 modalCorr beschriebArea" maxlength="500" id="jgtBeschrieb" name="jgtBeschrieb" placeholder="*Stückbeschrieb" required></textarea>
+              <div class="col-md-12 regMod" onclick="openChooserJgt();">
+                <div class="dropzone dz-clickable" id="jgtdzA">
+                  <div class="dz-message modalCorr" id="jgtdzmsgA">Weitere Anhänge</div>
+                </div>
               </div>
-              <div class="col-md-12 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtAnInfo" id="jgtAnInfo" type="text" placeholder="Weitere Informationen zur Produktion">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-6 regMod">
+                    <textarea class="form-control input-lg mt-1 modalCorr beschriebArea-xs" maxlength="500" id="jgtAnInfo" name="jgtAnInfo" placeholder="Weitere Informationen zur Produktion"></textarea>
+                  </div>
+                  <div class="col-md-6 regMod">
+                      <textarea class="form-control input-lg mt-1 modalCorr beschriebArea-xs" maxlength="500" id="jgtAnBe" name="jgtAnBe" placeholder="Beschrieb weitere Anhänge"></textarea>
+                  </div>
+                </div>
               </div>
-              <!-- TODO: Weitere Anhänge -->
-              <div class="col-md-12 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtAnBe" id="jgtAnBe" type="text" placeholder="Beschrieb weitere Anhänge">
-              </div>
+
 
               <div class="col-md-8 regModTitle2">
                 <div class="checkbox ">

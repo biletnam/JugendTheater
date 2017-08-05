@@ -64,14 +64,50 @@
 
 #jgtSonst{
   margin-top: 7px;
-  margin-left: -60px;
   height: 34px;
   font-size: 24px;
+}
+
+#jgtdz{
+  border: 2px dashed var(--main);
+	border-radius: 6px;
+}
+
+#jgtdzmsg{
+	height: 107px;
+	line-height: 107px;
+	text-align: center;
+}
+
+#jgtdzA{
+  border: 2px dashed var(--main);
+	border-radius: 6px;
+}
+
+#jgtdzmsgA{
+	height: 107px;
+	line-height: 107px;
+	text-align: center;
 }
 
 .beschriebArea{
   resize: none;
   height: 300px !important;
+}
+
+.beschriebArea-sm{
+  resize: none;
+  height: 215px !important;
+}
+
+.beschriebArea-xm{
+  resize: none;
+  height: 159px !important;
+}
+
+.beschriebArea-xs{
+  resize: none;
+  height: 102px !important;
 }
 
 .checkbox{
@@ -103,6 +139,11 @@
 
 .dz-preview *{
   margin:auto;
+}
+
+.dropzone .dz-preview .dz-error-message{
+  left: 50%;
+  margin-left: -70px;
 }
 
 .dz-details{

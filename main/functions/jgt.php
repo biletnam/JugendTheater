@@ -78,8 +78,6 @@ function jgt(){
     } else {
       echo "Error: " . $sql . "<br>" . $DBconn->error;
     }
-
-    //TODO: Upload management
   }
 }
 ?>

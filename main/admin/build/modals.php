@@ -176,7 +176,6 @@ if($loggedIn){
   </div>
 </div>
 
-<!-- TODO: Add search + sort -->
 <div id="jgtmodal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
     <!-- Modal content-->
@@ -513,23 +512,40 @@ if($loggedIn){
               <div class="col-md-12 regModTitle text-center">
                 <h4 class="modal-title modalCorr">Anhänge</h4>
               </div>
-              <div class="col-md-12 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtVid" id="jgtVid" type="url" placeholder="*Videolink" required>
+              <div class="col-md-6 regMod">
+                <div class="dropzone dz-clickable" id="jgtdz">
+                  <div class="dz-message modalCorr" id="jgtdzmsg">Techrider</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-12 regMod">
+                      <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtVid" id="jgtVid" type="url" placeholder="*Videolink" required>
+                  </div>
+                  <div class="col-md-12 regMod">
+                      <textarea class="form-control input-lg mt-1 modalCorr beschriebArea-xm" maxlength="500" id="jgtAnVid" name="jgtAnVid" placeholder="Beschrieb zu Videolink"></textarea>
+                  </div>
+                </div>
               </div>
               <div class="col-md-12 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtAnVid" id="jgtAnVid" type="text" placeholder="Beschrieb zu Videolink">
-              </div>
-              <!-- TODO: Techrider -->
-              <div class="col-md-12 regMod">
-                  <textarea class="form-control input-lg mt-1 modalCorr beschriebArea" maxlength="500" id="jgtBeschrieb" name="jgtBeschrieb" placeholder="*Stückbeschrieb" required></textarea>
+                  <textarea class="form-control input-lg mt-1 modalCorr beschriebArea-sm" maxlength="500" id="jgtBeschrieb" name="jgtBeschrieb" placeholder="*Stückbeschrieb" required></textarea>
               </div>
               <div class="col-md-12 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtAnInfo" id="jgtAnInfo" type="text" placeholder="Weitere Informationen zur Produktion">
+                <div class="dropzone dz-clickable" id="jgtdzA">
+                  <div class="dz-message modalCorr" id="jgtdzmsgA">Weitere Anhänge</div>
+                </div>
               </div>
-              <!-- TODO: Weitere Anhänge -->
-              <div class="col-md-12 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtAnBe" id="jgtAnBe" type="text" placeholder="Beschrieb weitere Anhänge">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-6 regMod">
+                    <textarea class="form-control input-lg mt-1 modalCorr beschriebArea-xs" maxlength="500" id="jgtAnInfo" name="jgtAnInfo" placeholder="Weitere Informationen zur Produktion"></textarea>
+                  </div>
+                  <div class="col-md-6 regMod">
+                      <textarea class="form-control input-lg mt-1 modalCorr beschriebArea-xs" maxlength="500" id="jgtAnBe" name="jgtAnBe" placeholder="Beschrieb weitere Anhänge"></textarea>
+                  </div>
+                </div>
               </div>
+
 
               <div class="col-md-8 regModTitle2">
                 <div class="checkbox ">
