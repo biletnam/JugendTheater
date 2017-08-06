@@ -88,7 +88,6 @@
               <div class="col-md-6 regMod">
                     <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premProduktion" id="premProduktion" type="text" placeholder="Name Produktion" required>
                 </div>
-                <!-- TODO: Add variable other Dates -->
                 <div class="col-md-6 regMod">
                     <input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDate" type="datetime-local" placeholder="Datum Premiere" required>
                 </div>
@@ -148,7 +147,6 @@
               <div class="col-md-4 regMod text-center">
                 *Dauer(gesamt)
               </div>
-              <!-- TODO: Add variable other Aufführungen -->
               <div class="col-md-4 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" name="jgtDate" id="jgtDate" type="datetime-local" placeholder="*Datum Premiere" required>
               </div>

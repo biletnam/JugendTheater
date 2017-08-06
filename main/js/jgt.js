@@ -132,3 +132,32 @@ function sonstTxtToggle(){
 function tbClick(){
   document.getElementById("jgtSubmitBtn").disabled = !document.getElementById("jgtSubmitBtn").disabled;
 }
+
+
+
+$(document).ready(function() {
+  $('#jgtmodal').on('hidden.bs.modal', function () {
+    Dropzone.forElement("#jgtdz").removeAllFiles(true);
+    Dropzone.forElement("#jgtdzA").removeAllFiles(true);
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {if (this.readyState == 4 && this.status == 200) {}};
+    xhttp.open("POST", "functions/functions.php?func=delUploads", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("");
+  });
+  $('#premieremodal').on('hidden.bs.modal', function () {
+    Dropzone.forElement("#my-dz").removeAllFiles(true);
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {if (this.readyState == 4 && this.status == 200) {}};
+    xhttp.open("POST", "functions/functions.php?func=delUploads", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("");
+  });
+  $('#premEditmodal').on('hidden.bs.modal', function () {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {if (this.readyState == 4 && this.status == 200) {}};
+    xhttp.open("POST", "functions/functions.php?func=delUploads", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("");
+  });
+});

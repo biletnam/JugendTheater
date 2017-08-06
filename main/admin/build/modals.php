@@ -81,6 +81,29 @@ if($loggedIn){
   </div>
 </div>
 
+<!-- this is hidden (the dialog that shows up on pressing a button)-->
+<div id="delAllModal" class="modal fade bootbox" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header modalCorr">
+        <h4 class="modal-title modalCorr">Sicher? <span class="modalResponse" id="delAllRes"></span></h4>
+      </div>
+      <div class="modal-body modalCorr">
+          <div class="row">
+            <div class="col-md-12 regMod">
+                  Bist du sicher, dass du alle Anmeldungen löschen willst?
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-outline btn-black pull-left" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger btn-outline pull-right" onclick="premDelAll();">Löschen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- this is hidden (the dialog that shows up on pressing a button) -->
 <div id="infomodal" class="modal fade" role="dialog">
@@ -208,7 +231,6 @@ if($loggedIn){
               <div class="col-md-4 regMod text-center">
                 *Dauer(gesamt)
               </div>
-              <!-- TODO: Add variable other Aufführungen -->
               <div class="col-md-4 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" name="jgtDate" id="jgtDate" type="datetime-local" placeholder="*Datum Premiere" required>
               </div>
@@ -566,7 +588,6 @@ if($loggedIn){
         <button  onclick="changeJgt();" type="button" class="btn btn-success btn-outline pull-right"<?php if(!$allowEdit){echo 'disabled';} ?>>Ändern</button>
         <button type="button" class="btn btn-danger btn-outline pull-right" data-toggle="modal" data-target="#deleteJgtmodal" <?php if(!$allowEdit){echo 'disabled';} ?>>Löschen</button>
       </form>
-        <!-- IDEA: Download PDF/Word -->
       </div>
     </div>
   </div>

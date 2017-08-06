@@ -24,6 +24,7 @@ include 'jgt.php';
 include 'techUploader.php';
 include 'fileUploader.php';
 include 'getUserInfo.php';
+include 'delUploads.php';
 
 $defaultPath = "../";
 $profilePath = "../";
@@ -50,6 +51,7 @@ switch($func){
     case "techUploader": techUploader(); break;
     case "fileUploader": fileUploader(); break;
     case "getUserInfo": getUserInfo(); break;
+    case "delUploads": delUploads(); break;
     default: echo "NO FUNCTION FOUND!";
 }
  ?>

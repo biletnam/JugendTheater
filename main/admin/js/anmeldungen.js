@@ -395,3 +395,19 @@ $(document).ready(function(){Dropzone.autoDiscover = false;
   $(jgtdzA_ID).dropzone({paramName: jgtdzA_FileName,url: jgtdzA_Url,maxFilesize: jgtdzA_FileSizeMB, acceptedFiles: jgtdzA_FileTypes,
     init: function() {this.removeEventListeners();}});
   });
+
+function premDelAll(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("delAllRes").innerHTML = "Gelöscht";
+        setTimeout(function(){
+            location.reload();
+        }, 800);
+      }
+  };
+  document.getElementById("delAllRes").innerHTML = "Loading...";
+  xhttp.open("POST", "functions/functions.php?func=premDelAll", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("");
+}

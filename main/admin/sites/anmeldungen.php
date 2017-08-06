@@ -64,6 +64,7 @@
           </tbody>
         </table>
         <p class="wow fadeInUp col-md-12 text-center <?php if($tour != 0){echo 'invisibleStrict'; } ?>" data-wow-duration="1s" data-wow-delay=".8s">Keine Anmeldungen</p>
+        <button type="button" id="premDelAll" class="btn btn-danger btn-outline col-md-3 pull-right <?php if($tour == 0){echo 'invisibleStrict'; } ?>" data-toggle="modal" data-target="#delAllModal">Alle Anmeldungen löschen</button>
       </div>
     </div>
 </div>

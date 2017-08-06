@@ -28,7 +28,6 @@ function register(){
 			$msg = "Could not send Email. Please enter a valid Email-Address.";
 			$sql="DELETE FROM Users WHERE Username=".$_POST['us'];
 	    mysqli_query($DBconn, $sql);
-			// IDEA: Remove all unverified user after 24h
 		} else {
 			$msg = "Email versendet!";
 		}

@@ -14,6 +14,7 @@ include 'getAnmeldung.php';
 include 'delJgt.php';
 include 'changeJgt.php';
 include 'getFileInfos.php';
+include 'premDelAll.php';
 
 $defaultPath = "../";
 $profilePath = "../";
@@ -31,6 +32,7 @@ switch($func){
     case "delJgt": delJgt(); break;
     case "changeJgt": changeJgt(); break;
     case "getFileInfos": getFileInfos(); break;
+    case "premDelAll": premDelAll(); break;
     default: echo "NO FUNCTION FOUND!";
 }
  ?>
