@@ -17,6 +17,11 @@
 
 			function gMS($string){
 			  global $DBconn;
+				return mysqli_real_escape_string($DBconn,$string);
+			}
+
+			function gMSS($string){
+				global $DBconn;
 				return mysqli_real_escape_string($DBconn,htmlentities($string));
 			}
 
