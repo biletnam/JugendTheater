@@ -185,3 +185,24 @@ $(document).ready(function(){Dropzone.autoDiscover = false;
         if (ext == "docx") { $(this.files[jgtdzA_Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/docx.png");}
         if(jgtdzA_Counter < jgtdzA_MaxFiles-1){jgtdzA_Counter++;}});}});
   });
+
+
+  var premDzAn_Counter = 0;
+  var premDzAn_MaxFiles = 2;
+  var premDzAn_FileName = "premFile_" + profileName.innerHTML;
+  var premDzAn_ID = "#premDzAn";
+  var premDzAn_FileTypes = ".pdf,.jpg,.png";
+  var premDzAn_FileSizeMB = 1;
+  var premDzAn_Url = "../functions/functions.php?func=premFileUploader";
+
+  function openChooserPremAn(){var mydz = Dropzone.forElement(premDzAn_ID);mydz.hiddenFileInput.click();}
+  $(document).ready(function(){Dropzone.autoDiscover = false;
+    $(premDzAn_ID).dropzone({paramName: premDzAn_FileName,url: premDzAn_Url,maxFilesize: premDzAn_FileSizeMB, acceptedFiles: premDzAn_FileTypes,
+      init: function() {this.removeEventListeners();this.on("addedfile", function() {
+          if (this.files[premDzAn_MaxFiles]!=null){this.removeFile(this.files[0]);}
+          var ext = this.files[premDzAn_Counter].name.split('.').pop();
+          if (ext == "pdf") { $(this.files[premDzAn_Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/pdf.png");}
+          if (ext == "doc") { $(this.files[premDzAn_Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/doc.png");}
+          if (ext == "docx") { $(this.files[premDzAn_Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/docx.png");}
+          if(premDzAn_Counter < premDzAn_MaxFiles-1){premDzAn_Counter++;}});}});
+    });

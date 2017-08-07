@@ -27,7 +27,7 @@ function convertYoutube($string) {
 						<div class="col-md-push-6 col-md-6 full-height js-full-height">
 							<div class="fh5co-cover-intro">
 								<h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><?php echo $row['Produktion']; ?></h1>
-								<h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">von <?php $query2 = "SELECT EnsembleName,StadtKanton FROM Users WHERE ID=".$row['UserID'];$result2 = mysqli_query($DBconn, $query2);$row2 = mysqli_fetch_assoc($result2);echo $row2['EnsembleName'] . " aus " . $row2['StadtKanton'];?>
+								<h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">von <?php $query2 = "SELECT * FROM Users WHERE ID=".$row['UserID'];$result2 = mysqli_query($DBconn, $query2);$row2 = mysqli_fetch_assoc($result2);echo $row2['EnsembleName'] . " aus " . $row2['StadtKanton'];?>
                   in <?php $dStart=new DateTime(date("Y-m-d"));$dEnd=new DateTime($row['PremiereDatum']);$dDiff=$dStart->diff($dEnd);echo $dDiff->days; ?> Tagen
                 </h2>
                 <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a href="../" class="btn btn-primary btn-outline btn-lg">Zurück zur Auswahl</a></p>
@@ -43,13 +43,29 @@ function convertYoutube($string) {
         <div class="row p-b">
           <div class="text-center">
             <h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><?php echo $row['Produktion']; ?></h2>
-            <div class="wow fadeInUp col-md-6 gonnerverein" data-wow-duration="1s" data-wow-delay=".4s"><div class="untertitel">Beschrieb</div><br><?php echo $row['Beschrieb'] ?></div>
-            <div class="wow fadeInUp col-md-6 gonnerverein" data-wow-duration="1s" data-wow-delay=".6s"><div class="untertitel">Gruppe</div><br><?php $people = explode(",",$row['Spieler']); echo $row['Spieler'];?></div>
+            <div class="wow fadeInUp col-md-6 gonnerverein" data-wow-duration="1s" data-wow-delay=".4s"><div class="untertitel regModTitle">Beschrieb</div><br><?php echo $row['Beschrieb'] ?></div>
+            <div class="wow fadeInUp col-md-6 gonnerverein" data-wow-duration="1s" data-wow-delay=".6s"><div class="untertitel regModTitle">Gruppe</div><br><?php $people = explode(",",$row['Spieler']); echo $row['Spieler'];?></div>
             <?php if(!empty($row['Video']) && $row['Video'] != ""){ ?>
-            <div class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay=".8s"><div class="untertitel">Video</div><br></div>
-              <div class="embed-responsive embed-responsive-16by9 wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay="1s">
+            <div class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay=".8s"><div class="untertitel regModTitle">Video</div><br></div>
+              <div class="embed-responsive embed-responsive-16by9 wow fadeInUp col-md-12 roundBorder" data-wow-duration="1s" data-wow-delay="1s">
                 <?php echo convertYoutube($row['Video']); ?>
               </div>
+               <?php } ?>
+
+               <?php
+               $premData = glob("uploads/".$prem."premFile_".$row2['Username']."*.*");
+               if(count($premData) > 0){?>
+               <div class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay="1.2s"><div class="untertitel regModTitle">Anhänge</div><br></div>
+               <?php foreach ($premData as $fname) { ?>
+               <div class="wow fadeInUp col-md-<?php if(count($premData) == 1){echo "12";}else{echo "6";} ?>" data-wow-duration="1s" data-wow-delay="1.4s">
+                 <div class="dz-hide"><div class="dz-hide-sub">
+                   <div class="dz-hide-img">
+                     <a href="<?php echo $fname; ?>" download>
+                       <img data-dz-thumbnail  src="<?php $ext = pathinfo($fname, PATHINFO_EXTENSION); if($ext == "pdf"){echo "../images/edit/pdf.png";}else{echo $fname;}?>">
+                       <div class="dz-mark"><i class="fa fa-download huge-icon" aria-hidden="true"></i></div>
+                     </a></div></div></div>
+               </div>
+               <?php } ?>
                <?php } ?>
           </div>
         </div>

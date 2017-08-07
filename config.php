@@ -12,11 +12,12 @@
 			$user->config->database->name = $DBname;
 			$user->start();
 
-			$DBconn = mysqli_connect($DBhost, $DBuser, $DBpw,$DBname);
+			$DBconn = mysqli_connect($DBhost, $DBuser, $DBpw, $DBname);
+			$DBconn->set_charset("utf8");
 
 			function gMS($string){
 			  global $DBconn;
-			  return mysqli_real_escape_string($DBconn,$string);
+				return mysqli_real_escape_string($DBconn,htmlentities($string));
 			}
 
 			function gCT($std){

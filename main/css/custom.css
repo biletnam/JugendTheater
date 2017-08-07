@@ -17,7 +17,7 @@
 }
 
 #premVid{
-  border-radius: 6px;
+  
 }
 
 #premOrt{
@@ -394,6 +394,28 @@
   margin-bottom: 57px;
 }
 
+#premDzAn{
+  border: 2px dashed var(--main);
+  border-radius: 6px;
+}
+
+#premDzAnMsg{
+  height: 107px;
+  line-height: 107px;
+  text-align: center;
+}
+
+#premDzAnEdit{
+  border: 2px dashed var(--main);
+  border-radius: 6px;
+}
+
+#premDzAnMsgEdit{
+  height: 107px;
+  line-height: 107px;
+  text-align: center;
+}
+
 #preloader {
   position: fixed;
   left: 0;
@@ -404,3 +426,84 @@
   overflow: visible;
   background: #000;
 }
+
+.roundBorder{
+  border-radius: 6px;
+}
+
+.dz-hide{
+  border: none;
+  display: table;
+  width: 100%;
+  border-radius: 5px;
+  background: white;
+  box-sizing: border-box;
+}
+
+.dz-hide .dz-hide-sub{
+  position: relative;
+  margin: 16px;
+  display: table-cell !important;
+  vertical-align: middle !important;
+  box-sizing: border-box;
+}
+
+.dz-hide .dz-hide-sub .dz-hide-img{
+  border-radius: 6px;
+  overflow: hidden;
+  width: 120px;
+  height: 120px;
+  position: relative;
+  display: block;
+  z-index: 10;
+  margin: auto;
+}
+
+.dz-hide .dz-hide-sub .dz-hide-img img{
+  height: 120px;
+}
+
+.dz-hide .dz-hide-sub .dz-hide-img .dz-mark{
+  pointer-events: none;
+  opacity: 0;
+  z-index: 500;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  margin-left: -27px;
+  margin-top: -27px;
+}
+
+.dz-hide .dz-hide-sub .dz-hide-img .dz-mark .fa{
+  color: #fff;
+  display: block;
+  width: 54px;
+  height: 54px;
+}
+
+.dz-hide-img:hover img{
+  -webkit-filter: brightness(50%);
+  filter: brightness(50%);
+  cursor:pointer;
+}
+
+.dz-hide-img:hover .dz-mark{
+  -webkit-animation: fadeIn 0.5s linear forwards;
+  animation: fadeIn 0.5s linear forwards;
+}
+
+@keyframes fadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+}
+
+@keyframes fadeOut{
+   0% {opacity: 1;}
+   100% {opacity: 0;}
+}
+
+.dz-hide-img:not( :hover ) .dz-mark{
+  -webkit-animation: fadeOut 0.5s linear forwards;
+  animation: fadeOut 0.5s linear forwards;
+ }

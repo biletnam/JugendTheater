@@ -20,7 +20,7 @@ include('../../config.php');
 		include "functions/adminCheck.php";
 		include "build/topbar.php";
 		if(isset($_GET['loc'])){$loc = $_GET['loc'];}
-		if(empty($loc) || $loc == ""){$loc = "home";}
+		if(empty($loc) || $loc == ""){$loc = "premieren";}
 		if(!$loggedIn){$loc = "login";}
 		if(!file_exists("sites/". $loc .".php")){$loc = "404";}
 		include "sites/" . $loc . ".php";

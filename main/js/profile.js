@@ -57,6 +57,7 @@ function showPremEditModal(premID){
       $("#premEditmodal").modal("show");
       if (this.readyState == 4 && this.status == 200) {
             var rows = JSON.parse(this.responseText);
+            loadMockFiles();
             remAufAllEdit();
             var premAddDates = JSON.parse(rows["addDates"]);
             for (var e = 0; e < premAddDates.length; e += 2){
@@ -361,3 +362,91 @@ $(document).ready(function(){Dropzone.autoDiscover = false;
         if (ext == "docx") { $(this.files[jgtdzA_Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/docx.png");}
         if(jgtdzA_Counter < jgtdzA_MaxFiles-1){jgtdzA_Counter++;}});}});
   });
+
+
+  var premDzAn_Counter = 0;
+  var premDzAn_MaxFiles = 2;
+  var premDzAn_FileName = "premFile_" + profileName.innerHTML;
+  var premDzAn_ID = "#premDzAn";
+  var premDzAn_FileTypes = ".pdf,.jpg,.png";
+  var premDzAn_FileSizeMB = 1;
+  var premDzAn_Url = "../functions/functions.php?func=premFileUploader";
+
+  function openChooserPremAn(){var mydz = Dropzone.forElement(premDzAn_ID);mydz.hiddenFileInput.click();}
+  $(document).ready(function(){Dropzone.autoDiscover = false;
+    $(premDzAn_ID).dropzone({paramName: premDzAn_FileName,url: premDzAn_Url,maxFilesize: premDzAn_FileSizeMB, acceptedFiles: premDzAn_FileTypes,
+      init: function() {this.removeEventListeners();this.on("addedfile", function() {
+          if (this.files[premDzAn_MaxFiles]!=null){this.removeFile(this.files[0]);}
+          var ext = this.files[premDzAn_Counter].name.split('.').pop();
+          if (ext == "pdf") { $(this.files[premDzAn_Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/pdf.png");}
+          if (ext == "doc") { $(this.files[premDzAn_Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/doc.png");}
+          if (ext == "docx") { $(this.files[premDzAn_Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/docx.png");}
+          if(premDzAn_Counter < premDzAn_MaxFiles-1){premDzAn_Counter++;}});}});
+    });
+
+
+
+    function openChooserPremAnEdit(){Dropzone.forElement("#premDzAnEdit").hiddenFileInput.click();}
+    $(document).ready(function(){Dropzone.autoDiscover = false;
+      var Counter = 0;
+      var MaxFiles = 2;
+      var FileName = "premFile_" + profileName.innerHTML;
+      var FileTypes = ".pdf,.jpg,.png";
+      var FileSizeMB = 1;
+      var Url = "../functions/functions.php?func=premFileUploader";
+      $("#premDzAnEdit").dropzone({paramName:FileName,url:Url,maxFilesize:FileSizeMB,acceptedFiles: FileTypes,init:function(){this.removeEventListeners();this.on("addedfile",function(){if (this.files[MaxFiles]!=null){this.removeFile(this.files[0]);}
+            if(!AddsMockFiles){
+            var ext = this.files[Counter].name.split('.').pop();
+            if (ext == "pdf") { $(this.files[Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/pdf.png");}
+            if (ext == "doc") { $(this.files[Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/doc.png");}
+            if (ext == "docx") { $(this.files[Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/docx.png");}
+            } AddsMockFiles = false;
+            if(Counter < MaxFiles-1){Counter++;}});}});
+      });
+
+    var AddsMockFiles = false;
+    function loadMockFiles(){
+      Dropzone.forElement("#premDzAnEdit").removeAllFiles(true);
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var ret = this.responseText;
+            if(ret != ""){
+              var res = ret.split("/");
+              for(var i = 0; i < res.length; i++){
+                AddsMockFiles = true;
+                addMockFile(res[i],"premDzAnEdit");
+              }
+            }
+         }
+      };
+      var request = "id="+currentPremID;
+      xhttp.open("POST", "functions/functions.php?func=getPremFileInfos", true);
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send(request);
+    }
+
+    function addMockFile(filename,dzID){
+      var mockFile = { name: filename, size: 12345 };
+      var myDropzone = Dropzone.forElement("#"+dzID);
+      myDropzone.emit("addedfile", mockFile);
+      var ext = filename.split('.').pop();
+      if (ext == "pdf") {
+        myDropzone.createThumbnailFromUrl(mockFile, "../images/edit/pdf.png");
+      } else if(ext == "doc"){
+        myDropzone.createThumbnailFromUrl(mockFile, "../images/edit/doc.png");
+      } else if(ext == "docx"){
+        myDropzone.createThumbnailFromUrl(mockFile, "../images/edit/docx.png");
+      } else {
+        myDropzone.createThumbnailFromUrl(mockFile, "../uploads/"+filename);
+      }
+      myDropzone.emit("complete", mockFile);
+      myDropzone.files.push(mockFile);
+
+    /* var a = document.createElement('a');
+      a.setAttribute('href',"../uploads/"+filename);
+      a.setAttribute("download",filename);
+      a.className = "clickableStrict dBlock";
+      a.innerHTML = 'Download <i class="fa fa-download clickableStrict" aria-hidden="true"></i>';
+      mockFile.previewTemplate.appendChild(a);*/
+    }

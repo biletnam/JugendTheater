@@ -20,5 +20,9 @@ function delUploads(){
   foreach (glob("../uploads/img_".$Uname."*.*") as $filename) {
     unlink($filename);
   }
+
+  foreach (glob("../uploads/premFile_".$Uname."*.*") as $filename) {
+    unlink($filename);
+  }
 }
  ?>

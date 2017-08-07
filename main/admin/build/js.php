@@ -26,6 +26,10 @@
 <script src="../js/main.js"></script>
 <!-- Custom -->
 <script src="js/custom.js"></script>
+<?php if($loc == "premieren"){ ?>
 <script src="js/premieren.js"></script>
+<?php } if($loc == "user"){?>
 <script src="js/user.js"></script>
+<?php } if($loc == "anmeldungen"){?>
 <script src="js/anmeldungen.js"></script>
+<?php } ?>

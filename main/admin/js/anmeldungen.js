@@ -1,3 +1,7 @@
+function htmlDecode(string){
+  return $('<textarea />').html(string).text();
+}
+
 var CurrentJgtID = 0;
 function showJgt(id){
   var xhttp = new XMLHttpRequest();
@@ -6,23 +10,23 @@ function showJgt(id){
       $("#jgtmodal").modal("show");
       if (this.readyState == 4 && this.status == 200) {
             var rows = JSON.parse(this.responseText);
-            document.getElementById('deleteJgt').innerHTML = rows[0];
+            document.getElementById('deleteJgt').innerHTML = htmlDecode(rows[0]);
             loadMockFiles();
 
             // Zum Stück
-            document.getElementById('jgtTitel').value = rows[0];
-            document.getElementById('jgtUntertitel').value = rows[1];
+            document.getElementById('jgtTitel').value = htmlDecode(rows[0]);
+            document.getElementById('jgtUntertitel').value = htmlDecode(rows[1]);
             document.getElementById('jgtDate').value = rows[2];
-            document.getElementById('jgtOrt').value = rows[3];
+            document.getElementById('jgtOrt').value = htmlDecode(rows[3]);
             document.getElementById('jgtDauer').value = rows[4];
             if(rows[5] == 'true'){document.getElementById('actCheck2').click();}
             document.getElementById('jgtAlter').value = rows[6];
-            document.getElementById('jgtSprachen').value = rows[7];
-            document.getElementById('jgtCC').value = rows[8];
+            document.getElementById('jgtSprachen').value = htmlDecode(rows[7]);
+            document.getElementById('jgtCC').value = htmlDecode(rows[8]);
 
             // Zum Ensemble
-            document.getElementById('jgtEnsembleName').value = rows[9];
-            document.getElementById('jgtEnsembleCity').value = rows[10];
+            document.getElementById('jgtEnsembleName').value = htmlDecode(rows[9]);
+            document.getElementById('jgtEnsembleCity').value = htmlDecode(rows[10]);
             document.getElementById('jgtPlayer').value = rows[11];
             document.getElementById('jgtNonPlayer').value = rows[12];
             document.getElementById('jgtAgeFrom').value = rows[13];
@@ -35,18 +39,18 @@ function showJgt(id){
             document.getElementById('jgtAge18M').value = rows[20];
             document.getElementById('jgtAge21W').value = rows[21];
             document.getElementById('jgtAge21M').value = rows[22];
-            document.getElementById('jgtSpielleitung').value = rows[23];
-            document.getElementById('jgtAdress').value = rows[24];
+            document.getElementById('jgtSpielleitung').value = htmlDecode(rows[23]);
+            document.getElementById('jgtAdress').value = htmlDecode(rows[24]);
             document.getElementById('jgtTele').value = rows[25];
-            document.getElementById('jgtEmail').value = rows[26];
-            document.getElementById('jgtInfo').value = rows[27];
+            document.getElementById('jgtEmail').value = htmlDecode(rows[26]);
+            document.getElementById('jgtInfo').value = htmlDecode(rows[27]);
 
             // Zur Trägerschaft
-            document.getElementById('jgtTrager').value = rows[28];
-            document.getElementById('jgtTragerAdress').value = rows[29];
-            document.getElementById('jgtTragerTele').value = rows[30];
-            document.getElementById('jgtTragerEmail').value = rows[31];
-            document.getElementById('jgtTragerWebsite').value = rows[32];
+            document.getElementById('jgtTrager').value = htmlDecode(rows[28]);
+            document.getElementById('jgtTragerAdress').value = htmlDecode(rows[29]);
+            document.getElementById('jgtTragerTele').value = htmlDecode(rows[30]);
+            document.getElementById('jgtTragerEmail').value = htmlDecode(rows[31]);
+            document.getElementById('jgtTragerWebsite').value = htmlDecode(rows[32]);
 
             // Vom Wettbewerb erfahren durch
             if(rows[33] == 'true'){document.getElementById('medienInsta2').click();}
@@ -61,18 +65,18 @@ function showJgt(id){
             if(rows[42] == 'true'){document.getElementById('medienKollegen2').click();}
             if(rows[43] == 'true'){document.getElementById('medienSchulverteiler2').click();}
             if(rows[44] == 'true'){document.getElementById('medienSonstige2').click();}
-            document.getElementById('jgtSonst').value = rows[45];
+            document.getElementById('jgtSonst').value = htmlDecode(rows[45]);
 
             // Anhänge
-            document.getElementById('jgtVid').value = rows[46];
-            document.getElementById('jgtAnVid').value = rows[47];
-            document.getElementById('jgtBeschrieb').value = rows[48];
-            document.getElementById('jgtAnInfo').value = rows[49];
-            document.getElementById('jgtAnBe').value = rows[50];
+            document.getElementById('jgtVid').value = htmlDecode(rows[46]);
+            document.getElementById('jgtAnVid').value = htmlDecode(rows[47]);
+            document.getElementById('jgtBeschrieb').value = htmlDecode(rows[48]);
+            document.getElementById('jgtAnInfo').value = htmlDecode(rows[49]);
+            document.getElementById('jgtAnBe').value = htmlDecode(rows[50]);
 
             // Schluss
             if(rows[51] == 'true'){document.getElementById('teilnahmebedingungen2').click();}
-            document.getElementById('jgtSign').value  = rows[52];
+            document.getElementById('jgtSign').value  = htmlDecode(rows[52]);
 
             document.getElementById("jgtResponse").innerHTML = "";
      } else {

@@ -110,6 +110,11 @@
                 <div class="col-md-12 regMod">
                     <input class="form-control input-lg mt-1 modalCorr" maxlength="1000" name="premVid" id="premVid" type="url" placeholder="Youtube-Link">
                 </div>
+                <div class="col-md-12 regMod dz-fancy" onclick="openChooserPremAn();">
+                  <div class="dropzone dz-clickable" id="premDzAn">
+                    <div class="dz-message" id="premDzAnMsg">Anhänge</div>
+                  </div>
+                </div>
           </div>
       </div>
       <div class="modal-footer">
@@ -152,7 +157,7 @@
               </div>
 
               <div class="col-md-4 regMod text-center">
-                *Dauer(gesamt)
+                *Dauer (gesamt)
               </div>
               <div class="col-md-4 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" name="jgtDate" id="jgtDate" type="datetime-local" placeholder="*Datum Premiere" required>
@@ -163,7 +168,7 @@
               </div>
 
               <div class="col-md-4 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtDauer" id="jgtDauer" type="time" placeholder="*Dauer (gesamt)" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtDauer" id="jgtDauer" type="number" placeholder="*Dauer (in Minuten)" required>
               </div>
 
               <div class="col-md-4 regMod">
@@ -457,9 +462,9 @@
               <div class="col-md-12 regModTitle text-center">
                 <h4 class="modal-title modalCorr">Anhänge</h4>
               </div>
-              <div class="col-md-6 regMod" onclick="openChooserTech();">
+              <div class="col-md-6 regMod dz-fancy" onclick="openChooserTech();">
                 <div class="dropzone dz-clickable" id="jgtdz">
-                  <div class="dz-message modalCorr" id="jgtdzmsg">Techrider</div>
+                  <div class="dz-message" id="jgtdzmsg">Techrider</div>
                 </div>
               </div>
               <div class="col-md-6">
@@ -475,9 +480,9 @@
               <div class="col-md-12 regMod">
                   <textarea class="form-control input-lg mt-1 modalCorr beschriebArea-sm" maxlength="500" id="jgtBeschrieb" name="jgtBeschrieb" placeholder="*Stückbeschrieb" required></textarea>
               </div>
-              <div class="col-md-12 regMod" onclick="openChooserJgt();">
+              <div class="col-md-12 regMod dz-fancy" onclick="openChooserJgt();">
                 <div class="dropzone dz-clickable" id="jgtdzA">
-                  <div class="dz-message modalCorr" id="jgtdzmsgA">Weitere Anhänge</div>
+                  <div class="dz-message" id="jgtdzmsgA">Weitere Anhänge</div>
                 </div>
               </div>
               <div class="col-md-12">
@@ -528,7 +533,7 @@
       <div class="modal-body modalCorr">
           <div class="row">
             <div class="col-md-12">
-              <div class="col-md-6 regMod" onclick="openChooserEdit();">
+              <div class="col-md-6 regMod dz-fancy" onclick="openChooserEdit();">
                 <form action="" class="dropzone" id="my-dz-Edit">
                   <div class="dz-message modalCorr" id="my-dz-msg-Edit">Bild hochladen</div>
                 </form>
@@ -557,7 +562,12 @@
                   <textarea class="form-control input-lg mt-1 modalCorr beschriebArea" maxlength="500" id="premTAEdit" name="premTA" placeholder="Stückbeschrieb" required></textarea>
                 </div>
                 <div class="col-md-12 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr" maxlength="1000" name="premVid" id="premVidEdit" type="url" placeholder="Youtube-Link" required>
+                    <input class="form-control input-lg mt-1 modalCorr" maxlength="1000" name="premVid" id="premVidEdit" type="url" placeholder="Youtube-Link">
+                </div>
+                <div class="col-md-12 regMod dz-fancy" onclick="openChooserPremAnEdit();">
+                  <div class="dropzone dz-clickable" id="premDzAnEdit">
+                    <div class="dz-message" id="premDzAnMsgEdit">Anhänge</div>
+                  </div>
                 </div>
               </div>
           </div>

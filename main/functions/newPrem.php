@@ -6,6 +6,9 @@ function createPrem($fileType){
   if ($DBconn->query($sql) === TRUE) {
     $last_id = $DBconn->insert_id;
     rename("../uploads/img_".$user->getProperty('Username').$fileType, "../uploads/" . $last_id . $fileType);
+    foreach (glob("../uploads/premFile_".$user->getProperty('Username')."*.*") as $fname) {
+      rename($fname, "../uploads/" . $last_id . basename($fname));
+    }
     uploadResize("../uploads/" . $last_id . $fileType,"../uploads/small/" . $last_id . $fileType);
     echo "Success!/".$last_id."/".$fileType."/".$_POST['name'];
   } else {

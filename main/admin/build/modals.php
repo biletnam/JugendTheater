@@ -46,8 +46,10 @@ if($loggedIn){
                 <div class="col-md-12 regMod">
                     <input class="form-control input-lg mt-1 modalCorr" maxlength="1000" name="premVid" id="premVidEdit" type="url" placeholder="Youtube-Link" required>
                 </div>
-                <div class="col-md-12 regMod">
-
+                <div class="col-md-12 regMod dz-fancy">
+                  <div class="dropzone dz-clickable" id="premDzAnEdit">
+                    <div class="dz-message" id="premDzAnMsgEdit">Anhänge</div>
+                  </div>
                 </div>
               </div>
           </div>
@@ -236,7 +238,7 @@ if($loggedIn){
               </div>
 
               <div class="col-md-4 regMod text-center">
-                *Dauer(gesamt)
+                *Dauer (gesamt)
               </div>
               <div class="col-md-4 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" name="jgtDate" id="jgtDate" type="datetime-local" placeholder="*Datum Premiere" required>
@@ -247,7 +249,7 @@ if($loggedIn){
               </div>
 
               <div class="col-md-4 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtDauer" id="jgtDauer" type="time" placeholder="*Dauer (gesamt)" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtDauer" id="jgtDauer" type="number" placeholder="*Dauer (in Minuten)" required>
               </div>
 
               <div class="col-md-4 regMod">
