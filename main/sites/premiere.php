@@ -45,10 +45,12 @@ function convertYoutube($string) {
             <h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><?php echo $row['Produktion']; ?></h2>
             <div class="wow fadeInUp col-md-6 gonnerverein" data-wow-duration="1s" data-wow-delay=".4s"><div class="untertitel">Beschrieb</div><br><?php echo $row['Beschrieb'] ?></div>
             <div class="wow fadeInUp col-md-6 gonnerverein" data-wow-duration="1s" data-wow-delay=".6s"><div class="untertitel">Gruppe</div><br><?php $people = explode(",",$row['Spieler']); echo $row['Spieler'];?></div>
+            <?php if(!empty($row['Video']) && $row['Video'] != ""){ ?>
             <div class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay=".8s"><div class="untertitel">Video</div><br></div>
               <div class="embed-responsive embed-responsive-16by9 wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay="1s">
                 <?php echo convertYoutube($row['Video']); ?>
               </div>
+               <?php } ?>
           </div>
         </div>
   </div>

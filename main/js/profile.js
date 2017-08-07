@@ -6,6 +6,7 @@ function tryPremiere(){
   var ort = document.getElementById('premOrt').value;
   var beschrieb = document.getElementById('premTA').value;
   var video = document.getElementById('premVid').value;
+  var jon = getAddDatesJ();
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
           var ret = this.responseText;
@@ -32,7 +33,7 @@ function tryPremiere(){
        document.getElementById("premResponse").innerHTML = "Waiting for response...";
      }
   };
-  var request = "name=" + name + "&spieler=" + spieler + "&datum=" + datum + "&ort=" + ort + "&beschrieb=" + beschrieb + "&video=" + video;
+  var request = "name=" + name + "&spieler=" + spieler + "&datum=" + datum + "&ort=" + ort + "&beschrieb=" + beschrieb + "&video=" + video + "&jon=" + jon;
   xhttp.open("POST", "functions/functions.php?func=newPrem", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(request);
@@ -56,6 +57,13 @@ function showPremEditModal(premID){
       $("#premEditmodal").modal("show");
       if (this.readyState == 4 && this.status == 200) {
             var rows = JSON.parse(this.responseText);
+            remAufAllEdit();
+            var premAddDates = JSON.parse(rows["addDates"]);
+            for (var e = 0; e < premAddDates.length; e += 2){
+              newAufEdit();
+              $("#premDateEdit"+lastNmbrEdit).val(premAddDates[e]);
+              $("#premOrtEdit"+lastNmbrEdit).val(premAddDates[e+1]);
+            }
             var filename = rows["ID"]+rows["Bilder"];
             var mockFile = { name: filename, size: 12345 };
             var myDropzone = Dropzone.forElement("#my-dz-Edit");
@@ -136,6 +144,7 @@ function updatePrem(){
   var ort = document.getElementById('premOrtEdit').value;
   var beschrieb = document.getElementById('premTAEdit').value;
   var video = document.getElementById('premVidEdit').value;
+  var jon = getAddDatesJEdit();
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         var ret = this.responseText;
@@ -155,10 +164,75 @@ function updatePrem(){
        document.getElementById("premResponseEdit").innerHTML = "Loading...";
      }
   };
-  var request = "id=" + currentPremID + "&name=" + name + "&spieler=" + spieler + "&datum=" + datum + "&ort=" + ort + "&beschrieb=" + beschrieb + "&video=" + video + "&filetype=" + filetype;
+  var request = "id=" + currentPremID + "&name=" + name + "&spieler=" + spieler + "&datum=" + datum + "&ort=" + ort + "&beschrieb=" + beschrieb + "&video=" + video + "&filetype=" + filetype + "&jon=" + jon;
   xhttp.open("POST", "functions/functions.php?func=changePrem", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(request);
+}
+
+function remAuf(nmbr){
+  $("#premDateDiv" + nmbr).remove();
+  $("#premOrtDiv" + nmbr).remove();
+  $("#premIcoDiv" + nmbr).remove();
+  var index = nmbrs.indexOf(nmbr);
+  if (index > -1) {
+    nmbrs.splice(index, 1);
+  }
+}
+var nmbrs = [];
+var lastNmbr = 0;
+function newAuf(){
+  var nmbr = lastNmbr + 1;
+  $( '<div class="col-md-6 regMod" id="premDateDiv'+nmbr+'"><input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDate'+nmbr+'" type="datetime-local" placeholder="Datum Premiere" required></div><div class="col-md-4 regMod" id="premOrtDiv'+nmbr+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrt'+nmbr+'" type="text" placeholder="Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDiv'+nmbr+'"><i onclick="remAuf('+nmbr+');" id="delIco'+nmbr+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDiv" );
+  lastNmbr = nmbr;
+  nmbrs.push(nmbr);
+}
+function getAddDatesJ(){
+  var dates = [];
+  for (var i = 0; i < nmbrs.length; i++){
+    dates.push($("#premDate"+nmbrs[i]).val());
+    dates.push($("#premOrt"+nmbrs[i]).val());
+  }
+  var jon = JSON.stringify(dates);
+  return jon;
+}
+
+function remAufAllEdit(){
+  var size = nmbrsEdit.length;
+  for (var i = 0; i < size; i++){
+    $("#premDateDivEdit" + nmbrsEdit[i]).remove();
+    $("#premOrtDivEdit" + nmbrsEdit[i]).remove();
+    $("#premIcoDivEdit" + nmbrsEdit[i]).remove();
+  }
+  lastNmbrEdit = 0;
+  nmbrsEdit = [];
+}
+
+function remAufEdit(nmbr){
+  $("#premDateDivEdit" + nmbr).remove();
+  $("#premOrtDivEdit" + nmbr).remove();
+  $("#premIcoDivEdit" + nmbr).remove();
+  var index = nmbrsEdit.indexOf(nmbr);
+  if (index > -1) {
+    nmbrsEdit.splice(index, 1);
+  }
+}
+var nmbrsEdit = [];
+var lastNmbrEdit = 0;
+function newAufEdit(){
+  var nmbrEdit = lastNmbrEdit + 1;
+  $( '<div class="col-md-6 regMod" id="premDateDivEdit'+nmbrEdit+'"><input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDateEdit'+nmbrEdit+'" type="datetime-local" placeholder="Datum Premiere" required></div><div class="col-md-4 regMod" id="premOrtDivEdit'+nmbrEdit+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrtEdit'+nmbrEdit+'" type="text" placeholder="Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDivEdit'+nmbrEdit+'"><i onclick="remAufEdit('+nmbrEdit+');" id="delIcoEdit'+nmbrEdit+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDivEdit" );
+  lastNmbrEdit = nmbrEdit;
+  nmbrsEdit.push(nmbrEdit);
+}
+function getAddDatesJEdit(){
+  var datesEdit = [];
+  for (var i = 0; i < nmbrsEdit.length; i++){
+    datesEdit.push($("#premDateEdit"+nmbrsEdit[i]).val());
+    datesEdit.push($("#premOrtEdit"+nmbrsEdit[i]).val());
+  }
+  var jonEdit = JSON.stringify(datesEdit);
+  return jonEdit;
 }
 
 // Disable newline

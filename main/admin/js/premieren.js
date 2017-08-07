@@ -17,6 +17,13 @@ function showPremEditModal(premID){
       $("#premEditmodal").modal("show");
       if (this.readyState == 4 && this.status == 200) {
             var rows = JSON.parse(this.responseText);
+            remAufAllEdit();
+            var premAddDates = JSON.parse(rows["addDates"]);
+            for (var e = 0; e < premAddDates.length; e += 2){
+              newAufEdit();
+              $("#premDateEdit"+lastNmbrEdit).val(premAddDates[e]);
+              $("#premOrtEdit"+lastNmbrEdit).val(premAddDates[e+1]);
+            }
             var filename = rows["ID"]+rows["Bilder"];
             var mockFile = { name: filename, size: 12345 };
             var myDropzone = Dropzone.forElement("#my-dz-Edit");
@@ -79,18 +86,7 @@ function delPrem(){
             document.getElementById("premTAEdit").value = "";
             document.getElementById("premVidEdit").value = "";
             setTimeout(function(){
-              $("#deletemodal").modal("hide");
-              $("#premEditmodal").modal("hide");
-              document.getElementById("premResponseDel").innerHTML = "";
-              var elem = document.getElementById('premNr'+currentPremID);
-              elem.parentNode.removeChild(elem);
-              if(currentAct == 0){
-                  if($("ul#profPrems > li").length == 0){document.getElementById("noPremtxt").className = "wow fadeInUp col-md-12 text-center";}
-              } else if(currentAct == 1){
-                  if($("ul#profPremsActive > li").length == 0){document.getElementById("noPremtxtActive").className = "wow fadeInUp col-md-12 text-center";}
-              } else if(currentAct == 2){
-                  if($("ul#profPremsInv > li").length == 0){document.getElementById("noPremtxtInv").className = "wow fadeInUp col-md-12 text-center";}
-              }
+              location.reload();
             }, 800);
      } else {
        document.getElementById("premResponseDel").innerHTML = "Loading...";
@@ -115,6 +111,7 @@ function updatePrem(){
   var ort = document.getElementById('premOrtEdit').value;
   var beschrieb = document.getElementById('premTAEdit').value;
   var video = document.getElementById('premVidEdit').value;
+  var jon = getAddDatesJEdit();
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         var ret = this.responseText;
@@ -122,10 +119,7 @@ function updatePrem(){
           var res = ret.split("/");
             document.getElementById("premResponseEdit").innerHTML = res[0];
           setTimeout(function(){
-            document.getElementById("premTxtNr"+currentPremID).innerHTML = name;
-            document.getElementById("premNr"+currentPremID).style.backgroundImage = "url(../uploads/small/"+currentPremID+res[1]+"?"+getRandomInt(0, 10000)+")";
             $("#premEditmodal").modal("hide");
-            document.getElementById("premResponseEdit").innerHTML = "";
           }, 800);
         } else {
           document.getElementById("premResponseEdit").innerHTML = ret;
@@ -134,7 +128,7 @@ function updatePrem(){
        document.getElementById("premResponseEdit").innerHTML = "Loading...";
      }
   };
-  var request = "id=" + currentPremID + "&name=" + name + "&spieler=" + spieler + "&datum=" + datum + "&ort=" + ort + "&beschrieb=" + beschrieb + "&video=" + video + "&filetype=" + filetype;
+  var request = "id=" + currentPremID + "&name=" + name + "&spieler=" + spieler + "&datum=" + datum + "&ort=" + ort + "&beschrieb=" + beschrieb + "&video=" + video + "&filetype=" + filetype + "&jon=" + jon;
   xhttp.open("POST", "functions/functions.php?func=changePrem", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(request);
@@ -155,6 +149,45 @@ function changeActivation(newAct){
   xhttp.open("POST", "functions/functions.php?func=changeActivation", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(request);
+}
+
+
+function remAufAllEdit(){
+  var size = nmbrsEdit.length;
+  for (var i = 0; i < size; i++){
+    $("#premDateDivEdit" + nmbrsEdit[i]).remove();
+    $("#premOrtDivEdit" + nmbrsEdit[i]).remove();
+    $("#premIcoDivEdit" + nmbrsEdit[i]).remove();
+  }
+  lastNmbrEdit = 0;
+  nmbrsEdit = [];
+}
+
+function remAufEdit(nmbr){
+  $("#premDateDivEdit" + nmbr).remove();
+  $("#premOrtDivEdit" + nmbr).remove();
+  $("#premIcoDivEdit" + nmbr).remove();
+  var index = nmbrsEdit.indexOf(nmbr);
+  if (index > -1) {
+    nmbrsEdit.splice(index, 1);
+  }
+}
+var nmbrsEdit = [];
+var lastNmbrEdit = 0;
+function newAufEdit(){
+  var nmbrEdit = lastNmbrEdit + 1;
+  $( '<div class="col-md-6 regMod" id="premDateDivEdit'+nmbrEdit+'"><input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDateEdit'+nmbrEdit+'" type="datetime-local" placeholder="Datum Premiere" required></div><div class="col-md-4 regMod" id="premOrtDivEdit'+nmbrEdit+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrtEdit'+nmbrEdit+'" type="text" placeholder="Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDivEdit'+nmbrEdit+'"><i onclick="remAufEdit('+nmbrEdit+');" id="delIcoEdit'+nmbrEdit+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDivEdit" );
+  lastNmbrEdit = nmbrEdit;
+  nmbrsEdit.push(nmbrEdit);
+}
+function getAddDatesJEdit(){
+  var datesEdit = [];
+  for (var i = 0; i < nmbrsEdit.length; i++){
+    datesEdit.push($("#premDateEdit"+nmbrsEdit[i]).val());
+    datesEdit.push($("#premOrtEdit"+nmbrsEdit[i]).val());
+  }
+  var jonEdit = JSON.stringify(datesEdit);
+  return jonEdit;
 }
 
 // Disable newline

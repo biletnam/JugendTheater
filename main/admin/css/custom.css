@@ -361,6 +361,56 @@
   line-height: 1.42857;
 }
 
+.addDate{
+  border: 2px dashed var(--main);
+  color: #9a9a9a;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.addDate:hover{
+  border: 2px solid var(--main);
+  color: #000;
+}
+
+.dz-fancy .dropzone{
+  color: #9a9a9a;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.dz-fancy .dropzone:hover{
+  border: 2px solid var(--main) !important;
+  color: #000;
+}
+
+.modSpace{
+  margin-bottom: 57px;
+}
+
+.huge-icon{
+  font-size: 46px;
+}
+
+.fa-minus-square-o{
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.fa-minus-square-o:hover{
+  color: var(--sub);
+}
+
+
 #preloader {
   position: fixed;
   left: 0;

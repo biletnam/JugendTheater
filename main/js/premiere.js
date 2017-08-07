@@ -6,6 +6,7 @@ function tryPremiere(){
   var ort = document.getElementById('premOrt').value;
   var beschrieb = document.getElementById('premTA').value;
   var video = document.getElementById('premVid').value;
+  var jon = getAddDatesJ();
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         var ret = this.responseText;
@@ -32,7 +33,7 @@ function tryPremiere(){
        document.getElementById("premResponse").innerHTML = "Waiting for response...";
      }
   };
-  var request = "name=" + name + "&spieler=" + spieler + "&datum=" + datum + "&ort=" + ort + "&beschrieb=" + beschrieb + "&video=" + video;
+  var request = "name=" + name + "&spieler=" + spieler + "&datum=" + datum + "&ort=" + ort + "&beschrieb=" + beschrieb + "&video=" + video + "&jon=" + jon;
   xhttp.open("POST", "functions/functions.php?func=newPrem", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(request);
@@ -45,6 +46,33 @@ function openPremiere(){
   } else {
     $("#premieremodal").modal("show");
   }
+}
+
+function remAuf(nmbr){
+  $("#premDateDiv" + nmbr).remove();
+  $("#premOrtDiv" + nmbr).remove();
+  $("#premIcoDiv" + nmbr).remove();
+  var index = nmbrs.indexOf(nmbr);
+  if (index > -1) {
+    nmbrs.splice(index, 1);
+  }
+}
+var nmbrs = [];
+var lastNmbr = 0;
+function newAuf(){
+  var nmbr = lastNmbr + 1;
+  $( '<div class="col-md-6 regMod" id="premDateDiv'+nmbr+'"><input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDate'+nmbr+'" type="datetime-local" placeholder="Datum Premiere" required></div><div class="col-md-4 regMod" id="premOrtDiv'+nmbr+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrt'+nmbr+'" type="text" placeholder="Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDiv'+nmbr+'"><i onclick="remAuf('+nmbr+');" id="delIco'+nmbr+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDiv" );
+  lastNmbr = nmbr;
+  nmbrs.push(nmbr);
+}
+function getAddDatesJ(){
+  var dates = [];
+  for (var i = 0; i < nmbrs.length; i++){
+    dates.push($("#premDate"+nmbrs[i]).val());
+    dates.push($("#premOrt"+nmbrs[i]).val());
+  }
+  var jon = JSON.stringify(dates);
+  return jon;
 }
 
 function openChooser(){

@@ -79,9 +79,9 @@
       </div>
       <div class="modal-body modalCorr">
           <div class="row">
-              <div class="col-md-6 regMod" onclick="openChooser();">
+              <div class="col-md-6 regMod dz-fancy" onclick="openChooser();">
                 <form action="" class="dropzone" id="my-dz">
-                  <div class="dz-message modalCorr" id="my-dz-msg">Bild hochladen</div>
+                  <div class="dz-message" id="my-dz-msg">Bild hochladen</div>
                 </form>
               </div>
               <form onsubmit="tryPremiere();return false;">
@@ -92,8 +92,15 @@
                     <input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDate" type="datetime-local" placeholder="Datum Premiere" required>
                 </div>
                 <div class="col-md-6 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrt" type="text" placeholder="Aufführungort" required>
+                    <input class="form-control input-lg mt-1 modalCorr modSpace" maxlength="50" name="premOrt" id="premOrt" type="text" placeholder="Aufführungort" required>
                 </div>
+
+                <div class="col-md-12 regMod" id="newAufDiv">
+                  <div class="form-control input-lg addDate clickable text-center" onclick="newAuf();">
+                    Weitere Aufführung
+                  </div>
+                </div>
+
                 <div class="col-md-12 regMod">
                     <textarea class="form-control input-lg mt-1 modalCorr" maxlength="500" name="premSpieler" id="premSpieler" type="text" placeholder="Spieler (kommagetrennt)" required></textarea>
                 </div>
@@ -101,7 +108,7 @@
                   <textarea class="form-control input-lg mt-1 modalCorr beschriebArea" maxlength="500" id="premTA" name="premTA" placeholder="Stückbeschrieb" required></textarea>
                 </div>
                 <div class="col-md-12 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr" maxlength="1000" name="premVid" id="premVid" type="url" placeholder="Youtube-Link" required>
+                    <input class="form-control input-lg mt-1 modalCorr" maxlength="1000" name="premVid" id="premVid" type="url" placeholder="Youtube-Link">
                 </div>
           </div>
       </div>
@@ -220,11 +227,11 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge13W" id="jgtAge13W" type="number" placeholder="Weiblich" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge13W" id="jgtAge13W" type="number" placeholder="Weiblich">
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge13M" id="jgtAge13M" type="number" placeholder="Männlich" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge13M" id="jgtAge13M" type="number" placeholder="Männlich">
               </div>
 
               <div class="col-md-6 regMod FormTextAlign">
@@ -232,11 +239,11 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge14W" id="jgtAge14W" type="number" placeholder="Weiblich" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge14W" id="jgtAge14W" type="number" placeholder="Weiblich">
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge14M" id="jgtAge14M" type="number" placeholder="Männlich" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge14M" id="jgtAge14M" type="number" placeholder="Männlich">
               </div>
 
               <div class="col-md-6 regMod FormTextAlign">
@@ -244,11 +251,11 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge18W" id="jgtAge18W" type="number" placeholder="Weiblich" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge18W" id="jgtAge18W" type="number" placeholder="Weiblich">
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge18M" id="jgtAge18M" type="number" placeholder="Männlich" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge18M" id="jgtAge18M" type="number" placeholder="Männlich">
               </div>
 
               <div class="col-md-6 regMod FormTextAlign">
@@ -256,11 +263,11 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge21W" id="jgtAge21W" type="number" placeholder="Weiblich" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge21W" id="jgtAge21W" type="number" placeholder="Weiblich">
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge21M" id="jgtAge21M" type="number" placeholder="Männlich" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge21M" id="jgtAge21M" type="number" placeholder="Männlich">
               </div>
 
               <div class="col-md-6 regMod">
@@ -534,8 +541,15 @@
                     <input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDateEdit" type="datetime-local" placeholder="Datum Premiere" required>
                 </div>
                 <div class="col-md-6 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrtEdit" type="text" placeholder="Aufführungort" required>
+                    <input class="form-control input-lg mt-1 modalCorr modSpace" maxlength="50" name="premOrt" id="premOrtEdit" type="text" placeholder="Aufführungort" required>
                 </div>
+
+                <div class="col-md-12 regMod" id="newAufDivEdit">
+                  <div class="form-control input-lg addDate clickable text-center" onclick="newAufEdit();">
+                    Weitere Aufführung
+                  </div>
+                </div>
+
                 <div class="col-md-12 regMod">
                     <textarea class="form-control input-lg mt-1 modalCorr" maxlength="500" name="premSpieler" id="premSpielerEdit" type="text" placeholder="Spieler (kommagetrennt)" required></textarea>
                 </div>

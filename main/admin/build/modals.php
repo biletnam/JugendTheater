@@ -15,7 +15,7 @@ if($loggedIn){
       <div class="modal-body modalCorr">
           <div class="row">
             <div class="col-md-12">
-              <div class="col-md-6 regMod">
+              <div class="col-md-6 regMod dz-fancy">
                 <form action="" class="dropzone" id="my-dz-Edit">
                   <div class="dz-message modalCorr" id="my-dz-msg-Edit">Bild hochladen</div>
                 </form>
@@ -28,8 +28,15 @@ if($loggedIn){
                     <input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDateEdit" type="datetime-local" placeholder="Datum Premiere" required>
                 </div>
                 <div class="col-md-6 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrtEdit" type="text" placeholder="Aufführungort" required>
+                    <input class="form-control input-lg mt-1 modalCorr modSpace" maxlength="50" name="premOrt" id="premOrtEdit" type="text" placeholder="Aufführungort" required>
                 </div>
+
+                <div class="col-md-12 regMod" id="newAufDivEdit">
+                  <div class="form-control input-lg addDate clickable text-center" onclick="newAufEdit();">
+                    Weitere Aufführung
+                  </div>
+                </div>
+
                 <div class="col-md-12 regMod">
                     <textarea class="form-control input-lg mt-1 modalCorr" maxlength="500" name="premSpieler" id="premSpielerEdit" type="text" placeholder="Spieler (kommagetrennt)" required></textarea>
                 </div>

@@ -158,6 +158,10 @@
   cursor: pointer;
 }
 
+.clickable{
+  cursor: pointer;
+}
+
 .modalCorr{
     color: #000 !important;
 }
@@ -169,6 +173,23 @@
 .bigger-icon{
   font-size: 26px;
 }
+
+.huge-icon{
+  font-size: 46px;
+}
+
+.fa-minus-square-o{
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.fa-minus-square-o:hover{
+  color: var(--sub);
+}
+
 
 .counter{
     display: initial !important;
@@ -340,6 +361,38 @@
   visibility: hidden !important;
 }
 
+.addDate{
+  border: 2px dashed var(--main);
+  color: #9a9a9a;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.addDate:hover{
+  border: 2px solid var(--main);
+  color: #000;
+}
+
+.dz-fancy .dropzone{
+  color: #9a9a9a;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.dz-fancy .dropzone:hover{
+  border: 2px solid var(--main) !important;
+  color: #000;
+}
+
+.modSpace{
+  margin-bottom: 57px;
+}
 
 #preloader {
   position: fixed;
