@@ -136,7 +136,7 @@
           <?php if($loggedIn){$query = "SELECT ID FROM anmeldungen WHERE UserID=".$user->getProperty('ID');if ($result=mysqli_query($DBconn,$query)){if(mysqli_num_rows($result) > 0){echo 'Du hast dich bereits angemeldet.';} else {
           echo '* zwingend ausfüllen';}}}
             ?>
-          
+
         </span></h4>
       </div>
       <div class="modal-body modalCorr">
@@ -551,8 +551,8 @@
                   <div class="dz-message modalCorr" id="my-dz-msg-Edit">Bild hochladen</div>
                 </form>
               </div>
-              <div class="col-md-6 regMod">
                 <form onsubmit="updatePrem();return false;">
+              <div class="col-md-6 regMod">
                     <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premProduktion" id="premProduktionEdit" type="text" placeholder="Name Produktion" required>
                 </div>
                 <div class="col-md-6 regMod">

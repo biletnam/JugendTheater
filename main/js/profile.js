@@ -52,12 +52,12 @@ var currentPremID = 0;
 var filetype = "";
 function showPremEditModal(premID){
   var xhttp = new XMLHttpRequest();
-  currentPremID = premID
+  currentPremID = premID;
   xhttp.onreadystatechange = function() {
       $("#premEditmodal").modal("show");
       if (this.readyState == 4 && this.status == 200) {
             var rows = JSON.parse(this.responseText);
-            loadMockFiles();
+            loadMockFilesEdit();
             remAufAllEdit();
             var premAddDates = JSON.parse(rows["addDates"]);
             for (var e = 0; e < premAddDates.length; e += 2){
@@ -341,6 +341,7 @@ $(document).ready(function(){
           if (ext == "pdf") {
              $(this.files[0].previewElement).find(".dz-image img").attr("src", "../images/edit/pdf.png");
           }
+          loadsMocks = true;
         }
       });
     }
@@ -365,7 +366,7 @@ $(document).ready(function(){Dropzone.autoDiscover = false;
         if (ext == "pdf") { $(this.files[jgtdzA_Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/pdf.png");}
         if (ext == "doc") { $(this.files[jgtdzA_Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/doc.png");}
         if (ext == "docx") { $(this.files[jgtdzA_Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/docx.png");}
-        }if(jgtdzA_Counter < jgtdzA_MaxFiles-1){jgtdzA_Counter++;}});}});
+        }loadsMocks = true;if(jgtdzA_Counter < jgtdzA_MaxFiles-1){jgtdzA_Counter++;}});}});
   });
 
 
@@ -410,7 +411,7 @@ $(document).ready(function(){Dropzone.autoDiscover = false;
       });
 
     var AddsMockFiles = false;
-    function loadMockFiles(){
+    function loadMockFilesEdit(){
       Dropzone.forElement("#premDzAnEdit").removeAllFiles(true);
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
@@ -420,7 +421,7 @@ $(document).ready(function(){Dropzone.autoDiscover = false;
               var res = ret.split("/");
               for(var i = 0; i < res.length; i++){
                 AddsMockFiles = true;
-                addMockFile(res[i],"premDzAnEdit");
+                addMockFileEdit(res[i],"premDzAnEdit");
               }
             }
          }
@@ -431,7 +432,7 @@ $(document).ready(function(){Dropzone.autoDiscover = false;
       xhttp.send(request);
     }
 
-    function addMockFile(filename,dzID){
+    function addMockFileEdit(filename,dzID){
       var mockFile = { name: filename, size: 12345 };
       var myDropzone = Dropzone.forElement("#"+dzID);
       myDropzone.emit("addedfile", mockFile);
@@ -448,10 +449,10 @@ $(document).ready(function(){Dropzone.autoDiscover = false;
       myDropzone.emit("complete", mockFile);
       myDropzone.files.push(mockFile);
 
-    /* var a = document.createElement('a');
+      var a = document.createElement('a');
       a.setAttribute('href',"../uploads/"+filename);
       a.setAttribute("download",filename);
       a.className = "clickableStrict dBlock";
       a.innerHTML = 'Download <i class="fa fa-download clickableStrict" aria-hidden="true"></i>';
-      mockFile.previewTemplate.appendChild(a);*/
+      mockFile.previewTemplate.appendChild(a);
     }

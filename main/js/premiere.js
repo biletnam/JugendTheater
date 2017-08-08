@@ -164,6 +164,7 @@ $(document).ready(function(){
           if (ext == "pdf") {
              $(this.files[0].previewElement).find(".dz-image img").attr("src", "../images/edit/pdf.png");
           }
+          loadsMocks = true;
         }
       });
     }
@@ -188,7 +189,7 @@ $(document).ready(function(){Dropzone.autoDiscover = false;
         if (ext == "pdf") { $(this.files[jgtdzA_Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/pdf.png");}
         if (ext == "doc") { $(this.files[jgtdzA_Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/doc.png");}
         if (ext == "docx") { $(this.files[jgtdzA_Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/docx.png");}
-        }if(jgtdzA_Counter < jgtdzA_MaxFiles-1){jgtdzA_Counter++;}});}});
+        }loadsMocks = true;if(jgtdzA_Counter < jgtdzA_MaxFiles-1){jgtdzA_Counter++;}});}});
   });
 
 

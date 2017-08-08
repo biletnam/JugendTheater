@@ -47,7 +47,7 @@
 
       <?php $tour = 0; $result = mysqli_query($DBconn, "SELECT * FROM premieren WHERE Activation = 1");
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)): $tour++;?>
-      <li class="wow fadeInUp col-md-4 premImgFix" style="background-image: url(../uploads/small/<?php  echo $row['ID'].$row['Bilder']; ?>);" data-wow-duration="1s" data-wow-delay=".8s" data-stellar-background-ratio="0.5">
+      <li class="wow fadeInUp col-md-4 premImgFix" style="background-image: url(../uploads/small/<?php  echo $row['ID'].$row['Bilder']; ?>);" data-wow-duration="1s" data-wow-delay=".8s">
         <a href="../?loc=premiere&prem=<?php echo $row['ID']; ?>">
           <div class="fh5co-overlay"></div>
             <div class="fh5co-text">

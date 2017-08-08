@@ -342,6 +342,19 @@
   background-attachment: scroll !important;
   background-position: center !important;
   box-shadow: none !important;
+  filter: grayscale(100%) !important;
+  -webkit-filter: grayscale(100%) !important;
+  opacity: 0.95 !important;
+}
+
+.wir_partner2{
+  background-color: #fff !important;
+}
+
+.wir_partner:hover{
+  filter: none !important;
+  -webkit-filter: grayscale(0) !important;
+  opacity: 1.0 !important;
 }
 
 .setBtn{
@@ -521,3 +534,7 @@
   -webkit-animation: fadeOut 0.5s linear forwards;
   animation: fadeOut 0.5s linear forwards;
  }
+
+.fh5co-cover-style-2{
+    background-position: center !important;
+}

@@ -45,8 +45,21 @@ function convertYoutube($string) {
             <h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><?php echo $row['Produktion']; ?></h2>
             <div class="wow fadeInUp col-md-6 gonnerverein" data-wow-duration="1s" data-wow-delay=".4s"><div class="untertitel regModTitle">Beschrieb</div><br><?php echo $row['Beschrieb'] ?></div>
             <div class="wow fadeInUp col-md-6 gonnerverein" data-wow-duration="1s" data-wow-delay=".6s"><div class="untertitel regModTitle">Gruppe</div><br><?php $people = explode(",",$row['Spieler']); echo $row['Spieler'];?></div>
+            <?php $aD = json_decode($row['addDates']); if(count($aD)>0){?>
+              <div class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay=".8s"><div class="untertitel regModTitle">Weitere Aufführungen</div><br></div>
+              <div class="wow fadeInUp col-md-4" data-wow-duration="1s" data-wow-delay=".8s">Datum</div>
+              <div class="wow fadeInUp col-md-4" data-wow-duration="1s" data-wow-delay=".8s">Ort</div>
+              <div class="wow fadeInUp col-md-4" data-wow-duration="1s" data-wow-delay=".8s">Zeit</div>
+              <?php for($i = 0; $i < count($aD)-1;$i += 2){?>
+                <?php list($date,$time)=explode('T', $aD[$i]);?>
+                <div class="wow fadeInUp col-md-4" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $date; ?></div>
+                <div class="wow fadeInUp col-md-4" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $aD[$i + 1]; ?></div>
+                <div class="wow fadeInUp col-md-4" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $time; ?></div>
+
+              <?php }?>
+              <?php } ?>
             <?php if(!empty($row['Video']) && $row['Video'] != ""){ ?>
-            <div class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay=".8s"><div class="untertitel regModTitle">Video</div><br></div>
+            <div class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay="1.0s"><div class="untertitel regModTitle">Video</div><br></div>
               <div class="embed-responsive embed-responsive-16by9 wow fadeInUp col-md-12 roundBorder" data-wow-duration="1s" data-wow-delay="1s">
                 <?php echo convertYoutube($row['Video']); ?>
               </div>
@@ -55,9 +68,9 @@ function convertYoutube($string) {
                <?php
                $premData = glob("uploads/".$prem."premFile_".$row2['Username']."*.*");
                if(count($premData) > 0){?>
-               <div class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay="1.2s"><div class="untertitel regModTitle">Anhänge</div><br></div>
+               <div class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay=".2s"><div class="untertitel regModTitle">Anhänge</div><br></div>
                <?php foreach ($premData as $fname) { ?>
-               <div class="wow fadeInUp col-md-<?php if(count($premData) == 1){echo "12";}else{echo "6";} ?>" data-wow-duration="1s" data-wow-delay="1.4s">
+               <div class="wow fadeInUp col-md-<?php if(count($premData) == 1){echo "12";}else{echo "6";} ?>" data-wow-duration="1s" data-wow-delay=".4s">
                  <div class="dz-hide"><div class="dz-hide-sub">
                    <div class="dz-hide-img">
                      <a href="<?php echo $fname; ?>" download>
@@ -67,6 +80,8 @@ function convertYoutube($string) {
                </div>
                <?php } ?>
                <?php } ?>
+
+
           </div>
         </div>
   </div>
@@ -82,8 +97,15 @@ function convertYoutube($string) {
 								<div class="icon">
 									<i class="fa fa-calendar" aria-hidden="true"></i>
 								</div>
-								<span class="fh5co-counter js-counter counter" data-from="0" data-to="<?php list($date,$time)=explode(' ', $row['PremiereDatum']);list($year,$month,$day)=explode('-',$date);echo $day;?>" data-speed="2000" data-refresh-interval="20"></span>
+                <?php list($date,$time)=explode(' ', $row['PremiereDatum']);list($year,$month,$day)=explode('-',$date); if($day  < 10){ ?>
+                  <span class="fh5co-counter counter">0</span>
+                <?php } ?>
+								<span class="fh5co-counter js-counter counter" data-from="0" data-to="<?php echo $day;?>" data-speed="2000" data-refresh-interval="20"></span>
+
                 <span class="fh5co-counter counter">.</span>
+                <?php if($month < 10){ ?>
+                <span class="fh5co-counter counter">0</span>
+                <?php } ?>
                 <span class="fh5co-counter js-counter counter" data-from="0" data-to="<?php echo $month;?>" data-speed="2000" data-refresh-interval="20"></span>
 								<span class="fh5co-counter-label">Datum</span>
 
@@ -99,8 +121,14 @@ function convertYoutube($string) {
                 <div class="icon">
                   <i class="fa fa-clock-o" aria-hidden="true"></i>
                 </div>
-                <span class="fh5co-counter js-counter counter" data-from="0" data-to="<?php list($hour,$min,$sec)=explode(':',$time);echo $hour;?>" data-speed="2000" data-refresh-interval="20"></span>
+                <?php list($hour,$min,$sec)=explode(':',$time); if($hour < 10){?>
+                  <span class="fh5co-counter counter">0</span>
+                <?php } ?>
+                <span class="fh5co-counter js-counter counter" data-from="0" data-to="<?php echo $hour;?>" data-speed="2000" data-refresh-interval="20"></span>
                 <span class="fh5co-counter counter">:</span>
+                <?php if($min < 10){?>
+                <span class="fh5co-counter counter">0</span>
+                <?php } ?>
                 <span class="fh5co-counter js-counter counter" data-from="0" data-to="<?php echo $min; ?>" data-speed="2000" data-refresh-interval="20"></span>
                 <span class="fh5co-counter-label">Uhrzeit</span>
               </div>
