@@ -132,7 +132,12 @@
     <!-- Modal content-->
     <div class="modal-content" id="jgtModalContent">
       <div class="modal-header modalCorr">
-        <h4 class="modal-title modalCorr">Für das Festival bewerben <span class="modalResponse" id="jgtResponse">* zwingend ausfüllen</span></h4>
+        <h4 class="modal-title modalCorr">Für das Festival bewerben <span class="modalResponse" id="jgtResponse">
+          <?php if($loggedIn){$query = "SELECT ID FROM anmeldungen WHERE UserID=".$user->getProperty('ID');if ($result=mysqli_query($DBconn,$query)){if(mysqli_num_rows($result) > 0){echo 'Du hast dich bereits angemeldet.';} else {
+          echo '* zwingend ausfüllen';}}}
+            ?>
+          
+        </span></h4>
       </div>
       <div class="modal-body modalCorr">
           <div class="row">
@@ -169,6 +174,12 @@
 
               <div class="col-md-4 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" name="jgtDauer" id="jgtDauer" type="number" placeholder="*Dauer (in Minuten)" required>
+              </div>
+
+              <div class="col-md-12 regMod" id="newAufDivJgt">
+                <div class="form-control input-lg addDate clickable text-center" onclick="newAufJgt();">
+                  Weitere Aufführung
+                </div>
               </div>
 
               <div class="col-md-4 regMod">
@@ -513,7 +524,9 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary btn-outline btn-black pull-left" data-dismiss="modal">Cancel</button>
-        <input id="jgtSubmitBtn" type="submit" class="btn btn-success btn-outline pull-right" value="Bewerben" disabled>
+        <?php if($loggedIn){$query = "SELECT ID FROM anmeldungen WHERE UserID=".$user->getProperty('ID');if ($result=mysqli_query($DBconn,$query)){if(mysqli_num_rows($result) > 0){} else {?>
+          <input id="jgtSubmitBtn" type="submit" class="btn btn-success btn-outline pull-right" value="Bewerben" disabled>
+        <?php }}} ?>
         </form>
       </div>
     </div>

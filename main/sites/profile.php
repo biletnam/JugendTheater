@@ -12,7 +12,18 @@
           <div class="fh5co-cover-intro">
             <h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Profile</h1>
             <h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Hier kannst du deine Premieren verwalten</h2>
-            <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a onclick="openJgt();" class="btn btn-primary btn-outline btn-lg">Für das Jugendtheater-Festival Schweiz bewerben</a></p>
+            <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a onclick="openJgt();" class="btn btn-primary btn-outline btn-lg">
+              <?php
+              $query = "SELECT ID FROM anmeldungen WHERE UserID=".$user->getProperty('ID');
+           		if ($result=mysqli_query($DBconn,$query)){
+             		if(mysqli_num_rows($result) > 0){
+          				echo 'Bewerbung ansehen';
+          			} else {
+                  echo 'Für das Jugendtheater-Festival Schweiz bewerben';
+                }
+            	}
+               ?>
+              </a></p>
           </div>
         </div>
       </div>

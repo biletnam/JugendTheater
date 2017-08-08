@@ -69,10 +69,11 @@ function jgt(){
 
     // Schluss
     $jgtSign = gMSS($_POST['jgtSign']);
+    $jon = gMS($_POST['jon']);
 
     $varArray = array($jgtTitel,$jgtUntertitel,$jgtDate,$jgtOrt,$jgtDauer,$actCheck,$jgtAlter,$jgtSprachen,$jgtCC,$jgtEnsembleName,$jgtEnsembleCity,$jgtPlayer,$jgtNonPlayer,$jgtAgeFrom,$jgtAgeTo,$jgtAge13W,$jgtAge13M,$jgtAge14W,$jgtAge14M,$jgtAge18W,$jgtAge18M,$jgtAge21W,$jgtAge21M,$jgtSpielleitung,$jgtAdress,$jgtTele,$jgtEmail,$jgtInfo,$jgtTrager,$jgtTragerAdress,$jgtTragerTele,$jgtTragerEmail,$jgtTragerWebsite,$medienInsta,$medienFlickr,$medienEmail,$medienFacebook,$medienWebsite,$medienTagespresse,$medienFachzeitschrift,$medienAnzeige,$medienFlyer,$medienKollegen,$medienSchulverteiler,$medienSonstige,$jgtSonst,$jgtVid,$jgtAnVid,$jgtBeschrieb,$jgtAnInfo,$jgtAnBe,$jgtTeilnahme,$jgtSign);
 
-    $sql = "INSERT INTO anmeldungen (UserID, Json) VALUES ('".$user->getProperty('ID')."','".json_encode($varArray)."')";
+    $sql = "INSERT INTO anmeldungen (UserID, Json, Jon) VALUES ('".$user->getProperty('ID')."','".json_encode($varArray)."','".$jon."')";
     if ($DBconn->query($sql) === TRUE) {
       echo "Success!";
     } else {

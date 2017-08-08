@@ -12,7 +12,16 @@
           <div class="fh5co-cover-intro">
             <h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><?php gCT("Willkommen"); ?></h1>
             <h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Hier findest du alles rund um das Theater</h2>
-            <p class="wow fadeInUp hidden-xs" data-wow-duration="1s" data-wow-delay=".6s"><a onclick="openJgt();" class="btn btn-primary btn-outline btn-lg">Für das Jugendtheater-Festival Schweiz bewerben</a></p>
+            <p class="wow fadeInUp hidden-xs" data-wow-duration="1s" data-wow-delay=".6s"><a onclick="openJgt();" class="btn btn-primary btn-outline btn-lg"><?php
+            $query = "SELECT ID FROM anmeldungen WHERE UserID=".$user->getProperty('ID');
+            if ($result=mysqli_query($DBconn,$query)){
+              if(mysqli_num_rows($result) > 0){
+                echo 'Bewerbung ansehen';
+              } else {
+                echo 'Für das Jugendtheater-Festival Schweiz bewerben';
+              }
+            }
+             ?></a></p>
           </div>
         </div>
       </div>
@@ -38,7 +47,7 @@
 
       <?php $tour = 0; $result = mysqli_query($DBconn, "SELECT * FROM premieren WHERE Activation = 1");
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)): $tour++;?>
-      <li class="wow fadeInUp col-md-4" style="background-image: url(../uploads/small/<?php  echo $row['ID'].$row['Bilder']; ?>);" data-wow-duration="1s" data-wow-delay=".8s" data-stellar-background-ratio="0.5">
+      <li class="wow fadeInUp col-md-4 premImgFix" style="background-image: url(../uploads/small/<?php  echo $row['ID'].$row['Bilder']; ?>);" data-wow-duration="1s" data-wow-delay=".8s" data-stellar-background-ratio="0.5">
         <a href="../?loc=premiere&prem=<?php echo $row['ID']; ?>">
           <div class="fh5co-overlay"></div>
             <div class="fh5co-text">

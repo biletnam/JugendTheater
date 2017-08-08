@@ -252,6 +252,12 @@ if($loggedIn){
                 <input class="form-control input-lg mt-1 modalCorr" name="jgtDauer" id="jgtDauer" type="number" placeholder="*Dauer (in Minuten)" required>
               </div>
 
+              <div class="col-md-12 regMod" id="newAufDivJgt">
+                <div class="form-control input-lg addDate clickable text-center" onclick="newAufJgt();">
+                  Weitere Aufführung
+                </div>
+              </div>
+              
               <div class="col-md-4 regMod">
                 <div class="checkbox">
                   <label>

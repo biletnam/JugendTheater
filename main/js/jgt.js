@@ -1,16 +1,99 @@
+function htmlDecode(string){
+  return $('<textarea />').html(string).text();
+}
+
 function openJgt(){
   if(!loggedIn){
     $("#infoModText").html("Du musst eingeloggt sein!");
     $("#infomodal").modal("show");
   } else {
+    $("#jgtmodal").modal("show");
     if(jgtdone){
-      $("#infoModText").html("Du hast dich bereits angemeldet. ");
-      $("#infomodal").modal("show");
+      loadAnmeldung(1);
     } else {
-      $("#jgtmodal").modal("show");
       getNames();
     }
   }
+}
+
+var CurrentJgtID = 0;
+function loadAnmeldung(id){
+  CurrentJgtID = id;
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          var ret = JSON.parse(this.responseText);
+            var rows = JSON.parse(ret['Json']);
+            var JgtAddDates = JSON.parse(ret['Jon']);
+            loadMockFiles();
+            remAufAllJgt();
+            for (var e = 0; e < JgtAddDates.length; e += 2){
+              newAufJgt();
+              $("#premDateJgt"+lastNmbrJgt).val(JgtAddDates[e]);
+              $("#premOrtJgt"+lastNmbrJgt).val(JgtAddDates[e+1]);
+            }
+            document.getElementById('jgtTitel').value = htmlDecode(rows[0]);
+            document.getElementById('jgtUntertitel').value = htmlDecode(rows[1]);
+            document.getElementById('jgtDate').value = rows[2];
+            document.getElementById('jgtOrt').value = htmlDecode(rows[3]);
+            document.getElementById('jgtDauer').value = rows[4];
+            if(rows[5] == 'true'){document.getElementById('actCheck2').click();}
+            document.getElementById('jgtAlter').value = rows[6];
+            document.getElementById('jgtSprachen').value = htmlDecode(rows[7]);
+            document.getElementById('jgtCC').value = htmlDecode(rows[8]);
+            document.getElementById('jgtEnsembleName').value = htmlDecode(rows[9]);
+            document.getElementById('jgtEnsembleCity').value = htmlDecode(rows[10]);
+            document.getElementById('jgtPlayer').value = rows[11];
+            document.getElementById('jgtNonPlayer').value = rows[12];
+            document.getElementById('jgtAgeFrom').value = rows[13];
+            document.getElementById('jgtAgeTo').value = rows[14];
+            document.getElementById('jgtAge13W').value = rows[15];
+            document.getElementById('jgtAge13M').value = rows[16];
+            document.getElementById('jgtAge14W').value = rows[17];
+            document.getElementById('jgtAge14M').value = rows[18];
+            document.getElementById('jgtAge18W').value = rows[19];
+            document.getElementById('jgtAge18M').value = rows[20];
+            document.getElementById('jgtAge21W').value = rows[21];
+            document.getElementById('jgtAge21M').value = rows[22];
+            document.getElementById('jgtSpielleitung').value = htmlDecode(rows[23]);
+            document.getElementById('jgtAdress').value = htmlDecode(rows[24]);
+            document.getElementById('jgtTele').value = rows[25];
+            document.getElementById('jgtEmail').value = htmlDecode(rows[26]);
+            document.getElementById('jgtInfo').value = htmlDecode(rows[27]);
+            document.getElementById('jgtTrager').value = htmlDecode(rows[28]);
+            document.getElementById('jgtTragerAdress').value = htmlDecode(rows[29]);
+            document.getElementById('jgtTragerTele').value = htmlDecode(rows[30]);
+            document.getElementById('jgtTragerEmail').value = htmlDecode(rows[31]);
+            document.getElementById('jgtTragerWebsite').value = htmlDecode(rows[32]);
+            if(rows[33] == 'true'){document.getElementById('medienInsta2').click();}
+            if(rows[34] == 'true'){document.getElementById('medienFlickr2').click();}
+            if(rows[35] == 'true'){document.getElementById('medienEmail2').click();}
+            if(rows[36] == 'true'){document.getElementById('medienFacebook2').click();}
+            if(rows[37] == 'true'){document.getElementById('medienWebsite2').click();}
+            if(rows[38] == 'true'){document.getElementById('medienTagespresse2').click();}
+            if(rows[39] == 'true'){document.getElementById('medienFachzeitschrift2').click();}
+            if(rows[40] == 'true'){document.getElementById('medienAnzeige2').click();}
+            if(rows[41] == 'true'){document.getElementById('medienFlyer2').click();}
+            if(rows[42] == 'true'){document.getElementById('medienKollegen2').click();}
+            if(rows[43] == 'true'){document.getElementById('medienSchulverteiler2').click();}
+            if(rows[44] == 'true'){document.getElementById('medienSonstige2').click();}
+            document.getElementById('jgtSonst').value = htmlDecode(rows[45]);
+            document.getElementById('jgtVid').value = htmlDecode(rows[46]);
+            document.getElementById('jgtAnVid').value = htmlDecode(rows[47]);
+            document.getElementById('jgtBeschrieb').value = htmlDecode(rows[48]);
+            document.getElementById('jgtAnInfo').value = htmlDecode(rows[49]);
+            document.getElementById('jgtAnBe').value = htmlDecode(rows[50]);
+            if(rows[51] == 'true'){document.getElementById('teilnahmebedingungen2').click();}
+            document.getElementById('jgtSign').value  = htmlDecode(rows[52]);
+            document.getElementById("jgtResponse").innerHTML = "Du hast dich bereits angemeldet.";
+     } else {
+       document.getElementById("jgtResponse").innerHTML = "Loading...";
+     }
+  };
+  var request = "id=" + id;
+  xhttp.open("POST", "../admin/functions/functions.php?func=getAnmeldung", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(request);
 }
 
 function tryJgt(){
@@ -86,7 +169,7 @@ function tryJgt(){
   var requestSchluss = "&teilnahmebedingungen=" + teilnahmebedingungen + "&jgtSign=" + jgtSign;
 
 
-  var request = requestStueck + requestEnsemble + requestTrager + requestWett + requestAnhang + requestSchluss;
+  var request = requestStueck + requestEnsemble + requestTrager + requestWett + requestAnhang + requestSchluss + "&jon=" + getAddDatesJJgt();
   $('#jgtmodal').animate({ scrollTop: 0 }, 'slow');
 
   var xhttp = new XMLHttpRequest();
@@ -130,7 +213,9 @@ function sonstTxtToggle(){
 }
 
 function tbClick(){
-  document.getElementById("jgtSubmitBtn").disabled = !document.getElementById("jgtSubmitBtn").disabled;
+  if(!jgtdone){
+    document.getElementById("jgtSubmitBtn").disabled = !document.getElementById("jgtSubmitBtn").disabled;
+  }
 }
 
 
@@ -161,3 +246,90 @@ $(document).ready(function() {
     xhttp.send("");
   });
 });
+
+function remAufAllJgt(){
+  var size = nmbrsJgt.length;
+  for (var i = 0; i < size; i++){
+    $("#premDateDivJgt" + nmbrsJgt[i]).remove();
+    $("#premOrtDivJgt" + nmbrsJgt[i]).remove();
+    $("#premIcoDivJgt" + nmbrsJgt[i]).remove();
+  }
+  lastNmbrJgt = 0;
+  nmbrsJgt = [];
+}
+
+function remAufJgt(nmbr){
+  $("#premDateDivJgt" + nmbr).remove();
+  $("#premOrtDivJgt" + nmbr).remove();
+  $("#premIcoDivJgt" + nmbr).remove();
+  var index = nmbrsJgt.indexOf(nmbr);
+  if (index > -1) {
+    nmbrsJgt.splice(index, 1);
+  }
+}
+var nmbrsJgt = [];
+var lastNmbrJgt = 0;
+function newAufJgt(){
+  var nmbrJgt = lastNmbrJgt + 1;
+  $( '<div class="col-md-4 regMod" id="premDateDivJgt'+nmbrJgt+'"><input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDateJgt'+nmbrJgt+'" type="datetime-local" placeholder="Datum Premiere" required></div><div class="col-md-6 regMod" id="premOrtDivJgt'+nmbrJgt+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrtJgt'+nmbrJgt+'" type="text" placeholder="*Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDivJgt'+nmbrJgt+'"><i onclick="remAufJgt('+nmbrJgt+');" id="delIcoJgt'+nmbrJgt+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDivJgt" );
+  lastNmbrJgt = nmbrJgt;
+  nmbrsJgt.push(nmbrJgt);
+}
+function getAddDatesJJgt(){
+  var datesJgt = [];
+  for (var i = 0; i < nmbrsJgt.length; i++){
+    datesJgt.push($("#premDateJgt"+nmbrsJgt[i]).val());
+    datesJgt.push($("#premOrtJgt"+nmbrsJgt[i]).val());
+  }
+  var jonJgt = JSON.stringify(datesJgt);
+  return jonJgt;
+}
+
+var loadsMocks = false;
+function loadMockFiles(){
+  Dropzone.forElement("#jgtdz").removeAllFiles(true);
+  Dropzone.forElement("#jgtdzA").removeAllFiles(true);
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var ret = this.responseText;
+        var res = ret.split("/");
+        if(res[0] != ""){
+          addMockFile(res[0],"jgtdz");
+        }
+        for(var i = 1; i < res.length; i++){
+          addMockFile(res[i],"jgtdzA");
+        }
+     }
+  };
+  var request = "id="+CurrentJgtID;
+  xhttp.open("POST", "../admin/functions/functions.php?func=getFileInfos", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(request);
+}
+
+function addMockFile(filename,dzID){
+  loadsMocks = true;
+  var mockFile = { name: filename, size: 12345 };
+  var myDropzone = Dropzone.forElement("#"+dzID);
+  myDropzone.emit("addedfile", mockFile);
+  var ext = filename.split('.').pop();
+  if (ext == "pdf") {
+    myDropzone.createThumbnailFromUrl(mockFile, "../images/edit/pdf.png");
+  } else if(ext == "doc"){
+    myDropzone.createThumbnailFromUrl(mockFile, "../images/edit/doc.png");
+  } else if(ext == "docx"){
+    myDropzone.createThumbnailFromUrl(mockFile, "../images/edit/docx.png");
+  } else {
+    myDropzone.createThumbnailFromUrl(mockFile, "../uploads/"+filename);
+  }
+  myDropzone.emit("complete", mockFile);
+  myDropzone.files.push(mockFile);
+
+  var a = document.createElement('a');
+  a.setAttribute('href',"../uploads/"+filename);
+  a.setAttribute("download",filename);
+  a.className = "clickableStrict dBlock";
+  a.innerHTML = 'Download <i class="fa fa-download clickableStrict" aria-hidden="true"></i>';
+  mockFile.previewTemplate.appendChild(a);
+}

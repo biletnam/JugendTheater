@@ -9,10 +9,18 @@ function showJgt(id){
   xhttp.onreadystatechange = function() {
       $("#jgtmodal").modal("show");
       if (this.readyState == 4 && this.status == 200) {
-            var rows = JSON.parse(this.responseText);
+          var ret = JSON.parse(this.responseText);
+            var rows = JSON.parse(ret['Json']);
+            var JgtAddDates = JSON.parse(ret['Jon']);
             document.getElementById('deleteJgt').innerHTML = htmlDecode(rows[0]);
             loadMockFiles();
+            remAufAllJgt();
 
+            for (var e = 0; e < JgtAddDates.length; e += 2){
+              newAufJgt();
+              $("#premDateJgt"+lastNmbrJgt).val(JgtAddDates[e]);
+              $("#premOrtJgt"+lastNmbrJgt).val(JgtAddDates[e+1]);
+            }
             // Zum Stück
             document.getElementById('jgtTitel').value = htmlDecode(rows[0]);
             document.getElementById('jgtUntertitel').value = htmlDecode(rows[1]);
@@ -245,7 +253,7 @@ function changeJgt(){
   var requestSchluss = "&teilnahmebedingungen=" + teilnahmebedingungen + "&jgtSign=" + jgtSign;
 
 
-  var request = requestStueck + requestEnsemble + requestTrager + requestWett + requestAnhang + requestSchluss + "&id=" + CurrentJgtID;
+  var request = requestStueck + requestEnsemble + requestTrager + requestWett + requestAnhang + requestSchluss + "&id=" + CurrentJgtID + "&jon=" + getAddDatesJJgt();
   $('#jgtmodal').animate({ scrollTop: 0 }, 'slow');
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -414,4 +422,42 @@ function premDelAll(){
   xhttp.open("POST", "functions/functions.php?func=premDelAll", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("");
+}
+
+function remAufAllJgt(){
+  var size = nmbrsJgt.length;
+  for (var i = 0; i < size; i++){
+    $("#premDateDivJgt" + nmbrsJgt[i]).remove();
+    $("#premOrtDivJgt" + nmbrsJgt[i]).remove();
+    $("#premIcoDivJgt" + nmbrsJgt[i]).remove();
+  }
+  lastNmbrJgt = 0;
+  nmbrsJgt = [];
+}
+
+function remAufJgt(nmbr){
+  $("#premDateDivJgt" + nmbr).remove();
+  $("#premOrtDivJgt" + nmbr).remove();
+  $("#premIcoDivJgt" + nmbr).remove();
+  var index = nmbrsJgt.indexOf(nmbr);
+  if (index > -1) {
+    nmbrsJgt.splice(index, 1);
+  }
+}
+var nmbrsJgt = [];
+var lastNmbrJgt = 0;
+function newAufJgt(){
+  var nmbrJgt = lastNmbrJgt + 1;
+  $( '<div class="col-md-4 regMod" id="premDateDivJgt'+nmbrJgt+'"><input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDateJgt'+nmbrJgt+'" type="datetime-local" placeholder="Datum Premiere" required></div><div class="col-md-6 regMod" id="premOrtDivJgt'+nmbrJgt+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrtJgt'+nmbrJgt+'" type="text" placeholder="*Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDivJgt'+nmbrJgt+'"><i onclick="remAufJgt('+nmbrJgt+');" id="delIcoJgt'+nmbrJgt+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDivJgt" );
+  lastNmbrJgt = nmbrJgt;
+  nmbrsJgt.push(nmbrJgt);
+}
+function getAddDatesJJgt(){
+  var datesJgt = [];
+  for (var i = 0; i < nmbrsJgt.length; i++){
+    datesJgt.push($("#premDateJgt"+nmbrsJgt[i]).val());
+    datesJgt.push($("#premOrtJgt"+nmbrsJgt[i]).val());
+  }
+  var jonJgt = JSON.stringify(datesJgt);
+  return jonJgt;
 }

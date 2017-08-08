@@ -316,8 +316,10 @@ $(document).on('hidden.bs.modal', '.modal', function () {
 
 
 function openChooserTech(){
-  var mydz = Dropzone.forElement("#jgtdz");
-  mydz.hiddenFileInput.click();
+  if(!jgtdone){
+    var mydz = Dropzone.forElement("#jgtdz");
+    mydz.hiddenFileInput.click();
+  }
 }
 
 $(document).ready(function(){
@@ -334,9 +336,11 @@ $(document).ready(function(){
         if (this.files[1]!=null){
           this.removeFile(this.files[0]);
         }
-        var ext = this.files[0].name.split('.').pop();
-        if (ext == "pdf") {
-           $(this.files[0].previewElement).find(".dz-image img").attr("src", "../images/edit/pdf.png");
+        if(!loadsMocks){
+          var ext = this.files[0].name.split('.').pop();
+          if (ext == "pdf") {
+             $(this.files[0].previewElement).find(".dz-image img").attr("src", "../images/edit/pdf.png");
+          }
         }
       });
     }
@@ -351,16 +355,17 @@ var jgtdzA_FileTypes = ".pdf,.jpg,.png,.doc,.docx";
 var jgtdzA_FileSizeMB = 1;
 var jgtdzA_Url = "../functions/functions.php?func=fileUploader";
 
-function openChooserJgt(){var mydz = Dropzone.forElement(jgtdzA_ID);mydz.hiddenFileInput.click();}
+function openChooserJgt(){if(!jgtdone){var mydz = Dropzone.forElement(jgtdzA_ID);mydz.hiddenFileInput.click();}}
 $(document).ready(function(){Dropzone.autoDiscover = false;
   $(jgtdzA_ID).dropzone({paramName: jgtdzA_FileName,url: jgtdzA_Url,maxFilesize: jgtdzA_FileSizeMB, acceptedFiles: jgtdzA_FileTypes,
     init: function() {this.removeEventListeners();this.on("addedfile", function() {
         if (this.files[jgtdzA_MaxFiles]!=null){this.removeFile(this.files[0]);}
+        if(!loadsMocks){
         var ext = this.files[jgtdzA_Counter].name.split('.').pop();
         if (ext == "pdf") { $(this.files[jgtdzA_Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/pdf.png");}
         if (ext == "doc") { $(this.files[jgtdzA_Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/doc.png");}
         if (ext == "docx") { $(this.files[jgtdzA_Counter].previewElement).find(".dz-image img").attr("src", "../images/edit/docx.png");}
-        if(jgtdzA_Counter < jgtdzA_MaxFiles-1){jgtdzA_Counter++;}});}});
+        }if(jgtdzA_Counter < jgtdzA_MaxFiles-1){jgtdzA_Counter++;}});}});
   });
 
 

@@ -35,9 +35,6 @@
     } else {
       changePremDB($_POST['filetype']);
     }
-    foreach (glob("../uploads/".$_POST['id']."premFile_".$user->getProperty('Username')."*.*") as $filename) {
-      unlink($filename);
-    }
     foreach (glob("../uploads/premFile_".$user->getProperty('Username')."*.*") as $fname) {
       rename($fname, "../uploads/" . $_POST['id'] . basename($fname));
     }
