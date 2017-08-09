@@ -21,7 +21,7 @@
 		</div>
 
 
-    <div class="fh5co-testimonial-style-2 wir_vorstand">
+    <div class="fh5co-testimonial-style-2 wir_vorstand hidden-xs">
       <div class="container">
         <div class="row p-b">
           <div class="text-center">
@@ -37,6 +37,25 @@
           </div>
         </div>
   </div>
+</div>
+
+<div class="fh5co-testimonial-style-2 visible-xs">
+	<div class="container">
+		<div class="row p-b">
+			<div class="text-center">
+				<h2 class="fh5co-heading wow fadeInUp titel" data-wow-duration="1s" data-wow-delay=".2s">Vorstand</h2>
+				<p class="wow fadeInUp col-md-4 gonnerverein" data-wow-duration="1s" data-wow-delay=".8s">
+					<span class="wir_spender"><span class="wir_spender_name">Gunhild Hamer</span>,<br> Präsidentin (Leiterin Fachstelle Kulturvermittlung Kanton Aargau)<br><br></span>
+					<span class="wir_spender"><span class="wir_spender_name">Christoph Haering</span>,<br> (Leiter Darstellende Künste und Literatur Migros Kulturprozent)<br><br></span>
+					<span class="wir_spender"><span class="wir_spender_name">Beat Knaus</span>,<br> (Lehrer Neue Kantonsschule Aarau)<br><br></span>
+					<span class="wir_spender"><span class="wir_spender_name">Patrick Oes</span>, (Schauspieler und Regisseur)<br></span>
+					<span class="wir_spender"><span class="wir_spender_name">Madelaine Passerini</span>, (Kulturmanagerin)<br></span>
+					<span class="wir_spender"><span class="wir_spender_name">Anita Zihlmann</span>, (Kulturvermittlerin)<br></span>
+
+				</p>
+			</div>
+		</div>
+</div>
 </div>
 
 

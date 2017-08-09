@@ -23,6 +23,10 @@
 1.0 BASE
 ///////////////////////////////////////////////////
 */
+.useFontStrict{
+  font-family: "circular" !important;
+}
+
 html.mobile-menu-expanded {
   overflow: hidden;
 }
@@ -703,10 +707,10 @@ a:hover .lnk-icon-right {
   display: inline-block;
   zoom: 1;
   *display: inline;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  border-radius: 30px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  border-radius: 6px;
   color: #fff;
 }
 .fh5co-nav-style-1 .fh5co-link-wrap ul li a.call-to-action:hover, .fh5co-nav-style-2 .fh5co-link-wrap ul li a.call-to-action:hover {

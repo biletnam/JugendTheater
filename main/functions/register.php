@@ -18,14 +18,16 @@ function register(){
     }
 	} else {
 		$to      = $_POST["email"];
-		$subject = 'Email Verification';
-		$message = 'Click this link to activate your account: <a href="https://jugend-theater.ch/functions/functions.php?func=verification&hsh='.$hash.'">Verify now!</a>';
+		$subject = 'Account aktivieren';
+		$msg1 =  file_get_contents('../mails/register1.html');
+		$msg2 =  file_get_contents('../mails/register2.html');
+		$message = $msg1 . "https://jugend-theater.ch/functions/functions.php?func=verification&hsh=". $hash . $msg2;
 		$headers = "MIME-Version: 1.0" . "\r\n";
 		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 		$headers .= 'From: <info@jugend-theater.ch>' . "\r\n";
 		$suc = mail($to, $subject, $message, $headers);
 		if(!$suc){
-			$msg = "Could not send Email. Please enter a valid Email-Address.";
+			$msg = "Email konnte nicht gesendet werden. Prüfen Sie die Email-Adresse";
 			$sql="DELETE FROM Users WHERE Username=".$_POST['us'];
 	    mysqli_query($DBconn, $sql);
 		} else {

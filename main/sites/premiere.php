@@ -47,19 +47,20 @@ function convertYoutube($string) {
             <div class="wow fadeInUp col-md-6 gonnerverein" data-wow-duration="1s" data-wow-delay=".6s"><div class="untertitel regModTitle">Gruppe</div><br><?php $people = explode(",",$row['Spieler']); echo $row['Spieler'];?></div>
             <?php $aD = json_decode($row['addDates']); if(count($aD)>0){?>
               <div class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay=".8s"><div class="untertitel regModTitle">Weitere Aufführungen</div><br></div>
-              <div class="wow fadeInUp col-md-4" data-wow-duration="1s" data-wow-delay=".8s">Datum</div>
-              <div class="wow fadeInUp col-md-4" data-wow-duration="1s" data-wow-delay=".8s">Ort</div>
-              <div class="wow fadeInUp col-md-4" data-wow-duration="1s" data-wow-delay=".8s">Zeit</div>
+              <div class="wow fadeInUp col-md-4 col-xs-4" data-wow-duration="1s" data-wow-delay=".8s">Datum</div>
+              <div class="wow fadeInUp col-md-4 col-xs-4" data-wow-duration="1s" data-wow-delay=".8s">Ort</div>
+              <div class="wow fadeInUp col-md-4 col-xs-4" data-wow-duration="1s" data-wow-delay=".8s">Zeit</div>
               <?php for($i = 0; $i < count($aD)-1;$i += 2){?>
                 <?php list($date,$time)=explode('T', $aD[$i]);?>
-                <div class="wow fadeInUp col-md-4" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $date; ?></div>
-                <div class="wow fadeInUp col-md-4" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $aD[$i + 1]; ?></div>
-                <div class="wow fadeInUp col-md-4" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $time; ?></div>
+                <div class="wow fadeInUp col-md-4 col-xs-4" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $date; ?></div>
+                <div class="wow fadeInUp col-md-4 col-xs-4" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $aD[$i + 1]; ?></div>
+                <div class="wow fadeInUp col-md-4 col-xs-4" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $time; ?></div>
 
               <?php }?>
               <?php } ?>
+              <div class="col-md-12 regModTitle visible-xs"></div>
             <?php if(!empty($row['Video']) && $row['Video'] != ""){ ?>
-            <div class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay="1.0s"><div class="untertitel regModTitle">Video</div><br></div>
+            <div class="wow fadeInUp col-md-12 regModTitle" data-wow-duration="1s" data-wow-delay="1.0s"><div class="untertitel">Video</div><br></div>
               <div class="embed-responsive embed-responsive-16by9 wow fadeInUp col-md-12 roundBorder" data-wow-duration="1s" data-wow-delay="1s">
                 <?php echo convertYoutube($row['Video']); ?>
               </div>

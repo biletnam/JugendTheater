@@ -41,6 +41,9 @@
 	<link rel="stylesheet" href="../css/animatedCheckbox.css">
 	<!-- Modernizr JS -->
 	<script src="../js/modernizr-2.6.2.min.js"></script>
+	<!-- Animated Dropdown -->
+	<link rel="stylesheet" href="../css/animate.min.css">
+	<link rel="stylesheet" href="../css/bootstrap-dropdownhover.min.css">
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>

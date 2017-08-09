@@ -5,6 +5,6 @@ function logout(){
 	global $defaultPath;
 	$user->logout();
 	sendMsg("You have been logged out.",true);
-	header("Location: ".$defaultPath);
+	header("Location: ../../");
 }
 ?>

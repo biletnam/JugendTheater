@@ -20,7 +20,9 @@ function forgotPw(){
     } else {
       $to      = $usr;
       $subject = 'Password reset';
-      $message = 'Click this link to reset your password: <a href="https://jugend-theater.ch/?loc=resetPassword&hash='.$prehash->Confirmation.'">Reset Password</a>';
+      $msg1 =  file_get_contents('../mails/forgotPw1.html');
+      $msg2 =  file_get_contents('../mails/forgotPw2.html');
+      $message = $msg1 . "https://jugend-theater.ch/?loc=resetPassword&hash=" . $prehash->Confirmation . $msg2;
       $headers = "MIME-Version: 1.0" . "\r\n";
       $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
       $headers .= 'From: <info@jugend-theater.ch>' . "\r\n";

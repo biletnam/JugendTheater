@@ -18,6 +18,8 @@
 <script src="../js/wow.min.js"></script>
 <!-- Dropzone -->
 <script src="../js/dropzone.js"></script>
+<!-- Animated Dropdown -->
+<script src="../js/bootstrap-dropdownhover.min.js"></script>
 <!-- Init -->
 <script>
   new WOW().init();

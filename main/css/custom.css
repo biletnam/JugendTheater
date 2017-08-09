@@ -459,6 +459,7 @@
 }
 
 .dz-hide{
+  margin-top: 10px;
   border: none;
   display: table;
   width: 100%;

@@ -1,8 +1,7 @@
 <?php
 session_start();
 include('../config.php');
-//IDEA: one php to query
-//IDEA: one js for easy AJAX
+include("functions/languageManager.php");
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +55,7 @@ include('../config.php');
 	    var registerBtn = document.getElementById("registerBtn");
 			var userIcon = document.getElementById("userIcon");
 			var profileName = document.getElementById("profileName");
+			var langDrop = document.getElementById("langDrop");
 	</script>
 	</body>
 </html>

@@ -8,10 +8,9 @@ function tryLogin() {
             if(ret.includes("Success")){
               var res = ret.split("/");
               document.getElementById("loginResponse").innerHTML = res[0];
-              //loginBtn.className = "invisible";
-              //registerBtn.className = "invisible";
               loginBtn.parentNode.removeChild(loginBtn);
               registerBtn.parentNode.removeChild(registerBtn);
+              langDrop.parentNode.removeChild(langDrop);
               userIcon.className = "dropdown top-dd";
               profileName.innerHTML = res[1];
               $("#loginmodal").modal("hide");
@@ -22,8 +21,6 @@ function tryLogin() {
               if(res[3]){
                 jgtdone = true;
               }
-              //loginBtn.parentNode.insertBefore(userIcon, loginBtn);
-              //document.getElementById("loginResponse").innerHTML = "";
             } else {
               document.getElementById("loginResponse").innerHTML = this.responseText;
             }
