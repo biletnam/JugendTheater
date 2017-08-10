@@ -5,9 +5,9 @@ function verification(){
 	$suc = $user->activate(gMS($_GET['hsh']));
 	$msg = "";
 	if(!$suc){
-			$msg = "<b>Error:</b> Could not verify. Try again.";
+			$msg = "<b>".gCTSilent("Error: ")."</b>" .gCTSilent("Could not verify. Try again.");
 	} else {
-			$msg = "Verification successful!";
+			$msg = gCTSilent("Verification successful!");
 	}
 
 	sendMsg($msg,$suc);

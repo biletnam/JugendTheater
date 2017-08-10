@@ -4,7 +4,7 @@ function jgt(){
   global $DBconn;
   $jgtTeilnahme = gMSS($_POST['teilnahmebedingungen']);
   if($jgtTeilnahme == "false"){
-    echo "Bitte akzeptieren Sie die Teilnahmebedingungen";
+    echo gCTSilent("Bitte akzeptieren Sie die Teilnahmebedingungen");
   } else {
     // Zum Stück
     $jgtTitel = gMSS($_POST['jgtTitel']);
@@ -75,9 +75,9 @@ function jgt(){
 
     $sql = "INSERT INTO anmeldungen (UserID, Json, Jon) VALUES ('".$user->getProperty('ID')."','".json_encode($varArray)."','".$jon."')";
     if ($DBconn->query($sql) === TRUE) {
-      echo "Success!";
+      echo gCTSilent("Success!");
     } else {
-      echo "Error: " . $sql . "<br>" . $DBconn->error;
+      echo gCTSilent("Error: ") . $sql . "<br>" . $DBconn->error;
     }
   }
 }

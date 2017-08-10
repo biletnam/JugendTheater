@@ -13,12 +13,12 @@ function changePassword(){
 	  );
 		$suc = $user->update($pw);
 	  if($suc){
-	    $msg = "Password has been changed.";
+	    $msg = gCTSilent("Password has been changed.");
 	  } else {
-	    $msg = "Password could not be changed.";
+	    $msg = gCTSilent("Password could not be changed.");
 	  }
 	} else {
-		$msg = "The passwords do not match!";
+		$msg = gCTSilent("The passwords do not match!");
 	}
 	echo $msg;
 }

@@ -38,7 +38,7 @@ function tryPremiere(){
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(request);
 }
-
+/* REVIEW: Hard Coded Text */
 function openPremiere(){
   if(!loggedIn){
     $("#infoModText").html("Du musst eingeloggt sein!");

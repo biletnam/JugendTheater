@@ -1,6 +1,7 @@
 var alreadyChangedPw = false;
 function resetPw(){
   if(alreadyChangedPw){
+    /* REVIEW: Hard Coded Text */
     document.getElementById("infoModText").innerHTML = "Du hast dein Passwort bereits geändert.";
     $("#infomodal").modal("show");
   } else if(hash == ""){

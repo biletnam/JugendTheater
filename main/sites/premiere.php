@@ -27,10 +27,11 @@ function convertYoutube($string) {
 						<div class="col-md-push-6 col-md-6 full-height js-full-height">
 							<div class="fh5co-cover-intro">
 								<h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><?php echo $row['Produktion']; ?></h1>
-								<h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">von <?php $query2 = "SELECT * FROM Users WHERE ID=".$row['UserID'];$result2 = mysqli_query($DBconn, $query2);$row2 = mysqli_fetch_assoc($result2);echo $row2['EnsembleName'] . " aus " . $row2['StadtKanton'];?>
+                <!-- REVIEW: Add Info (multilang)-->
+								<!--<h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">von <?php $query2 = "SELECT * FROM Users WHERE ID=".$row['UserID'];$result2 = mysqli_query($DBconn, $query2);$row2 = mysqli_fetch_assoc($result2);echo $row2['EnsembleName'] . " aus " . $row2['StadtKanton'];?>
                   in <?php $dStart=new DateTime(date("Y-m-d"));$dEnd=new DateTime($row['PremiereDatum']);$dDiff=$dStart->diff($dEnd);echo $dDiff->days; ?> Tagen
-                </h2>
-                <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a href="../" class="btn btn-primary btn-outline btn-lg">Zurück zur Auswahl</a></p>
+                </h2>-->
+                <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a href="../" class="btn btn-primary btn-outline btn-lg"><?php gCT("Zurück zur Auswahl");?></a></p>
 							</div>
 						</div>
 					</div>
@@ -43,25 +44,29 @@ function convertYoutube($string) {
         <div class="row p-b">
           <div class="text-center">
             <h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><?php echo $row['Produktion']; ?></h2>
-            <div class="wow fadeInUp col-md-6 gonnerverein" data-wow-duration="1s" data-wow-delay=".4s"><div class="untertitel regModTitle">Beschrieb</div><br><?php echo $row['Beschrieb'] ?></div>
-            <div class="wow fadeInUp col-md-6 gonnerverein" data-wow-duration="1s" data-wow-delay=".6s"><div class="untertitel regModTitle">Gruppe</div><br><?php $people = explode(",",$row['Spieler']); echo $row['Spieler'];?></div>
+            <div class="wow fadeInUp col-md-6 gonnerverein" data-wow-duration="1s" data-wow-delay=".4s"><div class="untertitel regModTitle"><?php gCT("Beschrieb");?></div><br><?php echo $row['Beschrieb'] ?></div>
+            <div class="wow fadeInUp col-md-6 gonnerverein" data-wow-duration="1s" data-wow-delay=".6s"><div class="untertitel regModTitle"><?php gCT("Gruppe");?></div><br><?php $people = explode(",",$row['Spieler']); echo $row['Spieler'];?></div>
             <?php $aD = json_decode($row['addDates']); if(count($aD)>0){?>
-              <div class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay=".8s"><div class="untertitel regModTitle">Weitere Aufführungen</div><br></div>
-              <div class="wow fadeInUp col-md-4 col-xs-4" data-wow-duration="1s" data-wow-delay=".8s">Datum</div>
-              <div class="wow fadeInUp col-md-4 col-xs-4" data-wow-duration="1s" data-wow-delay=".8s">Ort</div>
-              <div class="wow fadeInUp col-md-4 col-xs-4" data-wow-duration="1s" data-wow-delay=".8s">Zeit</div>
+              <div class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay=".8s"><div class="untertitel regModTitle"><?php gCT("Weitere Aufführungen");?></div><br></div>
+              <div class="wow fadeInUp col-md-4 hidden-xs" data-wow-duration="1s" data-wow-delay=".8s"><?php gCT("Datum");?></div>
+              <div class="wow fadeInUp col-md-4 hidden-xs" data-wow-duration="1s" data-wow-delay=".8s"><?php gCT("Ort");?></div>
+              <div class="wow fadeInUp col-md-4 hidden-xs" data-wow-duration="1s" data-wow-delay=".8s"><?php gCT("Zeit");?></div>
               <?php for($i = 0; $i < count($aD)-1;$i += 2){?>
-                <?php list($date,$time)=explode('T', $aD[$i]);?>
-                <div class="wow fadeInUp col-md-4 col-xs-4" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $date; ?></div>
-                <div class="wow fadeInUp col-md-4 col-xs-4" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $aD[$i + 1]; ?></div>
-                <div class="wow fadeInUp col-md-4 col-xs-4" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $time; ?></div>
+                <?php list($date,$time)=explode('T', $aD[$i]); list($year,$month,$day)=explode('-', $date);?>
+                <div class="wow fadeInUp col-md-4 col-xs-12 hidden-xs" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $day.".".$month.".".$year; ?></div>
+                <div class="wow fadeInUp col-md-4 col-xs-12 hidden-xs" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $aD[$i + 1]; ?></div>
+                <div class="wow fadeInUp col-md-4 col-xs-12 hidden-xs" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $time; ?></div>
 
+                <div class="wow fadeInUp col-md-4 col-xs-12 visible-xs" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $time; ?></div>
+                <div class="wow fadeInUp col-md-4 col-xs-12 visible-xs" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $day.".".$month.".".$year; ?></div>
+                <div class="wow fadeInUp col-md-4 col-xs-12 visible-xs" data-wow-duration="1s" data-wow-delay=".8s"><?php echo $aD[$i + 1]; ?></div>
+                <div class="wow fadeInUp col-md-4 col-xs-12 visible-xs"><br><br></div>
               <?php }?>
               <?php } ?>
               <div class="col-md-12 regModTitle visible-xs"></div>
             <?php if(!empty($row['Video']) && $row['Video'] != ""){ ?>
-            <div class="wow fadeInUp col-md-12 regModTitle" data-wow-duration="1s" data-wow-delay="1.0s"><div class="untertitel">Video</div><br></div>
-              <div class="embed-responsive embed-responsive-16by9 wow fadeInUp col-md-12 roundBorder" data-wow-duration="1s" data-wow-delay="1s">
+            <div class="wow fadeInUp col-md-12 regModTitle" data-wow-duration="1s" data-wow-delay="1.0s"><div class="untertitel"><?php gCT("Video");?></div><br></div>
+              <div style="margin-left:15px;margin-right:15px;" class="embed-responsive embed-responsive-16by9 wow fadeInUp col-md-12 roundBorder" data-wow-duration="1s" data-wow-delay="1s">
                 <?php echo convertYoutube($row['Video']); ?>
               </div>
                <?php } ?>
@@ -69,7 +74,7 @@ function convertYoutube($string) {
                <?php
                $premData = glob("uploads/".$prem."premFile_".$row2['Username']."*.*");
                if(count($premData) > 0){?>
-               <div class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay=".2s"><div class="untertitel regModTitle">Anhänge</div><br></div>
+               <div class="wow fadeInUp col-md-12" data-wow-duration="1s" data-wow-delay=".2s"><div class="untertitel regModTitle"><?php gCT("Anhänge");?></div><br></div>
                <?php foreach ($premData as $fname) { ?>
                <div class="wow fadeInUp col-md-<?php if(count($premData) == 1){echo "12";}else{echo "6";} ?>" data-wow-duration="1s" data-wow-delay=".4s">
                  <div class="dz-hide"><div class="dz-hide-sub">
@@ -108,7 +113,7 @@ function convertYoutube($string) {
                 <span class="fh5co-counter counter">0</span>
                 <?php } ?>
                 <span class="fh5co-counter js-counter counter" data-from="0" data-to="<?php echo $month;?>" data-speed="2000" data-refresh-interval="20"></span>
-								<span class="fh5co-counter-label">Datum</span>
+								<span class="fh5co-counter-label"><?php gCT("Datum");?></span>
 
 							</div>
 							<div class="col-md-8 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
@@ -116,7 +121,7 @@ function convertYoutube($string) {
 									<i class="fa fa-map-marker" aria-hidden="true"></i>
 								</div>
 								<span class="fh5co-counter counter" id="premOrt"><?php echo str_replace(",",",<br>",$row['Ort']); ?></span>
-								<span class="fh5co-counter-label">Ort</span>
+								<span class="fh5co-counter-label"><?php gCT("Ort");?></span>
 							</div>
               <div class="col-md-2 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
                 <div class="icon">
@@ -131,7 +136,7 @@ function convertYoutube($string) {
                 <span class="fh5co-counter counter">0</span>
                 <?php } ?>
                 <span class="fh5co-counter js-counter counter" data-from="0" data-to="<?php echo $min; ?>" data-speed="2000" data-refresh-interval="20"></span>
-                <span class="fh5co-counter-label">Uhrzeit</span>
+                <span class="fh5co-counter-label"><?php gCT("Uhrzeit");?></span>
               </div>
 						</div>
 					</div>

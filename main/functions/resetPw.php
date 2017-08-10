@@ -8,11 +8,11 @@ function resetPw(){
    );
    $suc = $user->newPassword($hash,$pw);
    if($suc){
-     echo "Success/Passwort wurde geändert.";
+     echo gCTSilent("Success!")."/".gCTSilent("Passwort wurde geändert.");
    } elseif($_POST['pw1'] != $_POST['pw2']){
-     echo "Passwörter stimmen nicht überein.";
+     echo gCTSilent("Passwörter stimmen nicht überein.");
    } else {
-     echo "Passwort konnte nicht geändert werden. Versuche es nochmal.";
+     echo gCTSilent("Passwort konnte nicht geändert werden. Versuche es nochmal.");
    }
 }
 ?>

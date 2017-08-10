@@ -10,16 +10,16 @@
       <div class="row">
         <div class="col-md-push-6 col-md-6 full-height js-full-height">
           <div class="fh5co-cover-intro">
-            <h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Profile</h1>
-            <h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Hier kannst du deine Premieren verwalten</h2>
+            <h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><?php gCT("Profile"); ?></h1>
+            <h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s"><?php gCT("Hier kannst du deine Premieren verwalten");?></h2>
             <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a onclick="openJgt();" class="btn btn-primary btn-outline btn-lg">
               <?php
               $query = "SELECT ID FROM anmeldungen WHERE UserID=".$user->getProperty('ID');
            		if ($result=mysqli_query($DBconn,$query)){
              		if(mysqli_num_rows($result) > 0){
-          				echo 'Bewerbung ansehen';
+          				 gCT("Bewerbung ansehen");
           			} else {
-                  echo 'Für das Jugendtheater-Festival Schweiz bewerben';
+                  gCT("Für das Jugendtheater-Festival Schweiz bewerben");
                 }
             	}
                ?>
@@ -35,9 +35,9 @@
   <div class="container">
     <div class="row p-b">
       <div class="col-md-6 col-md-offset-3 text-center">
-        <h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">Premieren</h2>
-        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Hier findest du deine Premieren</p>
-        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a onclick="openPremiere();" class="btn btn-primary btn-outline btn-lg btn-black">Meine Premiere anmelden</a></p>
+        <h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s"><?php gCT("Premieren"); ?></h2>
+        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s"><?php gCT("Hier findest du deine Premieren");?></p>
+        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a onclick="openPremiere();" class="btn btn-primary btn-outline btn-lg btn-black"><?php gCT("Meine Premiere anmelden");?></a></p>
       </div>
     </div>
   </div>
@@ -62,7 +62,7 @@
 
     <?php endwhile;?>
     </ul>
-    <p id="noPremtxt" class="wow fadeInUp col-md-12 text-center <?php if($tour != 0){echo 'invisibleStrict'; } ?>" data-wow-duration="1s" data-wow-delay=".8s">Du hast noch keine Premieren angemeldet</p>
+    <p id="noPremtxt" class="wow fadeInUp col-md-12 text-center <?php if($tour != 0){echo 'invisibleStrict'; } ?>" data-wow-duration="1s" data-wow-delay=".8s"><?php gCT("Du hast noch keine Premieren angemeldet"); ?></p>
   </div>
 </div>
 </div>

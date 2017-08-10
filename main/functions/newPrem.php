@@ -10,9 +10,9 @@ function createPrem($fileType){
       rename($fname, "../uploads/" . $last_id . basename($fname));
     }
     uploadResize("../uploads/" . $last_id . $fileType,"../uploads/small/" . $last_id . $fileType);
-    echo "Success!/".$last_id."/".$fileType."/".$_POST['name'];
+    echo gCTSilent("Success!")."/".$last_id."/".$fileType."/".$_POST['name'];
   } else {
-    echo "Error: " . $sql . "<br>" . $DBconn->error;
+    echo gCTSilent("Error: ") . $sql . "<br>" . $DBconn->error;
   }
 }
 
@@ -27,7 +27,7 @@ function newPrem(){
   } elseif (file_exists("../uploads/img_".$user->getProperty('Username').".jpeg")) {
     createPrem(".jpeg");
   } else {
-    echo "Bitte laden Sie ein Bild hoch.";
+    echo gCTSilent("Bitte laden Sie ein Bild hoch.");
   }
 }
 

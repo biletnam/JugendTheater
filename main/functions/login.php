@@ -16,9 +16,9 @@ function login(){
    		if(mysqli_num_rows($result) > 0){$jgtdone = true;}
   	}
 		if($user->getProperty("GroupID") >= 3){$canEdit = true;}
-		echo "Successfully logged in!/".$user->getProperty("Username")."/".$canEdit."/".$jgtdone;
+		echo gCTSilent("Successfully logged in!")."/".$user->getProperty("Username")."/".$canEdit."/".$jgtdone;
 	}else{
-		echo "Benutzername oder Passwort falsch.";
+		echo gCTSilent("Benutzername oder Passwort falsch.");
 	}
 }
 ?>

@@ -4,9 +4,9 @@
     global $DBconn;
     $sql = "UPDATE premieren SET Produktion='".gMS($_POST['name'])."',Spieler='".gMS($_POST['spieler'])."',PremiereDatum='".gMS($_POST['datum'])."',Ort='".gMS($_POST['ort'])."',Beschrieb='".gMS($_POST['beschrieb'])."',Video='".gMS($_POST['video'])."',Bilder='".$fileType."',Activation=0, addDates='".gMS($_POST['jon'])."' WHERE ID=".$_POST['id'];
     if ($DBconn->query($sql) === TRUE) {
-      echo "Success!/".$fileType;
+      echo gCTSilent("Success!")."/".$fileType;
     } else {
-      echo "Error: " . $sql . "<br>" . $DBconn->error;
+      echo gCTSilent("Error: ") . $sql . "<br>" . $DBconn->error;
     }
   }
 

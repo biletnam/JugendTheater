@@ -1,7 +1,7 @@
 function htmlDecode(string){
   return $('<textarea />').html(string).text();
 }
-
+/* REVIEW: Hard Coded Text */
 function openJgt(){
   if(!loggedIn){
     $("#infoModText").html("Du musst eingeloggt sein!");

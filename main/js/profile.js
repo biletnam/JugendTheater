@@ -39,6 +39,7 @@ function tryPremiere(){
   xhttp.send(request);
 }
 
+/* REVIEW: Hard Coded Text */
 function openPremiere(){
   if(!loggedIn){
     $("#infoModText").html("Du musst eingeloggt sein!");
@@ -80,6 +81,7 @@ function showPremEditModal(premID){
             document.getElementById("premOrtEdit").value = rows["Ort"];
             document.getElementById("premTAEdit").value = rows["Beschrieb"];
             document.getElementById("premVidEdit").value = rows["Video"];
+            /* REVIEW: Hard Coded Text */
             if(rows["Activation"] == 0){
               document.getElementById("premResponseEdit").innerHTML = "Warten auf Aktivierung...";
             } else if(rows["Activation"] == 1){
