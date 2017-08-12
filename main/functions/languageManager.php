@@ -28,33 +28,14 @@ if($langAuto){
 }
 
 function gCT($std){
-	global $DBconn;
-	$stdLang = "std";
-	$defaultLang = "de";
-	$lang = isset($_GET['ln']) ? $_GET['ln'] : $stdLang;
-	if($lang == ""){ $lang = $defaultLang; }
-
-	$result = mysqli_query($DBconn,"SHOW COLUMNS FROM content LIKE '".$lang."'");
-	$exists = (mysqli_num_rows($result))?TRUE:FALSE;
-	if(!$exists){ $lang = $defaultLang;}
-
-	$sql = "SELECT ".$lang." FROM content WHERE ".$stdLang."='".$std."'";
-	$result = mysqli_query($DBconn, $sql);
-	if(mysqli_num_rows($result) == 0){
-		$sql = "INSERT INTO content (".$stdLang.",".$defaultLang.",fr,it) VALUES ('".$std."','".$std."','".$std."','".$std."')";
-		mysqli_query($DBconn, $sql);
-		echo $std;
-	} else {
-		echo mysqli_fetch_array($result)[0] ;
-	}
-
+	echo gCTSilent($std);
 }
 
 function gCTSilent($std){
 	global $DBconn;
 	$stdLang = "std";
 	$defaultLang = "de";
-	$lang = isset($_GET['ln']) ? $_GET['ln'] : $stdLang;
+	$lang = isset($_GET['ln']) ? $_GET['ln'] : $defaultLang;
 	if($lang == ""){ $lang = $defaultLang; }
 
 	$result = mysqli_query($DBconn,"SHOW COLUMNS FROM content LIKE '".$lang."'");

@@ -4,6 +4,7 @@ if($loggedIn){
   if($user->getProperty("GroupID") >= 4){ $allowEdit = true; }
 }
  ?>
+ <?php if($loc == "premieren"){ ?>
 <!-- this is hidden (the dialog that shows up on pressing a button) -->
 <div id="premEditmodal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
@@ -89,7 +90,9 @@ if($loggedIn){
     </div>
   </div>
 </div>
+<?php } ?>
 
+<?php if($loc == "anmeldungen"){ ?>
 <!-- this is hidden (the dialog that shows up on pressing a button)-->
 <div id="delAllModal" class="modal fade bootbox" role="dialog">
   <div class="modal-dialog">
@@ -112,7 +115,7 @@ if($loggedIn){
     </div>
   </div>
 </div>
-
+<?php }?>
 
 <!-- this is hidden (the dialog that shows up on pressing a button) -->
 <div id="infomodal" class="modal fade" role="dialog">
@@ -136,6 +139,7 @@ if($loggedIn){
   </div>
 </div>
 
+<?php if($loc == "user"){ ?>
 <div id="usermodal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -207,6 +211,7 @@ if($loggedIn){
   </div>
 </div>
 
+<?php } if($loc == "anmeldungen"){ ?>
 <div id="jgtmodal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
     <!-- Modal content-->
@@ -629,3 +634,48 @@ if($loggedIn){
     </div>
   </div>
 </div>
+<?php } ?>
+<?php if($loc == "content"){ ?>
+  <div id="contentmodal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title modalCorr">Content bearbeiten <span class="modalResponse" id="ContentResponse"></span></h4>
+        </div>
+        <div class="modal-body modalCorr">
+            <div class="row">
+              <div class="col-md-12 regMod">
+                Standard
+              </div>
+              <div class="col-md-12 regMod">
+                  <textarea class="form-control input-lg mt-1 modalCorr beschriebArea" id="std" name="std" placeholder="Standard" required disabled></textarea>
+              </div>
+              <div class="col-md-12 regMod">
+                Deutsch
+              </div>
+              <div class="col-md-12 regMod">
+                <textarea class="form-control input-lg mt-1 modalCorr beschriebArea" id="de" name="de" placeholder="Deutsch" required></textarea>
+              </div>
+              <div class="col-md-12 regMod">
+                Französisch
+              </div>
+              <div class="col-md-12 regMod">
+                <textarea class="form-control input-lg mt-1 modalCorr beschriebArea" id="fr" name="fr" placeholder="Französisch" required></textarea>
+              </div>
+              <div class="col-md-12 regMod">
+                Italienisch
+              </div>
+              <div class="col-md-12 regMod">
+                <textarea class="form-control input-lg mt-1 modalCorr beschriebArea" id="it" name="it" placeholder="Italienisch" required></textarea>
+              </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-outline btn-black pull-left" data-dismiss="modal">Cancel</button>
+          <button  onclick="changeContent();" type="button" class="btn btn-success btn-outline pull-right">Ändern</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<?php } ?>

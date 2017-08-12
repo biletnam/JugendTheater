@@ -32,4 +32,6 @@
 <script src="js/user.js"></script>
 <?php } if($loc == "anmeldungen"){?>
 <script src="js/anmeldungen.js"></script>
+<?php } if($loc == "content"){?>
+<script src="js/content.js"></script>
 <?php } ?>

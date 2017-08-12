@@ -46,7 +46,7 @@
               <th class="clickable text-center" onclick="sortTableJgt(0)">ID</th>
               <th class="clickable text-center" onclick="sortTableJgt(1)">Ensemble Name</th>
               <th class="clickable text-center" onclick="sortTableJgt(2)">Email</th>
-              <th class="clickable text-center" onclick="sortTableJgt(9)">Details</th>
+              <th class="clickable text-center" onclick="sortTableJgt(3)">Details</th>
             </tr>
           </thead>
           <tbody class="text-center">

@@ -10,6 +10,7 @@
         <li><a href="?loc=premieren">Premieren</a></li>
         <li><a href="?loc=anmeldungen">Festival Anmeldungen</a></li>
         <li><a href="?loc=user">User</a></li>
+        <li><a href="?loc=content">Content</a></li>
       </ul>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-4 text-right fh5co-link-wrap">
