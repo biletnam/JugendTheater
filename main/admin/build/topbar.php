@@ -2,7 +2,7 @@
   <div class="container">
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 fh5co-logo">
       <a href="#" class="js-fh5co-mobile-toggle fh5co-nav-toggle"><i></i></a>
-      <a href="?loc=home">Jugend-Theater</a>
+      <a href="?loc=home">Jugend Theater Festival Schweiz</a>
     </div>
     <?php if($loggedIn){ ?>
     <div class="col-lg-6 col-md-5 col-sm-5 text-center fh5co-link-wrap">
@@ -11,6 +11,7 @@
         <li><a href="?loc=anmeldungen">Festival Anmeldungen</a></li>
         <li><a href="?loc=user">User</a></li>
         <li><a href="?loc=content">Content</a></li>
+        <li><a href="?loc=bilder">Bilder</a></li>
       </ul>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-4 text-right fh5co-link-wrap">

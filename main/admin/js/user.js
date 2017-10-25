@@ -6,7 +6,6 @@ function showUser(UserID){
       $("#usermodal").modal("show");
       if (this.readyState == 4 && this.status == 200) {
             var rows = JSON.parse(this.responseText);
-
             document.getElementById("Username").value = rows["Username"];
             document.getElementById("deleteUserName").innerHTML = rows["Username"];
             document.getElementById("UserEmail").value = rows["Email"];
@@ -60,10 +59,10 @@ function delUser(){
 
 function changeUser(){
   var xhttp = new XMLHttpRequest();
-  var name = document.getElementById('Username').value;
-  var email = document.getElementById('UserEmail').value;
-  var ename = document.getElementById('UserEnsemleName').value;
-  var city = document.getElementById('UserStadtKanton').value;
+  var name = encodeURIComponent(document.getElementById('Username').value);
+  var email = encodeURIComponent(document.getElementById('UserEmail').value);
+  var ename = encodeURIComponent(document.getElementById('UserEnsemleName').value);
+  var city = encodeURIComponent(document.getElementById('UserStadtKanton').value);
   var e = document.getElementById("UserGroup");
   var group = e.options[e.selectedIndex].value;
   var act = 0;

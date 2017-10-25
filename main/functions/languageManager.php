@@ -35,6 +35,7 @@ function gCTSilent($std){
 	global $DBconn;
 	$stdLang = "std";
 	$defaultLang = "de";
+	$std = gMS($std);
 	$lang = isset($_GET['ln']) ? $_GET['ln'] : $defaultLang;
 	if($lang == ""){ $lang = $defaultLang; }
 

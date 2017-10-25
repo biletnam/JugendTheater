@@ -4,18 +4,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Hier findest du alles rund um das Theater." />
 	<meta name="keywords" content="Jugend, Theater, Aarau, Premiere, Festival" />
-	<meta name="author" content="Berke Ates" />
+	<meta name="author" content="Berke Ates - berke@quickline.ch" />
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="../tabicon.png">

@@ -1,3 +1,9 @@
+:root {
+  --main: #3680EE;
+  --sub: #FF7B26;
+  --acc: #FFD326;
+}
+
 .checkbox{
   margin:0px;
   font-size: 2em;
@@ -14,6 +20,24 @@
   position: absolute;
   left: 50%;
   margin-left: -46px !important;
+}
+
+.dropzone.dz-clickable * {
+  cursor: pointer;
+}
+
+.dz-fancy .dropzone{
+  color: #9a9a9a;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.dz-fancy .dropzone:hover{
+  border: 2px solid var(--main) !important;
+  color: #000;
 }
 
 .clickable{

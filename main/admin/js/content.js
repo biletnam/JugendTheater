@@ -24,9 +24,9 @@ function showContent(id){
 
 function changeContent(){
   var xhttp = new XMLHttpRequest();
-  var de = document.getElementById('de').value;
-  var fr = document.getElementById('fr').value;
-  var it = document.getElementById('it').value;
+  var de = encodeURIComponent(document.getElementById('de').value);
+  var fr = encodeURIComponent(document.getElementById('fr').value);
+  var it = encodeURIComponent(document.getElementById('it').value);
   xhttp.onreadystatechange = function() {
       $("#contentmodal").modal("show");
       if (this.readyState == 4 && this.status == 200) {

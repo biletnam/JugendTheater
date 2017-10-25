@@ -106,12 +106,12 @@ function getRandomInt(min, max) {
 
 function updatePrem(){
   var xhttp = new XMLHttpRequest();
-  var name = document.getElementById('premProduktionEdit').value;
-  var spieler = document.getElementById('premSpielerEdit').value;
+  var name = encodeURIComponent(document.getElementById('premProduktionEdit').value);
+  var spieler = encodeURIComponent(document.getElementById('premSpielerEdit').value);
   var datum = document.getElementById('premDateEdit').value;
-  var ort = document.getElementById('premOrtEdit').value;
-  var beschrieb = document.getElementById('premTAEdit').value;
-  var video = document.getElementById('premVidEdit').value;
+  var ort = encodeURIComponent(document.getElementById('premOrtEdit').value);
+  var beschrieb = encodeURIComponent(document.getElementById('premTAEdit').value);
+  var video = encodeURIComponent(document.getElementById('premVidEdit').value);
   var jon = getAddDatesJEdit();
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {

@@ -2,12 +2,12 @@
   <div class="container">
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 fh5co-logo">
       <a href="#" class="js-fh5co-mobile-toggle fh5co-nav-toggle"><i></i></a>
-      <a href="../">Jugend-Theater</a>
+      <a href="../"><?php gCT('Jugend Theater Festival Schweiz');?></a>
     </div>
     <div class="col-lg-6 col-md-5 col-sm-5 text-center fh5co-link-wrap">
       <ul data-offcanvass="yes">
-        <li><a href="../"><?php gCT("Home");?></a></li>
-        <li><a href="../?loc=wir"><?php gCT("About");?></a></li>
+        <li><a href="https://www.jugendtheaterfestival.ch/de"><?php gCT("Home");?></a></li>
+
         <li><a href="https://www.jugendtheaterfestival.ch/de" target="_blank"><?php gCT("JTF Webseite");?></a></li>
       </ul>
 

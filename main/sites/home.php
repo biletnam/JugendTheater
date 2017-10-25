@@ -29,7 +29,7 @@
   </div>
 </div>
 
-<div class="fh5co-project-style-2">
+<div id="premscroll" class="fh5co-project-style-2">
   <div class="container">
     <div class="row p-b">
       <div class="col-md-6 col-md-offset-3 text-center">

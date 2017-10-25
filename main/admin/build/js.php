@@ -34,4 +34,6 @@
 <script src="js/anmeldungen.js"></script>
 <?php } if($loc == "content"){?>
 <script src="js/content.js"></script>
+<?php } if($loc == "bilder"){?>
+<script src="js/bilder.js"></script>
 <?php } ?>

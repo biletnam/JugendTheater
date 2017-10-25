@@ -1,4 +1,5 @@
-<div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(../images/edit/medien.jpg);">
+<?php $allowEdit = false; if($user->getProperty("GroupID") > 3){ $allowEdit = true; } ?>
+<div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(../images/edit/back3.jpg);">
     <span class="scroll-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
     <a href="#">
       <span class="mouse"><span></span></span>
@@ -24,6 +25,9 @@
     <div class="row p-b">
       <div class="col-md-6 col-md-offset-3 text-center">
         <h2 class="fh5co-heading">Content</h2>
+      </div>
+      <div class="col-md-12 text-center">
+          <h3><a href="https://jugend-theater.ch/?newln=std" target="_blank">Zur Standardseite</a></h3>
       </div>
       <div class="col-md-6">
           <input class="form-control input-lg mt-1 modalCorr" type="text" id="ContentSearch" onkeyup="SearchContent();" placeholder="Suche">
@@ -53,7 +57,7 @@
               <tr>
                 <td scope="row"><?php echo $row["ID"]; ?></td>
                 <td><?php echo $row["std"]; ?></td>
-                <td><button type="button" onclick="showContent(<?php echo $row["ID"] ?>);" id="contentBtn" class="btn btn-primary btn-outline btn-black">Bearbeiten</button></td>
+                <td><button type="button" onclick="showContent(<?php echo $row["ID"] ?>);" id="contentBtn" class="btn btn-primary btn-outline btn-black" <?php if(!$allowEdit){echo 'disabled';}?>>Bearbeiten</button></td>
               </tr>
             <?php endwhile;?>
           </tbody>
