@@ -6,7 +6,7 @@
     </div>
     <div class="col-lg-6 col-md-5 col-sm-5 text-center fh5co-link-wrap">
       <ul data-offcanvass="yes">
-        <li><a href="../"><?php gCT("Home");?></a></li>
+        <li><a href="<?php echo $DomainUrlPath;?>/"><?php gCT("Home");?></a></li>
 
         <li><a href="https://www.jugendtheaterfestival.ch/de" target="_blank"><?php gCT("JTF Webseite");?></a></li>
       </ul>
@@ -40,8 +40,8 @@
         <li class="dropdown top-dd  <?php if(!$loggedIn){echo'invisible';}?>" id="userIcon">
           <a href="#" class="dropdown-toggle call-to-action" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span id="profileName"><?php echo $user->getProperty("Username"); ?></span> <i class="fa fa-user" aria-hidden="true"></i> <span class="caret"></span></a>
             <ul id="topbarMenu" class="dropdown-menu">
-              <?php if($loggedIn && $user->getProperty("GroupID") >= 3){ echo '<li><a href="../admin/">Admin-Page</a></li>';} ?>
-              <li><a href="../?loc=profile"><i class="fa fa-user" aria-hidden="true"></i> <?php gCT("Profile");?></a></li>
+              <?php if($loggedIn && $user->getProperty("GroupID") >= 3){ echo '<li><a href="'.$DomainUrlPath.'/admin/">Admin-Page</a></li>';} ?>
+              <li><a href="<?php echo $DomainUrlPath;?>/?loc=profile"><i class="fa fa-user" aria-hidden="true"></i> <?php gCT("Profile");?></a></li>
 
               <li class="dropdown">
                 <a tabindex="-1" href="#" class="dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown" data-animations="fadeIn fadeIn fadeIn fadeIn"><i class="fa fa-globe" aria-hidden="true"></i> <?php gCT("Sprachen");?></a>
@@ -52,9 +52,9 @@
                 </ul>
               </li>
 
-              <li><a href="../?loc=settings"><i class="fa fa-gears" aria-hidden="true"></i> <?php gCT("Settings");?></a></li>
+              <li><a href="<?php echo $DomainUrlPath;?>/?loc=settings"><i class="fa fa-gears" aria-hidden="true"></i> <?php gCT("Settings");?></a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="../functions/functions.php?func=logout"><i class="fa fa-sign-out" aria-hidden="true"></i> <?php gCT("Logout");?></a></li>
+              <li><a href="<?php echo $DomainUrlPath;?>/functions/functions.php?func=logout"><i class="fa fa-sign-out" aria-hidden="true"></i> <?php gCT("Logout");?></a></li>
             </ul>
           </li>
       </ul>

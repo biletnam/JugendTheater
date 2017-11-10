@@ -3,7 +3,7 @@ if(isset($_GET['hash'])){
     $hsh = $_GET['hash'];
 } else {$hsh = "";}
 echo '<script>var hash="'.$hsh.'"</script>'; ?>
-<div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(images/edit/home.jpg);">
+<div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(images/edit/back1.jpg);">
   <div class="fh5co-overlay"></div>
   <div class="fh5co-cover-text">
     <div class="container">

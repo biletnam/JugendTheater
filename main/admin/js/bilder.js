@@ -10,12 +10,13 @@ $(document).ready(function(){
 
 function initDzBilder(dzID){
   $("#my-back-dz-"+dzID).dropzone({
-    paramName: "back_"+dzID,
-    url: '../functions/functions.php?func=changeBackImage&dzID='+dzID,
+    paramName: "back"+dzID,
+    url: 'functions/functions.php?func=changeBackImage&dzID='+dzID,
     maxFilesize: 1, //FileSize in MB
     acceptedFiles: ".jpg",
 
     init: function() {
+      this.removeEventListeners();
       this.on("addedfile", function() {
         if (this.files[1]!=null){
           this.removeFile(this.files[0]);

@@ -17,14 +17,15 @@ function createPrem($fileType){
 }
 
 function newPrem(){
-  include('checkUser.php');
-  if(file_exists("../uploads/img_".$user->getProperty('Username').".jpg")){
+global $user;
+$Uname = $user->getProperty('Username');
+  if ( file_exists("../uploads/img_".$Uname.".jpg") ){
     createPrem(".jpg");
-  }elseif (file_exists("../uploads/img_".$user->getProperty('Username').".png")) {
+  } elseif ( file_exists("../uploads/img_".$Uname.".png") ){
     createPrem(".png");
-  }elseif (file_exists("../uploads/img_".$user->getProperty('Username').".gif")) {
+  } elseif ( file_exists("../uploads/img_".$Uname.".gif") ){
     createPrem(".gif");
-  } elseif (file_exists("../uploads/img_".$user->getProperty('Username').".jpeg")) {
+  } elseif ( file_exists("../uploads/img_".$Uname.".jpeg") ){
     createPrem(".jpeg");
   } else {
     echo gCTSilent("Bitte laden Sie ein Bild hoch.");

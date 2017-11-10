@@ -1,4 +1,4 @@
-<div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(images/edit/kontakt.jpg);">
+<div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(images/edit/back4.jpg);">
     <span class="scroll-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
     <a href="#">
       <span class="mouse"><span></span></span>
@@ -49,7 +49,7 @@
 
       <?php $tour = 0; $result = mysqli_query($DBconn, "SELECT * FROM premieren WHERE UserID=".$user->getProperty("ID"));
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)): $tour++;?>
-      <li class="wow fadeInUp col-md-4" style="background-image: url(../uploads/small/<?php  echo $row['ID'].$row['Bilder']; ?>);" data-wow-duration="1s" data-wow-delay=".8s" data-stellar-background-ratio="0.5" id="premNr<?php echo $row['ID'];?>">
+      <li class="wow fadeInUp col-md-4" style="background-image: url(<?php echo $DomainUrlPath;?>/uploads/small/<?php  echo $row['ID'].$row['Bilder']; ?>);" data-wow-duration="1s" data-wow-delay=".8s" data-stellar-background-ratio="0.5" id="premNr<?php echo $row['ID'];?>">
         <a  href="#" onclick="showPremEditModal(<?php echo $row['ID'] ?>);event.preventDefault();">
           <div class="fh5co-overlay"></div>
             <div class="fh5co-text">

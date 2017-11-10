@@ -593,7 +593,7 @@ if($loggedIn){
                   <label>
                     <input id="teilnahmebedingungen" type="checkbox">
                     <span id="teilnahmebedingungen2" class="cr"><i class="cr-icon fa fa-check"></i></span>
-                    *Ich habe die <a href="../?loc=teilnahmebedingungen" target="_blank">Teilnahmebedingungen</a> gelesen
+                    *Ich habe die <a href="<?php echo $DomainUrlPath;?>/?loc=teilnahmebedingungen" target="_blank">Teilnahmebedingungen</a> gelesen
                   </label>
                 </div>
               </div>

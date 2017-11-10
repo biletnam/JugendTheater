@@ -1,5 +1,6 @@
 <?php
 session_start();
+$DomainUrlPath = "https://jugend-theater.ch";
 include('../config.php');
 $langAuto = true;
 include("functions/languageManager.php");

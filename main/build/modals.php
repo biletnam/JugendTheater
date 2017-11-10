@@ -513,7 +513,7 @@
                   <label>
                     <input onclick="tbClick();" id="teilnahmebedingungen" type="checkbox">
                     <span class="cr"><i class="cr-icon fa fa-check"></i></span>
-                    <?php gCT('*Ich habe die <a href="../?loc=teilnahmebedingungen" target="_blank">Teilnahmebedingungen</a> gelesen');?>
+                    <?php gCT('*Ich habe die <a href="<?php echo $DomainUrlPath;?>/?loc=teilnahmebedingungen" target="_blank">Teilnahmebedingungen</a> gelesen');?>
                   </label>
                 </div>
               </div>
