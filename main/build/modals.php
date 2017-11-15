@@ -227,7 +227,7 @@
               </div>
 
               <div class="col-md-6 regMod FormTextAlign">
-                <?php gCT("*Alter aller SpielerInnen:");?>"
+                <?php gCT("*Alter aller SpielerInnen:");?>
               </div>
 
               <div class="col-md-3 regMod">
@@ -239,7 +239,7 @@
               </div>
 
               <div class="col-md-6 regMod FormTextAlign">
-                <?php gCT("davon jünger als 13 Jahre:");?>"
+                <?php gCT("davon jünger als 13 Jahre:");?>
               </div>
 
               <div class="col-md-3 regMod">
@@ -275,7 +275,7 @@
               </div>
 
               <div class="col-md-6 regMod FormTextAlign">
-                <?php gCT("davon älter als 21 Jahre:");?>"
+                <?php gCT("davon älter als 21 Jahre:");?>
               </div>
 
               <div class="col-md-3 regMod">
@@ -513,7 +513,7 @@
                   <label>
                     <input onclick="tbClick();" id="teilnahmebedingungen" type="checkbox">
                     <span class="cr"><i class="cr-icon fa fa-check"></i></span>
-                    <?php gCT('*Ich habe die <a href="<?php echo $DomainUrlPath;?>/?loc=teilnahmebedingungen" target="_blank">Teilnahmebedingungen</a> gelesen');?>
+                    <?php gCT('*Ich habe die <a href="../?loc=teilnahmebedingungen" target="_blank">Teilnahmebedingungen</a> gelesen');?>
                   </label>
                 </div>
               </div>
@@ -524,9 +524,19 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary btn-outline btn-black pull-left" data-dismiss="modal"><?php gCT("Cancel");?></button>
-        <?php if($loggedIn){$query = "SELECT ID FROM anmeldungen WHERE UserID=".$user->getProperty('ID');if ($result=mysqli_query($DBconn,$query)){if(mysqli_num_rows($result) > 0){} else {?>
-          <input id="jgtSubmitBtn" type="submit" class="btn btn-success btn-outline pull-right" value="<?php gCT("Bewerben");?>" disabled>
-        <?php }}} ?>
+
+        <?php if($loggedIn){
+          $query = "SELECT final FROM anmeldungen WHERE UserID=".$user->getProperty('ID');
+          $result = mysqli_query($DBconn, $query);
+          $row = mysqli_fetch_assoc($result);
+          if($row['final'] == 0){
+          ?>
+
+          <input id="jgtSubmitBtn" type="submit" class="btn btn-primary btn-outline btn-black pull-left" value="<?php gCT("Speichern");?>">
+
+          <button id="realSubBtn" type="button" class="btn btn-success btn-outline pull-right" disabled onclick="realSubBtnClick();"><?php gCT("Bewerben");?></button>
+
+          <?php }} ?>
         </form>
       </div>
     </div>

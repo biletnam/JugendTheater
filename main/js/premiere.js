@@ -7,6 +7,7 @@ function tryPremiere(){
   var beschrieb = document.getElementById('premTA').value;
   var video = document.getElementById('premVid').value;
   var jon = getAddDatesJ();
+  $('#premieremodal').animate({ scrollTop: 0 }, 'slow');
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         var ret = this.responseText;
@@ -25,7 +26,7 @@ function tryPremiere(){
               $("#premieremodal").modal("hide");
               document.getElementById("premResponse").innerHTML = "";
               $("ul#homePrems").append('<li class="wow fadeInUp col-md-4" style="background-image: url(../uploads/small/'+res[1]+res[2]+');" data-wow-duration="1s" data-wow-delay="0s" data-stellar-background-ratio="0.5"><a href="../?loc=premiere&prem='+res[1]+'"><div class="fh5co-overlay"></div><div class="fh5co-text"><div class="fh5co-text-inner"><div class="text-center"><h3>'+res[3]+'</h3></div></div></div></a></li>');
-            }, 800);
+            }, 1000);
           } else {
             document.getElementById("premResponse").innerHTML = this.responseText;
           }

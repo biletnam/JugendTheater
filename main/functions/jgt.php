@@ -73,7 +73,17 @@ function jgt(){
 
     $varArray = array($jgtTitel,$jgtUntertitel,$jgtDate,$jgtOrt,$jgtDauer,$actCheck,$jgtAlter,$jgtSprachen,$jgtCC,$jgtEnsembleName,$jgtEnsembleCity,$jgtPlayer,$jgtNonPlayer,$jgtAgeFrom,$jgtAgeTo,$jgtAge13W,$jgtAge13M,$jgtAge14W,$jgtAge14M,$jgtAge18W,$jgtAge18M,$jgtAge21W,$jgtAge21M,$jgtSpielleitung,$jgtAdress,$jgtTele,$jgtEmail,$jgtInfo,$jgtTrager,$jgtTragerAdress,$jgtTragerTele,$jgtTragerEmail,$jgtTragerWebsite,$medienInsta,$medienFlickr,$medienEmail,$medienFacebook,$medienWebsite,$medienTagespresse,$medienFachzeitschrift,$medienAnzeige,$medienFlyer,$medienKollegen,$medienSchulverteiler,$medienSonstige,$jgtSonst,$jgtVid,$jgtAnVid,$jgtBeschrieb,$jgtAnInfo,$jgtAnBe,$jgtTeilnahme,$jgtSign);
 
-    $sql = "INSERT INTO anmeldungen (UserID, Json, Jon) VALUES ('".$user->getProperty('ID')."','".json_encode($varArray)."','".$jon."')";
+    $fin = $_POST['final'];
+    $query = "SELECT final FROM anmeldungen WHERE UserID=".$user->getProperty('ID');
+    $result=mysqli_query($DBconn,$query);
+    if(mysqli_num_rows($result) > 0){
+      $sql = "UPDATE anmeldungen SET Json = '".json_encode($varArray)."', Jon = '".$jon."', final = ".$fin." WHERE UserID = " . $user->getProperty('ID');
+    } else {
+      $sql = "INSERT INTO anmeldungen (UserID, Json, Jon, final) VALUES ('".$user->getProperty('ID')."','".json_encode($varArray)."','".$jon."',".$fin.")";
+    }
+
+
+
     if ($DBconn->query($sql) === TRUE) {
       echo gCTSilent("Success!");
     } else {

@@ -27,7 +27,7 @@ function showJgt(id){
             document.getElementById('jgtDate').value = rows[2];
             document.getElementById('jgtOrt').value = htmlDecode(rows[3]);
             document.getElementById('jgtDauer').value = rows[4];
-            if(rows[5] == 'true'){document.getElementById('actCheck2').click();}
+            if(rows[5] == 'true'){document.getElementById('actCheck2').checked = true;}
             document.getElementById('jgtAlter').value = rows[6];
             document.getElementById('jgtSprachen').value = htmlDecode(rows[7]);
             document.getElementById('jgtCC').value = htmlDecode(rows[8]);
@@ -61,18 +61,18 @@ function showJgt(id){
             document.getElementById('jgtTragerWebsite').value = htmlDecode(rows[32]);
 
             // Vom Wettbewerb erfahren durch
-            if(rows[33] == 'true'){document.getElementById('medienInsta2').click();}
-            if(rows[34] == 'true'){document.getElementById('medienFlickr2').click();}
-            if(rows[35] == 'true'){document.getElementById('medienEmail2').click();}
-            if(rows[36] == 'true'){document.getElementById('medienFacebook2').click();}
-            if(rows[37] == 'true'){document.getElementById('medienWebsite2').click();}
-            if(rows[38] == 'true'){document.getElementById('medienTagespresse2').click();}
-            if(rows[39] == 'true'){document.getElementById('medienFachzeitschrift2').click();}
-            if(rows[40] == 'true'){document.getElementById('medienAnzeige2').click();}
-            if(rows[41] == 'true'){document.getElementById('medienFlyer2').click();}
-            if(rows[42] == 'true'){document.getElementById('medienKollegen2').click();}
-            if(rows[43] == 'true'){document.getElementById('medienSchulverteiler2').click();}
-            if(rows[44] == 'true'){document.getElementById('medienSonstige2').click();}
+            if(rows[33] == 'true'){document.getElementById('medienInsta2').checked = true;}
+            if(rows[34] == 'true'){document.getElementById('medienFlickr2').checked = true;}
+            if(rows[35] == 'true'){document.getElementById('medienEmail2').checked = true;}
+            if(rows[36] == 'true'){document.getElementById('medienFacebook2').checked = true;}
+            if(rows[37] == 'true'){document.getElementById('medienWebsite2').checked = true;}
+            if(rows[38] == 'true'){document.getElementById('medienTagespresse2').checked = true;}
+            if(rows[39] == 'true'){document.getElementById('medienFachzeitschrift2').checked = true;}
+            if(rows[40] == 'true'){document.getElementById('medienAnzeige2').checked = true;}
+            if(rows[41] == 'true'){document.getElementById('medienFlyer2').checked = true;}
+            if(rows[42] == 'true'){document.getElementById('medienKollegen2').checked = true;}
+            if(rows[43] == 'true'){document.getElementById('medienSchulverteiler2').checked = true;}
+            if(rows[44] == 'true'){document.getElementById('medienSonstige2').checked = true;}
             document.getElementById('jgtSonst').value = htmlDecode(rows[45]);
 
             // Anhänge
@@ -83,7 +83,7 @@ function showJgt(id){
             document.getElementById('jgtAnBe').value = htmlDecode(rows[50]);
 
             // Schluss
-            if(rows[51] == 'true'){document.getElementById('teilnahmebedingungen2').click();}
+            if(rows[51] == 'true'){document.getElementById('teilnahmebedingungen2').checked = true;}
             document.getElementById('jgtSign').value  = htmlDecode(rows[52]);
 
             document.getElementById("jgtResponse").innerHTML = "";

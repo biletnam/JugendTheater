@@ -50,7 +50,7 @@
             </tr>
           </thead>
           <tbody class="text-center">
-            <?php $tour = 0; $result = mysqli_query($DBconn, "SELECT * FROM anmeldungen");
+            <?php $tour = 0; $result = mysqli_query($DBconn, "SELECT * FROM anmeldungen WHERE final = 1");
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)): $tour++;?>
             <?php $result2 = mysqli_query($DBconn, "SELECT Email,EnsembleName FROM Users WHERE ID=".$row["UserID"]);
             $row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC); ?>
