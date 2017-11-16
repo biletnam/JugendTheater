@@ -42,6 +42,6 @@ if($loc == "profile"){
 }
 
 if(!$loggedIn){
-  echo '<script src="'.$DomainUrlPath.'js/topbar.js"></script>';
+  echo '<script src="'.$DomainUrlPath.'/js/topbar.js"></script>';
 }
 ?>
