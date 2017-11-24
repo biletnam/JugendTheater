@@ -67,13 +67,13 @@
             <?php if($row["GroupID"] == 5){continue;}?>
               <tr>
                 <td scope="row"><?php echo $row["ID"]; ?></td>
-                <td><?php echo $row["Username"]; ?></td>
+                <td><?php echo html_entity_decode($row["Username"]); ?></td>
                 <td><?php echo $row["Email"]; ?></td>
                 <td><?php if($row["Activated"]){ echo '<i class="fa fa-check" aria-hidden="true"></i>';} else { echo '<i class="fa fa-times" aria-hidden="true"></i>';} ?></td>
                 <td><?php echo date("d.m.y",$row["RegDate"]); ?></td>
                 <td><?php echo date("d.m.y",$row["LastLogin"]); ?></td>
-                <td><?php echo $row["EnsembleName"]; ?></td>
-                <td><?php echo $row["StadtKanton"]; ?></td>
+                <td><?php echo html_entity_decode($row["EnsembleName"]); ?></td>
+                <td><?php echo html_entity_decode($row["StadtKanton"]); ?></td>
                 <td><?php if($row["GroupID"] < 3){ echo "User";} elseif($row["GroupID"] == 3){ echo "Moderator";} elseif($row["GroupID"] == 4){ echo "Admin";} ?></td>
                 <td><button type="button" onclick="showUser(<?php echo $row["ID"] ?>);" id="premInv" class="btn btn-primary btn-outline btn-black <?php if(!$allowEdit){ echo "disabled";} else {if($row["GroupID"] == 4 && !$superuser){echo "disabled";}}?>" <?php if(!$allowEdit){ echo "disabled";} else {if($row["GroupID"] == 4 && !$superuser){echo "disabled";}}?>>Bearbeiten</button></td>
               </tr>

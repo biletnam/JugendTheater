@@ -1,3 +1,7 @@
+function htmlDecode(string){
+  return $('<textarea />').html(string).text();
+}
+
 var currentUserID = 0;
 function showUser(UserID){
   var xhttp = new XMLHttpRequest();
@@ -6,11 +10,11 @@ function showUser(UserID){
       $("#usermodal").modal("show");
       if (this.readyState == 4 && this.status == 200) {
             var rows = JSON.parse(this.responseText);
-            document.getElementById("Username").value = rows["Username"];
-            document.getElementById("deleteUserName").innerHTML = rows["Username"];
+            document.getElementById("Username").value = htmlDecode(rows["Username"]);
+            document.getElementById("deleteUserName").innerHTML = htmlDecode(rows["Username"]);
             document.getElementById("UserEmail").value = rows["Email"];
-            document.getElementById("UserEnsemleName").value = rows["EnsembleName"];
-            document.getElementById("UserStadtKanton").value = rows["StadtKanton"];
+            document.getElementById("UserEnsemleName").value = htmlDecode(rows["EnsembleName"]);
+            document.getElementById("UserStadtKanton").value = htmlDecode(rows["StadtKanton"]);
             if(rows["GroupID"] < 3){
               document.getElementById("UserModalUser").selected = true;
             } else if(rows["GroupID"] == 3){
