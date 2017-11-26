@@ -1,5 +1,12 @@
-function htmlDecode(string){
-  return $('<textarea />').html(string).text();
+function umlautFix(s){
+  s = s.replace("Ã¤","ä");
+  s = s.replace("Ã„","Ä");
+  s = s.replace("Ã¶","ö");
+  s = s.replace("Ã–","Ö");
+  s = s.replace("Ã¼","ü");
+  s = s.replace("Ãœ","Ü");
+  s = s.replace("ÃŸ","ß");
+  return s;
 }
 
 var currentUserID = 0;
@@ -10,11 +17,11 @@ function showUser(UserID){
       $("#usermodal").modal("show");
       if (this.readyState == 4 && this.status == 200) {
             var rows = JSON.parse(this.responseText);
-            document.getElementById("Username").value = htmlDecode(rows["Username"]);
-            document.getElementById("deleteUserName").innerHTML = htmlDecode(rows["Username"]);
+            document.getElementById("Username").value = umlautFix(rows["Username"]);
+            document.getElementById("deleteUserName").innerHTML = umlautFix(rows["Username"]);
             document.getElementById("UserEmail").value = rows["Email"];
-            document.getElementById("UserEnsemleName").value = htmlDecode(rows["EnsembleName"]);
-            document.getElementById("UserStadtKanton").value = htmlDecode(rows["StadtKanton"]);
+            document.getElementById("UserEnsemleName").value = umlautFix(rows["EnsembleName"]);
+            document.getElementById("UserStadtKanton").value = umlautFix(rows["StadtKanton"]);
             if(rows["GroupID"] < 3){
               document.getElementById("UserModalUser").selected = true;
             } else if(rows["GroupID"] == 3){
@@ -57,6 +64,19 @@ function delUser(){
   };
   var request = "id=" + currentUserID;
   xhttp.open("POST", "functions/functions.php?func=delUser", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(request);
+}
+
+function addNewUser(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        setTimeout(function(){ location.reload(); }, 400);
+     }
+  };
+  var request = "";
+  xhttp.open("POST", "functions/functions.php?func=addNewUser", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(request);
 }

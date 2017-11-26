@@ -1,3 +1,13 @@
+<?php function umlautFix($s){
+  $s = str_replace("Ã¤","ä",$s);
+  $s = str_replace("Ã„","Ä",$s);
+  $s = str_replace("Ã¶","ö",$s);
+  $s = str_replace("Ã–","Ö",$s);
+  $s = str_replace("Ã¼","ü",$s);
+  $s = str_replace("Ãœ","Ü",$s);
+  $s = str_replace("ÃŸ","ß",$s);
+  return $s;
+} ?>
 <?php $allowEdit = false; $superuser=false; if($user->getProperty("GroupID") >= 4){ $allowEdit = true; } if($user->getProperty("GroupID") > 4){$superuser = true;} ?>
 <div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(../images/edit/back2.jpg);">
     <span class="scroll-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
@@ -26,10 +36,10 @@
       <div class="col-md-6 col-md-offset-3 text-center">
         <h2 class="fh5co-heading">User</h2>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-5">
           <input class="form-control input-lg mt-1 modalCorr" type="text" id="UserSearch" onkeyup="SearchUser();" placeholder="Suche">
       </div>
-      <div class="col-md-6">
+      <div class="col-md-5">
         <select id="SearchFor" class="form-control input-lg mt-1 modalCorr" name="Suchen nach" onchange="SearchUser();">
           <option value="0">ID</option>
           <option value="1" selected>Username</option>
@@ -40,6 +50,9 @@
           <option value="7">Stadt,Kanton</option>
           <option value="8">Rolle</option>
         </select>
+      </div>
+      <div class="col-md-2">
+        <button type="button" onclick="addNewUser();" class="btn btn-primary btn-outline btn-black pull-right">Add User</button>
       </div>
     </div>
   </div>
@@ -67,13 +80,13 @@
             <?php if($row["GroupID"] == 5){continue;}?>
               <tr>
                 <td scope="row"><?php echo $row["ID"]; ?></td>
-                <td><?php echo html_entity_decode($row["Username"]); ?></td>
+                <td><?php echo umlautFix($row["Username"]); ?></td>
                 <td><?php echo $row["Email"]; ?></td>
                 <td><?php if($row["Activated"]){ echo '<i class="fa fa-check" aria-hidden="true"></i>';} else { echo '<i class="fa fa-times" aria-hidden="true"></i>';} ?></td>
                 <td><?php echo date("d.m.y",$row["RegDate"]); ?></td>
                 <td><?php echo date("d.m.y",$row["LastLogin"]); ?></td>
-                <td><?php echo html_entity_decode($row["EnsembleName"]); ?></td>
-                <td><?php echo html_entity_decode($row["StadtKanton"]); ?></td>
+                <td><?php echo umlautFix($row["EnsembleName"]); ?></td>
+                <td><?php echo umlautFix($row["StadtKanton"]); ?></td>
                 <td><?php if($row["GroupID"] < 3){ echo "User";} elseif($row["GroupID"] == 3){ echo "Moderator";} elseif($row["GroupID"] == 4){ echo "Admin";} ?></td>
                 <td><button type="button" onclick="showUser(<?php echo $row["ID"] ?>);" id="premInv" class="btn btn-primary btn-outline btn-black <?php if(!$allowEdit){ echo "disabled";} else {if($row["GroupID"] == 4 && !$superuser){echo "disabled";}}?>" <?php if(!$allowEdit){ echo "disabled";} else {if($row["GroupID"] == 4 && !$superuser){echo "disabled";}}?>>Bearbeiten</button></td>
               </tr>

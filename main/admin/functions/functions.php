@@ -18,6 +18,7 @@ include 'premDelAll.php';
 include 'getContent.php';
 include 'changeContent.php';
 include 'changeBackImage.php';
+include 'addNewUser.php';
 
 $defaultPath = "../";
 $profilePath = "../";
@@ -39,6 +40,7 @@ switch($func){
     case "getContent": getContent(); break;
     case "changeContent": changeContent(); break;
     case "changeBackImage": changeBackImage(); break;
+    case "addNewUser": addNewUser(); break;
     default: echo "NO FUNCTION FOUND!";
 }
  ?>
