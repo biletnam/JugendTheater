@@ -72,7 +72,7 @@ function addNewUser(){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        setTimeout(function(){ location.reload(); }, 400);
+        location.reload();
      }
   };
   var request = "";
