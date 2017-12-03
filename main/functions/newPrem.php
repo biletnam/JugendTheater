@@ -17,8 +17,7 @@ function createPrem($fileType){
 }
 
 function newPrem(){
-global $user;
-$Uname = $user->getProperty('Username');
+$Uname = $_POST['profName'];
   if ( file_exists("../uploads/img_".$Uname.".jpg") ){
     createPrem(".jpg");
   } elseif ( file_exists("../uploads/img_".$Uname.".png") ){

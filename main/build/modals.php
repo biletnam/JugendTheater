@@ -86,31 +86,31 @@
               </div>
               <form onsubmit="tryPremiere();return false;">
               <div class="col-md-6 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premProduktion" id="premProduktion" type="text" placeholder="<?php gCT("Name Produktion");?>" required>
+                    <input class="form-control input-lg mt-1 modalCorr easyDisablerFix" maxlength="50" name="premProduktion" id="premProduktion" type="text" placeholder="<?php gCT("Name Produktion");?>" required disabled>
                 </div>
                 <div class="col-md-6 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDate" type="datetime-local" placeholder="<?php gCT("Datum Premiere");?>" required>
+                    <input class="form-control input-lg mt-1 modalCorr easyDisablerFix" name="premDate" id="premDate" type="datetime-local" placeholder="<?php gCT("Datum Premiere");?>" required disabled>
                 </div>
                 <div class="col-md-6 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr modSpace" maxlength="50" name="premOrt" id="premOrt" type="text" placeholder="<?php gCT("Aufführungort");?>" required>
+                    <input class="form-control input-lg mt-1 modalCorr modSpace easyDisablerFix" maxlength="50" name="premOrt" id="premOrt" type="text" placeholder="<?php gCT("Aufführungort");?>" required disabled>
                 </div>
 
                 <div class="col-md-12 regMod" id="newAufDiv">
-                  <div class="form-control input-lg addDate clickable text-center" onclick="newAuf();">
+                  <div class="form-control input-lg addDate clickable text-center easyDisablerFix" onclick="newAuf();" disabled>
                     <?php gCT("Weitere Aufführung");?>
                   </div>
                 </div>
 
                 <div class="col-md-12 regMod">
-                    <textarea class="form-control input-lg mt-1 modalCorr" maxlength="500" name="premSpieler" id="premSpieler" type="text" placeholder="<?php gCT("Spieler (kommagetrennt)");?>" required></textarea>
+                    <textarea class="form-control input-lg mt-1 modalCorr easyDisablerFix" maxlength="500" name="premSpieler" id="premSpieler" type="text" disabled placeholder="<?php gCT("Spieler (kommagetrennt)");?>" required></textarea>
                 </div>
                 <div class="col-md-12 regMod">
-                  <textarea class="form-control input-lg mt-1 modalCorr beschriebArea" maxlength="500" id="premTA" name="premTA" placeholder="<?php gCT("Stückbeschrieb");?>" required></textarea>
+                  <textarea class="form-control input-lg mt-1 modalCorr beschriebArea easyDisablerFix" maxlength="500" id="premTA" name="premTA" disabled placeholder="<?php gCT("Stückbeschrieb");?>" required></textarea>
                 </div>
                 <div class="col-md-12 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr" maxlength="1000" name="premVid" id="premVid" type="url" placeholder="<?php gCT("Youtube-Link");?>">
+                    <input class="form-control input-lg mt-1 modalCorr easyDisablerFix" disabled maxlength="1000" name="premVid" id="premVid" type="url" placeholder="<?php gCT("Youtube-Link");?>">
                 </div>
-                <div class="col-md-12 regMod dz-fancy" onclick="openChooserPremAn();">
+                <div class="col-md-12 regMod dz-fancy easyDisablerFix" onclick="openChooserPremAn();" disabled>
                   <div class="dropzone dz-clickable" id="premDzAn">
                     <div class="dz-message" id="premDzAnMsg"><?php gCT("Anhänge");?></div>
                   </div>

@@ -34,7 +34,7 @@ function tryPremiere(){
        document.getElementById("premResponse").innerHTML = "Waiting for response...";
      }
   };
-  var request = "name=" + name + "&spieler=" + spieler + "&datum=" + datum + "&ort=" + ort + "&beschrieb=" + beschrieb + "&video=" + video + "&jon=" + jon;
+  var request = "name=" + name + "&spieler=" + spieler + "&datum=" + datum + "&ort=" + ort + "&beschrieb=" + beschrieb + "&video=" + video + "&jon=" + jon + "&profName=" + profileName.innerHTML;
   xhttp.open("POST", "functions/functions.php?func=newPrem", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(request);
@@ -94,7 +94,7 @@ function openChooserEdit(){
       }
     });
   });
-
+$(".easyDisablerFix").removeAttr('disabled');
 // Dropzone config
 var fileName2 = "img_" + profileName.innerHTML;
 var fileName3 = "tech_" + profileName.innerHTML;
@@ -111,6 +111,7 @@ var fileName3 = "tech_" + profileName.innerHTML;
     init: function() {
       this.removeEventListeners();
       this.on("addedfile", function() {
+
         if (this.files[1]!=null){
           this.removeFile(this.files[0]);
         }

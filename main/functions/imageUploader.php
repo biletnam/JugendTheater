@@ -1,7 +1,6 @@
 <?php
 function imageUploader(){
  include('checkUser.php');
- global $user;
  $ds = DIRECTORY_SEPARATOR;
  $storeFolder = 'uploads';
  $getName = 'img_'.$user->getProperty('Username');
