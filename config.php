@@ -25,4 +25,15 @@
 				return mysqli_real_escape_string($DBconn,htmlentities($string));
 			}
 
+			function umlautFix($s){
+			  $s = str_replace("Ã¤","ä",$s);
+			  $s = str_replace("Ã„","Ä",$s);
+			  $s = str_replace("Ã¶","ö",$s);
+			  $s = str_replace("Ã–","Ö",$s);
+			  $s = str_replace("Ã¼","ü",$s);
+			  $s = str_replace("Ãœ","Ü",$s);
+			  $s = str_replace("ÃŸ","ß",$s);
+			  return $s;
+			}
+
 ?>

@@ -57,11 +57,11 @@
                     list($date,$time)=explode(' ', $row['PremiereDatum']);
                     list($year,$month,$day)=explode('-',$date);
                     $date = $day . "." . $month . "." . $year;
-                    $result2 = mysqli_query($DBconn, "SELECT EnsembleName FROM users WHERE ID = " . $row['UserID']);
+                    $result2 = mysqli_query($DBconn, "SELECT EnsembleName FROM Users WHERE ID = " . $row['UserID']);
                     $row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC);
                     ?>
                     <h3><?php echo $row['Produktion']; ?></h3>
-                    <h3 class="smallerH3"><?php echo $row2['EnsembleName']; ?> <?php echo $date?></h3>
+                    <h3 class="smallerH3"><?php echo umlautFix($row2['EnsembleName'];) ?> <?php echo $date?></h3>
                   </div>
               </div>
             </div>

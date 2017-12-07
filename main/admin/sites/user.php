@@ -1,13 +1,3 @@
-<?php function umlautFix($s){
-  $s = str_replace("Ã¤","ä",$s);
-  $s = str_replace("Ã„","Ä",$s);
-  $s = str_replace("Ã¶","ö",$s);
-  $s = str_replace("Ã–","Ö",$s);
-  $s = str_replace("Ã¼","ü",$s);
-  $s = str_replace("Ãœ","Ü",$s);
-  $s = str_replace("ÃŸ","ß",$s);
-  return $s;
-} ?>
 <?php $allowEdit = false; $superuser=false; if($user->getProperty("GroupID") >= 4){ $allowEdit = true; } if($user->getProperty("GroupID") > 4){$superuser = true;} ?>
 <div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(../images/edit/back2.jpg);">
     <span class="scroll-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
