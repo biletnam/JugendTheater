@@ -52,7 +52,17 @@
           <div class="fh5co-overlay"></div>
             <div class="fh5co-text">
               <div class="fh5co-text-inner">
-                  <div class="text-center"><h3><?php echo $row['Produktion']; ?></h3></div>
+                  <div class="text-center">
+                    <?php
+                    list($date,$time)=explode(' ', $row['PremiereDatum']);
+                    list($year,$month,$day)=explode('-',$date);
+                    $date = $day . "." . $month . "." . $year;
+                    $result2 = mysqli_query($DBconn, "SELECT EnsembleName FROM users WHERE ID = " . $row['UserID']);
+                    $row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC);
+                    ?>
+                    <h3><?php echo $row['Produktion']; ?></h3>
+                    <h3 class="smallerH3"><?php echo $row2['EnsembleName']; ?> <?php echo $date?></h3>
+                  </div>
               </div>
             </div>
         </a>

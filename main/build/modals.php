@@ -36,25 +36,25 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header modalCorr">
-        <h4 class="modal-title modalCorr"><?php gCT("Register");?> <span class="modalResponse" id="registerResponse"></span></h4>
+        <h4 class="modal-title modalCorr"><?php gCT("Register");?> <span class="modalResponse" id="registerResponse"><?php gCT("* zwingend ausfüllen"); ?></span></h4>
       </div>
       <form onsubmit="tryRegister();return false;">
       <div class="modal-body modalCorr">
           <div class="row">
             <div class="col-md-6 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="Username" id="regUsername" type="text" placeholder="<?php gCT("Benutzername");?>" required>
+                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="Username" id="regUsername" type="text" placeholder="<?php gCT("Benutzername");?>*" required>
               </div>
               <div class="col-md-6 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="Ename" id="regEname" type="text" placeholder="<?php gCT("Ensemblename");?>" required>
+                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="Ename" id="regEname" type="text" placeholder="<?php gCT("Ensemblename");?>">
               </div>
               <div class="col-md-6 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="Password" id="regPassword" type="password" placeholder="<?php gCT("Passwort");?>" required>
+                  <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="Password" id="regPassword" type="password" placeholder="<?php gCT("Passwort");?>*" required>
               </div>
               <div class="col-md-6 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="City" id="regCity" type="text" placeholder="<?php gCT("Stadt,Kanton");?>" required>
+                  <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="City" id="regCity" type="text" placeholder="<?php gCT("Stadt,Kanton");?>">
               </div>
               <div class="col-md-6 regMod">
-                  <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="Email" id="regEmail" type="email" placeholder="<?php gCT("Email");?>" required>
+                  <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="Email" id="regEmail" type="email" placeholder="<?php gCT("Email");?>*" required>
               </div>
           </div>
       </div>
@@ -102,10 +102,10 @@
                 </div>
 
                 <div class="col-md-12 regMod">
-                    <textarea class="form-control input-lg mt-1 modalCorr easyDisablerFix" maxlength="500" name="premSpieler" id="premSpieler" type="text" disabled placeholder="<?php gCT("Spieler (kommagetrennt)");?>" required></textarea>
+                    <textarea class="form-control input-lg mt-1 modalCorr easyDisablerFix" maxlength="1000" name="premSpieler" id="premSpieler" type="text" disabled placeholder="<?php gCT("Spieler (kommagetrennt)");?>" required></textarea>
                 </div>
                 <div class="col-md-12 regMod">
-                  <textarea class="form-control input-lg mt-1 modalCorr beschriebArea easyDisablerFix" maxlength="500" id="premTA" name="premTA" disabled placeholder="<?php gCT("Stückbeschrieb");?>" required></textarea>
+                  <textarea class="form-control input-lg mt-1 modalCorr beschriebArea easyDisablerFix" maxlength="1000" id="premTA" name="premTA" disabled placeholder="<?php gCT("Stückbeschrieb");?>" required></textarea>
                 </div>
                 <div class="col-md-12 regMod">
                     <input class="form-control input-lg mt-1 modalCorr easyDisablerFix" disabled maxlength="1000" name="premVid" id="premVid" type="url" placeholder="<?php gCT("Youtube-Link");?>">
@@ -295,7 +295,7 @@
               </div>
 
               <div class="col-md-6 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtTele" id="jgtTele" type="tel" placeholder="<?php gCT("*Telefonnummer");?>" required>
+                <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtTele" id="jgtTele" type="tel" placeholder="<?php gCT("*Telefonnummer (079 132 89 76)");?>" required>
               </div>
 
               <div class="col-md-6 regMod">
@@ -319,7 +319,7 @@
               </div>
 
               <div class="col-md-6 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtTragerTele" id="jgtTragerTele" type="tel" placeholder="<?php gCT("*Telefonnummer");?>" required>
+                <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtTragerTele" id="jgtTragerTele" type="tel" placeholder="<?php gCT("*Telefonnummer (079 132 89 76)");?>" required>
               </div>
 
               <div class="col-md-6 regMod">
@@ -475,13 +475,13 @@
               </div>
               <div class="col-md-6 regMod dz-fancy" onclick="openChooserTech();">
                 <div class="dropzone dz-clickable" id="jgtdz">
-                  <div class="dz-message" id="jgtdzmsg"><?php gCT("Techrider");?></div>
+                  <div class="dz-message" id="jgtdzmsg"><?php gCT("Techrider (PDF)");?></div>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="row">
                   <div class="col-md-12 regMod">
-                      <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtVid" id="jgtVid" type="url" placeholder="<?php gCT("*Videolink");?>" required>
+                      <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtVid" id="jgtVid" type="url" placeholder="<?php gCT("Videolink");?>">
                   </div>
                   <div class="col-md-12 regMod">
                       <textarea class="form-control input-lg mt-1 modalCorr beschriebArea-xm" maxlength="500" id="jgtAnVid" name="jgtAnVid" placeholder="<?php gCT("Beschrieb zu Videolink");?>"></textarea>
