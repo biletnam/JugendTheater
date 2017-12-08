@@ -61,7 +61,7 @@
                     $row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC);
                     ?>
                     <h3><?php echo $row['Produktion']; ?></h3>
-                    <h3 class="smallerH3"><?php echo umlautFix($row2['EnsembleName'];) ?> <?php echo $date?></h3>
+                    <h3 class="smallerH3"><?php echo umlautFix($row2['EnsembleName']); ?> <?php echo $date?></h3>
                   </div>
               </div>
             </div>
