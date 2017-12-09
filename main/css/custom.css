@@ -90,6 +90,10 @@
 	text-align: center;
 }
 
+.noBorder{
+  border: none;
+}
+
 .smallerH3{
   font-size: 16px;
 }

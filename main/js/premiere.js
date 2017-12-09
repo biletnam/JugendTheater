@@ -1,8 +1,15 @@
+function parseDatetime(dt){
+  dt = dt.replace(".","-");
+  dt = dt.replace(" ","T");
+  dt = dt.replace(".","-");
+  return dt;
+}
+
 function tryPremiere(){
   var xhttp = new XMLHttpRequest();
   var name = document.getElementById('premProduktion').value;
   var spieler = document.getElementById('premSpieler').value;
-  var datum = document.getElementById('premDate').value;
+  var datum = parseDatetime(document.getElementById('premDate').value);
   var ort = document.getElementById('premOrt').value;
   var beschrieb = document.getElementById('premTA').value;
   var video = document.getElementById('premVid').value;
@@ -62,14 +69,15 @@ var nmbrs = [];
 var lastNmbr = 0;
 function newAuf(){
   var nmbr = lastNmbr + 1;
-  $( '<div class="col-md-6 regMod" id="premDateDiv'+nmbr+'"><input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDate'+nmbr+'" type="datetime-local" placeholder="Datum Premiere" required></div><div class="col-md-4 regMod" id="premOrtDiv'+nmbr+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrt'+nmbr+'" type="text" placeholder="Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDiv'+nmbr+'"><i onclick="remAuf('+nmbr+');" id="delIco'+nmbr+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDiv" );
+  $( '<div class="col-md-6 regMod" id="premDateDiv'+nmbr+'"><div class="form-control input-lg mt-1 modalCorr input-append date form_datetime"><input placeholder="Datum" class="noBorder" id="premDate'+nmbr+'" type="text" value="" readonly required><span class="add-on"><i class="fa fa-calendar"></i></span></div></div><div class="col-md-4 regMod" id="premOrtDiv'+nmbr+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrt'+nmbr+'" type="text" placeholder="Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDiv'+nmbr+'"><i onclick="remAuf('+nmbr+');" id="delIco'+nmbr+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDiv" );
   lastNmbr = nmbr;
   nmbrs.push(nmbr);
+  activateDatepicker();
 }
 function getAddDatesJ(){
   var dates = [];
   for (var i = 0; i < nmbrs.length; i++){
-    dates.push($("#premDate"+nmbrs[i]).val());
+    dates.push(parseDatetime($("#premDate"+nmbrs[i]).val()));
     dates.push($("#premOrt"+nmbrs[i]).val());
   }
   var jon = JSON.stringify(dates);

@@ -1,8 +1,22 @@
+function parseDatetime(dt){
+  dt = dt.replace(".","-");
+  dt = dt.replace(" ","T");
+  dt = dt.replace(".","-");
+  return dt;
+}
+
+function parseDatetimeBack(dt){
+  dt = dt.replace("-",".");
+  dt = dt.replace("T"," ");
+  dt = dt.replace("-",".");
+  return dt;
+}
+
 function tryPremiere(){
   var xhttp = new XMLHttpRequest();
   var name = document.getElementById('premProduktion').value;
   var spieler = document.getElementById('premSpieler').value;
-  var datum = document.getElementById('premDate').value;
+  var datum = parseDatetime(document.getElementById('premDate').value);
   var ort = document.getElementById('premOrt').value;
   var beschrieb = document.getElementById('premTA').value;
   var video = document.getElementById('premVid').value;
@@ -63,7 +77,7 @@ function showPremEditModal(premID){
             var premAddDates = JSON.parse(rows["addDates"]);
             for (var e = 0; e < premAddDates.length; e += 2){
               newAufEdit();
-              $("#premDateEdit"+lastNmbrEdit).val(premAddDates[e]);
+              $("#premDateEdit"+lastNmbrEdit).val(parseDatetimeBack(premAddDates[e]));
               $("#premOrtEdit"+lastNmbrEdit).val(premAddDates[e+1]);
             }
             var filename = rows["ID"]+rows["Bilder"];
@@ -77,7 +91,7 @@ function showPremEditModal(premID){
             document.getElementById("premProduktionEdit").value = rows["Produktion"];
             document.getElementById("deleteName").innerHTML = rows["Produktion"];
             document.getElementById("premSpielerEdit").value = rows["Spieler"];
-            document.getElementById("premDateEdit").value = rows["PremiereDatum"].replace(" ", "T");
+            document.getElementById("premDateEdit").value = parseDatetimeBack(rows["PremiereDatum"]);
             document.getElementById("premOrtEdit").value = rows["Ort"];
             document.getElementById("premTAEdit").value = rows["Beschrieb"];
             document.getElementById("premVidEdit").value = rows["Video"];
@@ -186,14 +200,15 @@ var nmbrs = [];
 var lastNmbr = 0;
 function newAuf(){
   var nmbr = lastNmbr + 1;
-  $( '<div class="col-md-6 regMod" id="premDateDiv'+nmbr+'"><input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDate'+nmbr+'" type="datetime-local" placeholder="Datum Premiere" required></div><div class="col-md-4 regMod" id="premOrtDiv'+nmbr+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrt'+nmbr+'" type="text" placeholder="Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDiv'+nmbr+'"><i onclick="remAuf('+nmbr+');" id="delIco'+nmbr+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDiv" );
+  $( '<div class="col-md-6 regMod" id="premDateDiv'+nmbr+'"><div class="form-control input-lg mt-1 modalCorr input-append date form_datetime"><input placeholder="Datum" class="noBorder" id="premDate'+nmbr+'" type="text" value="" readonly required><span class="add-on"><i class="fa fa-calendar"></i></span></div></div><div class="col-md-4 regMod" id="premOrtDiv'+nmbr+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrt'+nmbr+'" type="text" placeholder="Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDiv'+nmbr+'"><i onclick="remAuf('+nmbr+');" id="delIco'+nmbr+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDiv" );
   lastNmbr = nmbr;
   nmbrs.push(nmbr);
+  activateDatepicker();
 }
 function getAddDatesJ(){
   var dates = [];
   for (var i = 0; i < nmbrs.length; i++){
-    dates.push($("#premDate"+nmbrs[i]).val());
+    dates.push(parseDatetime($("#premDate"+nmbrs[i]).val()));
     dates.push($("#premOrt"+nmbrs[i]).val());
   }
   var jon = JSON.stringify(dates);
@@ -224,14 +239,15 @@ var nmbrsEdit = [];
 var lastNmbrEdit = 0;
 function newAufEdit(){
   var nmbrEdit = lastNmbrEdit + 1;
-  $( '<div class="col-md-6 regMod" id="premDateDivEdit'+nmbrEdit+'"><input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDateEdit'+nmbrEdit+'" type="datetime-local" placeholder="Datum Premiere" required></div><div class="col-md-4 regMod" id="premOrtDivEdit'+nmbrEdit+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrtEdit'+nmbrEdit+'" type="text" placeholder="Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDivEdit'+nmbrEdit+'"><i onclick="remAufEdit('+nmbrEdit+');" id="delIcoEdit'+nmbrEdit+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDivEdit" );
+  $( '<div class="col-md-6 regMod" id="premDateDivEdit'+nmbrEdit+'"><div class="form-control input-lg mt-1 modalCorr input-append date form_datetime"><input placeholder="<?php gCT("Datum Premiere");?>" class="noBorder" id="premDateEdit'+nmbrEdit+'" type="text" value="" readonly required><span class="add-on"><i class="fa fa-calendar"></i></span></div></div><div class="col-md-4 regMod" id="premOrtDivEdit'+nmbrEdit+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrtEdit'+nmbrEdit+'" type="text" placeholder="Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDivEdit'+nmbrEdit+'"><i onclick="remAufEdit('+nmbrEdit+');" id="delIcoEdit'+nmbrEdit+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDivEdit" );
   lastNmbrEdit = nmbrEdit;
   nmbrsEdit.push(nmbrEdit);
+  activateDatepicker();
 }
 function getAddDatesJEdit(){
   var datesEdit = [];
   for (var i = 0; i < nmbrsEdit.length; i++){
-    datesEdit.push($("#premDateEdit"+nmbrsEdit[i]).val());
+    datesEdit.push(parseDatetime($("#premDateEdit"+nmbrsEdit[i]).val()));
     datesEdit.push($("#premOrtEdit"+nmbrsEdit[i]).val());
   }
   var jonEdit = JSON.stringify(datesEdit);

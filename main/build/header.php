@@ -35,6 +35,10 @@
 	<!-- Animated Dropdown -->
 	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/animate.min.css">
 	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/bootstrap-dropdownhover.min.css">
+
+	<!-- Datetime picker -->
+	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/bootstrap-datetimepicker.min.css">
+
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>

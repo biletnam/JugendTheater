@@ -28,6 +28,8 @@
 <script src="<?php echo $DomainUrlPath;?>/js/main.js"></script>
 <!-- Custom -->
 <script src="<?php echo $DomainUrlPath;?>/js/custom.js"></script>
+<script src="<?php echo $DomainUrlPath;?>/js/bootstrap-datetimepicker.min.js"></script>
+<script src="<?php echo $DomainUrlPath;?>/js/datetimepicker.js"></script>
 <?php
 if($loc == "profile"){
   echo '<script src="'.$DomainUrlPath.'/js/profile.js"></script>';

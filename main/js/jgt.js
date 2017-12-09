@@ -1,3 +1,17 @@
+function parseDatetime(dt){
+  dt = dt.replace(".","-");
+  dt = dt.replace(" ","T");
+  dt = dt.replace(".","-");
+  return dt;
+}
+
+function parseDatetimeBack(dt){
+  dt = dt.replace("-",".");
+  dt = dt.replace("T"," ");
+  dt = dt.replace("-",".");
+  return dt;
+}
+
 function htmlDecode(string){
   return $('<textarea />').html(string).text();
 }
@@ -31,12 +45,12 @@ function loadAnmeldung(id){
             remAufAllJgt();
             for (var e = 0; e < JgtAddDates.length; e += 2){
               newAufJgt();
-              $("#premDateJgt"+lastNmbrJgt).val(JgtAddDates[e]);
+              $("#premDateJgt"+lastNmbrJgt).val(parseDatetimeBack(JgtAddDates[e]));
               $("#premOrtJgt"+lastNmbrJgt).val(JgtAddDates[e+1]);
             }
             document.getElementById('jgtTitel').value = htmlDecode(rows[0]);
             document.getElementById('jgtUntertitel').value = htmlDecode(rows[1]);
-            document.getElementById('jgtDate').value = rows[2];
+            document.getElementById('jgtDate').value = parseDatetimeBack(rows[2]);
             document.getElementById('jgtOrt').value = htmlDecode(rows[3]);
             document.getElementById('jgtDauer').value = rows[4];
             if(rows[5] == 'true'){document.getElementById('actCheck2').checked = true;}
@@ -111,7 +125,7 @@ function tryJgt(){
   // Zum Stück
   var jgtTitel = document.getElementById('jgtTitel').value;
   var jgtUntertitel = document.getElementById('jgtUntertitel').value;
-  var jgtDate = document.getElementById('jgtDate').value;
+  var jgtDate = parseDatetime(document.getElementById('jgtDate').value);
   var jgtOrt = document.getElementById('jgtOrt').value;
   var jgtDauer = document.getElementById('jgtDauer').value;
   var actCheck = document.getElementById('actCheck').checked;
@@ -285,14 +299,15 @@ var nmbrsJgt = [];
 var lastNmbrJgt = 0;
 function newAufJgt(){
   var nmbrJgt = lastNmbrJgt + 1;
-  $( '<div class="col-md-4 regMod" id="premDateDivJgt'+nmbrJgt+'"><input class="form-control input-lg mt-1 modalCorr" name="premDate" id="premDateJgt'+nmbrJgt+'" type="datetime-local" placeholder="Datum Premiere" required></div><div class="col-md-6 regMod" id="premOrtDivJgt'+nmbrJgt+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrtJgt'+nmbrJgt+'" type="text" placeholder="*Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDivJgt'+nmbrJgt+'"><i onclick="remAufJgt('+nmbrJgt+');" id="delIcoJgt'+nmbrJgt+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDivJgt" );
+  $( '<div class="col-md-4 regMod" id="premDateDivJgt'+nmbrJgt+'"><div class="form-control input-lg mt-1 modalCorr input-append date form_datetime"><input placeholder="Datum" class="noBorder" id="premDateJgt'+nmbrJgt+'" type="text" value="" readonly required><span class="add-on"><i class="fa fa-calendar"></i></span></div></div><div class="col-md-6 regMod" id="premOrtDivJgt'+nmbrJgt+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrtJgt'+nmbrJgt+'" type="text" placeholder="*Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDivJgt'+nmbrJgt+'"><i onclick="remAufJgt('+nmbrJgt+');" id="delIcoJgt'+nmbrJgt+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDivJgt" );
   lastNmbrJgt = nmbrJgt;
   nmbrsJgt.push(nmbrJgt);
+  activateDatepicker();
 }
 function getAddDatesJJgt(){
   var datesJgt = [];
   for (var i = 0; i < nmbrsJgt.length; i++){
-    datesJgt.push($("#premDateJgt"+nmbrsJgt[i]).val());
+    datesJgt.push(parseDatetime($("#premDateJgt"+nmbrsJgt[i]).val()));
     datesJgt.push($("#premOrtJgt"+nmbrsJgt[i]).val());
   }
   var jonJgt = JSON.stringify(datesJgt);
