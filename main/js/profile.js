@@ -200,7 +200,7 @@ var nmbrs = [];
 var lastNmbr = 0;
 function newAuf(){
   var nmbr = lastNmbr + 1;
-  $( '<div class="col-md-6 regMod" id="premDateDiv'+nmbr+'"><div class="form-control input-lg mt-1 modalCorr input-append date form_datetime"><input placeholder="Datum" class="noBorder" id="premDate'+nmbr+'" type="text" value="" readonly required><span class="add-on"><i class="fa fa-calendar"></i></span></div></div><div class="col-md-4 regMod" id="premOrtDiv'+nmbr+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrt'+nmbr+'" type="text" placeholder="Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDiv'+nmbr+'"><i onclick="remAuf('+nmbr+');" id="delIco'+nmbr+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDiv" );
+  $( '<div class="col-md-6 regMod" id="premDateDiv'+nmbr+'"><input placeholder="Datum" class="form-control input-lg mt-1 modalCorr noBorder form_datetime" id="premDate'+nmbr+'" type="text" value="" readonly required></div><div class="col-md-4 regMod" id="premOrtDiv'+nmbr+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrt'+nmbr+'" type="text" placeholder="Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDiv'+nmbr+'"><i onclick="remAuf('+nmbr+');" id="delIco'+nmbr+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDiv" );
   lastNmbr = nmbr;
   nmbrs.push(nmbr);
   activateDatepicker();
@@ -239,7 +239,7 @@ var nmbrsEdit = [];
 var lastNmbrEdit = 0;
 function newAufEdit(){
   var nmbrEdit = lastNmbrEdit + 1;
-  $( '<div class="col-md-6 regMod" id="premDateDivEdit'+nmbrEdit+'"><div class="form-control input-lg mt-1 modalCorr input-append date form_datetime"><input placeholder="<?php gCT("Datum Premiere");?>" class="noBorder" id="premDateEdit'+nmbrEdit+'" type="text" value="" readonly required><span class="add-on"><i class="fa fa-calendar"></i></span></div></div><div class="col-md-4 regMod" id="premOrtDivEdit'+nmbrEdit+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrtEdit'+nmbrEdit+'" type="text" placeholder="Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDivEdit'+nmbrEdit+'"><i onclick="remAufEdit('+nmbrEdit+');" id="delIcoEdit'+nmbrEdit+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDivEdit" );
+  $( '<div class="col-md-6 regMod" id="premDateDivEdit'+nmbrEdit+'"><input placeholder="Datum" class="form-control input-lg mt-1 modalCorr noBorder form_datetime" id="premDateEdit'+nmbrEdit+'" type="text" value="" readonly required></div><div class="col-md-4 regMod" id="premOrtDivEdit'+nmbrEdit+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrtEdit'+nmbrEdit+'" type="text" placeholder="Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDivEdit'+nmbrEdit+'"><i onclick="remAufEdit('+nmbrEdit+');" id="delIcoEdit'+nmbrEdit+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDivEdit" );
   lastNmbrEdit = nmbrEdit;
   nmbrsEdit.push(nmbrEdit);
   activateDatepicker();

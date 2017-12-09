@@ -299,7 +299,7 @@ var nmbrsJgt = [];
 var lastNmbrJgt = 0;
 function newAufJgt(){
   var nmbrJgt = lastNmbrJgt + 1;
-  $( '<div class="col-md-4 regMod" id="premDateDivJgt'+nmbrJgt+'"><div class="form-control input-lg mt-1 modalCorr input-append date form_datetime"><input placeholder="Datum" class="noBorder" id="premDateJgt'+nmbrJgt+'" type="text" value="" readonly required><span class="add-on"><i class="fa fa-calendar"></i></span></div></div><div class="col-md-6 regMod" id="premOrtDivJgt'+nmbrJgt+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrtJgt'+nmbrJgt+'" type="text" placeholder="*Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDivJgt'+nmbrJgt+'"><i onclick="remAufJgt('+nmbrJgt+');" id="delIcoJgt'+nmbrJgt+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDivJgt" );
+  $( '<div class="col-md-4 regMod" id="premDateDivJgt'+nmbrJgt+'"><input placeholder="Datum" class="form-control input-lg mt-1 modalCorr noBorder form_datetime" id="premDateJgt'+nmbrJgt+'" type="text" value="" readonly required></div><div class="col-md-6 regMod" id="premOrtDivJgt'+nmbrJgt+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrtJgt'+nmbrJgt+'" type="text" placeholder="*Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDivJgt'+nmbrJgt+'"><i onclick="remAufJgt('+nmbrJgt+');" id="delIcoJgt'+nmbrJgt+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDivJgt" );
   lastNmbrJgt = nmbrJgt;
   nmbrsJgt.push(nmbrJgt);
   activateDatepicker();

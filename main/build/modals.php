@@ -90,10 +90,7 @@
                 </div>
                 <div class="col-md-6 regMod">
                   <!-- NOTE: Fixed Datepicker, Required not working somehow -->
-                    <div class="form-control input-lg mt-1 modalCorr input-append date form_datetime">
-                      <input placeholder="<?php gCT("Datum Premiere");?>" class="noBorder" id="premDate" type="text" value="" readonly required>
-                      <span class="add-on"><i class="fa fa-calendar"></i></span>
-                    </div>
+                  <input placeholder="<?php gCT("Datum Premiere");?>" class="form-control input-lg mt-1 modalCorr noBorder form_datetime" id="premDate" type="text" value="" readonly required>
                 </div>
                 <div class="col-md-6 regMod">
                     <input class="form-control input-lg mt-1 modalCorr modSpace easyDisablerFix" maxlength="50" name="premOrt" id="premOrt" type="text" placeholder="<?php gCT("Aufführungort");?>" required disabled>
@@ -169,10 +166,7 @@
                 <?php gCT("*Dauer (gesamt)");?>
               </div>
               <div class="col-md-4 regMod">
-                <div class="form-control input-lg mt-1 modalCorr input-append date form_datetime">
-                  <input placeholder="<?php gCT("*Datum Premiere");?>" class="noBorder" id="jgtDate" type="text" value="" readonly required>
-                  <span class="add-on"><i class="fa fa-calendar"></i></span>
-                </div>
+                <input placeholder="<?php gCT("Datum Premiere");?>" class="form-control input-lg mt-1 modalCorr noBorder form_datetime" id="jgtDate" type="text" value="" readonly required>
               </div>
 
               <div class="col-md-4 regMod">
@@ -574,11 +568,8 @@
                 </div>
                 <div class="col-md-6 regMod">
 
-                  <div class="form-control input-lg mt-1 modalCorr input-append date form_datetime">
-                    <input placeholder="<?php gCT("Datum Premiere");?>" class="noBorder" id="premDateEdit" type="text" value="" readonly required>
-                    <span class="add-on"><i class="fa fa-calendar"></i></span>
-                  </div>
-                  
+                  <input placeholder="<?php gCT("Datum Premiere");?>" class="form-control input-lg mt-1 modalCorr noBorder form_datetime" id="premDateEdit" type="text" value="" readonly required>
+
                 </div>
                 <div class="col-md-6 regMod">
                     <input class="form-control input-lg mt-1 modalCorr modSpace" maxlength="50" name="premOrt" id="premOrtEdit" type="text" placeholder="<?php gCT("Aufführungort");?>" required>
