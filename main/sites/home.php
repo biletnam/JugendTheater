@@ -45,7 +45,7 @@
     <div class="row">
     <ul id="homePrems">
 
-      <?php $tour = 0; $result = mysqli_query($DBconn, "SELECT * FROM premieren WHERE Activation = 1");
+      <?php $tour = 0; $result = mysqli_query($DBconn, "SELECT * FROM premieren WHERE Activation = 1 ORDER BY PremiereDatum DESC");
       while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)): $tour++;?>
       <li class="wow fadeInUp col-md-4 premImgFix" style="background-image: url(<?php echo $DomainUrlPath;?>/uploads/small/<?php  echo $row['ID'].$row['Bilder']; ?>);" data-wow-duration="1s" data-wow-delay=".8s">
         <a href="<?php echo $DomainUrlPath;?>/?loc=premiere&prem=<?php echo $row['ID']; ?>">
@@ -57,11 +57,9 @@
                     list($date,$time)=explode(' ', $row['PremiereDatum']);
                     list($year,$month,$day)=explode('-',$date);
                     $date = $day . "." . $month . "." . $year;
-                    $result2 = mysqli_query($DBconn, "SELECT EnsembleName FROM Users WHERE ID = " . $row['UserID']);
-                    $row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC);
                     ?>
                     <h3><?php echo $row['Produktion']; ?></h3>
-                    <h3 class="smallerH3"><?php echo umlautFix($row2['EnsembleName']); ?> <?php echo $date?></h3>
+                    <h3 class="smallerH3"><?php echo umlautFix($row['Ort']); ?> <?php echo $date?></h3>
                   </div>
               </div>
             </div>

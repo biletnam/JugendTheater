@@ -4,6 +4,8 @@
 			$DBuser = 'wpp_jgt';
 			$DBpw = 'jgtdbpwd';
 			$DBname = 'wpp_jgt';
+			$DomainUrlPath = "https://jugend-theater.ch";
+			$langAuto = true;
 
 			$user = new ptejada\uFlex\User();
 			$user->config->database->host = $DBhost;
