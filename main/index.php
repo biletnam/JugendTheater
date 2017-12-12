@@ -12,7 +12,7 @@ include("functions/languageManager.php");
 	<head>
 		<?php include "build/header.php";?>
 	</head>
-	<body>
+	<body style="font-family: sans-serif">
 		<div id="preloader"></div>
 	<div id="fh5co-page">
 		<?php $loggedIn = false;
