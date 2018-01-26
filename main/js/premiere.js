@@ -69,7 +69,7 @@ var nmbrs = [];
 var lastNmbr = 0;
 function newAuf(){
   var nmbr = lastNmbr + 1;
-  $( '<div class="col-md-6 regMod" id="premDateDiv'+nmbr+'"><input placeholder="Datum" class="form-control input-lg mt-1 modalCorr noBorder form_datetime" id="premDate'+nmbr+'" type="text" value="" readonly required></div><div class="col-md-4 regMod" id="premOrtDiv'+nmbr+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrt'+nmbr+'" type="text" placeholder="Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDiv'+nmbr+'"><i onclick="remAuf('+nmbr+');" id="delIco'+nmbr+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDiv" );
+  $( '<div class="col-md-6 regMod" id="premDateDiv'+nmbr+'"><input placeholder="Datum" class="form-control input-lg mt-1 modalCorr form_datetime addAuf" id="premDate'+nmbr+'" type="text" value="" readonly required></div><div class="col-md-4 regMod" id="premOrtDiv'+nmbr+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrt'+nmbr+'" type="text" placeholder="Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDiv'+nmbr+'"><i onclick="remAuf('+nmbr+');" id="delIco'+nmbr+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDiv" );
   lastNmbr = nmbr;
   nmbrs.push(nmbr);
   activateDatepicker();
@@ -102,7 +102,7 @@ function openChooserEdit(){
       }
     });
   });
-$(".easyDisablerFix").removeAttr('disabled');
+
 // Dropzone config
 var fileName2 = "img_" + profileName.innerHTML;
 var fileName3 = "tech_" + profileName.innerHTML;
@@ -119,7 +119,9 @@ var fileName3 = "tech_" + profileName.innerHTML;
     init: function() {
       this.removeEventListeners();
       this.on("addedfile", function() {
-
+        $(".easyDisablerFix").removeAttr('disabled');
+        $(".easyDisablerFix").removeClass('unclickable');
+        $("#premDate").css('background-color','#fff');
         if (this.files[1]!=null){
           this.removeFile(this.files[0]);
         }

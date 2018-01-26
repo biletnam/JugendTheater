@@ -90,6 +90,15 @@
 	text-align: center;
 }
 
+.unclickable{
+  pointer-events: none;
+  background-color: #eeeeee;
+}
+
+.addAuf{
+  background-color: #fff !important;
+}
+
 .noBorder{
   border: none;
 }

@@ -90,14 +90,14 @@
                 </div>
                 <div class="col-md-6 regMod">
                   <!-- NOTE: Fixed Datepicker, Required not working somehow -->
-                  <input placeholder="<?php gCT("Datum Premiere");?>" class="form-control input-lg mt-1 modalCorr noBorder form_datetime" id="premDate" type="text" value="" readonly required>
+                  <input placeholder="<?php gCT("Datum Premiere");?>" class="form-control input-lg mt-1 modalCorr form_datetime easyDisablerFix" id="premDate" type="text" value="" readonly required disabled>
                 </div>
                 <div class="col-md-6 regMod">
                     <input class="form-control input-lg mt-1 modalCorr modSpace easyDisablerFix" maxlength="50" name="premOrt" id="premOrt" type="text" placeholder="<?php gCT("Aufführungort");?>" required disabled>
                 </div>
 
                 <div class="col-md-12 regMod" id="newAufDiv">
-                  <div class="form-control input-lg addDate clickable text-center easyDisablerFix" onclick="newAuf();" disabled>
+                  <div class="form-control input-lg addDate clickable text-center easyDisablerFix unclickable" onclick="newAuf();" disabled>
                     <?php gCT("Weitere Aufführung");?>
                   </div>
                 </div>
@@ -111,8 +111,8 @@
                 <div class="col-md-12 regMod">
                     <input class="form-control input-lg mt-1 modalCorr easyDisablerFix" disabled maxlength="1000" name="premVid" id="premVid" type="url" placeholder="<?php gCT("Youtube-Link");?>">
                 </div>
-                <div class="col-md-12 regMod dz-fancy easyDisablerFix" onclick="openChooserPremAn();" disabled>
-                  <div class="dropzone dz-clickable" id="premDzAn">
+                <div class="col-md-12 regMod dz-fancy easyDisablerFix unclickable" onclick="openChooserPremAn();" disabled>
+                  <div class="dropzone dz-clickable easyDisablerFix unclickable" id="premDzAn">
                     <div class="dz-message" id="premDzAnMsg"><?php gCT("Anhänge");?></div>
                   </div>
                 </div>
