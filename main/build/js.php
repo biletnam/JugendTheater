@@ -24,6 +24,12 @@
 <script>
   new WOW().init();
 </script>
+
+
+<script>
+var UserIDforJS = <?php if($loggedIn) { echo $user->getProperty('ID'); } else { echo -1; }?>
+</script>
+
 <!-- Main -->
 <script src="<?php echo $DomainUrlPath;?>/js/main.js"></script>
 <!-- Custom -->

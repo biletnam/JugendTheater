@@ -166,7 +166,7 @@
                 <?php gCT("*Dauer (gesamt)");?>
               </div>
               <div class="col-md-4 regMod">
-                <input placeholder="<?php gCT("Datum Premiere");?>" class="form-control input-lg mt-1 modalCorr noBorder form_datetime" id="jgtDate" type="text" value="" readonly required>
+                <input placeholder="<?php gCT("Datum Premiere");?>" class="form-control input-lg mt-1 modalCorr addAuf form_datetime" id="jgtDate" type="text" value="" readonly required>
               </div>
 
               <div class="col-md-4 regMod">

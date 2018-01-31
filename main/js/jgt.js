@@ -24,7 +24,7 @@ function openJgt(){
   } else {
     $("#jgtmodal").modal("show");
     if(jgtdone){
-      loadAnmeldung(1);
+      loadAnmeldung(UserIDforJS);
     } else {
       getNames();
     }
@@ -41,6 +41,7 @@ function loadAnmeldung(id){
           var ret = JSON.parse(this.responseText);
             var rows = JSON.parse(ret['Json']);
             var JgtAddDates = JSON.parse(ret['Jon']);
+
             loadMockFiles();
             remAufAllJgt();
             for (var e = 0; e < JgtAddDates.length; e += 2){
@@ -299,7 +300,7 @@ var nmbrsJgt = [];
 var lastNmbrJgt = 0;
 function newAufJgt(){
   var nmbrJgt = lastNmbrJgt + 1;
-  $( '<div class="col-md-4 regMod" id="premDateDivJgt'+nmbrJgt+'"><input placeholder="Datum" class="form-control input-lg mt-1 modalCorr noBorder form_datetime" id="premDateJgt'+nmbrJgt+'" type="text" value="" readonly required></div><div class="col-md-6 regMod" id="premOrtDivJgt'+nmbrJgt+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrtJgt'+nmbrJgt+'" type="text" placeholder="*Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDivJgt'+nmbrJgt+'"><i onclick="remAufJgt('+nmbrJgt+');" id="delIcoJgt'+nmbrJgt+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDivJgt" );
+  $( '<div class="col-md-4 regMod" id="premDateDivJgt'+nmbrJgt+'"><input placeholder="Datum" class="form-control input-lg mt-1 modalCorr addAuf form_datetime" id="premDateJgt'+nmbrJgt+'" type="text" value="" readonly required></div><div class="col-md-6 regMod" id="premOrtDivJgt'+nmbrJgt+'"><input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="premOrt" id="premOrtJgt'+nmbrJgt+'" type="text" placeholder="*Aufführungort" required>  </div><div class="col-md-2 regMod" id="premIcoDivJgt'+nmbrJgt+'"><i onclick="remAufJgt('+nmbrJgt+');" id="delIcoJgt'+nmbrJgt+'" class="fa fa-minus-square-o huge-icon clickable" aria-hidden="true"></i></div>').insertBefore( "#newAufDivJgt" );
   lastNmbrJgt = nmbrJgt;
   nmbrsJgt.push(nmbrJgt);
   activateDatepicker();
@@ -332,7 +333,7 @@ function loadMockFiles(){
      }
   };
   var request = "id="+CurrentJgtID;
-  xhttp.open("POST", "../admin/functions/functions.php?func=getFileInfos", true);
+  xhttp.open("POST", "functions/functions.php?func=getFileInfos", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(request);
 }

@@ -27,6 +27,7 @@ include 'getUserInfo.php';
 include 'delUploads.php';
 include 'premFileUploader.php';
 include 'getPremFileInfos.php';
+include 'getFileInfos.php';
 
 $defaultPath = "../";
 $profilePath = "../";
@@ -55,6 +56,7 @@ switch($func){
     case "delUploads": delUploads(); break;
     case "premFileUploader": premFileUploader(); break;
     case "getPremFileInfos": getPremFileInfos(); break;
+    case "getFileInfos": getFileInfos(); break;
     default: echo "NO FUNCTION FOUND!";
 }
  ?>
