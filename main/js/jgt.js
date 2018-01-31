@@ -111,7 +111,7 @@ function loadAnmeldung(id){
      }
   };
   var request = "id=" + id;
-  xhttp.open("POST", "../admin/functions/functions.php?func=getAnmeldung", true);
+  xhttp.open("POST", "functions/functions.php?func=getAnmeldung", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(request);
 }
