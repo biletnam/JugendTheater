@@ -186,7 +186,7 @@
               <div class="col-md-4 regMod">
                 <div class="checkbox">
                   <label>
-                    <input id="actCheck" type="checkbox" value="">
+                    <input id="pauseCheck" type="checkbox" value="">
                     <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                     <span><?php gCT("*Pause");?><span>
                   </label>

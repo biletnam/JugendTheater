@@ -246,6 +246,9 @@ if($loggedIn){
               </div>
               <div class="col-md-4 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" name="jgtDate" id="jgtDate" type="datetime-local" placeholder="*Datum Premiere" required>
+
+                <!-- TODO: replace admin datepicker -->
+                <!-- <input placeholder="*Datum Premiere" class="form-control input-lg mt-1 modalCorr form_datetime addAuf" id="jgtDate" name="jgtDate" type="text" value="" readonly required> -->
               </div>
 
               <div class="col-md-4 regMod">
@@ -265,8 +268,8 @@ if($loggedIn){
               <div class="col-md-4 regMod">
                 <div class="checkbox">
                   <label>
-                    <input id="actCheck" type="checkbox" value="">
-                    <span id="actCheck2" class="cr"><i class="cr-icon fa fa-check"></i></span>
+                    <input id="pauseCheck" type="checkbox" value="">
+                    <span id="pauseCheck2" class="cr"><i class="cr-icon fa fa-check"></i></span>
                     <span>*Pause<span>
                   </label>
                 </div>
@@ -561,7 +564,7 @@ if($loggedIn){
               <div class="col-md-6">
                 <div class="row">
                   <div class="col-md-12 regMod">
-                      <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtVid" id="jgtVid" type="url" placeholder="*Videolink" required>
+                      <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtVid" id="jgtVid" type="url" placeholder="Videolink" required>
                   </div>
                   <div class="col-md-12 regMod">
                       <textarea class="form-control input-lg mt-1 modalCorr beschriebArea-xm" maxlength="500" id="jgtAnVid" name="jgtAnVid" placeholder="Beschrieb zu Videolink"></textarea>

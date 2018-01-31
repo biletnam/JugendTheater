@@ -56,8 +56,8 @@
             $row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC); ?>
               <tr>
                 <td scope="row"><?php echo $row["ID"]; ?></td>
-                <td><?php echo $row2["EnsembleName"]; ?></td>
-                <td><?php echo $row2["Email"]; ?></td>
+                <td><?php echo umlautFix($row2["EnsembleName"]); ?></td>
+                <td><?php echo umlautFix($row2["Email"]); ?></td>
                 <td><button type="button" onclick="showJgt(<?php echo $row["ID"] ?>);" id="premInv" class="btn btn-primary btn-outline btn-black">Details</button></td>
               </tr>
             <?php endwhile;?>

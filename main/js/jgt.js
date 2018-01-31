@@ -54,7 +54,7 @@ function loadAnmeldung(id){
             document.getElementById('jgtDate').value = parseDatetimeBack(rows[2]);
             document.getElementById('jgtOrt').value = htmlDecode(rows[3]);
             document.getElementById('jgtDauer').value = rows[4];
-            if(rows[5] == 'true'){document.getElementById('actCheck2').checked = true;}
+            if(rows[5] == 'true'){ document.getElementById('pauseCheck').checked = true;}
             document.getElementById('jgtAlter').value = rows[6];
             document.getElementById('jgtSprachen').value = htmlDecode(rows[7]);
             document.getElementById('jgtCC').value = htmlDecode(rows[8]);
@@ -93,14 +93,14 @@ function loadAnmeldung(id){
             if(rows[41] == 'true'){document.getElementById('medienFlyer').checked = true;}
             if(rows[42] == 'true'){document.getElementById('medienKollegen').checked = true;}
             if(rows[43] == 'true'){document.getElementById('medienSchulverteiler').checked = true;}
-            if(rows[44] == 'true'){document.getElementById('medienSonstige').checked = true;}
+            if(rows[44] == 'true'){document.getElementById('medienSonstige').checked = true; sonstTxtToggle();}
             document.getElementById('jgtSonst').value = htmlDecode(rows[45]);
             document.getElementById('jgtVid').value = htmlDecode(rows[46]);
             document.getElementById('jgtAnVid').value = htmlDecode(rows[47]);
             document.getElementById('jgtBeschrieb').value = htmlDecode(rows[48]);
             document.getElementById('jgtAnInfo').value = htmlDecode(rows[49]);
             document.getElementById('jgtAnBe').value = htmlDecode(rows[50]);
-            if(rows[51] == 'true'){
+            if(rows[51] == 'true' && ret['final'] == 'false'){
               document.getElementById('teilnahmebedingungen').checked = true;
               document.getElementById("realSubBtn").disabled = false;
             }
@@ -129,11 +129,11 @@ function tryJgt(){
   var jgtDate = parseDatetime(document.getElementById('jgtDate').value);
   var jgtOrt = document.getElementById('jgtOrt').value;
   var jgtDauer = document.getElementById('jgtDauer').value;
-  var actCheck = document.getElementById('actCheck').checked;
+  var pauseCheck = document.getElementById('pauseCheck').checked;
   var jgtAlter = document.getElementById('jgtAlter').value;
   var jgtSprachen = document.getElementById('jgtSprachen').value;
   var jgtCC = document.getElementById('jgtCC').value;
-  var requestStueck = "jgtTitel=" + jgtTitel + "&jgtUntertitel=" + jgtUntertitel + "&jgtDate=" + jgtDate + "&jgtOrt=" + jgtOrt + "&jgtDauer=" + jgtDauer + "&actCheck=" + actCheck + "&jgtAlter=" + jgtAlter + "&jgtSprachen=" + jgtSprachen + "&jgtCC=" + jgtCC;
+  var requestStueck = "jgtTitel=" + jgtTitel + "&jgtUntertitel=" + jgtUntertitel + "&jgtDate=" + jgtDate + "&jgtOrt=" + jgtOrt + "&jgtDauer=" + jgtDauer + "&pauseCheck=" + pauseCheck + "&jgtAlter=" + jgtAlter + "&jgtSprachen=" + jgtSprachen + "&jgtCC=" + jgtCC;
 
   // Zum Ensemble
   var jgtEnsembleName = document.getElementById('jgtEnsembleName').value;

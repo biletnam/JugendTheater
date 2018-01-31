@@ -39,6 +39,8 @@
 	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/animatedCheckbox.css">
 	<!-- Modernizr JS -->
 	<script src="<?php echo $DomainUrlPath;?>/js/modernizr-2.6.2.min.js"></script>
+	<!-- Datetime picker -->
+	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/bootstrap-datetimepicker.min.css">
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
