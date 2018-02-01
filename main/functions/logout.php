@@ -4,6 +4,6 @@ function logout(){
 	global $user;
 	$user->logout();
 	sendMsg(gCTSilent("You have been logged out."),true);
-	header("Location: ". $DomainUrlPath ."/");
+	header("Location: ../");
 }
 ?>

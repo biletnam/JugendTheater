@@ -38,6 +38,7 @@ function loadAnmeldung(id){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
+        console.log("AJAX RECEIVED: " + this.responseText);
           var ret = JSON.parse(this.responseText);
             var rows = JSON.parse(ret['Json']);
             var JgtAddDates = JSON.parse(ret['Jon']);
@@ -100,9 +101,11 @@ function loadAnmeldung(id){
             document.getElementById('jgtBeschrieb').value = htmlDecode(rows[48]);
             document.getElementById('jgtAnInfo').value = htmlDecode(rows[49]);
             document.getElementById('jgtAnBe').value = htmlDecode(rows[50]);
-            if(rows[51] == 'true' && ret['final'] == 'false'){
+            if(rows[51] == 'true'){
               document.getElementById('teilnahmebedingungen').checked = true;
-              document.getElementById("realSubBtn").disabled = false;
+              if(ret['final'] == 'false'){
+                document.getElementById("realSubBtn").disabled = false;
+              }
             }
             document.getElementById('jgtSign').value  = htmlDecode(rows[52]);
             document.getElementById("jgtResponse").innerHTML = "";
@@ -111,6 +114,7 @@ function loadAnmeldung(id){
      }
   };
   var request = "id=" + id;
+  console.log("AJAX SENT: " + request);
   xhttp.open("POST", "functions/functions.php?func=getAnmeldung", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(request);

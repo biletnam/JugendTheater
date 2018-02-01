@@ -27,7 +27,7 @@ function showJgt(id){
             document.getElementById('jgtDate').value = rows[2];
             document.getElementById('jgtOrt').value = htmlDecode(rows[3]);
             document.getElementById('jgtDauer').value = rows[4];
-            if(rows[5] == 'true'){document.getElementById('pauseCheck').checked = true;}
+            if(rows[5] == 'true'){document.getElementById('pauseCheck').checked = true;} else {document.getElementById('pauseCheck').checked = false;}
             document.getElementById('jgtAlter').value = rows[6];
             document.getElementById('jgtSprachen').value = htmlDecode(rows[7]);
             document.getElementById('jgtCC').value = htmlDecode(rows[8]);
@@ -61,18 +61,18 @@ function showJgt(id){
             document.getElementById('jgtTragerWebsite').value = htmlDecode(rows[32]);
 
             // Vom Wettbewerb erfahren durch
-            if(rows[33] == 'true'){document.getElementById('medienInsta').checked = true;}
-            if(rows[34] == 'true'){document.getElementById('medienFlickr').checked = true;}
-            if(rows[35] == 'true'){document.getElementById('medienEmail').checked = true;}
-            if(rows[36] == 'true'){document.getElementById('medienFacebook').checked = true;}
-            if(rows[37] == 'true'){document.getElementById('medienWebsite').checked = true;}
-            if(rows[38] == 'true'){document.getElementById('medienTagespresse').checked = true;}
-            if(rows[39] == 'true'){document.getElementById('medienFachzeitschrift').checked = true;}
-            if(rows[40] == 'true'){document.getElementById('medienAnzeige').checked = true;}
-            if(rows[41] == 'true'){document.getElementById('medienFlyer').checked = true;}
-            if(rows[42] == 'true'){document.getElementById('medienKollegen').checked = true;}
-            if(rows[43] == 'true'){document.getElementById('medienSchulverteiler').checked = true;}
-            if(rows[44] == 'true'){document.getElementById('medienSonstige').checked = true;}
+            if(rows[33] == 'true'){document.getElementById('medienInsta').checked = true;} else {document.getElementById('medienInsta').checked = false;}
+            if(rows[34] == 'true'){document.getElementById('medienFlickr').checked = true;} else {document.getElementById('medienFlickr').checked = false;}
+            if(rows[35] == 'true'){document.getElementById('medienEmail').checked = true;} else {document.getElementById('medienEmail').checked = false;}
+            if(rows[36] == 'true'){document.getElementById('medienFacebook').checked = true;} else {document.getElementById('medienFacebook').checked = false;}
+            if(rows[37] == 'true'){document.getElementById('medienWebsite').checked = true;} else {document.getElementById('medienWebsite').checked = false;}
+            if(rows[38] == 'true'){document.getElementById('medienTagespresse').checked = true;} else {document.getElementById('medienTagespresse').checked = false;}
+            if(rows[39] == 'true'){document.getElementById('medienFachzeitschrift').checked = true;} else {document.getElementById('medienFachzeitschrift').checked = false;}
+            if(rows[40] == 'true'){document.getElementById('medienAnzeige').checked = true;} else {document.getElementById('medienAnzeige').checked = false;}
+            if(rows[41] == 'true'){document.getElementById('medienFlyer').checked = true;} else {document.getElementById('medienFlyer').checked = false;}
+            if(rows[42] == 'true'){document.getElementById('medienKollegen').checked = true;} else {document.getElementById('medienKollegen').checked = false;}
+            if(rows[43] == 'true'){document.getElementById('medienSchulverteiler').checked = true;} else {document.getElementById('medienSchulverteiler').checked = false;}
+            if(rows[44] == 'true'){document.getElementById('medienSonstige').checked = true;}  else {document.getElementById('medienSonstige').checked = false;}
             document.getElementById('jgtSonst').value = htmlDecode(rows[45]);
 
             // Anhänge
@@ -83,7 +83,7 @@ function showJgt(id){
             document.getElementById('jgtAnBe').value = htmlDecode(rows[50]);
 
             // Schluss
-            if(rows[51] == 'true'){document.getElementById('teilnahmebedingungen').checked = true;}
+            if(rows[51] == 'true'){document.getElementById('teilnahmebedingungen').checked = true;} else {document.getElementById('teilnahmebedingungen').checked = false;}
             document.getElementById('jgtSign').value  = htmlDecode(rows[52]);
 
             document.getElementById("jgtResponse").innerHTML = "";

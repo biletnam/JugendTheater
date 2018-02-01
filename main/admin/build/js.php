@@ -26,8 +26,8 @@
 <script src="../js/main.js"></script>
 <!-- Custom -->
 <script src="js/custom.js"></script>
-<script src="<?php echo $DomainUrlPath;?>/js/bootstrap-datetimepicker.min.js"></script>
-<script src="<?php echo $DomainUrlPath;?>/js/datetimepicker.js"></script>
+<script src="../js/bootstrap-datetimepicker.min.js"></script>
+<script src="../js/datetimepicker.js"></script>
 
 <?php if($loc == "premieren"){ ?>
 <script src="js/premieren.js"></script>

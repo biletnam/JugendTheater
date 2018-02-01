@@ -9,35 +9,35 @@
 
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="<?php echo $DomainUrlPath;?>/tabicon.png">
+	<link rel="shortcut icon" href="../tabicon.png">
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/animate.css">
+	<link rel="stylesheet" href="../css/animate.css">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/icomoon.css">
+	<link rel="stylesheet" href="../css/icomoon.css">
 	<!-- Magnific Popup-->
-	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/magnific-popup.css">
+	<link rel="stylesheet" href="../css/magnific-popup.css">
 	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="../css/owl.carousel.min.css">
+	<link rel="stylesheet" href="../css/owl.theme.default.min.css">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/bootstrap.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
 	<!-- Cards -->
-	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/cards.css">
+	<link rel="stylesheet" href="../css/cards.css">
 	<!-- FontAwesome -->
-	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../css/font-awesome.min.css">
 	<!-- Dropzone -->
-	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/dropzone.css">
+	<link rel="stylesheet" href="../css/dropzone.css">
 	<!-- Custom -->
-	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/custom.css">
-	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/animatedCheckbox.css">
+	<link rel="stylesheet" href="../css/custom.css">
+	<link rel="stylesheet" href="../css/animatedCheckbox.css">
 	<!-- Modernizr JS -->
-	<script src="<?php echo $DomainUrlPath;?>/js/modernizr-2.6.2.min.js"></script>
+	<script src="../js/modernizr-2.6.2.min.js"></script>
 	<!-- Animated Dropdown -->
-	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/animate.min.css">
-	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/bootstrap-dropdownhover.min.css">
+	<link rel="stylesheet" href="../css/animate.min.css">
+	<link rel="stylesheet" href="../css/bootstrap-dropdownhover.min.css">
 
 	<!-- Datetime picker -->
-	<link rel="stylesheet" href="<?php echo $DomainUrlPath;?>/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
 
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>

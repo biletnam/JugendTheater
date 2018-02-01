@@ -12,7 +12,7 @@
           <div class="fh5co-cover-intro">
             <h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">404</h1>
             <h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s"><?php gCT("Hoppla diese Seite existiert nicht"); ?></h2>
-            <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a href="<?php echo $DomainUrlPath;?>/" class="btn btn-primary btn-outline btn-lg"><?php gCT("Home"); ?></a></p>
+            <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"><a href="../" class="btn btn-primary btn-outline btn-lg"><?php gCT("Home"); ?></a></p>
           </div>
         </div>
       </div>

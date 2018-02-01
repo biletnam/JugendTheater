@@ -201,7 +201,7 @@
                 <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtSprachen" id="jgtSprachen" type="text" placeholder="<?php gCT("*Sprachen");?>" required>
               </div>
               <div class="col-md-12 regMod20">
-                <?php gCT("Falls die Aufführung auf Texten Dritter basiert bzw. Textpassagen Dritter enthält, bitte Angaben zum Urheberrecht (Name der Autorin/des Autors, ggf. des Verlags):");?>"
+                <?php gCT("Falls die Aufführung auf Texten Dritter basiert bzw. Textpassagen Dritter enthält, bitte Angaben zum Urheberrecht (Name der Autorin/des Autors, ggf. des Verlags):");?>
               </div>
               <div class="col-md-12 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="jgtCC" id="jgtCC" type="text" placeholder="<?php gCT("Urheber");?>">
