@@ -38,11 +38,9 @@ function loadAnmeldung(id){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        console.log("AJAX RECEIVED: " + this.responseText);
           var ret = JSON.parse(this.responseText);
             var rows = JSON.parse(ret['Json']);
             var JgtAddDates = JSON.parse(ret['Jon']);
-
             loadMockFiles();
             remAufAllJgt();
             for (var e = 0; e < JgtAddDates.length; e += 2){
@@ -94,7 +92,10 @@ function loadAnmeldung(id){
             if(rows[41] == 'true'){document.getElementById('medienFlyer').checked = true;}
             if(rows[42] == 'true'){document.getElementById('medienKollegen').checked = true;}
             if(rows[43] == 'true'){document.getElementById('medienSchulverteiler').checked = true;}
-            if(rows[44] == 'true'){document.getElementById('medienSonstige').checked = true; sonstTxtToggle();}
+            if(rows[44] == 'true'){
+              document.getElementById('medienSonstige').checked = true;
+              sonstTxtActivate();
+            }
             document.getElementById('jgtSonst').value = htmlDecode(rows[45]);
             document.getElementById('jgtVid').value = htmlDecode(rows[46]);
             document.getElementById('jgtAnVid').value = htmlDecode(rows[47]);
@@ -103,7 +104,7 @@ function loadAnmeldung(id){
             document.getElementById('jgtAnBe').value = htmlDecode(rows[50]);
             if(rows[51] == 'true'){
               document.getElementById('teilnahmebedingungen').checked = true;
-              if(ret['final'] == 'false'){
+              if(ret['final'] == 0){
                 document.getElementById("realSubBtn").disabled = false;
               }
             }
@@ -114,17 +115,21 @@ function loadAnmeldung(id){
      }
   };
   var request = "id=" + id;
-  console.log("AJAX SENT: " + request);
   xhttp.open("POST", "functions/functions.php?func=getAnmeldung", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send(request);
 }
 
 function realSubBtnClick(){
-  final = 1;
-  tryJgt();
+  var jgtForm = document.getElementById('jgtForm');
+  if(jgtForm.checkValidity()){
+    final = 1;
+    jgtForm.submit();
+  } else {
+    final = 0;
+    jgtForm.submit();
+  }
 }
-
 
 function tryJgt(){
   // Zum Stück
@@ -245,6 +250,10 @@ function getNames(){
 
 function sonstTxtToggle(){
   document.getElementById("jgtSonst").disabled = !document.getElementById("jgtSonst").disabled;
+}
+
+function sonstTxtActivate(){
+  document.getElementById("jgtSonst").disabled = false;
 }
 
 function tbClick(){

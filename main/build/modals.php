@@ -220,11 +220,11 @@
                 <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtEnsembleCity" id="jgtEnsembleCity" type="text" placeholder="<?php gCT("*Herkunft des Ensembles");?>" required value="">
               </div>
               <div class="col-md-6 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtPlayer" id="jgtPlayer" type="number" placeholder="<?php gCT("*Anzahl SpielerInnen");?>" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtPlayer" id="jgtPlayer" type="number" min="1" placeholder="<?php gCT("*Anzahl SpielerInnen");?>" required>
               </div>
 
               <div class="col-md-6 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtNonPlayer" id="jgtNonPlayer" type="number" placeholder="<?php gCT("*Anzahl weitere beteiligte Personen (SpielleiterInnen, TechnikerInnen, Maske, usw.)");?>" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtNonPlayer" id="jgtNonPlayer" type="number" min="0" placeholder="<?php gCT("*Anzahl weitere beteiligte Personen (SpielleiterInnen, TechnikerInnen, Maske, usw.)");?>" required>
               </div>
 
               <div class="col-md-6 regMod FormTextAlign">
@@ -232,11 +232,11 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAgeFrom" id="jgtAgeFrom" type="number" placeholder="<?php gCT("von...Jahren");?>" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAgeFrom" id="jgtAgeFrom" type="number" min="0" placeholder="<?php gCT("von...Jahren");?>" required>
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAgeTo" id="jgtAgeTo" type="number" placeholder="<?php gCT("bis...Jahren");?>" required>
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAgeTo" id="jgtAgeTo" min="0" type="number" placeholder="<?php gCT("bis...Jahren");?>" required>
               </div>
 
               <div class="col-md-6 regMod FormTextAlign">
@@ -244,11 +244,11 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge13W" id="jgtAge13W" type="number" placeholder="<?php gCT("Weiblich");?>">
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge13W" id="jgtAge13W" type="number" min="0" placeholder="<?php gCT("Weiblich");?>">
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge13M" id="jgtAge13M" type="number" placeholder="<?php gCT("Männlich");?>">
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge13M" id="jgtAge13M" type="number" min="0" placeholder="<?php gCT("Männlich");?>">
               </div>
 
               <div class="col-md-6 regMod FormTextAlign">
@@ -256,11 +256,11 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge14W" id="jgtAge14W" type="number" placeholder="<?php gCT("Weiblich");?>">
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge14W" id="jgtAge14W" type="number" min="0" placeholder="<?php gCT("Weiblich");?>">
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge14M" id="jgtAge14M" type="number" placeholder="<?php gCT("Männlich");?>">
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge14M" id="jgtAge14M" type="number" min="0" placeholder="<?php gCT("Männlich");?>">
               </div>
 
               <div class="col-md-6 regMod FormTextAlign">
@@ -268,11 +268,11 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge18W" id="jgtAge18W" type="number" placeholder="<?php gCT("Weiblich");?>">
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge18W" id="jgtAge18W" type="number" min="0" placeholder="<?php gCT("Weiblich");?>">
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge18M" id="jgtAge18M" type="number" placeholder="<?php gCT("Männlich");?>">
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge18M" id="jgtAge18M" type="number" min="0" placeholder="<?php gCT("Männlich");?>">
               </div>
 
               <div class="col-md-6 regMod FormTextAlign">
@@ -280,11 +280,11 @@
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge21W" id="jgtAge21W" type="number" placeholder="<?php gCT("Weiblich");?>">
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge21W" id="jgtAge21W" type="number" min="0" placeholder="<?php gCT("Weiblich");?>">
               </div>
 
               <div class="col-md-3 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge21M" id="jgtAge21M" type="number" placeholder="<?php gCT("Männlich");?>">
+                <input class="form-control input-lg mt-1 modalCorr" name="jgtAge21M" id="jgtAge21M" type="number" min="0" placeholder="<?php gCT("Männlich");?>">
               </div>
 
               <div class="col-md-6 regMod">
