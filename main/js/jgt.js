@@ -123,10 +123,11 @@ function loadAnmeldung(id){
 function realSubBtnClick(){
   if(document.getElementById('jgtForm').checkValidity()){
     final = 1;
-    document.getElementById('jgtSubmitBtn').click();
+    tryJgt();
   } else {
     final = 0;
-    document.getElementById('jgtSubmitBtn').click();
+    $('#jgtmodal').animate({ scrollTop: 0 }, 'slow');
+    document.getElementById("jgtResponse").innerHTML = "Bitte speichern Sie ihr Formular zuerst.";
   }
 }
 

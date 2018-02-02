@@ -717,7 +717,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header modalCorr">
-        <h4 class="modal-title modalCorr"><?php gCT("Sicher?");?>" <span class="modalResponse" id="premResponseDel"></span></h4>
+        <h4 class="modal-title modalCorr"><?php gCT("Sicher?");?> <span class="modalResponse" id="premResponseDel"></span></h4>
       </div>
       <div class="modal-body modalCorr">
           <div class="row">

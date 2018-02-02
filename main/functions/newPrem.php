@@ -20,15 +20,25 @@ function newPrem(){
 $Uname = $_POST['profName'];
   if ( file_exists("../uploads/img_".$Uname.".jpg") ){
     createPrem(".jpg");
-  } elseif ( file_exists("../uploads/img_".$Uname.".png") ){
-    createPrem(".png");
-  } elseif ( file_exists("../uploads/img_".$Uname.".gif") ){
-    createPrem(".gif");
-  } elseif ( file_exists("../uploads/img_".$Uname.".jpeg") ){
-    createPrem(".jpeg");
-  } else {
-    echo gCTSilent("Bitte laden Sie ein Bild hoch.");
+    return;
   }
+
+  if ( file_exists("../uploads/img_".$Uname.".png") ){
+    createPrem(".png");
+    return;
+  }
+
+  if ( file_exists("../uploads/img_".$Uname.".gif") ){
+    createPrem(".gif");
+    return;
+  }
+
+  if ( file_exists("../uploads/img_".$Uname.".jpeg") ){
+    createPrem(".jpeg");
+    return;
+  }
+
+  echo gCTSilent("Bitte laden Sie ein Bild hoch.");
 }
 
  ?>
