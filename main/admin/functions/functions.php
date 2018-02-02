@@ -2,6 +2,7 @@
 session_start();
 include('../../../config.php');
 include('notifier.php');
+include('languageManager.php');
 
 include 'login.php';
 include 'logout.php';
