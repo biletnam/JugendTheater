@@ -121,13 +121,12 @@ function loadAnmeldung(id){
 }
 
 function realSubBtnClick(){
-  var jgtForm = document.getElementById('jgtForm');
-  if(jgtForm.checkValidity()){
+  if(document.getElementById('jgtForm').checkValidity()){
     final = 1;
-    jgtForm.submit();
+    document.getElementById('jgtSubmitBtn').click();
   } else {
     final = 0;
-    jgtForm.submit();
+    document.getElementById('jgtSubmitBtn').click();
   }
 }
 

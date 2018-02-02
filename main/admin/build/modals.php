@@ -265,6 +265,18 @@ if($loggedIn){
                 </div>
               </div>
 
+              <div class="col-md-4 regMod text-center">
+
+              </div>
+
+              <div class="col-md-4 regMod text-center">
+                <?php gCT("*Altersfreigabe");?>
+              </div>
+
+              <div class="col-md-4 regMod text-center">
+                <?php gCT("*Sprachen");?>
+              </div>
+
               <div class="col-md-4 regMod">
                 <div class="checkbox">
                   <label>
@@ -294,6 +306,14 @@ if($loggedIn){
                 <h4 class="modal-title modalCorr">Zum Ensemble</h4>
               </div>
 
+              <div class="col-md-6 regMod text-center">
+                <?php gCT("*Name des Ensembles");?>
+              </div>
+
+              <div class="col-md-6 regMod text-center">
+                <?php gCT("*Herkunft des Ensembles");?>
+              </div>
+
               <div class="col-md-6 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtEnsembleName" id="jgtEnsembleName" type="text" placeholder="*Name des Ensembles" required>
               </div>
@@ -301,6 +321,15 @@ if($loggedIn){
               <div class="col-md-6 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtEnsembleCity" id="jgtEnsembleCity" type="text" placeholder="*Herkunft des Ensembles" required>
               </div>
+
+              <div class="col-md-6 regMod text-center">
+                <?php gCT("*Anzahl SpielerInnen");?>
+              </div>
+
+              <div class="col-md-6 regMod text-center">
+                <?php gCT("*Anzahl weitere beteiligte Personen");?>
+              </div>
+
               <div class="col-md-6 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" name="jgtPlayer" id="jgtPlayer" type="number" placeholder="*Anzahl SpielerInnen" required>
               </div>
@@ -308,6 +337,19 @@ if($loggedIn){
               <div class="col-md-6 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" name="jgtNonPlayer" id="jgtNonPlayer" type="number" placeholder="*Anzahl weitere beteiligte Personen (SpielleiterInnen, TechnikerInnen, Maske, usw.)" required>
               </div>
+
+              <div class="col-md-6 regMod text-center">
+
+              </div>
+
+              <div class="col-md-3 regMod text-center">
+                <?php gCT("von ... Jahren");?>
+              </div>
+
+              <div class="col-md-3 regMod text-center">
+                <?php gCT("bis ... Jahren");?>
+              </div>
+
 
               <div class="col-md-6 regMod FormTextAlign">
                 *Alter aller SpielerInnen:
@@ -319,6 +361,18 @@ if($loggedIn){
 
               <div class="col-md-3 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" name="jgtAgeTo" id="jgtAgeTo" type="number" placeholder="bis...Jahren" required>
+              </div>
+
+              <div class="col-md-6 regMod text-center">
+
+              </div>
+
+              <div class="col-md-3 regMod text-center">
+                <?php gCT("Weiblich");?>
+              </div>
+
+              <div class="col-md-3 regMod text-center">
+                <?php gCT("Männlich");?>
               </div>
 
               <div class="col-md-6 regMod FormTextAlign">
@@ -369,12 +423,28 @@ if($loggedIn){
                 <input class="form-control input-lg mt-1 modalCorr" name="jgtAge21M" id="jgtAge21M" type="number" placeholder="Männlich" required>
               </div>
 
+              <div class="col-md-6 regMod text-center">
+                <?php gCT("*Name der Spielleitung");?>
+              </div>
+
+              <div class="col-md-6 regMod text-center">
+                <?php gCT("*Adresse");?>
+              </div>
+
               <div class="col-md-6 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtSpielleitung" id="jgtSpielleitung" type="text" placeholder="*Name der Spielleitung" required>
               </div>
 
               <div class="col-md-6 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtAdress" id="jgtAdress" type="text" placeholder="*Adresse" required>
+              </div>
+
+              <div class="col-md-6 regMod text-center">
+                <?php gCT("*Telefonnummer (xxx xxx xx xx)");?>
+              </div>
+
+              <div class="col-md-6 regMod text-center">
+                <?php gCT("*Email");?>
               </div>
 
               <div class="col-md-6 regMod">
@@ -385,6 +455,10 @@ if($loggedIn){
                 <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtEmail" id="jgtEmail" type="email" placeholder="*Email" required>
               </div>
 
+              <div class="col-md-12 regMod text-center">
+                <?php gCT("Weitere Infos zum Ensemble (Zusammensetzung, Arbeitsweise/-bedingungen)");?>
+              </div>
+
               <div class="col-md-12 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="jgtInfo" id="jgtInfo" type="text" placeholder="Weitere Infos zum Ensemble (Zusammensetzung, Arbeitsweise/-bedingungen)">
               </div>
@@ -393,6 +467,15 @@ if($loggedIn){
               <div class="col-md-12 regModTitle text-center">
                 <h4 class="modal-title modalCorr">Zur Trägerschaft</h4>
               </div>
+
+              <div class="col-md-6 regMod text-center">
+                <?php gCT("*Name Trägerinstitution (Theater,Verein,Schule...)");?>
+              </div>
+
+              <div class="col-md-6 regMod text-center">
+                <?php gCT("*Adresse");?>
+              </div>
+
               <div class="col-md-6 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtTrager" id="jgtTrager" type="text" placeholder="*Name Trägerinstitution(Theater,Verein,Schule...)" required>
               </div>
@@ -401,12 +484,24 @@ if($loggedIn){
                 <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtTragerAdress" id="jgtTragerAdress" type="text" placeholder="*Adresse" required>
               </div>
 
+              <div class="col-md-6 regMod text-center">
+                <?php gCT("*Telefonnummer (xxx xxx xx xx)");?>
+              </div>
+
+              <div class="col-md-6 regMod text-center">
+                <?php gCT("*Email");?>
+              </div>
+
               <div class="col-md-6 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtTragerTele" id="jgtTragerTele" type="tel" placeholder="*Telefonnummer" required>
               </div>
 
               <div class="col-md-6 regMod">
                 <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtTragerEmail" id="jgtTragerEmail" type="email" placeholder="*Email" required>
+              </div>
+
+              <div class="col-md-12 regMod text-center">
+                <?php gCT("Website");?>
               </div>
 
               <div class="col-md-12 regMod">

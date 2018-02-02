@@ -90,6 +90,10 @@
 	text-align: center;
 }
 
+.modalFooterText{
+  margin-top: 8px;
+}
+
 .unclickable{
   pointer-events: none;
   background-color: #eeeeee;
