@@ -1,0 +1,31 @@
+
+Uncaught ReferenceError: jQuery is not defined
+																																	(/js/jquery.easing.1.3.js L39 C1)
+Uncaught Error: Bootstrap's JavaScript requires jQuery
+																																	(/js/bootstrap.min.js L6 C31)
+Uncaught TypeError: Cannot read property 'each' of undefined
+																																	(/js/jquery.waypoints.min.js L7 C7842)
+Uncaught TypeError: Cannot read property 'fn' of undefined
+																																	(/js/owl.carousel.min.js L1 C23045)
+Uncaught TypeError: e is not a function
+																																	(/js/jquery.magnific-popup.min.js L4 C230)
+Uncaught ReferenceError: jQuery is not defined
+																																	(/js/jquery.stellar.min.js L2 C12432)
+Uncaught ReferenceError: jQuery is not defined
+																																	(/js/jquery.countTo.js L10 C17)
+Uncaught ReferenceError: jQuery is not defined
+																																	(/js/bootstrap-dropdownhover.min.js L4 C3978)
+Uncaught ReferenceError: $ is not defined
+																																	(/js/main.js L198 C2)
+Uncaught ReferenceError: $ is not defined
+																																	(/js/custom.js L2 C3)
+Uncaught ReferenceError: jQuery is not defined
+																																	(/js/bootstrap-datetimepicker.min.js L1 C141)
+Uncaught ReferenceError: $ is not defined
+																																	(/js/datetimepicker.js L2 C3)
+Uncaught ReferenceError: $ is not defined
+																																	(/js/premiere.js L98 C3)
+Uncaught ReferenceError: $ is not defined
+																																	(/js/jgt.js L264 C1)
+Uncaught Error: No URL provided.
+																																	(/js/dropzone.js L440 C9)

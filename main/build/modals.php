@@ -109,7 +109,7 @@
                   <textarea class="form-control input-lg mt-1 modalCorr beschriebArea easyDisablerFix" maxlength="1000" id="premTA" name="premTA" disabled placeholder="<?php gCT("Stückbeschrieb");?>" required></textarea>
                 </div>
                 <div class="col-md-12 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr easyDisablerFix" disabled maxlength="1000" name="premVid" id="premVid" type="url" placeholder="<?php gCT("Youtube-Link");?>">
+                    <input class="form-control input-lg mt-1 modalCorr easyDisablerFix" disabled maxlength="1000" name="premVid" id="premVid" type="text" placeholder="<?php gCT("Youtube-Link");?>">
                 </div>
                 <div class="col-md-12 regMod dz-fancy easyDisablerFix unclickable" onclick="openChooserPremAn();" disabled>
                   <div class="dropzone dz-clickable easyDisablerFix unclickable" id="premDzAn">
@@ -426,7 +426,7 @@
               </div>
 
               <div class="col-md-12 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="jgtTragerWebsite" id="jgtTragerWebsite" type="url" placeholder="<?php gCT("Website");?>">
+                <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="jgtTragerWebsite" id="jgtTragerWebsite" type="text" placeholder="<?php gCT("Website");?>">
               </div>
 
 
@@ -580,7 +580,7 @@
               <div class="col-md-6">
                 <div class="row">
                   <div class="col-md-12 regMod">
-                      <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtVid" id="jgtVid" type="url" placeholder="<?php gCT("Videolink");?>">
+                      <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtVid" id="jgtVid" type="text" placeholder="<?php gCT("Videolink");?>">
                   </div>
                   <div class="col-md-12 regMod">
                       <textarea class="form-control input-lg mt-1 modalCorr beschriebArea-xm" maxlength="500" id="jgtAnVid" name="jgtAnVid" placeholder="<?php gCT("Beschrieb zu Videolink");?>"></textarea>
@@ -592,7 +592,7 @@
               </div>
               <div class="col-md-12 regMod dz-fancy" onclick="openChooserJgt();">
                 <div class="dropzone dz-clickable" id="jgtdzA">
-                  <div class="dz-message" id="jgtdzmsgA"><?php gCT("Weitere Anhänge");?></div>
+                  <div class="dz-message" id="jgtdzmsgA"><?php gCT("Weitere Anhänge (3 - 4 Bilder, Hoch- und Querformat mit Angabe der Credits)");?></div>
                 </div>
               </div>
               <div class="col-md-12">
@@ -690,7 +690,7 @@
                   <textarea class="form-control input-lg mt-1 modalCorr beschriebArea" maxlength="500" id="premTAEdit" name="premTA" placeholder="<?php gCT("Stückbeschrieb");?>" required></textarea>
                 </div>
                 <div class="col-md-12 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr" maxlength="1000" name="premVid" id="premVidEdit" type="url" placeholder="<?php gCT("Youtube-Link");?>">
+                    <input class="form-control input-lg mt-1 modalCorr" maxlength="1000" name="premVid" id="premVidEdit" type="text" placeholder="<?php gCT("Youtube-Link");?>">
                 </div>
                 <div class="col-md-12 regMod dz-fancy" onclick="openChooserPremAnEdit();">
                   <div class="dropzone dz-clickable" id="premDzAnEdit">

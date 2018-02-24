@@ -45,7 +45,7 @@ if($loggedIn){
                   <textarea class="form-control input-lg mt-1 modalCorr" maxlength="500" id="premTAEdit" name="premTA" placeholder="Stückbeschrieb" required></textarea>
                 </div>
                 <div class="col-md-12 regMod">
-                    <input class="form-control input-lg mt-1 modalCorr" maxlength="1000" name="premVid" id="premVidEdit" type="url" placeholder="Youtube-Link" >
+                    <input class="form-control input-lg mt-1 modalCorr" maxlength="1000" name="premVid" id="premVidEdit" type="text" placeholder="Youtube-Link" >
                 </div>
                 <div class="col-md-12 regMod dz-fancy">
                   <div class="dropzone dz-clickable" id="premDzAnEdit">
@@ -505,7 +505,7 @@ if($loggedIn){
               </div>
 
               <div class="col-md-12 regMod">
-                <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="jgtTragerWebsite" id="jgtTragerWebsite" type="url" placeholder="Website">
+                <input class="form-control input-lg mt-1 modalCorr" maxlength="100" name="jgtTragerWebsite" id="jgtTragerWebsite" type="text" placeholder="Website">
               </div>
 
 
@@ -659,7 +659,7 @@ if($loggedIn){
               <div class="col-md-6">
                 <div class="row">
                   <div class="col-md-12 regMod">
-                      <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtVid" id="jgtVid" type="url" placeholder="Videolink" required>
+                      <input class="form-control input-lg mt-1 modalCorr" maxlength="50" name="jgtVid" id="jgtVid" type="text" placeholder="Videolink" required>
                   </div>
                   <div class="col-md-12 regMod">
                       <textarea class="form-control input-lg mt-1 modalCorr beschriebArea-xm" maxlength="500" id="jgtAnVid" name="jgtAnVid" placeholder="Beschrieb zu Videolink"></textarea>
@@ -671,7 +671,7 @@ if($loggedIn){
               </div>
               <div class="col-md-12 regMod">
                 <div class="dropzone dz-clickable" id="jgtdzA">
-                  <div class="dz-message modalCorr" id="jgtdzmsgA">Weitere Anhänge</div>
+                  <div class="dz-message modalCorr" id="jgtdzmsgA">Weitere Anhänge (3 - 4 Bilder, Hoch- und Querformat mit Angabe der Credits)</div>
                 </div>
               </div>
               <div class="col-md-12">

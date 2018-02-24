@@ -30,13 +30,15 @@
 <script src="../js/datetimepicker.js"></script>
 
 <?php if($loc == "premieren"){ ?>
-<script src="js/premieren.js"></script>
-<?php } if($loc == "user"){?>
-<script src="js/user.js"></script>
-<?php } if($loc == "anmeldungen"){?>
-<script src="js/anmeldungen.js"></script>
-<?php } if($loc == "content"){?>
-<script src="js/content.js"></script>
-<?php } if($loc == "bilder"){?>
-<script src="js/bilder.js"></script>
+  <script src="js/premieren.js"></script>
+<?php } if($loc == "user"){ ?>
+  <script src="js/user.js"></script>
+<?php } if($loc == "anmeldungen"){ ?>
+  <script src="js/anmeldungen.js"></script>
+<?php } if($loc == "content"){ ?>
+  <script src="js/content.js"></script>
+<?php } if($loc == "bilder"){ ?>
+  <script src="js/bilder.js"></script>
+<?php } if($loc == "logs"){ ?>
+  <script src="js/cute.js"></script>
 <?php } ?>

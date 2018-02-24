@@ -46,11 +46,12 @@
               <th class="clickable text-center" onclick="sortTableJgt(0)">ID</th>
               <th class="clickable text-center" onclick="sortTableJgt(1)">Ensemble Name</th>
               <th class="clickable text-center" onclick="sortTableJgt(2)">Email</th>
-              <th class="clickable text-center" onclick="sortTableJgt(3)">Details</th>
+              <th class="clickable text-center" onclick="sortTableJgt(3)">Abgeschlossen</th>
+              <th class="clickable text-center" onclick="sortTableJgt(4)">Details</th>
             </tr>
           </thead>
           <tbody class="text-center">
-            <?php $tour = 0; $result = mysqli_query($DBconn, "SELECT * FROM anmeldungen WHERE final = 1");
+            <?php $tour = 0; $result = mysqli_query($DBconn, "SELECT * FROM anmeldungen");
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)): $tour++;?>
             <?php $result2 = mysqli_query($DBconn, "SELECT Email,EnsembleName FROM Users WHERE ID=".$row["UserID"]);
             $row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC); ?>
@@ -58,6 +59,7 @@
                 <td scope="row"><?php echo $row["ID"]; ?></td>
                 <td><?php echo umlautFix($row2["EnsembleName"]); ?></td>
                 <td><?php echo umlautFix($row2["Email"]); ?></td>
+                <td><?php if($row["final"] == 1){ echo '<i class="fa fa-check" aria-hidden="true"></i>'; } else { echo '<i class="fa fa-times" aria-hidden="true"></i>'; }; ?></td>
                 <td><button type="button" onclick="showJgt(<?php echo $row["ID"] ?>);" id="premInv" class="btn btn-primary btn-outline btn-black">Details</button></td>
               </tr>
             <?php endwhile;?>

@@ -8,10 +8,11 @@
     <div class="col-lg-6 col-md-5 col-sm-5 text-center fh5co-link-wrap">
       <ul data-offcanvass="yes">
         <li><a href="?loc=premieren">Premieren</a></li>
-        <li><a href="?loc=anmeldungen">Festival Anmeldungen</a></li>
+        <li><a href="?loc=anmeldungen">Anmeldungen</a></li>
         <li><a href="?loc=user">User</a></li>
         <li><a href="?loc=content">Content</a></li>
         <li><a href="?loc=bilder">Bilder</a></li>
+        <li><a href="?loc=logs">Log</li>
       </ul>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-4 text-right fh5co-link-wrap">

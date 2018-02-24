@@ -1,3 +1,5 @@
+<!-- Logger -->
+<script src="../js/logger.js"></script>
 <!-- jQuery -->
 <script src="../js/jquery.min.js"></script>
 <!-- jQuery Easing -->

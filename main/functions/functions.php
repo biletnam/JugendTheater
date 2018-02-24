@@ -29,6 +29,7 @@ include 'premFileUploader.php';
 include 'getPremFileInfos.php';
 include 'getFileInfos.php';
 include 'getAnmeldung.php';
+include 'logger.php';
 
 $defaultPath = "../";
 $profilePath = "../";
@@ -59,6 +60,7 @@ switch($func){
     case "getPremFileInfos": getPremFileInfos(); break;
     case "getFileInfos": getFileInfos(); break;
     case "getAnmeldung": getAnmeldung(); break;
+    case "logPHP": logPHP(); break;
     default: echo "NO FUNCTION FOUND!";
 }
  ?>
